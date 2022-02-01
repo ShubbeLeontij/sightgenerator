@@ -4,19 +4,20 @@ import rangefinder
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __email__ = "leontij03@yandex.ru"
-
-K = 5600
-COLOR = '255, 255, 0, 255'
-SIZE = 1  # TODO
 
 # Requesting all requirements
 filename = input('Output filename: ')  # SimJagdpanther or SimLeo
 speed = int(input('Shell speed in m/s: '))  # 1000 or 1640
+zoom = float(input('Zoom: '))  # 5 or 4
 coord = list(map(float, input('50m coordinates: ').split()))  # 10.175 10 or -14.85 3.90
 left = True if coord[0] > 0 else False
 speed_type = 1 if speed < 1200 else 2
+
+K = 5600
+COLOR = '255, 255, 0, 255'
+SIZE = zoom / 5  # Should be 1 if zoom == 5
 
 
 def point(distance, base=50):
@@ -46,17 +47,20 @@ elif speed_type == 2:
     small_dist_list = [1000, 1800, 2600]
 else:
     raise Exception
+all_dist_list = sorted(default_dist_list + large_dist_list + small_dist_list)
 
 # Start settings
 with open('start.blk') as f:
     output = f.read() + COLOR + '\n'
+    index = output.find('\nlineSizeMult:r=1.0')
+    output = output[:index] + str(round(SIZE, 2)) + output[index:]
 
 
 # Lines
 points = [point(5)]
 output += 'crosshair_distances {\n}\n\ndrawLines{\n'
 output += 'line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n'
-for dist in [20, 35, 50] + list(range(100, 3200, 100)):
+for dist in all_dist_list + [all_dist_list[-1] + 200]:
     points.append(point(dist))
     output += 'line\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
 output += rangefinder.left_line if left else rangefinder.right_line
@@ -75,8 +79,8 @@ output += '}\n\n'
 
 # Text
 output += 'drawTexts{\n'
-output += text(20, [3 if left else -3, 0], 1.5) + text(35, [2.5 if left else -2.5, 0], 1.5) + text(50, [2 if left else -2, 0], 1)
-output += text(100, [0, -1], 0.5) + text(200, [0, -1], 0.5) + text(400, [0, -1], 0.5)
+output += text(20, [0, -2], 1.5) + text(35, [0, -2], 1.5) + text(50, [0, -1], 1) + text(100, [-0.5 if left else 0.5, -0.5], 0.6) + \
+          text(200, [-0.5 if left else 0.5, -0.5], 0.6) + text(400, [-0.5 if left else 0.5, -0.5], 0.6)
 for dist in large_dist_list:
     output += text(dist, [-1.5 if left else 1.5, 0], 0.6)
 output += rangefinder.left_text if left else rangefinder.right_text
