@@ -31,14 +31,21 @@ def create_sight(foldername, filename, speed, zoom, sight_type, coord):
                str(round(x, 2)) + ', ' + str(round(y, 2)) + '\nmove: b = yes\nthousandth: b = yes\nsize: r = ' + str(size) + '\nhighlight: b = yes\n}\n'
 
     # Loading settings from json
-    left = True if coord[0] > 0 else False
+    isLeft = True if coord[0] > 0 else False
     settings = json.load(open('settings.json', 'r'))
+    smallCirclesSize = settings["smallCirclesSize"]
+    largeCirclesSize = settings["largeCirclesSize"]
+    lineSizeZoomDependence = settings["lineSizeZoomDependence"]
+    badZoomThreshold = settings["badZoomThreshold"]
     crosshairColor = settings["crosshairColor"]
     crosshairLightColor = settings["crosshairLightColor"]
     rangefinderProgressBarColor1 = settings["rangefinderProgressBarColor1"]
     rangefinderProgressBarColor2 = settings["rangefinderProgressBarColor2"]
-    fontSizeMult = settings["fontSizeMult"] * zoom / 5
-    lineSizeMult = settings["lineSizeMult"]
+    fontSizeMult = settings["fontSizeMult"] * 0.2 * zoom
+    if lineSizeZoomDependence == "sum":
+        lineSizeMult = settings["lineSizeMult"] - fontSizeMult
+    else:
+        lineSizeMult = settings["lineSizeMult"]
 
     default_circles_list = settings["default_circles_list"]
     for s_type in settings["sightTypes"]:
@@ -47,7 +54,19 @@ def create_sight(foldername, filename, speed, zoom, sight_type, coord):
             small_circles_list = s_type["small_circles_list"]
             large_dist_list = s_type["large_dist_list"]
             small_dist_list = s_type["small_dist_list"]
-    all_dist_list = sorted(default_circles_list + large_circles_list + small_circles_list + large_dist_list + small_dist_list)
+    try:
+        all_dist_list = sorted(default_circles_list + large_circles_list + small_circles_list + large_dist_list + small_dist_list)
+    except UnboundLocalError:
+        print("Incorrect sight type")
+        return
+
+    # Load rangefinder
+    if zoom > badZoomThreshold:
+        rangefinder_lines = rangefinder.left_line if isLeft else rangefinder.right_line
+        rangefinder_text = rangefinder.left_text if isLeft else rangefinder.right_text
+    else:  # TODO
+        rangefinder_lines = rangefinder.left_line if isLeft else rangefinder.right_line
+        rangefinder_text = rangefinder.left_text if isLeft else rangefinder.right_text
 
     # Start settings
     with open('start.blk', 'r') as f:
@@ -72,34 +91,34 @@ def create_sight(foldername, filename, speed, zoom, sight_type, coord):
     points = [point(5)]
     output += '\ndrawLines{\n'
     output += 'line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n'
-    for dist in all_dist_list + [all_dist_list[-1] + 200]:
+    for dist in all_dist_list + [all_dist_list[-1] + 1000]:
         points.append(point(dist))
         output += 'line\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
-    output += rangefinder.left_line if left else rangefinder.right_line
+    output += rangefinder_lines
     output += '}\n\n'
 
     # Circles
     output += 'drawCircles{\ncircle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 4;\nmove:b = no\nthousandth:b = yes;\n}\n'
     for dist in default_circles_list + large_circles_list:
-        output += circle(dist, 4)
+        output += circle(dist, largeCirclesSize)
     for dist in small_circles_list:
-        output += circle(dist, 3.3)
+        output += circle(dist, smallCirclesSize)
     output += '}\n\n'
 
     # Text
     output += 'drawTexts{\n'
     for dist in default_circles_list:
         if dist < 100:
-            output += text(dist, [0, 1], 0.6)
+            output += text(dist, [0, 1], 0.7)
         elif dist < 300:
-            output += text(dist, [0, -1], 0.6)
+            output += text(dist, [0, -1], 0.7)
         elif dist < 500:
-            output += text(dist, [-0.5 if left else 0.5, -0.8], 0.6)
+            output += text(dist, [-0.5 if isLeft else 0.5, -0.7], 0.7)
         else:
-            output += text(dist, [-0.8 if left else 0.8, -0.5], 0.6)
+            output += text(dist, [-0.7 if isLeft else 0.7, -0.5], 0.7)
     for dist in large_circles_list:
-        output += text(dist, [-1.5 if left else 1.5, 0], 0.6)
-    output += rangefinder.left_text if left else rangefinder.right_text
+        output += text(dist, [-1.5 if isLeft else 1.5, 0], 0.7)
+    output += rangefinder_text
     output += '}'
 
     # Writing into file
@@ -118,11 +137,16 @@ def create_sight(foldername, filename, speed, zoom, sight_type, coord):
 
 if __name__ == '__main__':
     # Requesting all requirements
-    foldername = ''
-    filename = input('Output filename: ')  # SimJagdpanther or SimLeo
-    speed = int(input('Shell speed in m/s: '))  # 1000 or 1640
-    zoom = float(input('Zoom: '))  # 5 or 4
-    sight_type = int(input('Sight type: '))
-    coord = list(map(float, input('50m coordinates: ').split(',')))  # 10.175 10 or -14.85 3.90
+    try:
+        foldername = ''
+        filename = input('Output filename: ')  # SimJagdpanther or SimLeo
+        speed = int(input('Shell speed in m/s: '))  # 1000 or 1640
+        zoom = float(input('Zoom: '))  # 5 or 4
+        sight_type = input('Sight type: ')
+        coord = list(map(float, input('50m coordinates: ').split(',')))  # 10.175 10 or -14.85 3.90
 
-    create_sight(foldername, filename, speed, zoom, sight_type, coord)
+        create_sight(foldername, filename, speed, zoom, sight_type, coord)
+    except ValueError:
+        print('Wrong format string')
+
+    input("\nPress enter to exit")
