@@ -4,7 +4,7 @@ import generator
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "0.0.2"
+__version__ = "1.1"
 __email__ = "leontij03@yandex.ru"
 
 

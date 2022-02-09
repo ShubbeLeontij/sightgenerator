@@ -3,7 +3,7 @@ import json
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "0.0.2"
+__version__ = "1.1"
 __email__ = "leontij03@yandex.ru"
 
 
@@ -42,6 +42,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     gamemode = settings["gamemode"].lower()
     smallCirclesSize = settings["smallCirclesSize"]
     largeCirclesSize = settings["largeCirclesSize"]
+    circlesTextSize = float(settings["circlesTextSize"])
     lineSizeZoomDependence = settings["lineSizeZoomDependence"]
     badZoomThreshold = settings["badZoomThreshold"]
     crosshairColor = settings["crosshairColor"]
@@ -56,7 +57,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     else:
         lineSizeMult = settings["lineSizeMult"]
 
-    default_circles_list = settings["default_circles_list"]
+    sim_circles_list = settings["sim_circles_list"]
     for s_type in settings["sightTypes"]:
         if s_type["type"] == sight_type:
             large_circles_list = s_type["large_circles_list"]
@@ -64,7 +65,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
             large_dist_list = s_type["large_dist_list"]
             small_dist_list = s_type["small_dist_list"]
     try:
-        all_dist_list = sorted(default_circles_list + large_circles_list + small_circles_list + large_dist_list + small_dist_list)
+        all_dist_list = sorted(sim_circles_list + large_circles_list + small_circles_list + large_dist_list + small_dist_list)
     except UnboundLocalError:
         print("Incorrect sight type")
         return
@@ -111,7 +112,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     # Circles
     output += 'drawCircles{\ncircle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 4;\nmove:b = no\nthousandth:b = yes;\n}\n'
     if gamemode == 'sim':
-        for dist in default_circles_list:
+        for dist in sim_circles_list:
             output += circle(dist, largeCirclesSize)
     for dist in large_circles_list:
         output += circle(dist, largeCirclesSize)
@@ -122,17 +123,17 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     # Text
     output += 'drawTexts{\n'
     if gamemode == 'sim':
-        for dist in default_circles_list:
+        for dist in sim_circles_list:
             if dist < 100:
-                output += text(dist, [0, 1], 0.7)
+                output += text(dist, [0, 1], circlesTextSize)
             elif dist < 300:
-                output += text(dist, [0, -1], 0.7)
+                output += text(dist, [0, -1], circlesTextSize)
             elif dist < 500:
-                output += text(dist, [-0.5 if isLeft else 0.5, -0.7], 0.7)
+                output += text(dist, [-0.5 if isLeft else 0.5, -0.7], circlesTextSize)
             else:
-                output += text(dist, [-0.7 if isLeft else 0.7, -0.5], 0.7)
+                output += text(dist, [-0.7 if isLeft else 0.7, -0.5], circlesTextSize)
     for dist in large_circles_list:
-        output += text(dist, [-1.5 if isLeft else 1.5, 0], 0.7)
+        output += text(dist, [-1.5 if isLeft else 1.5, 0], circlesTextSize)
     output += rangefinder_text
     output += '}'
 
