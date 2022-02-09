@@ -1,0 +1,576 @@
+2000m bad zoom on LEFT side| до 2000м плохой зум с ЛЕВОЙ стороны
+$BadZoomLeftLineStart$
+// Rangefinder | Линии дальномера
+
+//main
+line { line:p4 = -30.5,   0, -6.8, 0; thousandth:b = true; move:b=no; }
+//4
+line { line:p4 = -7,  6.0, -8, 6.0; thousandth:b = true; }
+//5
+line { line:p4 = -8.7, 5.2, -10.3, 5.2; thousandth:b = true; }
+//6
+line { line:p4 = -11, 4.3, -12, 4.3; thousandth:b = true; }
+//7
+line { line:p4 = -12.7, 3.7, -14.3, 3.7; thousandth:b = true; }
+//8
+line { line:p4 = -15, 3.1, -16, 3.1; thousandth:b = true; }
+//9
+line { line:p4 = -16.7, 2.75, -18.3, 2.75; thousandth:b = true; }
+//10
+line { line:p4 = -19, 2.5, -20, 2.5; thousandth:b = true; }
+//12
+line { line:p4 = -20.7, 2.2, -22.7, 2.2; thousandth:b = true; }
+//14
+line { line:p4 = -23.3, 1.95, -25.3, 1.95; thousandth:b = true; }
+//16
+line { line:p4 = -25.9, 1.8, -27.9, 1.8; thousandth:b = true; }
+//18
+line { line:p4 = -28.5, 1.6, -30.5, 1.6; thousandth:b = true; }
+//4-
+line { line:p4 = -7, 6, -7, 7; thousandth:b = true; }
+//6-
+line { line:p4 = -11, 4.3, -11, 6; thousandth:b = true; }
+//8-
+line { line:p4 = -15, 3.1, -15, 5; thousandth:b = true; }
+//10-
+line { line:p4 = -19, 2.5, -19, 4; thousandth:b = true; }
+//14-
+line { line:p4 = -23.3, 1.95, -23.3, 3.45; thousandth:b = true; }
+//18-
+line { line:p4 = -28.5, 1.6, -28.5, 3.1; thousandth:b = true; }
+$BadZoomLeftLineEnd$
+$BadZoomLeftTextStart$
+//rangfinder number | циферки на дальномере
+
+text {
+text:t = "4"
+align:i = 0
+pos:p2 = -7, 8.8
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="5"
+align:i=0
+pos:p2= -9.5,6.6
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text {
+text:t = "6"
+align:i = 0
+pos:p2 = -11, 7.6
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="7"
+align:i=0
+pos:p2= -13.5,5.2
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text {
+text:t = "8"
+align:i = 0
+pos:p2 = -15, 6.6
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="9"
+align:i=0
+pos:p2= -17.5,4.1
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text {
+text:t = "10"
+align:i = 0
+pos:p2 = -19, 5.7
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="12"
+align:i=0
+pos:p2= -21.5,3.4
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text {
+text:t = "14"
+align:i = 0
+pos:p2 = -23.3, 5.1
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="16"
+align:i=0
+pos:p2= -26.7,2.9
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text{
+text:t="18"
+align:i=0
+pos:p2= -28.5,4.5
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+$BadZoomLeftTextEnd$
+
+
+2000m bad zoom on RIGHT side| до 2000м плохой зум с ПРАВОЙ стороны
+$BadZoomRightLineStart$
+//main
+line { line:p4 = 30.5,   0, 6.8, 0; thousandth:b = true; move:b=no; }
+//4
+line { line:p4 = 7,  6.0, 8, 6.0; thousandth:b = true; }
+//5
+line { line:p4 = 8.7, 5.2, 10.3, 5.2; thousandth:b = true; }
+//6
+line { line:p4 = 11, 4.3, 12, 4.3; thousandth:b = true; }
+//7
+line { line:p4 = 12.7, 3.7, 14.3, 3.7; thousandth:b = true; }
+//8
+line { line:p4 = 15, 3.1, 16, 3.1; thousandth:b = true; }
+//9
+line { line:p4 = 16.7, 2.75, 18.3, 2.75; thousandth:b = true; }
+//10
+line { line:p4 = 19, 2.5, 20, 2.5; thousandth:b = true; }
+//12
+line { line:p4 = 20.7, 2.2, 22.7, 2.2; thousandth:b = true; }
+//14
+line { line:p4 = 23.3, 1.95, 25.3, 1.95; thousandth:b = true; }
+//16
+line { line:p4 = 25.9, 1.8, 27.9, 1.8; thousandth:b = true; }
+//18
+line { line:p4 = 28.5, 1.6, 30.5, 1.6; thousandth:b = true; }
+//4-
+line { line:p4 = 7, 6, 7, 7; thousandth:b = true; }
+//6-
+line { line:p4 = 11, 4.3, 11, 6; thousandth:b = true; }
+//8-
+line { line:p4 = 15, 3.1, 15, 5; thousandth:b = true; }
+//10-
+line { line:p4 = 19, 2.5, 19, 4; thousandth:b = true; }
+//14-
+line { line:p4 = 23.3, 1.95, 23.3, 3.45; thousandth:b = true; }
+//18-
+line { line:p4 = 28.5, 1.6, 28.5, 3.1; thousandth:b = true; }
+$BadZoomRightLineEnd$
+$BadZoomRightTextStart$
+//rangfindernumber | циферки на дальномере
+
+text {
+text:t = "4"
+align:i = 0
+pos:p2 = 7, 8.8
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="5"
+align:i=0
+pos:p2= 9.5,6.6
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text {
+text:t = "6"
+align:i = 0
+pos:p2 = 11, 7.6
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="7"
+align:i=0
+pos:p2= 13.5,5.2
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text {
+text:t = "8"
+align:i = 0
+pos:p2 = 15, 6.6
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="9"
+align:i=0
+pos:p2= 17.5,4.1
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text {
+text:t = "10"
+align:i = 0
+pos:p2 = 19, 5.7
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="12"
+align:i=0
+pos:p2= 21.5,3.4
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text {
+text:t = "14"
+align:i = 0
+pos:p2 = 23.3, 5.1
+move:b = no
+thousandth:b = yes
+size:r = 0.67
+highlight:b=yes
+}
+text{
+text:t="16"
+align:i=0
+pos:p2= 26.7,2.9
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+text{
+text:t="18"
+align:i=0
+pos:p2= 28.5,4.5
+size:r = 0.67
+move:b=no
+thousandth:b=yes
+highlight:b=yes
+}
+$BadZoomRightTextEnd$
+
+
+3000m good zoom on LEFT side| до 3000м хороший зум с ЛЕВОЙ стороны
+$GoodZoomLeftLineStart$
+// Rangefinder | Линии дальномера
+
+line { line:p4 = -18.1, 0, -2.5, 0; thousandth:b = true; move:b=no; }
+//8
+line { line:p4 = -2.5, 3.1, -3.8, 3.1; thousandth:b = true; }
+//10
+line { line:p4 = -3.8, 2.6, -5.1, 2.6; thousandth:b = true; }
+//12
+line { line:p4 = -5.1, 2.1, -6.4, 2.1; thousandth:b = true; }
+//14
+line { line:p4 = -6.4, 1.9, -7.7, 1.9; thousandth:b = true; }
+//16
+line { line:p4 = -7.7, 1.6, -9.0, 1.6; thousandth:b = true; }
+//18
+line { line:p4 = -9.0, 1.4, -10.3, 1.4; thousandth:b = true; }
+//20
+line { line:p4 = -10.3, 1.2, -11.6, 1.2; thousandth:b = true; }
+//22
+line { line:p4 = -11.6, 1.05, -12.9, 1.05; thousandth:b = true; }
+//24
+line { line:p4 = -12.9, 0.95, -14.2, 0.95; thousandth:b = true; }
+//26
+line { line:p4 = -14.2, 0.89, -15.5, 0.89; thousandth:b = true; }
+//28
+line { line:p4 = -15.5, 0.82, -16.8, 0.82; thousandth:b = true; }
+//30
+line { line:p4 = -16.8, 0.73, -18.1, 0.73; thousandth:b = true; }
+$GoodZoomLeftLineEnd$
+$GoodZoomLeftTextStart$
+//rangfinder numbers | циферки на дальномере
+
+text {
+text:t = "8"
+align:i = 0
+pos:p2 = -3.2, 3.7
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "10"
+align:i = 0
+pos:p2 = -4.45, 3.2
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "12"
+align:i = 0
+pos:p2 = -5.7, 2.7
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "14"
+align:i = 0
+pos:p2 = -7.05, 2.5
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "16"
+align:i = 0
+pos:p2 = -8.35, 2.2
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "18"
+align:i = 0
+pos:p2 = -9.65, 2.01
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "20"
+align:i = 0
+pos:p2 = -11.05, 1.81
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "22"
+align:i = 0
+pos:p2 = -12.35, 1.70
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "24"
+align:i = 0
+pos:p2 = -13.55, 1.61
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "26"
+align:i = 0
+pos:p2 = -14.85, 1.51
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "28"
+align:i = 0
+pos:p2 = -16.15, 1.46
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "30"
+align:i = 0
+pos:p2 = -17.45, 1.41
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+$GoodZoomLeftTextEnd$
+
+
+3000m good zoom on RIGHT side| 3000м хороший зум с ПРАВОЙ стороны
+$GoodZoomRightLineStart$
+// Rangefinder | Линии дальномера
+
+line { line:p4 = 18.1, 0, 2.5, 0; thousandth:b = true; move:b=no; }
+//8
+line { line:p4 = 2.5, 3.1, 3.8, 3.1; thousandth:b = true; }
+//10
+line { line:p4 = 3.8, 2.6, 5.1, 2.6; thousandth:b = true; }
+//12
+line { line:p4 = 5.1, 2.1, 6.4, 2.1; thousandth:b = true; }
+//14
+line { line:p4 = 6.4, 1.9, 7.7, 1.9; thousandth:b = true; }
+//16
+line { line:p4 = 7.7, 1.6, 9.0, 1.6; thousandth:b = true; }
+//18
+line { line:p4 = 9.0, 1.4, 10.3, 1.4; thousandth:b = true; }
+//20
+line { line:p4 = 10.3, 1.2, 11.6, 1.2; thousandth:b = true; }
+//22
+line { line:p4 = 11.6, 1.05, 12.9, 1.05; thousandth:b = true; }
+//24
+line { line:p4 = 12.9, 0.95, 14.2, 0.95; thousandth:b = true; }
+//26
+line { line:p4 = 14.2, 0.89, 15.5, 0.89; thousandth:b = true; }
+//28
+line { line:p4 = 15.5, 0.82, 16.8, 0.82; thousandth:b = true; }
+//30
+line { line:p4 = 16.8, 0.73, 18.1, 0.73; thousandth:b = true; }
+$GoodZoomRightLineEnd$
+$GoodZoomRightTextStart$
+//rangfinder numbers | циферки на дальномере
+
+text {
+text:t = "8"
+align:i = 0
+pos:p2 = 3.2, 3.7
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "10"
+align:i = 0
+pos:p2 = 4.45, 3.2
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "12"
+align:i = 0
+pos:p2 = 5.8, 2.7
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "14"
+align:i = 0
+pos:p2 = 7.05, 2.5
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "16"
+align:i = 0
+pos:p2 = 8.35, 2.2
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "18"
+align:i = 0
+pos:p2 = 9.65, 2.01
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "20"
+align:i = 0
+pos:p2 = 10.95, 1.81
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "22"
+align:i = 0
+pos:p2 = 12.25, 1.70
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "24"
+align:i = 0
+pos:p2 = 13.55, 1.61
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "26"
+align:i = 0
+pos:p2 = 14.85, 1.51
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "28"
+align:i = 0
+pos:p2 = 16.15, 1.46
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+text {
+text:t = "30"
+align:i = 0
+pos:p2 = 17.45, 1.41
+move:b = no
+thousandth:b = yes
+size:r = 0.50
+highlight:b=yes
+}
+$GoodZoomRightTextEnd$

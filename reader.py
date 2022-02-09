@@ -1,4 +1,5 @@
 import xlrd
+import os
 import generator
 
 __author__ = "Shubbe Leontij"
@@ -6,20 +7,32 @@ __license__ = "GPL"
 __version__ = "0.0.2"
 __email__ = "leontij03@yandex.ru"
 
-sheet = xlrd.open_workbook('data.xlsx').sheet_by_index(0)
 
-for row_num in range(1, sheet.nrows):
-    try:
-        row = sheet.row_values(row_num)
-        foldername = row[0]
-        filename = row[1]
-        speed = int(row[2])
-        zoom = float(row[3])
-        sight_type = row[4]
-        coord = list(map(float, row[5].split(',')))
+with open('path.txt', 'r') as f:
+    wt_path = f.readline()
+    if wt_path == '':
+        wt_path = os.path.dirname(os.path.realpath(__file__)) + '\\output\\'
+    else:
+        wt_path += '\\UserSights\\'
 
-        generator.create_sight(foldername, filename, speed, zoom, sight_type, coord)
-    except ValueError:
-        print('Wrong format string')
+workbook = xlrd.open_workbook('data.xlsx')
+
+for sheet_num in range(workbook.nsheets):
+    sheet = workbook.sheet_by_index(sheet_num)
+    print("Reading", workbook.sheet_names()[sheet_num])
+
+    for row_num in range(sheet.nrows):
+        try:
+            row = sheet.row_values(row_num)
+            path = wt_path + row[0]
+            convergence = int(row[1])
+            speed = int(row[2])
+            zoom = float(row[3])
+            coord = list(map(float, row[4].split(',')))
+            sight_type = row[5]
+
+            generator.create_sight(path, speed, zoom, sight_type, coord, convergence)
+        except ValueError:
+            print('Wrong format string')
 
 input("\nPress enter to exit")

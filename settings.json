@@ -1,16 +1,33 @@
 {
+    "gamemode": "sim",
     "crosshairColor": "255, 0, 0, 255",
     "crosshairLightColor": "255, 255, 0, 255",
     "rangefinderProgressBarColor1": "255, 255, 255, 255",
     "rangefinderProgressBarColor2": "0, 0, 0, 255",
+    "drawCentralLineVert": "no",
+    "drawCentralLineHorz": "no",
     "fontSizeMult": 1.0,
     "lineSizeMult": 2.1,
     "lineSizeZoomDependence": "sum",
     "smallCirclesSize": 3.3,
     "largeCirclesSize": 4.0,
-    "badZoomThreshold": 5.0,
+    "badZoomThreshold": 3.99,
     "default_circles_list": [20, 35, 50, 100, 200, 400, 600],
     "sightTypes": [
+        {
+            "type": "AP",
+            "large_circles_list": [],
+            "small_circles_list": [],
+            "large_dist_list": [1000, 1400, 1800, 2200, 2600, 3000],
+            "small_dist_list": [800, 1200, 1600, 2000, 2400, 2800]
+        },
+        {
+            "type": "APDS",
+            "large_circles_list": [],
+            "small_circles_list": [],
+            "large_dist_list": [1400, 2200, 3000],
+            "small_dist_list": [1000, 1800, 2600]
+        },
         {
             "type": "laser",
             "large_circles_list": [],
@@ -30,20 +47,6 @@
             "large_circles_list": [1400, 2200, 3000],
             "small_circles_list": [1000, 1800, 2600],
             "large_dist_list": [],
-            "small_dist_list": []
-        },
-        {
-            "type": "AP",
-            "large_circles_list": [],
-            "small_circles_list": [],
-            "large_dist_list": [1000, 1400, 1800, 2200, 2600, 3000],
-            "small_dist_list": [800, 1200, 1600, 2000, 2400, 2800]
-        },
-        {
-            "type": "APDS",
-            "large_circles_list": [],
-            "small_circles_list": [],
-            "large_dist_list": [1400, 2200, 3000, 1000, 1800, 2600],
             "small_dist_list": []
         }
     ]

@@ -1,5 +1,4 @@
 import os
-import rangefinder
 import json
 
 __author__ = "Shubbe Leontij"
@@ -8,11 +7,17 @@ __version__ = "0.0.2"
 __email__ = "leontij03@yandex.ru"
 
 
-def create_sight(foldername, filename, speed, zoom, sight_type, coord):
-    def point(distance, base=50):
-        parallax_x, parallax_y = coord[0] * (1 / distance - 1 / 1000) / (1 / base - 1 / 1000), coord[1] * (1 / distance - 1 / 1000) / (1 / base - 1 / 1000)
-        gravity = 5600 * (distance - base) / speed ** 2
-        return str(round(parallax_x, 2)) + ', ' + str(round(parallax_y + gravity, 2))
+def create_sight(path, speed, zoom, sight_type, coord, convergence):
+    def point(distance):
+        if gamemode == 'sim':
+            parallax_x, parallax_y = - coord[1] * (convergence - distance) / (convergence * distance), coord[0] * (convergence - distance) / (convergence * distance)
+        elif gamemode == 'ab' or gamemode == 'rb':
+            parallax_x, parallax_y = 0, 0
+        else:
+            raise ValueError
+
+        gravity = 5.0 * distance / speed ** 2
+        return str(round(parallax_x * 1000, 2)) + ', ' + str(round((parallax_y + gravity) * 1000, 2))
 
     def crosshair_distance(distance, size):
         if size == 0:
@@ -31,8 +36,10 @@ def create_sight(foldername, filename, speed, zoom, sight_type, coord):
                str(round(x, 2)) + ', ' + str(round(y, 2)) + '\nmove: b = yes\nthousandth: b = yes\nsize: r = ' + str(size) + '\nhighlight: b = yes\n}\n'
 
     # Loading settings from json
-    isLeft = True if coord[0] > 0 else False
+    isLeft = True if coord[1] < 0 else False
     settings = json.load(open('settings.json', 'r'))
+
+    gamemode = settings["gamemode"].lower()
     smallCirclesSize = settings["smallCirclesSize"]
     largeCirclesSize = settings["largeCirclesSize"]
     lineSizeZoomDependence = settings["lineSizeZoomDependence"]
@@ -41,6 +48,8 @@ def create_sight(foldername, filename, speed, zoom, sight_type, coord):
     crosshairLightColor = settings["crosshairLightColor"]
     rangefinderProgressBarColor1 = settings["rangefinderProgressBarColor1"]
     rangefinderProgressBarColor2 = settings["rangefinderProgressBarColor2"]
+    drawCentralLineVert = settings["drawCentralLineVert"]
+    drawCentralLineHorz = settings["drawCentralLineHorz"]
     fontSizeMult = settings["fontSizeMult"] * 0.2 * zoom
     if lineSizeZoomDependence == "sum":
         lineSizeMult = settings["lineSizeMult"] - fontSizeMult
@@ -60,21 +69,23 @@ def create_sight(foldername, filename, speed, zoom, sight_type, coord):
         print("Incorrect sight type")
         return
 
-    # Load rangefinder
-    if zoom > badZoomThreshold:
-        rangefinder_lines = rangefinder.left_line if isLeft else rangefinder.right_line
-        rangefinder_text = rangefinder.left_text if isLeft else rangefinder.right_text
-    else:  # TODO
-        rangefinder_lines = rangefinder.left_line if isLeft else rangefinder.right_line
-        rangefinder_text = rangefinder.left_text if isLeft else rangefinder.right_text
+    # Load rangefinder depending on gamemode and zoom
+    if gamemode == 'ab':
+        rangefinder_lines, rangefinder_text = '', ''
+    elif gamemode == 'rb' or gamemode == 'sim':
+        rangefinder_lines, rangefinder_text = rangefinder('good' if zoom > badZoomThreshold else 'bad', 'left' if isLeft else 'right')
+    else:
+        raise ValueError
 
     # Start settings
-    with open('start.blk', 'r') as f:
+    with open('start.txt', 'r') as f:
         output = f.read()
         output = output.replace('$crosshairColor$', crosshairColor)
         output = output.replace('$crosshairLightColor$', crosshairLightColor)
         output = output.replace('$rangefinderProgressBarColor1$', rangefinderProgressBarColor1)
         output = output.replace('$rangefinderProgressBarColor2$', rangefinderProgressBarColor2)
+        output = output.replace('$drawCentralLineVert$', drawCentralLineVert)
+        output = output.replace('$drawCentralLineHorz$', drawCentralLineHorz)
         output = output.replace('$fontSizeMult$', str(fontSizeMult))
         output = output.replace('$lineSizeMult$', str(lineSizeMult))
 
@@ -99,7 +110,10 @@ def create_sight(foldername, filename, speed, zoom, sight_type, coord):
 
     # Circles
     output += 'drawCircles{\ncircle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 4;\nmove:b = no\nthousandth:b = yes;\n}\n'
-    for dist in default_circles_list + large_circles_list:
+    if gamemode == 'sim':
+        for dist in default_circles_list:
+            output += circle(dist, largeCirclesSize)
+    for dist in large_circles_list:
         output += circle(dist, largeCirclesSize)
     for dist in small_circles_list:
         output += circle(dist, smallCirclesSize)
@@ -107,45 +121,67 @@ def create_sight(foldername, filename, speed, zoom, sight_type, coord):
 
     # Text
     output += 'drawTexts{\n'
-    for dist in default_circles_list:
-        if dist < 100:
-            output += text(dist, [0, 1], 0.7)
-        elif dist < 300:
-            output += text(dist, [0, -1], 0.7)
-        elif dist < 500:
-            output += text(dist, [-0.5 if isLeft else 0.5, -0.7], 0.7)
-        else:
-            output += text(dist, [-0.7 if isLeft else 0.7, -0.5], 0.7)
+    if gamemode == 'sim':
+        for dist in default_circles_list:
+            if dist < 100:
+                output += text(dist, [0, 1], 0.7)
+            elif dist < 300:
+                output += text(dist, [0, -1], 0.7)
+            elif dist < 500:
+                output += text(dist, [-0.5 if isLeft else 0.5, -0.7], 0.7)
+            else:
+                output += text(dist, [-0.7 if isLeft else 0.7, -0.5], 0.7)
     for dist in large_circles_list:
         output += text(dist, [-1.5 if isLeft else 1.5, 0], 0.7)
     output += rangefinder_text
     output += '}'
 
     # Writing into file
-    path = os.path.dirname(os.path.realpath(__file__)) + '\\output'
-    if foldername != '':
-        path += '\\' + foldername
-        try:
-            os.mkdir(path)
-        except OSError:
-            pass
+    try:
+        os.mkdir(path)
+    except OSError:
+        pass
 
-    with open(path + '\\' + filename + '.blk', 'w') as f:
+    path = path + '\\' + gamemode + '_' + sight_type + '_' + path.rpartition('\\')[2] + '.blk'
+    with open(path, 'w') as f:
         f.write(output)
-        print("Successfully created sight at %s " % (path + '\\' + filename + '.blk'))
+        print("Successfully created sight at %s " % path)
+
+
+def rangefinder(zoom, side):
+    if zoom == 'bad':
+        string = '$BadZoom'
+    elif zoom == 'good':
+        string = '$GoodZoom'
+    else:
+        raise ValueError
+
+    if side == 'left':
+        string += 'Left'
+    elif side == 'right':
+        string += 'Right'
+    else:
+        raise ValueError
+
+    with open('rangefinder.txt', 'r') as f:
+        rangefinder_str = f.read()
+        line_str = rangefinder_str.partition(string + 'LineStart$')[2].partition(string + 'LineEnd$')[0]
+        text_str = rangefinder_str.partition(string + 'TextStart$')[2].partition(string + 'TextEnd$')[0]
+
+    return line_str, text_str
 
 
 if __name__ == '__main__':
     # Requesting all requirements
     try:
-        foldername = ''
-        filename = input('Output filename: ')  # SimJagdpanther or SimLeo
-        speed = int(input('Shell speed in m/s: '))  # 1000 or 1640
-        zoom = float(input('Zoom: '))  # 5 or 4
+        path = os.path.dirname(os.path.realpath(__file__)) + '\\output'
+        speed = int(input('Shell speed in m/s: '))
+        convergence = int(input('convergence in meters: '))
+        zoom = float(input('Zoom: '))
         sight_type = input('Sight type: ')
-        coord = list(map(float, input('50m coordinates: ').split(',')))  # 10.175 10 or -14.85 3.90
+        coord = list(map(float, input('Sight coordinates: ').split(',')))
 
-        create_sight(foldername, filename, speed, zoom, sight_type, coord)
+        create_sight(path, speed, zoom, sight_type, coord, convergence)
     except ValueError:
         print('Wrong format string')
 
