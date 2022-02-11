@@ -4,7 +4,7 @@ import generator
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "1.1"
+__version__ = "1.2"
 __email__ = "leontij03@yandex.ru"
 
 
@@ -28,10 +28,21 @@ for sheet_num in range(workbook.nsheets):
             convergence = int(row[1])
             speed = int(row[2])
             zoom = float(row[3])
-            coord = list(map(float, row[4].split(',')))
-            sight_type = row[5]
+            sight_type = row[4]
 
-            generator.create_sight(path, speed, zoom, sight_type, coord, convergence)
+            coord_y, coord_x = tuple(map(float, row[5].split(',')))
+            for cell in row[6], row[7], row[8]:
+                try:
+                    coord_y, coord_x = coord_y + float(cell.split(',')[0]), coord_x + float(cell.split(',')[1])
+                except ValueError:
+                    pass
+            for cell in row[9], row[10], row[11]:
+                try:
+                    coord_y, coord_x = coord_y - float(cell.split(',')[0]), coord_x - float(cell.split(',')[1])
+                except ValueError:
+                    pass
+
+            generator.create_sight(path, speed, zoom, sight_type, [round(coord_y, 3), round(coord_x, 3)], convergence)
         except ValueError:
             print('Wrong format string')
 

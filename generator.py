@@ -3,14 +3,28 @@ import json
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "1.1"
+__version__ = "1.2"
 __email__ = "leontij03@yandex.ru"
 
 
 def create_sight(path, speed, zoom, sight_type, coord, convergence):
+    """
+    Function that creates sight .blk file.
+    :param path: path where sight should be created
+    :param speed: shell speed in m/s (int type)
+    :param zoom: minimum zoom (float type)
+    :param sight_type: sight type according to settings.json
+    :param coord: list with two floats inside - height and width location of sight relatively to the gun in meters
+    :param convergence: convergence in meters i.e. distance with zero parallax (int type)
+    """
     def point(distance):
+        """
+        Function that finds location of point on sight depending on distance.
+        :param distance: int distance in meters
+        :return: str with two parallaxes in milliradian splitted by ', '
+        """
         if gamemode == 'sim':
-            parallax_x, parallax_y = - coord[1] * (convergence - distance) / (convergence * distance), coord[0] * (convergence - distance) / (convergence * distance)
+            parallax_x, parallax_y = - coord[1] * (1 / distance - 1 / convergence), coord[0] * (1 / distance - 1 / convergence)
         elif gamemode == 'ab' or gamemode == 'rb':
             parallax_x, parallax_y = 0, 0
         else:
@@ -20,15 +34,34 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         return str(round(parallax_x * 1000, 2)) + ', ' + str(round((parallax_y + gravity) * 1000, 2))
 
     def crosshair_distance(distance, size):
+        """
+        Function that creates string for adding WT generated distances on sight.
+        :param distance: int distance in meters
+        :param size: big or small - int 1 or 0
+        :return: str type generated text
+        """
         if size == 0:
             return 'distance:p3=' + str(distance) + ', 0, 0\n'
         if size == 1:
             return 'distance:p3=' + str(distance) + ', ' + str(distance // 100) + ', 0\n'
 
     def circle(distance, size):
-        return 'circle {\nsegment:p2 = 0, 360;\npos:p2 = ' + point(distance) + ';\ndiameter:r = 0;\nsize:r = ' + str(size) + ';\nmove:b = yes\nthousandth:b = yes;\n}\n'
+        """
+        Function that creates circle marking some distance.
+        :param distance: int distance in meters
+        :param size: diameter of circle
+        :return: str type generated text
+        """
+        return 'circle {    //' + str(distance) + '\nsegment:p2 = 0, 360;\npos:p2 = ' + point(distance) + ';\ndiameter:r = 0;\nsize:r = ' + str(size) + ';\nmove:b = yes\nthousandth:b = yes;\n}\n'
 
     def text(distance, delta, size):
+        """
+        Function that creates text marking some distance.
+        :param distance: int distance in meters
+        :param delta: list of text shift in milliradians relative to the circle - [horizontal, vertical]
+        :param size: size of text
+        :return: str type generated text
+        """
         x, y = tuple(map(float, point(distance).split(', ')))
         x = x + delta[0]
         y = y + delta[1]
@@ -42,7 +75,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     gamemode = settings["gamemode"].lower()
     smallCirclesSize = settings["smallCirclesSize"]
     largeCirclesSize = settings["largeCirclesSize"]
-    circlesTextSize = float(settings["circlesTextSize"])
+    circlesTextSize = settings["circlesTextSize"]
     lineSizeZoomDependence = settings["lineSizeZoomDependence"]
     badZoomThreshold = settings["badZoomThreshold"]
     crosshairColor = settings["crosshairColor"]
@@ -58,15 +91,23 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         lineSizeMult = settings["lineSizeMult"]
 
     sim_circles_list = settings["sim_circles_list"]
+    line_dist_list = []
+    large_circles_list = []
+    small_circles_list = []
+    large_dist_list = []
+    small_dist_list = []
+    found = False
     for s_type in settings["sightTypes"]:
         if s_type["type"] == sight_type:
-            large_circles_list = s_type["large_circles_list"]
-            small_circles_list = s_type["small_circles_list"]
-            large_dist_list = s_type["large_dist_list"]
-            small_dist_list = s_type["small_dist_list"]
-    try:
-        all_dist_list = sorted(sim_circles_list + large_circles_list + small_circles_list + large_dist_list + small_dist_list)
-    except UnboundLocalError:
+            found = True
+            line_dist_list = s_type["line_dist_list"]
+            if s_type["circles"]:
+                large_circles_list = s_type["large_dist_list"]
+                small_circles_list = s_type["small_dist_list"]
+            else:
+                large_dist_list = s_type["large_dist_list"]
+                small_dist_list = s_type["small_dist_list"]
+    if not found:
         print("Incorrect sight type")
         return
 
@@ -87,8 +128,8 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         output = output.replace('$rangefinderProgressBarColor2$', rangefinderProgressBarColor2)
         output = output.replace('$drawCentralLineVert$', drawCentralLineVert)
         output = output.replace('$drawCentralLineHorz$', drawCentralLineHorz)
-        output = output.replace('$fontSizeMult$', str(fontSizeMult))
-        output = output.replace('$lineSizeMult$', str(lineSizeMult))
+        output = output.replace('$fontSizeMult$', str(round(fontSizeMult, 2)))
+        output = output.replace('$lineSizeMult$', str(round(lineSizeMult, 2)))
 
     # Distances
     output += '\ncrosshair_distances {\n'
@@ -103,7 +144,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     points = [point(5)]
     output += '\ndrawLines{\n'
     output += 'line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n'
-    for dist in all_dist_list + [all_dist_list[-1] + 1000]:
+    for dist in line_dist_list:
         points.append(point(dist))
         output += 'line\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
     output += rangefinder_lines
@@ -150,6 +191,12 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
 
 
 def rangefinder(zoom, side):
+    """
+    Function that returns text for adding rangefinder.
+    :param zoom: zoom type - 'bad' or 'good'
+    :param side: side where rangefinder should be painted - 'left' or 'right'
+    :return: tuple with line str and text str
+    """
     if zoom == 'bad':
         string = '$BadZoom'
     elif zoom == 'good':
@@ -173,11 +220,11 @@ def rangefinder(zoom, side):
 
 
 if __name__ == '__main__':
-    # Requesting all requirements
+    # Requesting all requirements and creating sight in output
     try:
         path = os.path.dirname(os.path.realpath(__file__)) + '\\output'
         speed = int(input('Shell speed in m/s: '))
-        convergence = int(input('convergence in meters: '))
+        convergence = int(input('Convergence in meters: '))
         zoom = float(input('Zoom: '))
         sight_type = input('Sight type: ')
         coord = list(map(float, input('Sight coordinates: ').split(',')))

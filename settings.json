@@ -6,47 +6,33 @@
     "rangefinderProgressBarColor2": "0, 0, 0, 255",
     "drawCentralLineVert": "no",
     "drawCentralLineHorz": "no",
-    "fontSizeMult": 1.0,
-    "lineSizeMult": 2.1,
+    "fontSizeMult": 0.7,
+    "lineSizeMult": 2.2,
     "lineSizeZoomDependence": "sum",
     "smallCirclesSize": 3.3,
     "largeCirclesSize": 4.0,
-    "circlesTextSize": 0.7,
+    "circlesTextSize": 0.8,
     "badZoomThreshold": 3.99,
     "sim_circles_list": [20, 35, 50, 100, 200, 400, 600],
     "sightTypes": [
         {
             "type": "AP",
-            "large_circles_list": [],
-            "small_circles_list": [],
+            "circles": 0,
+            "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 3500],
             "large_dist_list": [1000, 1400, 1800, 2200, 2600, 3000],
             "small_dist_list": [800, 1200, 1600, 2000, 2400, 2800]
         },
         {
             "type": "APDS",
-            "large_circles_list": [],
-            "small_circles_list": [],
+            "circles": 0,
+            "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 3500],
             "large_dist_list": [1400, 2200, 3000],
             "small_dist_list": [1000, 1800, 2600]
         },
         {
             "type": "laser",
-            "large_circles_list": [],
-            "small_circles_list": [],
-            "large_dist_list": [],
-            "small_dist_list": []
-        },
-        {
-            "type": "APcircles",
-            "large_circles_list": [1000, 1400, 1800, 2200, 2600, 3000],
-            "small_circles_list": [800, 1200, 1600, 2000, 2400, 2800],
-            "large_dist_list": [],
-            "small_dist_list": []
-        },
-        {
-            "type": "APDScircles",
-            "large_circles_list": [1400, 2200, 3000],
-            "small_circles_list": [1000, 1800, 2600],
+            "circles": 0,
+            "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800],
             "large_dist_list": [],
             "small_dist_list": []
         }
