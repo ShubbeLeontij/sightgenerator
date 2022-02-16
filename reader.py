@@ -4,7 +4,7 @@ import generator
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "1.2"
+__version__ = "1.3"
 __email__ = "leontij03@yandex.ru"
 
 
@@ -19,7 +19,7 @@ workbook = xlrd.open_workbook('data.xlsx')
 
 for sheet_num in range(workbook.nsheets):
     sheet = workbook.sheet_by_index(sheet_num)
-    print("Reading", workbook.sheet_names()[sheet_num])
+    print("\nReading", workbook.sheet_names()[sheet_num])
 
     for row_num in range(sheet.nrows):
         try:

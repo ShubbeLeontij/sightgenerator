@@ -7,34 +7,43 @@
     "drawCentralLineVert": "no",
     "drawCentralLineHorz": "no",
     "fontSizeMult": 0.7,
-    "lineSizeMult": 2.2,
-    "lineSizeZoomDependence": "sum",
+    "lineSizeMult": 1.0,
+    "lineSizeZoomDependence": "no",
+    "minFontSize": 0.35,
+    "badZoomThreshold": 3.99,
     "smallCirclesSize": 3.3,
     "largeCirclesSize": 4.0,
     "circlesTextSize": 0.8,
-    "badZoomThreshold": 3.99,
-    "sim_circles_list": [20, 35, 50, 100, 200, 400, 600],
-    "sightTypes": [
-        {
-            "type": "AP",
+    "sim_circles_list": {
+        "20": {"size":  7.0, "textPos": [0, 1], "textSize": 1.4},
+        "35": {"size":  6.0, "textPos": [0, 1], "textSize": 1.2},
+        "50": {"size":  5.0, "textPos": [0, 1], "textSize": 1.0},
+        "100": {"size":  4.0, "textPos": [0, -1], "textSize": 0.8},
+        "200": {"size":  4.0, "textPos": [0, -1], "textSize": 0.8},
+        "400": {"size":  4.0, "textPos": [-0.6, -0.8], "textSize": 0.8},
+        "600": {"size":  4.0, "textPos": [-0.8, -0.6], "textSize": 0.8}
+    },
+    "sightTypes": {
+        "AP": {
             "circles": 0,
             "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 3500],
-            "large_dist_list": [1000, 1400, 1800, 2200, 2600, 3000],
-            "small_dist_list": [800, 1200, 1600, 2000, 2400, 2800]
+            "right_dist_list": [],
+            "left_dist_list": [800, 1200, 1600, 2000, 2400, 2800],
+            "small_dist_list": [1000, 1400, 1800, 2200, 2600, 3000]
         },
-        {
-            "type": "APDS",
+        "APDS": {
             "circles": 0,
             "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 3500],
-            "large_dist_list": [1400, 2200, 3000],
-            "small_dist_list": [1000, 1800, 2600]
+            "right_dist_list": [1400, 2200, 3000],
+            "left_dist_list": [1000, 1800, 2600],
+            "small_dist_list": []
         },
-        {
-            "type": "laser",
+        "laser": {
             "circles": 0,
             "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800],
-            "large_dist_list": [],
+            "right_dist_list": [],
+            "left_dist_list": [],
             "small_dist_list": []
         }
-    ]
+    }
 }

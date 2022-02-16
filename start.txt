@@ -13,8 +13,19 @@ drawSightMask:b=yes
 crosshairDistHorSizeMain:p2=0, 0
 crosshairHorVertSize:p2=0.5, 0.5
 crosshairDistHorSizeAdditional:p2=0.007, 0.0025
-distancePos:p2 = 0.005, 0
 rangefinderUseThousandth:b=yes
 crosshair_hor_ranges{}
 crosshairColor:c = $crosshairColor$
 crosshairLightColor:c = $crosshairLightColor$
+
+// ballistic range indicators
+drawUpward:b = no
+distancePos:p2 = $distancePos$,0
+move:b = yes
+crosshairDistHorSizeMain:p2 = 0,0
+textPos:p2 = 0.010, 0
+textAlign:i = 1
+textShift:r = 0
+drawAdditionalLines:b = no
+crosshairDistHorSizeAdditional:p2 = 0.0,0.0
+drawDistanceCorrection:b = no
