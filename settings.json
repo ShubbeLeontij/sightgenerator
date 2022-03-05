@@ -1,5 +1,4 @@
 {
-    "gamemode": "sim",
     "crosshairColor": "0, 0, 0, 255",
     "crosshairLightColor": "255, 255, 0, 255",
     "rangefinderProgressBarColor1": "255, 255, 255, 255",
@@ -26,6 +25,8 @@
     "sightTypes": {
         "AP": {
             "circles": 0,
+            "rangefinder": 1,
+            "parallax": 1,
             "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 3500],
             "right_dist_list": [],
             "left_dist_list": [800, 1200, 1600, 2000, 2400, 2800],
@@ -33,16 +34,38 @@
         },
         "APDS": {
             "circles": 0,
+            "rangefinder": 1,
+            "parallax": 1,
             "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 4000],
-            "right_dist_list": [1400, 2200, 3000],
-            "left_dist_list": [1000, 1800, 2600],
+            "right_dist_list": [],
+            "left_dist_list": [1000, 1400, 1800, 2200, 2600, 3000],
             "small_dist_list": []
         },
         "laser": {
             "circles": 0,
+            "rangefinder": 0,
+            "parallax": 1,
             "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800],
             "right_dist_list": [],
             "left_dist_list": [],
+            "small_dist_list": []
+        },
+        "AP2": {
+            "circles": 0,
+            "rangefinder": 1,
+            "parallax": 1,
+            "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 3500],
+            "right_dist_list": [1000, 1400, 1800, 2200, 2600, 3000],
+            "left_dist_list": [800, 1200, 1600, 2000, 2400, 2800],
+            "small_dist_list": []
+        },
+        "APDS2": {
+            "circles": 0,
+            "rangefinder": 1,
+            "parallax": 1,
+            "line_dist_list": [20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 4000],
+            "right_dist_list": [1400, 2200, 3000],
+            "left_dist_list": [1000, 1800, 2600],
             "small_dist_list": []
         }
     }

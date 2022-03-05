@@ -3,7 +3,7 @@ import json
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "1.3"
+__version__ = "1.4"
 __email__ = "leontij03@yandex.ru"
 
 
@@ -23,12 +23,10 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         :param distance: int distance in meters
         :return: str with two parallaxes in milliradian splitted by ', '
         """
-        if gamemode == 'sim':
+        if parallax:
             parallax_x, parallax_y = - coord[1] * (1 / distance - 1 / convergence), coord[0] * (1 / distance - 1 / convergence)
-        elif gamemode == 'ab' or gamemode == 'rb':
-            parallax_x, parallax_y = 0, 0
         else:
-            raise ValueError
+            parallax_x, parallax_y = 0, 0
 
         gravity = 5.0 * distance / speed ** 2
         return str(round(parallax_x * 1000, 2)) + ', ' + str(round((parallax_y + gravity) * 1000, 2))
@@ -79,6 +77,8 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     sim_circles_list = settings["sim_circles_list"]
     s_type = settings["sightTypes"][sight_type]
     line_dist_list = s_type["line_dist_list"]
+    rangefinder = s_type["rangefinder"]
+    parallax = s_type["parallax"]
     if s_type["circles"]:
         right_circles_list = s_type["right_dist_list"]
         left_circles_list = s_type["left_dist_list"]
@@ -87,7 +87,6 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         right_dist_list = s_type["right_dist_list"]
         left_dist_list = s_type["left_dist_list"]
         small_dist_list = s_type["small_dist_list"]
-    gamemode = settings["gamemode"].lower()
     smallCirclesSize = settings["smallCirclesSize"]
     largeCirclesSize = settings["largeCirclesSize"]
     circlesTextSize = settings["circlesTextSize"]
@@ -108,12 +107,10 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         lineSizeMult = settings["lineSizeMult"]
 
     # Load rangefinder depending on gamemode and zoom
-    if gamemode == 'ab':
-        rangefinder_lines, rangefinder_text = '', ''
-    elif gamemode == 'rb' or gamemode == 'sim':
-        rangefinder_lines, rangefinder_text = rangefinder('good' if zoom > badZoomThreshold else 'bad', 'left' if isLeft else 'right')
+    if rangefinder:
+        rangefinder_lines, rangefinder_text = get_rangefinder('good' if zoom > badZoomThreshold else 'bad', 'left' if isLeft else 'right')
     else:
-        raise ValueError
+        rangefinder_lines, rangefinder_text = '', ''
 
     # Start settings
     with open('start.txt', 'r') as f:
@@ -151,7 +148,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
 
     # Circles
     output += 'drawCircles{\ncircle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 4;\nmove:b = no\nthousandth:b = yes;\n}\n'
-    if gamemode == 'sim':
+    if parallax:
         for dist in sim_circles_list.keys():
             output += circle(int(dist), sim_circles_list[dist]['size'])
     for dist in right_circles_list + left_circles_list:
@@ -162,7 +159,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
 
     # Text
     output += 'drawTexts{\n'
-    if gamemode == 'sim':
+    if parallax:
         for dist in sim_circles_list.keys():
             textPos = sim_circles_list[dist]['textPos']
             textPos[0] = textPos[0] if isLeft else -textPos[0]
@@ -179,13 +176,13 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     except OSError:
         pass
 
-    path = path + '\\' + gamemode + '_' + sight_type + '_' + path.rpartition('\\')[2] + '.blk'
+    path = path + '\\' + sight_type + '_' + path.rpartition('\\')[2] + '.blk'
     with open(path, 'w') as f:
         f.write(output)
         print("Successfully created sight at %s " % path)
 
 
-def rangefinder(zoom, side):
+def get_rangefinder(zoom, side):
     """
     Function that returns text for adding rangefinder.
     :param zoom: zoom type - 'bad' or 'good'
