@@ -3,7 +3,7 @@ import json
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "1.4"
+__version__ = "1.5"
 __email__ = "leontij03@yandex.ru"
 
 
