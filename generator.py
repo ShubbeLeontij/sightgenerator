@@ -3,7 +3,7 @@ import json
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "1.5"
+__version__ = "1.6"
 __email__ = "leontij03@yandex.ru"
 
 
@@ -133,7 +133,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         if dist in left_dist_list:
             output += crosshair_distance(dist, 1, 'left' if isLeft else 'right')
         if dist in small_dist_list:
-            output += crosshair_distance(dist, 0, 'left')
+            output += crosshair_distance(dist, 0, 'left' if isLeft else 'right')
     output += '}\n'
 
     # Lines

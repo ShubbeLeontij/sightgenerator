@@ -23,7 +23,7 @@
         "600": {"size":  4.0, "textPos": [-0.8, -0.6], "textSize": 0.8}
     },
     "sightTypes": {
-        "AP": {
+        "sim_AP": {
             "circles": 0,
             "rangefinder": 1,
             "parallax": 1,
@@ -32,7 +32,7 @@
             "left_dist_list": [800, 1200, 1600, 2000, 2400, 2800],
             "small_dist_list": [1000, 1400, 1800, 2200, 2600, 3000]
         },
-        "APDS": {
+        "sim_APDS": {
             "circles": 0,
             "rangefinder": 1,
             "parallax": 1,
@@ -41,7 +41,7 @@
             "left_dist_list": [1000, 1400, 1800, 2200, 2600, 3000],
             "small_dist_list": []
         },
-        "laser": {
+        "sim_LASER": {
             "circles": 0,
             "rangefinder": 0,
             "parallax": 1,
@@ -50,7 +50,7 @@
             "left_dist_list": [],
             "small_dist_list": []
         },
-        "AP2": {
+        "sim_AP2": {
             "circles": 0,
             "rangefinder": 1,
             "parallax": 1,
@@ -59,7 +59,7 @@
             "left_dist_list": [800, 1200, 1600, 2000, 2400, 2800],
             "small_dist_list": []
         },
-        "APDS2": {
+        "sim_APDS2": {
             "circles": 0,
             "rangefinder": 1,
             "parallax": 1,
