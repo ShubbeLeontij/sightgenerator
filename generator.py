@@ -3,7 +3,7 @@ import json
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "1.6"
+__version__ = "1.7"
 __email__ = "leontij03@yandex.ru"
 
 
@@ -173,10 +173,10 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     # Writing into file
     try:
         os.mkdir(path)
-    except OSError:
+    except:
         pass
 
-    path = path + '\\' + sight_type + '_' + path.rpartition('\\')[2] + '.blk'
+    path = path + '/' + sight_type + '_' + path.rpartition('/')[2] + '.blk'
     with open(path, 'w') as f:
         f.write(output)
         print("Successfully created sight at %s " % path)
@@ -214,7 +214,7 @@ def get_rangefinder(zoom, side):
 if __name__ == '__main__':
     # Requesting all requirements and creating sight in output
     try:
-        path = os.path.dirname(os.path.realpath(__file__)) + '\\output'
+        path = os.path.dirname(os.path.realpath(__file__)) + '/output'
         speed = int(input('Shell speed in m/s: '))
         convergence = int(input('Convergence in meters: '))
         zoom = float(input('Zoom: '))

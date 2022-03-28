@@ -1,6 +1,6 @@
-2000m bad zoom on LEFT side| до 2000м плохой зум с ЛЕВОЙ стороны
+п»ї2000m bad zoom on LEFT side
 $BadZoomLeftLineStart$
-// Rangefinder | Линии дальномера
+//RANGEFINDER
 
 //main
 line { line:p4 = -30.5,   0, -6.8, 0; thousandth:b = true; move:b=no; }
@@ -40,7 +40,7 @@ line { line:p4 = -23.3, 1.95, -23.3, 3.45; thousandth:b = true; }
 line { line:p4 = -28.5, 1.6, -28.5, 3.1; thousandth:b = true; }
 $BadZoomLeftLineEnd$
 $BadZoomLeftTextStart$
-//rangfinder number | циферки на дальномере
+//RANGEFINDER NUMBERS
 
 text {
 text:t = "4"
@@ -144,8 +144,10 @@ highlight:b=yes
 $BadZoomLeftTextEnd$
 
 
-2000m bad zoom on RIGHT side| до 2000м плохой зум с ПРАВОЙ стороны
+2000m bad zoom on RIGHT side
 $BadZoomRightLineStart$
+//RANGEFINDER
+
 //main
 line { line:p4 = 30.5,   0, 6.8, 0; thousandth:b = true; move:b=no; }
 //4
@@ -184,7 +186,7 @@ line { line:p4 = 23.3, 1.95, 23.3, 3.45; thousandth:b = true; }
 line { line:p4 = 28.5, 1.6, 28.5, 3.1; thousandth:b = true; }
 $BadZoomRightLineEnd$
 $BadZoomRightTextStart$
-//rangfindernumber | циферки на дальномере
+//RANGEFINDER NUMBERS
 
 text {
 text:t = "4"
@@ -288,9 +290,9 @@ highlight:b=yes
 $BadZoomRightTextEnd$
 
 
-3000m good zoom on LEFT side| до 3000м хороший зум с ЛЕВОЙ стороны
+3000m good zoom on LEFT side
 $GoodZoomLeftLineStart$
-// Rangefinder | Линии дальномера
+//RANGEFINDER
 
 line { line:p4 = -18.1, 0, -2.5, 0; thousandth:b = true; move:b=no; }
 //8
@@ -319,7 +321,7 @@ line { line:p4 = -15.5, 0.82, -16.8, 0.82; thousandth:b = true; }
 line { line:p4 = -16.8, 0.73, -18.1, 0.73; thousandth:b = true; }
 $GoodZoomLeftLineEnd$
 $GoodZoomLeftTextStart$
-//rangfinder numbers | циферки на дальномере
+//RANGEFINDER NUMBERS
 
 text {
 text:t = "8"
@@ -432,9 +434,9 @@ highlight:b=yes
 $GoodZoomLeftTextEnd$
 
 
-3000m good zoom on RIGHT side| 3000м хороший зум с ПРАВОЙ стороны
+3000m good zoom on RIGHT side
 $GoodZoomRightLineStart$
-// Rangefinder | Линии дальномера
+//RANGEFINDER
 
 line { line:p4 = 18.1, 0, 2.5, 0; thousandth:b = true; move:b=no; }
 //8
@@ -463,7 +465,7 @@ line { line:p4 = 15.5, 0.82, 16.8, 0.82; thousandth:b = true; }
 line { line:p4 = 16.8, 0.73, 18.1, 0.73; thousandth:b = true; }
 $GoodZoomRightLineEnd$
 $GoodZoomRightTextStart$
-//rangfinder numbers | циферки на дальномере
+//RANGEFINDER NUMBERS
 
 text {
 text:t = "8"
