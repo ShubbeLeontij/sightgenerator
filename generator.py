@@ -3,7 +3,7 @@ import json
 
 __author__ = "Shubbe Leontij"
 __license__ = "GPL"
-__version__ = "1.7"
+__version__ = "1.8"
 __email__ = "leontij03@yandex.ru"
 
 
@@ -23,11 +23,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         :param distance: int distance in meters
         :return: str with two parallaxes in milliradian splitted by ', '
         """
-        if parallax:
-            parallax_x, parallax_y = - coord[1] * (1 / distance - 1 / convergence), coord[0] * (1 / distance - 1 / convergence)
-        else:
-            parallax_x, parallax_y = 0, 0
-
+        parallax_x, parallax_y = - coord[1] * (1 / distance - 1 / convergence), coord[0] * (1 / distance - 1 / convergence)
         gravity = 5.0 * distance / speed ** 2
         return str(round(parallax_x * 1000, 2)) + ', ' + str(round((parallax_y + gravity) * 1000, 2))
 
@@ -38,7 +34,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         :param size: big or small - int 1 or 0
         :return: str type generated text
         """
-        x = '0.0065' if size else '0.0045'
+        x = str(distLength) if size else str(round(distLength * 2 / 3, 4))
         return 'distance { distance:p3=' + str(distance) + ',' + (str(distance // 100) if size else '0') + ',' + ('-' if side == 'right' else '') + x + '; textPos:p2=' + ('' if side == 'right' else '-') + '0.013,0; }\n'
 
     def circle(distance, size):
@@ -67,44 +63,33 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     # Loading settings from json
     settings = json.load(open('settings.json', 'r'))
 
-    line_dist_list = []
-    right_circles_list = []
-    left_circles_list = []
-    small_circles_list = []
-    right_dist_list = []
-    left_dist_list = []
-    small_dist_list = []
-    sim_circles_list = settings["sim_circles_list"]
-    s_type = settings["sightTypes"][sight_type]
+    s_type = None
+    for t in settings["sightTypes"]:
+        if sight_type in t["names"]:
+            s_type = t
+            break
     line_dist_list = s_type["line_dist_list"]
     rangefinder = s_type["rangefinder"]
-    parallax = s_type["parallax"]
-    if s_type["circles"]:
-        right_circles_list = s_type["right_dist_list"]
-        left_circles_list = s_type["left_dist_list"]
-        small_circles_list = s_type["small_dist_list"]
-    else:
-        right_dist_list = s_type["right_dist_list"]
-        left_dist_list = s_type["left_dist_list"]
-        small_dist_list = s_type["small_dist_list"]
-    smallCirclesSize = settings["smallCirclesSize"]
-    largeCirclesSize = settings["largeCirclesSize"]
-    circlesTextSize = settings["circlesTextSize"]
-    lineSizeZoomDependence = settings["lineSizeZoomDependence"]
+    right_dist_list = s_type["right_dist_list"]
+    left_dist_list = s_type["left_dist_list"]
+    small_dist_list = s_type["small_dist_list"]
+    circles_list = s_type["circles"]
+    centralLines = s_type["centralLines"]
+    centralCircle = s_type["centralCircle"]
+
     badZoomThreshold = settings["badZoomThreshold"]
+    distLength = settings["distLength"]
     crosshairColor = settings["crosshairColor"]
     crosshairLightColor = settings["crosshairLightColor"]
     rangefinderProgressBarColor1 = settings["rangefinderProgressBarColor1"]
     rangefinderProgressBarColor2 = settings["rangefinderProgressBarColor2"]
     drawCentralLineVert = settings["drawCentralLineVert"]
     drawCentralLineHorz = settings["drawCentralLineHorz"]
+    lineSizeMult = settings["lineSizeMult"]
     fontSizeMult = max(settings["fontSizeMult"] * 0.2 * zoom, settings["minFontSize"])
     isLeft = True if coord[1] < 0 else False
-    distancePos = str(round(-float(point(2000).split(',')[0]) * zoom * 0.0025, 4))
-    if lineSizeZoomDependence == "sum":
-        lineSizeMult = settings["lineSizeMult"] - fontSizeMult
-    else:
-        lineSizeMult = settings["lineSizeMult"]
+    distancePos = str(round(float(point(2000).split(',')[0]) * -0.01, 4))
+
 
     # Load rangefinder depending on gamemode and zoom
     if rangefinder:
@@ -137,36 +122,30 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     output += '}\n'
 
     # Lines
-    points = [point(5)]
     output += '\ndrawLines{\n'
-    output += 'line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n'
-    for dist in line_dist_list:
-        points.append(point(dist))
-        output += 'line    //to ' + str(dist) + '\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
+    output += 'line{\n' + centralLines + '\n'
+    if len(line_dist_list) > 1:
+        points = [point(line_dist_list[0])]
+        for dist in line_dist_list[1:]:
+            points.append(point(dist))
+            output += 'line    //to ' + str(dist) + '\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
     output += rangefinder_lines
     output += '}\n\n'
 
     # Circles
-    output += 'drawCircles{\ncircle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 4;\nmove:b = no\nthousandth:b = yes;\n}\n'
-    if parallax:
-        for dist in sim_circles_list.keys():
-            output += circle(int(dist), sim_circles_list[dist]['size'])
-    for dist in right_circles_list + left_circles_list:
-        output += circle(dist, largeCirclesSize)
-    for dist in small_circles_list:
-        output += circle(dist, smallCirclesSize)
+    output += 'drawCircles{\n' + centralCircle + '\n'
+    for dist in circles_list.keys():
+        output += circle(int(dist), circles_list[dist]['size'])
     output += '}\n\n'
 
     # Text
     output += 'drawTexts{\n'
-    if parallax:
-        for dist in sim_circles_list.keys():
-            textPos = sim_circles_list[dist]['textPos']
-            textPos[0] = textPos[0] if isLeft else -textPos[0]
-            textSize = sim_circles_list[dist]['textSize']
+    for dist in circles_list.keys():
+        textPos = circles_list[dist]['textPos']
+        textPos[0] = textPos[0] if isLeft else -textPos[0]
+        textSize = circles_list[dist]['textSize']
+        if textSize:
             output += text(int(dist), textPos, textSize)
-    for dist in right_circles_list + left_circles_list:
-        output += text(dist, [-1.5 if isLeft else 1.5, 0], circlesTextSize)
     output += rangefinder_text
     output += '}'
 
@@ -214,7 +193,7 @@ def get_rangefinder(zoom, side):
 if __name__ == '__main__':
     # Requesting all requirements and creating sight in output
     try:
-        path = os.path.dirname(os.path.realpath(__file__)) + '/output'
+        path = os.path.dirname(os.path.realpath(__file__)) + '/UserSights/' + input('Tank name: ')
         speed = int(input('Shell speed in m/s: '))
         convergence = int(input('Convergence in meters: '))
         zoom = float(input('Zoom: '))
