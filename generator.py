@@ -93,7 +93,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
 
     # Load rangefinder depending on gamemode and zoom
     if rangefinder:
-        rangefinder_lines, rangefinder_text = get_rangefinder('good' if zoom > badZoomThreshold else 'bad', 'left' if isLeft else 'right')
+        rangefinder_lines, rangefinder_text = get_rangefinder('good' if rangefinder == 2 else 'bad', 'left' if isLeft else 'right')
     else:
         rangefinder_lines, rangefinder_text = '', ''
 

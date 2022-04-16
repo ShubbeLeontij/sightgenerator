@@ -53,7 +53,7 @@
         },
         {
             "names": ["sim_APDS", "sim_AP_f", "sim_HEAT_f", "sim_HE_f"],
-            "rangefinder": 1,
+            "rangefinder": 2,
             "right_dist_list": [],
             "left_dist_list": [1000, 1400, 1800, 2200, 2600, 3000],
             "small_dist_list": [],
