@@ -3,9 +3,7 @@ import os
 import generator
 
 __author__ = "Shubbe Leontij"
-__license__ = "GPL"
-__version__ = "1.9"
-__email__ = "leontij03@yandex.ru"
+__version__ = "2.0"
 
 
 with open('path.txt', 'r') as f:

@@ -2,9 +2,7 @@ import os
 import json
 
 __author__ = "Shubbe Leontij"
-__license__ = "GPL"
-__version__ = "1.9"
-__email__ = "leontij03@yandex.ru"
+__version__ = "2.0"
 
 
 def create_sight(path, speed, zoom, sight_type, coord, convergence):
@@ -90,10 +88,9 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     isLeft = True if coord[1] < 0 else False
     distancePos = str(round(float(point(2000).split(',')[0]) * -0.01, 4))
 
-
     # Load rangefinder depending on gamemode and zoom
     if rangefinder:
-        rangefinder_lines, rangefinder_text = get_rangefinder('good' if rangefinder == 2 else 'bad', 'left' if isLeft else 'right')
+        rangefinder_lines, rangefinder_text = get_rangefinder('good' if zoom > badZoomThreshold else 'bad', 'left' if isLeft else 'right')
     else:
         rangefinder_lines, rangefinder_text = '', ''
 
@@ -122,8 +119,7 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     output += '}\n'
 
     # Lines
-    output += '\ndrawLines{\n'
-    output += 'line{\n' + centralLines + '\n'
+    output += '\ndrawLines{\n' + centralLines
     if len(line_dist_list) > 1:
         points = [point(line_dist_list[0])]
         for dist in line_dist_list[1:]:
