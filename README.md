@@ -10,8 +10,6 @@ Download and unzip the project https://github.com/ShubbeLeontij/sightgenerator/a
 
 Download and install python3 (if not already installed) https://www.python.org/downloads/
 
-Install the openpyxl library. To do this, open terminal and write pip install openpyxl
-
 In the project folder, you need to run reader.py, a UserSights folder containing sights will be created. 
 
 Settings

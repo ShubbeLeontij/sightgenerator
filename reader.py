@@ -1,9 +1,13 @@
-import openpyxl
 import os
 import generator
+try:
+    import openpyxl
+except:
+    os.system('pip install openpyxl')
+    import openpyxl
 
 __author__ = "Shubbe Leontij"
-__version__ = "2.0"
+__version__ = "2.0.1"
 
 
 with open('path.txt', 'r') as f:
