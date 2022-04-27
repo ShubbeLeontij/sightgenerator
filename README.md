@@ -21,7 +21,7 @@ By default, the file is empty - in this case, UserSights folder containing all s
 start.txt and rangefinder.txt - files containing some standard settings and rangefinder variants. 
 Modify these files only if you are sure what you are doing.
 
-data.xlsx - table used to build sights. Each line is a separate sight. For convenience, the data is divided into sheets.
+data.xlsx - table used to build sights. Each line is a separate sight. For convenience, the data is divided into sheets. ALL is for AB and RB sights (without parallax), all other sheets for SB.
 Columns from left to right: tank name, convergence in meters, projectile muzzle velocity in m/s, gunner's sight zoom without zooming in, sight type, then data from AssetViewer about sight location relative to the barrel. 
 
 settings.json - main settings file
