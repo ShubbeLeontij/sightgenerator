@@ -2,7 +2,7 @@ import os
 import json
 
 __author__ = "Shubbe Leontij"
-__version__ = "2.0"
+__version__ = "2.0.2"
 
 
 def create_sight(path, speed, zoom, sight_type, coord, convergence):
@@ -195,7 +195,10 @@ if __name__ == '__main__':
         zoom = float(input('Zoom: '))
         sight_type = input('Sight type: ')
         coord = list(map(float, input('Sight coordinates: ').split(',')))
-
+        try:
+            os.mkdir(os.path.dirname(os.path.realpath(__file__)) + '/UserSights/')
+        except:
+            pass
         create_sight(path, speed, zoom, sight_type, coord, convergence)
     except ValueError:
         print('Wrong format string')
