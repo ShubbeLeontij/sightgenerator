@@ -22,10 +22,10 @@
                 "35": {"size":  6.0, "textPos": [0, 1], "textSize": 1.2},
                 "50": {"size":  5.0, "textPos": [0, 1], "textSize": 1.0},
                 "100": {"size":  4.0, "textPos": [0, -1], "textSize": 0.8},
-                "200": {"size":  4.0, "textPos": [0, -0.8], "textSize": 0.6},
-                "400": {"size":  4.0, "textPos": [0, -0.8], "textSize": 0.6}
+                "200": {"size":  4.0, "textPos": [0.2, -0.8], "textSize": 0.6},
+                "400": {"size":  4.0, "textPos": [0.4, -0.6], "textSize": 0.6}
             },
-            "line_dist_list": [5, 20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600],
+            "line_dist_list": [5, 20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 700, 800],
             "centralLines": "line{\nline:p4= -0.6, -0.6, -0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, 0.6, 0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0.6, -0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\n",
             "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 2;\nmove:b = no\nthousandth:b = yes;\n}"
         },
@@ -40,9 +40,9 @@
                 "35": {"size":  6.0, "textPos": [0, 1], "textSize": 1.2},
                 "50": {"size":  5.0, "textPos": [0, 1], "textSize": 1.0},
                 "100": {"size":  4.0, "textPos": [0, -1], "textSize": 0.8},
-                "200": {"size":  4.0, "textPos": [0, -1], "textSize": 0.8},
-                "400": {"size":  4.0, "textPos": [-0.6, -0.8], "textSize": 0.8},
-                "600": {"size":  4.0, "textPos": [-0.8, -0.6], "textSize": 0.8}
+                "200": {"size":  4.0, "textPos": [0, -1], "textSize": 0.7},
+                "400": {"size":  4.0, "textPos": [-0.5, -0.5], "textSize": 0.6},
+                "800": {"size":  4.0, "textPos": [-0.5, -0.5], "textSize": 0.6}
             },
             "line_dist_list": [5, 20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 4000],
             "centralLines": "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n",
