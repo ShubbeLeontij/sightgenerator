@@ -24,7 +24,7 @@ Modify these files only if you are sure what you are doing.
 data.xlsx - table used to build sights. Each line is a separate sight. For convenience, the data is divided into sheets. ALL is for AB and RB sights (without parallax), all other sheets for SB.
 Columns from left to right: tank name, convergence in meters, projectile muzzle velocity in m/s, gunner's sight zoom without zooming in, sight type, then data from AssetViewer about sight location relative to the barrel. 
 
-settings.json - main settings file
+settings.json - main settings file (open in any text editor)
 
 General settings:
 
@@ -38,7 +38,7 @@ lineSizeMult - line thickness
 
 fontSizeMult - labels size. The final value will depend on this parameter and zoom. 
 
-minFontSize - minimum value of fontSizeMult. It is necessary in order to lines don't disappear for tanks with large zoom. 
+minFontSize - minimum value of fontSizeMult. It is necessary in order to see labels tanks with small zoom. 
 
 badZoomThreshold - zoom threshold for rangefinder type selection
 
