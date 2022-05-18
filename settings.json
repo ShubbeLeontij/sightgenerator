@@ -5,7 +5,7 @@
     "rangefinderProgressBarColor2": "0, 0, 0, 255",
     "drawCentralLineVert": "no",
     "drawCentralLineHorz": "no",
-    "lineSizeMult": 1.0,
+    "lineSizeMult": 0.7,
     "fontSizeMult": 0.7,
     "minFontSize": 0.35,
     "badZoomThreshold": 4.99,
