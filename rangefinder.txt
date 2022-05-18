@@ -48,14 +48,14 @@ align:i = 0
 pos:p2 = -7, 8.8
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="5"
 align:i=0
 pos:p2= -9.5,6.6
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -66,14 +66,14 @@ align:i = 0
 pos:p2 = -11, 7.6
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="7"
 align:i=0
 pos:p2= -13.5,5.2
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -84,14 +84,14 @@ align:i = 0
 pos:p2 = -15, 6.6
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="9"
 align:i=0
 pos:p2= -17.5,4.1
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -102,14 +102,14 @@ align:i = 0
 pos:p2 = -19, 5.7
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="12"
 align:i=0
 pos:p2= -21.5,3.4
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -120,14 +120,14 @@ align:i = 0
 pos:p2 = -23.3, 5.1
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="16"
 align:i=0
 pos:p2= -26.7,2.9
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -136,7 +136,7 @@ text{
 text:t="18"
 align:i=0
 pos:p2= -28.5,4.5
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -194,14 +194,14 @@ align:i = 0
 pos:p2 = 7, 8.8
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="5"
 align:i=0
 pos:p2= 9.5,6.6
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -212,14 +212,14 @@ align:i = 0
 pos:p2 = 11, 7.6
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="7"
 align:i=0
 pos:p2= 13.5,5.2
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -230,14 +230,14 @@ align:i = 0
 pos:p2 = 15, 6.6
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="9"
 align:i=0
 pos:p2= 17.5,4.1
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -248,14 +248,14 @@ align:i = 0
 pos:p2 = 19, 5.7
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="12"
 align:i=0
 pos:p2= 21.5,3.4
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -266,14 +266,14 @@ align:i = 0
 pos:p2 = 23.3, 5.1
 move:b = no
 thousandth:b = yes
-size:r = 0.67
+size:r = $size$
 highlight:b=yes
 }
 text{
 text:t="16"
 align:i=0
 pos:p2= 26.7,2.9
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -282,7 +282,7 @@ text{
 text:t="18"
 align:i=0
 pos:p2= 28.5,4.5
-size:r = 0.67
+size:r = $size$
 move:b=no
 thousandth:b=yes
 highlight:b=yes
@@ -329,7 +329,7 @@ align:i = 0
 pos:p2 = -3.2, 3.7
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -338,7 +338,7 @@ align:i = 0
 pos:p2 = -4.45, 3.2
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -347,7 +347,7 @@ align:i = 0
 pos:p2 = -5.7, 2.7
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -356,7 +356,7 @@ align:i = 0
 pos:p2 = -7.05, 2.5
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -365,7 +365,7 @@ align:i = 0
 pos:p2 = -8.35, 2.2
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -374,7 +374,7 @@ align:i = 0
 pos:p2 = -9.65, 2.01
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -383,7 +383,7 @@ align:i = 0
 pos:p2 = -11.05, 1.81
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -392,7 +392,7 @@ align:i = 0
 pos:p2 = -12.35, 1.70
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -401,7 +401,7 @@ align:i = 0
 pos:p2 = -13.55, 1.61
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -410,7 +410,7 @@ align:i = 0
 pos:p2 = -14.85, 1.51
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -419,7 +419,7 @@ align:i = 0
 pos:p2 = -16.15, 1.46
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -428,7 +428,7 @@ align:i = 0
 pos:p2 = -17.45, 1.41
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 $GoodZoomLeftTextEnd$
@@ -473,7 +473,7 @@ align:i = 0
 pos:p2 = 3.2, 3.7
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -482,7 +482,7 @@ align:i = 0
 pos:p2 = 4.45, 3.2
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -491,7 +491,7 @@ align:i = 0
 pos:p2 = 5.8, 2.7
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -500,7 +500,7 @@ align:i = 0
 pos:p2 = 7.05, 2.5
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -509,7 +509,7 @@ align:i = 0
 pos:p2 = 8.35, 2.2
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -518,7 +518,7 @@ align:i = 0
 pos:p2 = 9.65, 2.01
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -527,7 +527,7 @@ align:i = 0
 pos:p2 = 10.95, 1.81
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -536,7 +536,7 @@ align:i = 0
 pos:p2 = 12.25, 1.70
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -545,7 +545,7 @@ align:i = 0
 pos:p2 = 13.55, 1.61
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -554,7 +554,7 @@ align:i = 0
 pos:p2 = 14.85, 1.51
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -563,7 +563,7 @@ align:i = 0
 pos:p2 = 16.15, 1.46
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 text {
@@ -572,7 +572,7 @@ align:i = 0
 pos:p2 = 17.45, 1.41
 move:b = no
 thousandth:b = yes
-size:r = 0.50
+size:r = $size$
 highlight:b=yes
 }
 $GoodZoomRightTextEnd$

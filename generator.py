@@ -2,7 +2,7 @@ import os
 import json
 
 __author__ = "Shubbe Leontij"
-__version__ = "2.0.2"
+__version__ = "2.1"
 
 
 def create_sight(path, speed, zoom, sight_type, coord, convergence):
@@ -15,6 +15,36 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     :param coord: list with two floats inside - height and width location of sight relatively to the gun in meters
     :param convergence: convergence in meters i.e. distance with zero parallax (int type)
     """
+    def get_rangefinder(zoom, side):
+        """
+        Function that returns text for adding rangefinder.
+        :param zoom: zoom type - 'bad' or 'good'
+        :param side: side where rangefinder should be painted - 'left' or 'right'
+        :return: tuple with line str and text str
+        """
+        if zoom == 'bad':
+            string = '$BadZoom'
+            fontSize = rangefinderFontSizeMult * 0.70
+        elif zoom == 'good':
+            string = '$GoodZoom'
+            fontSize = rangefinderFontSizeMult * 0.45
+        else:
+            raise ValueError
+
+        if side == 'left':
+            string += 'Left'
+        elif side == 'right':
+            string += 'Right'
+        else:
+            raise ValueError
+
+        with open('rangefinder.txt', 'r') as f:
+            rangefinder_str = f.read()
+            line_str = rangefinder_str.partition(string + 'LineStart$')[2].partition(string + 'LineEnd$')[0]
+            text_str = rangefinder_str.partition(string + 'TextStart$')[2].partition(string + 'TextEnd$')[0]
+
+        return line_str, text_str.replace('$size$', str(round(fontSize, 2)))
+
     def point(distance):
         """
         Function that finds location of point on sight depending on distance.
@@ -83,8 +113,9 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     rangefinderProgressBarColor2 = settings["rangefinderProgressBarColor2"]
     drawCentralLineVert = settings["drawCentralLineVert"]
     drawCentralLineHorz = settings["drawCentralLineHorz"]
-    lineSizeMult = settings["lineSizeMult"]
     fontSizeMult = max(settings["fontSizeMult"] * 0.2 * zoom, settings["minFontSize"])
+    lineSizeMult = round(settings["lineSizeMult"] / settings["fontSizeMult"], 2)
+    rangefinderFontSizeMult = round(1 / settings["fontSizeMult"], 2)
     isLeft = True if coord[1] < 0 else False
     distancePos = str(round(float(point(2000).split(',')[0]) * -0.01, 4))
 
@@ -154,36 +185,10 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     path = path + '/' + sight_type + '_' + path.rpartition('/')[2] + '.blk'
     with open(path, 'w') as f:
         f.write(output)
-        print("Successfully created sight at %s " % path)
-
-
-def get_rangefinder(zoom, side):
-    """
-    Function that returns text for adding rangefinder.
-    :param zoom: zoom type - 'bad' or 'good'
-    :param side: side where rangefinder should be painted - 'left' or 'right'
-    :return: tuple with line str and text str
-    """
-    if zoom == 'bad':
-        string = '$BadZoom'
-    elif zoom == 'good':
-        string = '$GoodZoom'
-    else:
-        raise ValueError
-
-    if side == 'left':
-        string += 'Left'
-    elif side == 'right':
-        string += 'Right'
-    else:
-        raise ValueError
-
-    with open('rangefinder.txt', 'r') as f:
-        rangefinder_str = f.read()
-        line_str = rangefinder_str.partition(string + 'LineStart$')[2].partition(string + 'LineEnd$')[0]
-        text_str = rangefinder_str.partition(string + 'TextStart$')[2].partition(string + 'TextEnd$')[0]
-
-    return line_str, text_str
+        if __name__ == '__main__':
+            print("Successfully created sight at %s " % path)
+        else:
+            return "Successfully created sight at %s " % path
 
 
 if __name__ == '__main__':
