@@ -15,13 +15,13 @@ In the project folder, you need to run reader.py, a UserSights folder containing
 Settings
 --------
 
-path.txt - file containing path to the game folder (for example, C:\Games\War Thunder). 
+path.txt - file containing path to the game folder (for example, C:\Games\Steam\steamapps\common\War Thunder). 
 By default, the file is empty - in this case, UserSights folder containing all sights will be created in the project folder. 
 
 start.txt and rangefinder.txt - files containing some standard settings and rangefinder variants. 
 Modify these files only if you are sure what you are doing.
 
-data.xlsx - table used to build sights. Each line is a separate sight. For convenience, the data is divided into sheets. ALL is for AB and RB sights (without parallax), all other sheets for SB.
+data.xlsx - table used to build sights. Each line is a separate sight. For convenience, the data is divided into sheets.
 Columns from left to right: tank name, convergence in meters, projectile muzzle velocity in m/s, gunner's sight zoom without zooming in, sight type, then data from AssetViewer about sight location relative to the barrel. 
 
 settings.json - main settings file (open in any text editor)

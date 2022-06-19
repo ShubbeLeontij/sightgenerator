@@ -1,11 +1,12 @@
+#!/usr/bin/env python3
 import os
 import json
 
 __author__ = "Shubbe Leontij"
-__version__ = "2.1"
+__version__ = "2.2"
 
 
-def create_sight(path, speed, zoom, sight_type, coord, convergence):
+def create_sight(path, speed, zoom, sight_type, coord, convergence, floppa_text=''):
     """
     Function that creates sight .blk file.
     :param path: path where sight should be created
@@ -88,6 +89,16 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         return 'text\n{\ntext: t = "' + (str(distance) if distance < 100 else str(distance//100)) + '"\nalign: i = 0\npos: p2 = ' + \
                str(round(x, 2)) + ', ' + str(round(y, 2)) + '\nmove: b = yes\nthousandth: b = yes\nsize: r = ' + str(size) + '\nhighlight: b = yes\n}\n'
 
+    def floppa_distance(distance, size):
+        """
+        Function that creates circle marking some distance.
+        :param distance: int distance in meters
+        :param size: diameter of circle
+        :return: str type generated text
+        """
+        x, y = tuple(map(float, point(distance).split(', ')))
+        return 'text\n{\ntext: t = "' + floppa_char + '"\nalign: i = 0\npos: p2 = ' + str(round(x, 2)) + ', ' + str(round(y, 2)) + '\nmove: b = yes\nthousandth: b = yes\nsize: r = ' + str(round(size, 2)) + '\nhighlight: b = yes\n}\n'
+
     # Loading settings from json
     settings = json.load(open('settings.json', 'r'))
 
@@ -116,8 +127,17 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
     fontSizeMult = max(settings["fontSizeMult"] * 0.2 * zoom, settings["minFontSize"])
     lineSizeMult = round(settings["lineSizeMult"] / settings["fontSizeMult"], 2)
     rangefinderFontSizeMult = round(1 / settings["fontSizeMult"], 2)
+
+    floppa_char = settings["floppa_char"]
+    floppa_char_size = settings["floppa_char_size"]
+    bigFloppa = True if floppa_text else False
     isLeft = True if coord[1] < 0 else False
     distancePos = str(round(float(point(2000).split(',')[0]) * -0.01, 4))
+
+    distances_blk = '\ncrosshair_distances{\n'
+    circles_blk = '\ndrawCircles{\n'
+    lines_blk = '\ndrawLines{\n'
+    text_blk = '\ndrawTexts{\n'
 
     # Load rangefinder depending on gamemode and zoom
     if rangefinder:
@@ -139,50 +159,65 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence):
         output = output.replace('$distancePos$', distancePos)
 
     # Distances
-    output += '\ncrosshair_distances {\n'
-    for dist in sorted(right_dist_list + left_dist_list + small_dist_list):
-        if dist in right_dist_list:
-            output += crosshair_distance(dist, 1, 'right' if isLeft else 'left')
-        if dist in left_dist_list:
-            output += crosshair_distance(dist, 1, 'left' if isLeft else 'right')
-        if dist in small_dist_list:
-            output += crosshair_distance(dist, 0, 'left' if isLeft else 'right')
-    output += '}\n'
+    if not bigFloppa:
+        for dist in sorted(right_dist_list + left_dist_list + small_dist_list):
+            if dist in right_dist_list:
+                distances_blk += crosshair_distance(dist, 1, 'right' if isLeft else 'left')
+            if dist in left_dist_list:
+                distances_blk += crosshair_distance(dist, 1, 'left' if isLeft else 'right')
+            if dist in small_dist_list:
+                distances_blk += crosshair_distance(dist, 0, 'left' if isLeft else 'right')
+    else:
+        for dist in sorted(right_dist_list + left_dist_list + small_dist_list):
+            if dist in right_dist_list:
+                text_blk += floppa_distance(dist, floppa_char_size)
+                text_blk += text(dist, [1 if isLeft else -1, 0], 0.8)
+            if dist in left_dist_list:
+                text_blk += floppa_distance(dist, floppa_char_size)
+                text_blk += text(dist, [-1 if isLeft else 1, 0], 0.8)
+            if dist in small_dist_list:
+                text_blk += floppa_distance(dist, floppa_char_size)
 
     # Lines
-    output += '\ndrawLines{\n' + centralLines
-    if len(line_dist_list) > 1:
-        points = [point(line_dist_list[0])]
-        for dist in line_dist_list[1:]:
-            points.append(point(dist))
-            output += 'line    //to ' + str(dist) + '\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
-    output += rangefinder_lines
-    output += '}\n\n'
+    if not bigFloppa:
+        lines_blk += centralLines
+        if len(line_dist_list) > 1:
+            points = [point(line_dist_list[0])]
+            for dist in line_dist_list[1:]:
+                points.append(point(dist))
+                lines_blk += 'line    //to ' + str(dist) + '\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
+    else:
+        lines_blk += "line{\nline:p4= 0.0, 0.0, 0.0, 80.0\nmove:b=yes\nthousandth:b=yes\n}\nline{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n"
+    lines_blk += rangefinder_lines
+    lines_blk += floppa_text  # PAINTING FLOPPA
 
     # Circles
-    output += 'drawCircles{\n' + centralCircle + '\n'
-    for dist in circles_list.keys():
-        output += circle(int(dist), circles_list[dist]['size'])
-    output += '}\n\n'
+    if not bigFloppa:
+        circles_blk += centralCircle + '\n'
+        for dist in circles_list.keys():
+            circles_blk += circle(int(dist), circles_list[dist]['size'])
+    else:
+        text_blk += '\ntext\n{\ntext: t = "' + floppa_char + '"\nalign: i = 0\npos: p2 = 0, 0\nmove: b = no\nthousandth: b = yes\nsize: r = ' + str(floppa_char_size) + '\nhighlight: b = yes\n}\n'
+        for dist in circles_list.keys():
+            text_blk += floppa_distance(int(dist), circles_list[dist]['size'] * 0.3)
 
     # Text
-    output += 'drawTexts{\n'
     for dist in circles_list.keys():
         textPos = circles_list[dist]['textPos']
         textPos[0] = textPos[0] if isLeft else -textPos[0]
         textSize = circles_list[dist]['textSize']
         if textSize:
-            output += text(int(dist), textPos, textSize)
-    output += rangefinder_text
-    output += '}'
+            text_blk += text(int(dist), textPos, textSize)
+    text_blk += rangefinder_text
 
     # Writing into file
+    output += distances_blk + '}\n' + lines_blk + '}\n' + circles_blk + '}\n' + text_blk + '}\n'  # SUM ALL STRINGS INTO ONE
     try:
         os.mkdir(path)
     except:
         pass
 
-    path = path + '/' + sight_type + '_' + path.rpartition('/')[2] + '.blk'
+    path = path + ('/F_' if bigFloppa else '/') + sight_type + '_' + path.rpartition('/')[2] + '.blk'
     with open(path, 'w') as f:
         f.write(output)
         if __name__ == '__main__':
@@ -200,11 +235,17 @@ if __name__ == '__main__':
         zoom = float(input('Zoom: '))
         sight_type = input('Sight type: ')
         coord = list(map(float, input('Sight coordinates: ').split(',')))
+        FLOPPA = int(input('Big Floppa: '))
+        if FLOPPA:
+            with open('floppa.txt', 'r') as floppa_file:
+                floppa_text = floppa_file.read()
+        else:
+            floppa_text = ''
         try:
             os.mkdir(os.path.dirname(os.path.realpath(__file__)) + '/UserSights/')
         except:
             pass
-        create_sight(path, speed, zoom, sight_type, coord, convergence)
+        create_sight(path, speed, zoom, sight_type, coord, convergence, floppa_text)
     except ValueError:
         print('Wrong format string')
 

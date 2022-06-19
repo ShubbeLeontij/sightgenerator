@@ -1,6 +1,6 @@
 {
-    "crosshairColor": "0, 0, 0, 255",
-    "crosshairLightColor": "255, 255, 0, 255",
+    "crosshairColor": "230, 255, 0, 255",
+    "crosshairLightColor": "0, 0, 0, 255",
     "rangefinderProgressBarColor1": "255, 255, 255, 255",
     "rangefinderProgressBarColor2": "0, 0, 0, 255",
     "drawCentralLineVert": "no",
@@ -10,6 +10,8 @@
     "minFontSize": 0.35,
     "badZoomThreshold": 4.99,
     "distLength": 0.0065,
+    "floppa_char": "·",
+    "floppa_char_size": 1.2,
     "sightTypes":[
         {
             "names": ["sim_LASER"],
@@ -46,7 +48,7 @@
             },
             "line_dist_list": [5, 20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 4000],
             "centralLines": "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n",
-            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 4;\nmove:b = no\nthousandth:b = yes;\n}"
+            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 3;\nmove:b = no\nthousandth:b = yes;\n}"
         },
         {
             "names": ["sim_AP", "sim_HEAT", "sim_HE"],
@@ -65,7 +67,7 @@
             },
             "line_dist_list": [5, 20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 4000],
             "centralLines": "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n",
-            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 3.5;\nmove:b = no\nthousandth:b = yes;\n}"
+            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 3;\nmove:b = no\nthousandth:b = yes;\n}"
         },
         {
             "names": ["sim_AP_s", "sim_HEAT_s", "sim_HE_s"],
@@ -84,7 +86,7 @@
             },
             "line_dist_list": [5, 20, 35, 50, 65, 80, 100, 120, 140, 170, 200, 230, 260, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 4000],
             "centralLines": "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n",
-            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 3.5;\nmove:b = no\nthousandth:b = yes;\n}"
+            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 3;\nmove:b = no\nthousandth:b = yes;\n}"
         },
         {
             "names": ["CLEAN"],
@@ -94,7 +96,7 @@
             "small_dist_list": [],
             "circles": {},
             "line_dist_list": [],
-            "centralLines": "",
+            "centralLines": "line{\nline:p4= -400, 0, 400, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0, -400, 0, 400\nmove:b=no\nthousandth:b=yes\n}\n",
             "centralCircle": ""
         },
         {
@@ -106,7 +108,7 @@
             "circles": {},
             "line_dist_list": [1, 4000],
             "centralLines": "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n",
-            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 4;\nmove:b = no\nthousandth:b = yes;\n}"
+            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 3;\nmove:b = no\nthousandth:b = yes;\n}"
         },
         {
             "names": ["RB"],
@@ -117,26 +119,7 @@
             "circles": {},
             "line_dist_list": [1, 4000],
             "centralLines": "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n",
-            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 4;\nmove:b = no\nthousandth:b = yes;\n}"
-        },
-        {
-            "names": ["sim_APv2", "sim_HEATv2", "sim_HEv2"],
-            "rangefinder": 1,
-            "right_dist_list": [1000, 1400, 1800, 2200, 2600, 3000],
-            "left_dist_list": [800, 1200, 1600, 2000, 2400, 2800],
-            "small_dist_list": [],
-            "circles": {
-                "20": {"size":  7.0, "textPos": [0, 1], "textSize": 1.4},
-                "35": {"size":  6.0, "textPos": [0, 1], "textSize": 1.2},
-                "50": {"size":  5.0, "textPos": [0, 1], "textSize": 1.0},
-                "100": {"size":  4.0, "textPos": [0, -1], "textSize": 0.8},
-                "200": {"size":  4.0, "textPos": [0, -1], "textSize": 0.8},
-                "400": {"size":  4.0, "textPos": [-0.6, -0.8], "textSize": 0.8},
-                "600": {"size":  4.0, "textPos": [-0.8, -0.6], "textSize": 0.8}
-            },
-            "line_dist_list": [5, 20, 35, 50, 100, 130, 160, 200, 250, 300, 350, 400, 500, 600, 800, 1000, 1400, 2000, 2600, 3500],
-            "centralLines": "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n",
-            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 3.5;\nmove:b = no\nthousandth:b = yes;\n}"
+            "centralCircle": "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = 3;\nmove:b = no\nthousandth:b = yes;\n}"
         }
     ]
 }

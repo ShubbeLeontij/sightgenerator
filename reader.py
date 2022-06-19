@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import argparse
 import generator
@@ -13,7 +14,7 @@ except:
 
 
 __author__ = "Shubbe Leontij"
-__version__ = "2.1"
+__version__ = "2.2"
 
 
 def _print(string, severity=1):
@@ -22,8 +23,12 @@ def _print(string, severity=1):
 
 
 parser = argparse.ArgumentParser(description='Creates UserSights folder with WarThunder sights.')
-parser.add_argument('-m', '--mode', help='Output mode. Development - 0 ; Normal - 1 (default); Silent - 2 ; Full silent - 3', default=1)
+parser.add_argument('-m', '--mode', help='Output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3', default=1)
+parser.add_argument('-f', '--floppa', help='Whether sights will have BIG FLOPPA; No Floppa - 0 (default); Only with Floppa - 1 ; Both with and without - 2', default=0)
 MODE = int(vars(parser.parse_args())['mode'])
+FLOPPA = int(vars(parser.parse_args())['floppa'])
+with open('floppa.txt', 'r') as floppa_file:
+    floppa_text = floppa_file.read()
 
 with open('path.txt', 'r') as f:
     wt_path = f.readline()
@@ -67,10 +72,13 @@ for sheet_name in workbook.sheetnames:
             if row[8] is not None:
                 y, x = y - float(row[8].split(',')[0]), x - float(row[8].split(',')[1])
 
-            _print(generator.create_sight(wt_path + row[0], int(row[2]), float(row[3]), row[4], [round(y, 3), round(x, 3)], int(row[1])), 0)
+            if FLOPPA == 0 or FLOPPA == 2:
+                _print(generator.create_sight(wt_path + row[0], int(row[2]), float(row[3]), row[4], [round(y, 3), round(x, 3)], int(row[1]), ''), 0)
+            if FLOPPA == 1 or FLOPPA == 2:
+                _print(generator.create_sight(wt_path + row[0], int(row[2]), float(row[3]), row[4], [round(y, 3), round(x, 3)], int(row[1]), floppa_text), 0)
         except:
             wrong_strings[-1] += 1
-            _print('Wrong string format. Sheet: ' + sheet_name + ' Row: ' + row_num, 1)
+            _print('Wrong string format. Sheet: ' + sheet_name + ' Row: ' + str(row_num), 1)
 
     _print(str(empty_rows) + ' empty rows', 0)
     _print(str(wrong_strings[-1]) + ' errors', 1)
