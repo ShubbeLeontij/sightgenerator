@@ -6,7 +6,7 @@ Clone the project https://github.com/ShubbeLeontij/sightgenerator, download and 
 Install the required libraries (pip install -r requirements.txt).
 In the project folder, you need to run GUI.py.
 2) Folder with exe file\
-Download zip https://github.com/ShubbeLeontij/sightgenerator-exe/archive/refs/heads/master.zip
+Download zip https://github.com/ShubbeLeontij/sightgenerator-exe/archive/refs/heads/master.zip \
 You do not need to download anything additionally, however, at the first start, the antivirus may react - allow it to run the file.
 
 Settings
