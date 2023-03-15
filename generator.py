@@ -1,59 +1,36 @@
 #!/usr/bin/env python3
-import os
+from defaults import *
 import json
+import os
+import re
+
 
 __author__ = "Shubbe Leontij"
-__version__ = "2.2"
+__version__ = "3.5"
 
 
-def create_sight(path, speed, zoom, sight_type, coord, convergence, floppa_text=''):
+def create_sight(speed, zoom, sight_type, coord, convergence, bigFloppa, isMain=True):
     """
-    Function that creates sight .blk file.
-    :param path: path where sight should be created
-    :param speed: shell speed in m/s (int type)
+    Function that creates sight layout.
+    :param speed: shell's speed in m/s (int type)
     :param zoom: minimum zoom (float type)
     :param sight_type: sight type according to settings.json
     :param coord: list with two floats inside - height and width location of sight relatively to the gun in meters
     :param convergence: convergence in meters i.e. distance with zero parallax (int type)
+    :param bigFloppa: type of Floppa (0, 1 or 2)
+    :param isMain: boolean showing whether is this sight main or additional
+    :return: list containing: start, distances_blk, lines_blk, circles_blk, text_blk. All in blk format
     """
-    def get_rangefinder(zoom, side):
-        """
-        Function that returns text for adding rangefinder.
-        :param zoom: zoom type - 'bad' or 'good'
-        :param side: side where rangefinder should be painted - 'left' or 'right'
-        :return: tuple with line str and text str
-        """
-        if zoom == 'bad':
-            string = '$BadZoom'
-            fontSize = rangefinderFontSizeMult * 0.70
-        elif zoom == 'good':
-            string = '$GoodZoom'
-            fontSize = rangefinderFontSizeMult * 0.45
-        else:
-            raise ValueError
-
-        if side == 'left':
-            string += 'Left'
-        elif side == 'right':
-            string += 'Right'
-        else:
-            raise ValueError
-
-        with open('rangefinder.txt', 'r') as f:
-            rangefinder_str = f.read()
-            line_str = rangefinder_str.partition(string + 'LineStart$')[2].partition(string + 'LineEnd$')[0]
-            text_str = rangefinder_str.partition(string + 'TextStart$')[2].partition(string + 'TextEnd$')[0]
-
-        return line_str, text_str.replace('$size$', str(round(fontSize, 2)))
-
     def point(distance):
         """
         Function that finds location of point on sight depending on distance.
         :param distance: int distance in meters
-        :return: str with two parallaxes in milliradian splitted by ', '
+        :return: str with two parallaxes in milliradian split by ', '
         """
+        if distance == 0:
+            return '0, 0'
         parallax_x, parallax_y = - coord[1] * (1 / distance - 1 / convergence), coord[0] * (1 / distance - 1 / convergence)
-        gravity = 5.0 * distance / speed ** 2
+        gravity = 5.0 * distance / speed ** 2  # 5.0 is g/2
         return str(round(parallax_x * 1000, 2)) + ', ' + str(round((parallax_y + gravity) * 1000, 2))
 
     def crosshair_distance(distance, size, side):
@@ -63,17 +40,17 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence, floppa_text=
         :param size: big or small - int 1 or 0
         :return: str type generated text
         """
-        x = str(distLength) if size else str(round(distLength * 2 / 3, 4))
-        return 'distance { distance:p3=' + str(distance) + ',' + (str(distance // 100) if size else '0') + ',' + ('-' if side == 'right' else '') + x + '; textPos:p2=' + ('' if side == 'right' else '-') + '0.013,0; }\n'
+        x = distLength if size else round(distLength * DIST_MULT, 4)
+        return 'distance { distance:p3=' + str(distance) + ',' + (str(distance // 100) if size else '0') + ',' + ('-' if side == 'right' else '') + str(x) + '; textPos:p2=' + ('' if side == 'right' else '-') + str(x + DIST_INDENT) + ',0; }\n'
 
-    def circle(distance, size):
+    def circle(distance, size, move=True, diameter=0):
         """
         Function that creates circle marking some distance.
         :param distance: int distance in meters
         :param size: diameter of circle
         :return: str type generated text
         """
-        return 'circle {    //' + str(distance) + '\nsegment:p2 = 0, 360;\npos:p2 = ' + point(distance) + ';\ndiameter:r = 0;\nsize:r = ' + str(size) + ';\nmove:b = yes\nthousandth:b = yes;\n}\n'
+        return 'circle {    //' + str(distance) + '\nsegment:p2 = 0, 360;\npos:p2 = ' + point(distance) + ';\ndiameter:r = ' + str(diameter) + ';\nsize:r = ' + str(size) + ';\nmove:b = ' + ('yes' if move else 'no') + '\nthousandth:b = yes;\n}\n'
 
     def text(distance, delta, size):
         """
@@ -84,12 +61,11 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence, floppa_text=
         :return: str type generated text
         """
         x, y = tuple(map(float, point(distance).split(', ')))
-        x = x + delta[0]
-        y = y + delta[1]
+        x, y = x + delta[0], y + delta[1]
         return 'text\n{\ntext: t = "' + (str(distance) if distance < 100 else str(distance//100)) + '"\nalign: i = 0\npos: p2 = ' + \
                str(round(x, 2)) + ', ' + str(round(y, 2)) + '\nmove: b = yes\nthousandth: b = yes\nsize: r = ' + str(size) + '\nhighlight: b = yes\n}\n'
 
-    def floppa_distance(distance, size):
+    def floppa_circle(distance, size, move=True):
         """
         Function that creates circle marking some distance.
         :param distance: int distance in meters
@@ -97,10 +73,23 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence, floppa_text=
         :return: str type generated text
         """
         x, y = tuple(map(float, point(distance).split(', ')))
-        return 'text\n{\ntext: t = "' + floppa_char + '"\nalign: i = 0\npos: p2 = ' + str(round(x, 2)) + ', ' + str(round(y, 2)) + '\nmove: b = yes\nthousandth: b = yes\nsize: r = ' + str(round(size, 2)) + '\nhighlight: b = yes\n}\n'
+        x, y = x + size * FLOPPA_OFFSET[0], y + size * FLOPPA_OFFSET[1]
+        return 'text\n{\ntext: t = "' + FLOPPA_CHAR + '"\nalign: i = 0\npos: p2 = ' + str(round(x, 2)) + ', ' + str(round(y, 2)) + '\nmove: b = ' + ('yes' if move else 'no') + '\nthousandth: b = yes\nsize: r = ' + str(round(size, 2)) + '\nhighlight: b = yes\n}\n'
+
+    def floppa_distance(distance, size, side):
+        """
+        Function that creates string for adding WT generated distances on sight if it has floppa.
+        :param distance: int distance in meters
+        :param size: filler, always size = 1
+        :param side: filler, always side = right
+        :return: str type generated text
+        """
+        x, y = tuple(map(float, point(distance).split(', ')))
+        return 'distance { distance:p3=' + str(distance) + ',-' + str(distance // 100) + ',-' + str(distLength) + '; textPos:p2=' + str(0.01 * x + (0.003 if distance < 1000 else 0.010)) + ',0; }\n'
 
     # Loading settings from json
-    settings = json.load(open('settings.json', 'r'))
+    with open('settings.json', 'r') as f:
+        settings = json.load(f)
 
     s_type = None
     for t in settings["sightTypes"]:
@@ -114,9 +103,8 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence, floppa_text=
     small_dist_list = s_type["small_dist_list"]
     circles_list = s_type["circles"]
     centralLines = s_type["centralLines"]
-    centralCircle = s_type["centralCircle"]
+    centralCircleSize = s_type["centralCircleSize"]
 
-    badZoomThreshold = settings["badZoomThreshold"]
     distLength = settings["distLength"]
     crosshairColor = settings["crosshairColor"]
     crosshairLightColor = settings["crosshairLightColor"]
@@ -124,128 +112,168 @@ def create_sight(path, speed, zoom, sight_type, coord, convergence, floppa_text=
     rangefinderProgressBarColor2 = settings["rangefinderProgressBarColor2"]
     drawCentralLineVert = settings["drawCentralLineVert"]
     drawCentralLineHorz = settings["drawCentralLineHorz"]
-    fontSizeMult = max(settings["fontSizeMult"] * 0.2 * zoom, settings["minFontSize"])
+    crosshair = settings["crosshair"]
+    fontSizeMult = max(settings["fontSizeMult"] * 0.2 * zoom, MIN_FONT_SIZE)
     lineSizeMult = round(settings["lineSizeMult"] / settings["fontSizeMult"], 2)
     rangefinderFontSizeMult = round(1 / settings["fontSizeMult"], 2)
 
-    floppa_char = settings["floppa_char"]
-    floppa_char_size = settings["floppa_char_size"]
-    bigFloppa = True if floppa_text else False
     isLeft = True if coord[1] < 0 else False
-    distancePos = str(round(float(point(2000).split(',')[0]) * -0.01, 4))
+    distancePos = round(float(point(DIST_POINT).split(',')[0]) * -0.01, 4)
+    if bigFloppa == 2:
+        distancePos = 0
 
-    distances_blk = '\ncrosshair_distances{\n'
-    circles_blk = '\ndrawCircles{\n'
-    lines_blk = '\ndrawLines{\n'
-    text_blk = '\ndrawTexts{\n'
+    distances_blk = ''
+    circles_blk = ''
+    lines_blk = ''
+    text_blk = ''
 
     # Load rangefinder depending on gamemode and zoom
     if rangefinder:
-        rangefinder_lines, rangefinder_text = get_rangefinder('good' if zoom > badZoomThreshold else 'bad', 'left' if isLeft else 'right')
+        d = RANGEFINDERS_BLK["GoodZoom" if zoom > BAD_ZOOM_THRESHOLD or bigFloppa else "BadZoom"]["Left" if isLeft else "Right"]
+        rangefinder_lines = d["Lines"].replace('$main$', (d["MainLine"] if bigFloppa or crosshair == '' or crosshair == 'no' or crosshair == 'false' or crosshair == 'empty' else ''))
+        rangefinder_text = d["Text"].replace('$size$', str(round(rangefinderFontSizeMult * (RANGEFINDER_BAD if zoom < BAD_ZOOM_THRESHOLD else RANGEFINDER_GOOD), 2)))
+    elif not bigFloppa:
+        rangefinder_lines = ''
+        rangefinder_text = ''
     else:
-        rangefinder_lines, rangefinder_text = '', ''
+        rangefinder_lines = RANGEFINDERS_BLK["GoodZoom"]["Left" if isLeft else "Right"]["MainLine"] + (FLOPPA_LINES_ADD if sight_type == "sim_LASER" else '')
+        rangefinder_text = FLOPPA_TEXT_ADD
 
     # Start settings
-    with open('start.txt', 'r') as f:
-        output = f.read()
-        output = output.replace('$crosshairColor$', crosshairColor)
-        output = output.replace('$crosshairLightColor$', crosshairLightColor)
-        output = output.replace('$rangefinderProgressBarColor1$', rangefinderProgressBarColor1)
-        output = output.replace('$rangefinderProgressBarColor2$', rangefinderProgressBarColor2)
-        output = output.replace('$drawCentralLineVert$', drawCentralLineVert)
-        output = output.replace('$drawCentralLineHorz$', drawCentralLineHorz)
-        output = output.replace('$fontSizeMult$', str(round(fontSizeMult, 2)))
-        output = output.replace('$lineSizeMult$', str(round(lineSizeMult, 2)))
-        output = output.replace('$distancePos$', distancePos)
+    replacements = {'$crosshairColor$': crosshairColor, '$crosshairLightColor$': crosshairLightColor, '$rangefinderProgressBarColor1$': rangefinderProgressBarColor1,
+                    '$rangefinderProgressBarColor2$': rangefinderProgressBarColor2, '$drawCentralLineVert$': drawCentralLineVert, '$drawCentralLineHorz$': drawCentralLineHorz,
+                    '$fontSizeMult$': str(round(fontSizeMult, 2)), '$lineSizeMult$': str(round(lineSizeMult, 2)), '$distancePos$': str(distancePos)}
+    rep = dict((re.escape(k), v) for k, v in replacements.items())
+    start = re.compile("|".join(rep.keys())).sub(lambda m: rep[re.escape(m.group(0))], START_BLK)
 
     # Distances
-    if not bigFloppa:
+    if bigFloppa == 0:
+        if isMain:
+            for dist in sorted(right_dist_list + left_dist_list + small_dist_list):
+                if dist in left_dist_list:
+                    distances_blk += crosshair_distance(dist, 1, 'right' if isLeft else 'left')
+                if dist in right_dist_list:
+                    distances_blk += crosshair_distance(dist, 1, 'left' if isLeft else 'right')
+                if dist in small_dist_list:
+                    distances_blk += crosshair_distance(dist, 0, 'left' if isLeft else 'right')
+    elif bigFloppa == 1:
         for dist in sorted(right_dist_list + left_dist_list + small_dist_list):
-            if dist in right_dist_list:
-                distances_blk += crosshair_distance(dist, 1, 'right' if isLeft else 'left')
             if dist in left_dist_list:
-                distances_blk += crosshair_distance(dist, 1, 'left' if isLeft else 'right')
-            if dist in small_dist_list:
-                distances_blk += crosshair_distance(dist, 0, 'left' if isLeft else 'right')
-    else:
-        for dist in sorted(right_dist_list + left_dist_list + small_dist_list):
+                text_blk += floppa_circle(dist, FLOPPA_SIZE)
+                text_blk += text(dist, [FLOPPA_INDENT if isLeft else -FLOPPA_INDENT, 0], FLOPPA_SIZE_COEF)
             if dist in right_dist_list:
-                text_blk += floppa_distance(dist, floppa_char_size)
-                text_blk += text(dist, [1 if isLeft else -1, 0], 0.8)
-            if dist in left_dist_list:
-                text_blk += floppa_distance(dist, floppa_char_size)
-                text_blk += text(dist, [-1 if isLeft else 1, 0], 0.8)
+                text_blk += floppa_circle(dist, FLOPPA_SIZE)
+                text_blk += text(dist, [-FLOPPA_INDENT if isLeft else FLOPPA_INDENT, 0], FLOPPA_SIZE_COEF)
             if dist in small_dist_list:
-                text_blk += floppa_distance(dist, floppa_char_size)
+                text_blk += floppa_circle(dist, FLOPPA_SIZE)
+    elif bigFloppa == 2:
+        if isMain:
+            for dist in sorted(right_dist_list + left_dist_list + small_dist_list):
+                if dist in left_dist_list:
+                    distances_blk += floppa_distance(dist, 1, 'right' if isLeft else 'left')
+                if dist in right_dist_list:
+                    distances_blk += floppa_distance(dist, 1, 'left' if isLeft else 'right')
+                if dist in small_dist_list:
+                    distances_blk += floppa_distance(dist, 0, 'left' if isLeft else 'right')
 
     # Lines
-    if not bigFloppa:
-        lines_blk += centralLines
-        if len(line_dist_list) > 1:
-            points = [point(line_dist_list[0])]
-            for dist in line_dist_list[1:]:
-                points.append(point(dist))
-                lines_blk += 'line    //to ' + str(dist) + '\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
-    else:
-        lines_blk += "line{\nline:p4= 0.0, 0.0, 0.0, 80.0\nmove:b=yes\nthousandth:b=yes\n}\nline{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n"
-    lines_blk += rangefinder_lines
-    lines_blk += floppa_text  # PAINTING FLOPPA
+    if len(line_dist_list) > 1:
+        points = [point(line_dist_list[0])]
+        for dist in line_dist_list[1:]:
+            points.append(point(dist))
+            lines_blk += 'line    //to ' + str(dist) + '\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
+    if isMain:
+        if crosshair != '' and crosshair != 'no' and crosshair != 'false' and crosshair != 'empty':
+            if crosshair == 'partial':
+                lines_blk += PARTIAL_CROSSHAIR
+            else:
+                lines_blk += crosshair
+        if centralLines != '' and centralLines != 'no' and centralLines != 'false' and centralLines != 'empty':
+            if centralLines == 'brackets':
+                lines_blk += BRACKETS_CENTRAL_LINES
+            elif centralLines == 'standard':
+                lines_blk += STANDARD_CENTRAL_LINES
+            else:
+                centralLines += centralLines
+        lines_blk += rangefinder_lines
 
     # Circles
     if not bigFloppa:
-        circles_blk += centralCircle + '\n'
+        if isMain:
+            circles_blk += CENTRAL_CIRCLE_BLK.replace('$size$', str(centralCircleSize)) + '\n'
         for dist in circles_list.keys():
             circles_blk += circle(int(dist), circles_list[dist]['size'])
     else:
-        text_blk += '\ntext\n{\ntext: t = "' + floppa_char + '"\nalign: i = 0\npos: p2 = 0, 0\nmove: b = no\nthousandth: b = yes\nsize: r = ' + str(floppa_char_size) + '\nhighlight: b = yes\n}\n'
+        if isMain:
+            circles_blk += circle(0, 4.5, move=False)
+            text_blk += floppa_circle(0, centralCircleSize * FLOPPA_COEF, move=False)  # may be should be 'if centralCircleSize * FLOPPA_COEF > 0.8 else 0.8'
         for dist in circles_list.keys():
-            text_blk += floppa_distance(int(dist), circles_list[dist]['size'] * 0.3)
+            text_blk += floppa_circle(int(dist), circles_list[dist]['size'] * FLOPPA_COEF)
 
     # Text
+    if isMain:
+        text_blk += rangefinder_text
     for dist in circles_list.keys():
         textPos = circles_list[dist]['textPos']
         textPos[0] = textPos[0] if isLeft else -textPos[0]
         textSize = circles_list[dist]['textSize']
         if textSize:
             text_blk += text(int(dist), textPos, textSize)
-    text_blk += rangefinder_text
 
-    # Writing into file
-    output += distances_blk + '}\n' + lines_blk + '}\n' + circles_blk + '}\n' + text_blk + '}\n'  # SUM ALL STRINGS INTO ONE
+    return [start, distances_blk, lines_blk, circles_blk, text_blk]
+
+
+def generator(path, speed, zoom, sight_type, coord, convergence, FLOPPA):
+    """
+    Function that creates sight .blk file.
+    :param path: path where sight should be created
+    :param speed: list of shells' speed in m/s (int type)
+    :param zoom: list of minimum zooms (float type)
+    :param sight_type: list of sight types according to settings.json
+    :param coord: list of lists with two floats inside - height and width location of sight relatively to the gun in meters
+    :param convergence: list of convergences in meters i.e. distance with zero parallax (int type)
+    :param FLOPPA: type of Floppa (0, 1 or 2)
+    """
+    sight_list = create_sight(speed[0], zoom, sight_type[0], coord[0], convergence[0], FLOPPA, True)
+    for i in range(1, len(coord)):
+        cur_sight_list = create_sight(speed[i], zoom, sight_type[i], coord[i], convergence[i], FLOPPA, False)
+        sight_list[2] += cur_sight_list[2]
+        sight_list[3] += cur_sight_list[3]
+        sight_list[4] += cur_sight_list[4]
+    if FLOPPA:
+        sight_list[2] += FLOPPA_BLK_TEXT
+    output = sight_list[0] + '\ncrosshair_distances{\n' + sight_list[1] + '}\n\ndrawLines{\n' + sight_list[2] + '}\n\ndrawCircles{\n' + sight_list[3] + '}\n\ndrawTexts{\n' + sight_list[4] + '}\n'
+    if FLOPPA == 1:
+        suffix = '/F_'
+    elif FLOPPA == 2:
+        suffix = '/FD_'
+    else:
+        suffix = '/'
     try:
         os.mkdir(path)
     except:
         pass
-
-    path = path + ('/F_' if bigFloppa else '/') + sight_type + '_' + path.rpartition('/')[2] + '.blk'
-    with open(path, 'w') as f:
+    cur_path = path + suffix + '_'.join(sight_type) + '_' + path.rpartition('/')[2] + '.blk'
+    with open(cur_path, 'w') as f:
         f.write(output)
-        if __name__ == '__main__':
-            print("Successfully created sight at %s " % path)
-        else:
-            return "Successfully created sight at %s " % path
+        return "Successfully created sight at %s " % cur_path
 
 
 if __name__ == '__main__':
     # Requesting all requirements and creating sight in output
     try:
-        path = os.path.dirname(os.path.realpath(__file__)) + '/UserSights/' + input('Tank name: ')
+        path = os.path.dirname(os.path.realpath('settings.json')) + '/UserSights/' + input('Tank name: ')
         speed = int(input('Shell speed in m/s: '))
         convergence = int(input('Convergence in meters: '))
         zoom = float(input('Zoom: '))
         sight_type = input('Sight type: ')
         coord = list(map(float, input('Sight coordinates: ').split(',')))
         FLOPPA = int(input('Big Floppa: '))
-        if FLOPPA:
-            with open('floppa.txt', 'r') as floppa_file:
-                floppa_text = floppa_file.read()
-        else:
-            floppa_text = ''
         try:
-            os.mkdir(os.path.dirname(os.path.realpath(__file__)) + '/UserSights/')
+            os.mkdir(os.path.dirname(os.path.realpath('settings.json')) + '/UserSights/')
         except:
             pass
-        create_sight(path, speed, zoom, sight_type, coord, convergence, floppa_text)
+        print(generator(path, [speed], zoom, [sight_type], [coord], [convergence], FLOPPA))
     except ValueError:
         print('Wrong format string')
 

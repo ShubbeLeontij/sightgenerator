@@ -1,88 +1,107 @@
 #!/usr/bin/env python3
-import os
-import argparse
 import generator
-try:
-    import openpyxl
-except:
-    try:
-        os.system('pip install openpyxl')
-        import openpyxl
-    except:
-        input('pip error\nPlease install pip and try again')
-        exit()
-
+import json
+import os
+import openpyxl
+import argparse
 
 __author__ = "Shubbe Leontij"
-__version__ = "2.2"
+__version__ = "3.5"
 
 
-def _print(string, severity=1):
-    if MODE <= severity:
-        print(string)
+def reader(MODE, FLOPPA, sheets=None, _print=print, _input=input):
+    """
+    Function that reads the table and creates sights for every row. This is the core of whole program.
+    :param MODE: output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3
+    :param FLOPPA: whether sights will have BIG FLOPPA; No Floppa - 0 (default); With Floppa - 1 ; Floppa with distances - 2
+    :param sheets: list of sheet names that will be used. By default, all sheets will be used
+    :param _print: output function
+    :param _input: input function
+    """
+    def _output(string, severity=1):
+        """
+        Function that check should some text be moved to output or not.
+        :param string: text that potentially should be moved to output
+        :param severity: integer severity of this text
+        """
+        if MODE <= severity:
+            _print(string)
 
-
-parser = argparse.ArgumentParser(description='Creates UserSights folder with WarThunder sights.')
-parser.add_argument('-m', '--mode', help='Output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3', default=1)
-parser.add_argument('-f', '--floppa', help='Whether sights will have BIG FLOPPA; No Floppa - 0 (default); Only with Floppa - 1 ; Both with and without - 2', default=0)
-MODE = int(vars(parser.parse_args())['mode'])
-FLOPPA = int(vars(parser.parse_args())['floppa'])
-with open('floppa.txt', 'r') as floppa_file:
-    floppa_text = floppa_file.read()
-
-with open('path.txt', 'r') as f:
-    wt_path = f.readline()
+    # Loading path from json and making it correct
+    with open('settings.json', 'r') as f:
+        wt_path = json.load(f)["path"].replace('\\', '/')
     if wt_path == '':
-        wt_path = os.path.dirname(os.path.realpath(__file__)) + '/UserSights/'
+        wt_path = os.path.dirname(os.path.realpath('settings.json')) + '/UserSights/'
     else:
-        wt_path += '/UserSights/'
+        wt_path_list = wt_path.split('/')
+        wt_path = '/' if wt_path[0] == '/' else ''
+        for folder in wt_path_list:
+            if folder:
+                wt_path += folder + '/'
+        if not wt_path.endswith('/UserSights/'):
+            wt_path += 'UserSights/'
     try:
         os.mkdir(wt_path)
-        _print('Created folder %s' % wt_path, 0)
+        _output('Created folder ' + wt_path, 1)
     except:
         pass
-    _print('Writing in %s' % wt_path, 1)
+    _output('Writing in %s' % wt_path, 1)
 
-wrong_strings = []
-workbook = openpyxl.load_workbook('data.xlsx')
+    # Loading the table
+    wrong_strings = []
+    workbook = openpyxl.load_workbook('data.xlsx')
 
-for sheet_name in workbook.sheetnames:
-    sheet = workbook[sheet_name]
-    _print("\nReading " + sheet_name, 1)
-    wrong_strings.append(0)
-    empty_rows = 0
-    row_num = 0
+    for sheet_name in workbook.sheetnames:  # Iterating sheets
+        if sheets and sheet_name not in sheets:  # Checking allowed list
+            continue
+        sheet = workbook[sheet_name]
+        _output("\nReading " + sheet_name, 1)
+        wrong_strings.append(0)
+        empty_rows = 0
+        row_num = 0
 
-    for row in sheet.iter_rows(min_row=1, min_col=1, max_row=sheet.max_row, max_col=9, values_only=True):
-        row_num += 1
-        _print(str(row), 0)
-        try:
-            if row.count(None) == len(row):
-                empty_rows += 1
-                continue
-            elif empty_rows:
-                _print(str(empty_rows) + ' empty rows', 0)
-                empty_rows = 0
+        for row in sheet.iter_rows(min_row=1, min_col=1, max_row=sheet.max_row, max_col=9, values_only=True):  # Iterating rows inside certain sheet
+            row_num += 1
+            try:
+                if row.count(None) == len(row):  # Checking emptiness
+                    empty_rows += 1
+                    continue
+                elif empty_rows:
+                    _output(str(empty_rows) + ' empty rows', 0)
+                    empty_rows = 0
+                _output(str(row), 0)
+                coords = list(map(lambda string: list(map(float, string.split(','))), row[5].split(';')))  # Reading first coords
+                for i in 6, 7, 8:  # Continue reading coords
+                    if row[i] is not None:
+                        cur = list(map(lambda string: list(map(float, string.split(','))), row[i].split(';')))
+                        for j in range(len(coords)):
+                            for k in 0, 1:  # Coords summation
+                                if i == 6:
+                                    coords[j][k] += cur[j][k]
+                                else:
+                                    coords[j][k] -= cur[j][k]
+                _output(str(coords), 0)
+                # Create sight using generator
+                _output(generator.generator(wt_path + row[0], list(map(int, str(row[2]).split(';'))), float(row[3]), row[4].split(';'), coords, list(map(int, str(row[1]).split(';'))), FLOPPA), 0)
+            except:  # If something went wrong
+                wrong_strings[-1] += 1
+                _output('Wrong string format. Sheet: ' + sheet_name + ' Row: ' + str(row_num), 1)
 
-            y, x = float(row[5].split(',')[0]), float(row[5].split(',')[1])
-            if row[6] is not None:
-                y, x = y + float(row[6].split(',')[0]), x + float(row[6].split(',')[1])
-            if row[7] is not None:
-                y, x = y - float(row[7].split(',')[0]), x - float(row[7].split(',')[1])
-            if row[8] is not None:
-                y, x = y - float(row[8].split(',')[0]), x - float(row[8].split(',')[1])
+        _output(str(empty_rows) + ' empty rows', 0)
+        _output(str(wrong_strings[-1]) + ' errors', 1)
 
-            if FLOPPA == 0 or FLOPPA == 2:
-                _print(generator.create_sight(wt_path + row[0], int(row[2]), float(row[3]), row[4], [round(y, 3), round(x, 3)], int(row[1]), ''), 0)
-            if FLOPPA == 1 or FLOPPA == 2:
-                _print(generator.create_sight(wt_path + row[0], int(row[2]), float(row[3]), row[4], [round(y, 3), round(x, 3)], int(row[1]), floppa_text), 0)
-        except:
-            wrong_strings[-1] += 1
-            _print('Wrong string format. Sheet: ' + sheet_name + ' Row: ' + str(row_num), 1)
+    _output("\nWorking directory was " + wt_path, 1)
+    _output("Execution ended with " + str(sum(wrong_strings)) + " errors\n", 2)
+    if MODE <= 2:
+        _input("Press Enter to exit")
 
-    _print(str(empty_rows) + ' empty rows', 0)
-    _print(str(wrong_strings[-1]) + ' errors', 1)
 
-_print("\nExecution ended with " + str(sum(wrong_strings)) + " errors", 2)
-if MODE <= 2:
-    input("\nPress Enter to exit")
+if __name__ == "__main__":
+    # Read all arguments from terminal and run main function
+    parser = argparse.ArgumentParser(description='Creates UserSights folder with WarThunder sights.')
+    parser.add_argument('-m', '--mode', help='Output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3', default=1)
+    parser.add_argument('-f', '--floppa', help='Whether sights will have BIG FLOPPA; No Floppa - 0 (default); With Floppa - 1 ; Floppa with distances - 2', default=0)
+    MODE = int(vars(parser.parse_args())['mode'])
+    FLOPPA = int(vars(parser.parse_args())['floppa'])
+
+    reader(MODE, FLOPPA, _print=print, _input=input)
