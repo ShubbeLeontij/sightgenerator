@@ -6,7 +6,7 @@
 Установите необходимые библиотеки (pip install -r requirements.txt).
 В папке проекта необходимо запустить GUI.py. Для смены языка можно изменить строку LANG = 'EN' на LANG = 'RU' в конце файла.
 2) Папка с exe файлом\
-Скачайте zip архив https://github.com/ShubbeLeontij/sightgenerator-exe/archive/refs/heads/master.zip
+Скачайте zip архив https://github.com/ShubbeLeontij/sightgenerator-exe/archive/refs/heads/master.zip\
 Ничего дополнительно скачивать не надо, однако при первом запуске возможна реакция антивируса - разрешите ему запуск файла.
 
 Настройки
