@@ -6,6 +6,7 @@ Clone the project https://github.com/ShubbeLeontij/sightgenerator, download and 
 Install the required libraries (pip install -r requirements.txt).
 In the project folder, you need to run GUI.py.
 2) Folder with exe file\
+Download zip https://github.com/ShubbeLeontij/sightgenerator-exe/archive/refs/heads/master.zip \
 You do not need to download anything additionally, however, at the first start, the antivirus may react - allow it to run the file.
 
 Settings
@@ -33,7 +34,7 @@ Launch
 
 In the main menu, there is a choice between three options for logging details, a field for entering the path to the game (don't forget to save) and columns for selecting sight types (pages from data.xlsx) in case you don't want to litter with unnecessary ones. Clicking on the top label will remove or add a tick to the entire column.
 
-There are also three options for optics enlightenment.
+There are also three options for optics enlightenment (see https://www.youtube.com/watch?v=314WiUDbr9E).
 The first (Normal) is a regular sight.
 The second (With Floppa) - removes the vignette and the white filter, this option will fully use the settings, but there will be some error at a distance (usually 1500m and more).
 The third one (Floppa Distances) also removes the vignette and the white filter, but due to a different technology, the marks and labels will only be on the right, and there will be no error at a distance.
