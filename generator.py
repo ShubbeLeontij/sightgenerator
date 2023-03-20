@@ -242,7 +242,7 @@ def generator(path, speed, zoom, sight_type, coord, convergence, FLOPPA):
         sight_list[4] += cur_sight_list[4]
     if FLOPPA:
         sight_list[2] += FLOPPA_BLK_TEXT
-    output = sight_list[0] + '\ncrosshair_distances{\n' + sight_list[1] + '}\n\ndrawLines{\n' + sight_list[2] + '}\n\ndrawCircles{\n' + sight_list[3] + '}\n\ndrawTexts{\n' + sight_list[4] + '}\n'
+    output = (ALL_TANKS_TOP if path.endswith('all_tanks') else '') + sight_list[0] + '\ncrosshair_distances{\n' + sight_list[1] + '}\n\ndrawLines{\n' + sight_list[2] + '}\n\ndrawCircles{\n' + sight_list[3] + '}\n\ndrawTexts{\n' + sight_list[4] + '}\n'
     if FLOPPA == 1:
         suffix = '/F_'
     elif FLOPPA == 2:

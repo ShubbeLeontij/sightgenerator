@@ -12,6 +12,7 @@ FLOPPA_COEF = 0.3
 FLOPPA_SIZE_COEF = 0.8
 FLOPPA_INDENT = 1.5
 FLOPPA_OFFSET = [-0.0, -0.65]
+ALL_TANKS_TOP = "matchExpClass {\nexp_tank:b = yes\nexp_heavy_tank:b = yes\nexp_tank_destroyer:b = yes\nexp_SPAA:b = yes\n}\n\n"
 PARTIAL_CROSSHAIR = "line{\nline:p4= 0, -2.5, 0, -400\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 2.5, 0, 400, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -2.5, 0, -400, 0\nmove:b=no\nthousandth:b=yes\n}\n"
 BRACKETS_CENTRAL_LINES = "line{\nline:p4= 0.6, 0, 1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0, -1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, 0.6, 0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0.6, -0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\n"
 STANDARD_CENTRAL_LINES = "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n"
