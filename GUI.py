@@ -588,7 +588,7 @@ if __name__ == "__main__":
             LABELS['CUSTOM'] = json.load(langfile)
             LANG = 'CUSTOM'
     except:
-        LANG = 'RU'
+        LANG = 'EN'
     root = Root(title=LABELS[LANG]['Sightgenerator GUI'], geometry='650x400', icon=ICON)
     main_menu()
     root.mainloop()
