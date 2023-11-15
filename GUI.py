@@ -6,10 +6,11 @@ import tkinter.ttk as ttk
 import json
 import openpyxl
 from tktooltip import ToolTip
+from tkinter import messagebox
 
 
 __author__ = "Shubbe Leontij"
-__version__ = "3.5"
+__version__ = "3.6"
 
 
 class Root(tk.Tk):
@@ -188,7 +189,14 @@ def main_menu():
         """
         Function that runs reader.
         """
-        reader.reader(mode_var.get(), floppa_var.get(), sheets=[flag['text'] if flag.get() else None for flag in sheet_flags], _print=output_text.print, _input=lambda *args: None)
+        reader.reader(mode_var.get(), 0, sheets=[flag['text'] if flag.get() else None for flag in sheet_flags], _print=output_text.print, _input=lambda *args: None)
+
+    def clear():
+        """
+        Function that runs cleaner.
+        """
+        if messagebox.askokcancel(title=LABELS[LANG]['Deleting'], message=LABELS[LANG]['Are you sure?']):
+            reader.cleaner(mode_var.get(), True, _print=output_text.print, _input=lambda *args: None)
 
     def save_path():
         """
@@ -211,9 +219,9 @@ def main_menu():
     # Create output mode radiobuttons
     mode_var = tk.IntVar()
     mode_var.set(1)
-    root.create(tk.Radiobutton, relx=0.02, rely=0.32, variable=mode_var, value=0, text=LABELS[LANG]['Dev mode'])
-    root.create(tk.Radiobutton, relx=0.02, rely=0.37, variable=mode_var, value=1, text=LABELS[LANG]['Normal output'])
-    root.create(tk.Radiobutton, relx=0.02, rely=0.42, variable=mode_var, value=2, text=LABELS[LANG]['Silent output'])
+    root.create(tk.Radiobutton, relx=0.01, rely=0.32, variable=mode_var, value=0, text=LABELS[LANG]['Dev mode'])
+    root.create(tk.Radiobutton, relx=0.01, rely=0.37, variable=mode_var, value=1, text=LABELS[LANG]['Normal output'])
+    root.create(tk.Radiobutton, relx=0.01, rely=0.42, variable=mode_var, value=2, text=LABELS[LANG]['Silent output'])
 
     # Create checkbuttons for table sheets
     workbook = openpyxl.load_workbook('data.xlsx')
@@ -239,15 +247,18 @@ def main_menu():
             sheet_flags.append(root.create(Flag, relx=0.64, rely=0.16 + 0.055 * k.get(), text=sheet_name, default=1))
 
     # Create radiobuttons for floppa mode
+    '''
     floppa_var = tk.IntVar()
     floppa_var.set(0)
     root.create(tk.Radiobutton, relx=0.22, rely=0.32, variable=floppa_var, value=0, text=LABELS[LANG]['Normal'])
     root.create(tk.Radiobutton, relx=0.22, rely=0.37, variable=floppa_var, value=1, text=LABELS[LANG]['With Floppa'])
     root.create(tk.Radiobutton, relx=0.22, rely=0.42, variable=floppa_var, value=2, text=LABELS[LANG]['Floppa Distances'])
+    '''
 
     # Create action buttons
     root.bind('<Return>', lambda event: run())
-    root.create(tk.Button, relx=0.80, rely=0.35, relwidth=0.17, relheight=0.10, command=run, text=LABELS[LANG]['RUN'])
+    root.create(tk.Button, relx=0.21, rely=0.33, relwidth=0.17, relheight=0.14, command=run, text=LABELS[LANG]['RUN'])
+    root.create(tk.Button, relx=0.80, rely=0.35, relwidth=0.17, relheight=0.10, command=clear, text=LABELS[LANG]['CLEAR'])
     root.create(tk.Button, relx=0.80, rely=0.20, relwidth=0.17, relheight=0.10, command=output_text.clear, text=LABELS[LANG]['Clear Logs'])
     with open('settings.json', 'r') as f:
         path_input = root.create(Input, relx=0.40, rely=0.05, relwidth=0.39, relheight=0.10, text=json.load(f)["path"])
@@ -577,7 +588,7 @@ if __name__ == "__main__":
             LABELS['CUSTOM'] = json.load(langfile)
             LANG = 'CUSTOM'
     except:
-        LANG = 'EN'
+        LANG = 'RU'
     root = Root(title=LABELS[LANG]['Sightgenerator GUI'], geometry='650x400', icon=ICON)
     main_menu()
     root.mainloop()

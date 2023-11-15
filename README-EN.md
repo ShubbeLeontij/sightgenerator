@@ -1,13 +1,15 @@
 Installation
 ---------
 
-1) Python project\
+There are two installation methods, the first is simpler, and the second gives more freedom of customization (if GUI offers not enough, you can try editing the defaults.py file or other program files), but requires the user to have basic terminal skills for installation.
+1) Folder with exe file\
+Download zip https://github.com/ShubbeLeontij/sightgenerator-exe/archive/refs/heads/master.zip \
+You do not need to download anything additionally, however, at the first start, the antivirus may react - allow it to run the file.
+
+2) Python project\
 Clone the project https://github.com/ShubbeLeontij/sightgenerator, download and install python3 (if not already installed) https://www.python.org/downloads/, make sure "ADD Python to PATH" and "td/tk and IDLE" are checked.
 Install the required libraries (pip install -r requirements.txt).
 In the project folder, you need to run GUI.py.
-2) Folder with exe file\
-Download zip https://github.com/ShubbeLeontij/sightgenerator-exe/archive/refs/heads/master.zip \
-You do not need to download anything additionally, however, at the first start, the antivirus may react - allow it to run the file.
 
 Settings
 ---------

@@ -89,9 +89,12 @@ LABELS = {
         'Dev mode': 'Dev mode',
         'Normal output': 'Normal output',
         'Silent output': 'Silent output',
+        'CLEAR': ['Clear Folder*', 'WARNING!!! This action will completely remove all contents of Sights Folder.'],
         'ab/rb': ['AB/RB', "Click here to check/uncheck all."],
         'sim': ['Sim', "Click here to check/uncheck all."],
         'other': ['Other', "Click here to check/uncheck all."],
+        'Deleting': 'Deleting...',
+        'Are you sure?': 'Are you sure you want to remove all sigths?',
         "preview": ["SIGHT PREVIEW", "If you have any questions, just test how it looks by this feature. Exact repetition not guaranteed, approximate result shown."],
         'CANVAS': 'Preview'
     },
@@ -139,9 +142,12 @@ LABELS = {
         'Dev mode': 'Dev mode',
         'Normal output': 'Normal output',
         'Silent output': 'Silent output',
+        'CLEAR': ['Очистить Папку*', 'ОСТОРОЖНО!!! Полностью удалит всё содержимое папки с прицелами.'],
         'ab/rb': ['AB/RB', "Нажми здесь чтобы отметить/убрать везде."],
         'sim': ['Sim', "Нажми здесь чтобы отметить/убрать везде."],
         'other': ['Другое', "Нажми здесь чтобы отметить/убрать везде."],
+        'Deleting': 'Удаление...',
+        'Are you sure?': 'Вы уверены, что хотите удалить все прицелы?',
         'preview': ['ПРЕДПРОСМОТР', "Если у вас есть вопросы к работе какого-то из пунктов, просто нажмите эту кнопку и проверьте как оно будет выглядеть. Точное повторение не гарантировано, показан приблизительный результат."],
         'CANVAS': 'Предпросмотр'
     }

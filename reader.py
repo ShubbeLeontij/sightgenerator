@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import shutil
+
 import generator
 import json
 import os
@@ -6,7 +8,7 @@ import openpyxl
 import argparse
 
 __author__ = "Shubbe Leontij"
-__version__ = "3.5"
+__version__ = "3.6"
 
 
 def reader(MODE, FLOPPA, sheets=None, _print=print, _input=input):
@@ -81,8 +83,17 @@ def reader(MODE, FLOPPA, sheets=None, _print=print, _input=input):
                                 else:
                                     coords[j][k] -= cur[j][k]
                 _output(str(coords), 0)
+                # Removing 3% speed from AP, 5% from HE and HEAT
+                type_list = row[4].split(';')
+                speed_list = []
+                for i in range(len(type_list)):
+                    speed_list.append(int(str(row[2]).split(';')[i]))
+                    if type_list[i] in ['sim_AP']:
+                        speed_list[-1] *= 0.97
+                    if type_list[i] in ['sim_HEAT', 'sim_HE']:
+                        speed_list[-1] *= 0.95
                 # Create sight using generator
-                _output(generator.generator(wt_path + row[0], list(map(int, str(row[2]).split(';'))), float(row[3]), row[4].split(';'), coords, list(map(int, str(row[1]).split(';'))), FLOPPA), 0)
+                _output(generator.generator(wt_path + row[0], speed_list, float(row[3]), type_list, coords, list(map(int, str(row[1]).split(';'))), FLOPPA), 0)
             except:  # If something went wrong
                 wrong_strings[-1] += 1
                 _output('Wrong string format. Sheet: ' + sheet_name + ' Row: ' + str(row_num), 1)
@@ -94,6 +105,41 @@ def reader(MODE, FLOPPA, sheets=None, _print=print, _input=input):
     _output("Execution ended with " + str(sum(wrong_strings)) + " errors\n", 2)
     if MODE <= 2:
         _input("Press Enter to exit")
+
+
+def cleaner(MODE, remove_all_tanks=False, _print=print, _input=input):
+    def _output(string, severity=1):
+        """
+        Function that check should some text be moved to output or not.
+        :param string: text that potentially should be moved to output
+        :param severity: integer severity of this text
+        """
+        if MODE <= severity:
+            _print(string)
+
+    # Loading path from json and making it correct
+    with open('settings.json', 'r') as f:
+        wt_path = json.load(f)["path"].replace('\\', '/')
+    if wt_path == '':
+        wt_path = os.path.dirname(os.path.realpath('settings.json')) + '/UserSights/'
+    else:
+        wt_path_list = wt_path.split('/')
+        wt_path = '/' if wt_path[0] == '/' else ''
+        for folder in wt_path_list:
+            if folder:
+                wt_path += folder + '/'
+        if not wt_path.endswith('/UserSights/'):
+            wt_path += 'UserSights/'
+
+    _output("Deleting all from " + wt_path + '\n', 1)
+    for dir_name in os.listdir(wt_path):
+        if remove_all_tanks or dir_name != 'all_tanks':
+            try:
+                _output("Deleting " + dir_name, 0)
+                shutil.rmtree(os.path.join(wt_path, dir_name))
+            except:
+                pass
+    _output("Deleted " + wt_path + '\n', 1)
 
 
 if __name__ == "__main__":
