@@ -10,7 +10,7 @@ from tkinter import messagebox
 
 
 __author__ = "Shubbe Leontij"
-__version__ = "3.6"
+__version__ = "3.7"
 
 
 class Root(tk.Tk):

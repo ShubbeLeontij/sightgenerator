@@ -6,7 +6,7 @@ import re
 
 
 __author__ = "Shubbe Leontij"
-__version__ = "3.6"
+__version__ = "3.7"
 
 
 def create_sight(speed, zoom, sight_type, coord, convergence, bigFloppa, isMain=True):
