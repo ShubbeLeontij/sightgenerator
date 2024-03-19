@@ -1,16 +1,16 @@
 {
-    "path": "/home/shubbe/Games/WarThunder",
+    "path": "",
     "lang": "EN",
-    "crosshairColor": "255, 255, 0, 255",
-    "crosshairLightColor": "0, 0, 0, 255",
+    "crosshairColor": "0, 0, 0, 255",
+    "crosshairLightColor": "220, 255, 0, 255",
     "rangefinderProgressBarColor1": "255, 255, 255, 255",
     "rangefinderProgressBarColor2": "0, 0, 0, 255",
     "drawCentralLineVert": "no",
     "drawCentralLineHorz": "no",
     "crosshair": "partial",
     "distLength": 0.007,
-    "lineSizeMult": 0.8,
-    "fontSizeMult": 0.8,
+    "lineSizeMult": 0.7,
+    "fontSizeMult": 0.7,
     "sightTypes": [
         {
             "names": [
