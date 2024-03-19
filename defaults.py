@@ -96,6 +96,7 @@ LABELS = {
         'Deleting': 'Deleting...',
         'Are you sure?': 'Are you sure you want to remove all sigths?',
         "preview": ["SIGHT PREVIEW", "If you have any questions, just test how it looks by this feature. Exact repetition not guaranteed, approximate result shown."],
+        "Change Language": "Сменить язык",
         'CANVAS': 'Preview'
     },
     'RU': {
@@ -149,6 +150,7 @@ LABELS = {
         'Deleting': 'Удаление...',
         'Are you sure?': 'Вы уверены, что хотите удалить все прицелы?',
         'preview': ['ПРЕДПРОСМОТР', "Если у вас есть вопросы к работе какого-то из пунктов, просто нажмите эту кнопку и проверьте как оно будет выглядеть. Точное повторение не гарантировано, показан приблизительный результат."],
+        "Change Language": "Change language",
         'CANVAS': 'Предпросмотр'
     }
 }

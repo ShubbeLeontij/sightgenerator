@@ -3,10 +3,26 @@ from defaults import *
 import json
 import os
 import re
+import json
+
+class Settings:
+    def __init__(self, settings_path):
+        with open(settings_path, 'r') as f:
+            self.settings = json.load(f)
+
+    def get_setting(self, key):
+        return self.settings.get(key)
+
+    def set_setting(self, key, value):
+        self.settings[key] = value
+
+    def save_settings(self, settings_path):
+        with open(settings_path, 'w') as f:
+            json.dump(self.settings, f, indent=4)
 
 
 __author__ = "Shubbe Leontij"
-__version__ = "3.7"
+__version__ = "3.8"
 
 
 def create_sight(speed, zoom, sight_type, coord, convergence, bigFloppa, isMain=True):
@@ -88,11 +104,11 @@ def create_sight(speed, zoom, sight_type, coord, convergence, bigFloppa, isMain=
         return 'distance { distance:p3=' + str(distance) + ',-' + str(distance // 100) + ',-' + str(distLength) + '; textPos:p2=' + str(0.01 * x + (0.003 if distance < 1000 else 0.010)) + ',0; }\n'
 
     # Loading settings from json
-    with open('settings.json', 'r') as f:
-        settings = json.load(f)
+    # Loading settings from json
+    settings = Settings('settings.json')
 
     s_type = None
-    for t in settings["sightTypes"]:
+    for t in settings.get_setting("sightTypes"):
         if sight_type in t["names"]:
             s_type = t
             break
@@ -105,18 +121,18 @@ def create_sight(speed, zoom, sight_type, coord, convergence, bigFloppa, isMain=
     centralLines = s_type["centralLines"]
     centralCircleSize = s_type["centralCircleSize"]
 
-    distLength = settings["distLength"]
-    crosshairColor = settings["crosshairColor"]
-    crosshairLightColor = settings["crosshairLightColor"]
-    rangefinderProgressBarColor1 = settings["rangefinderProgressBarColor1"]
-    rangefinderProgressBarColor2 = settings["rangefinderProgressBarColor2"]
-    drawCentralLineVert = settings["drawCentralLineVert"]
-    drawCentralLineHorz = settings["drawCentralLineHorz"]
-    crosshair = settings["crosshair"]
-    fontSizeMult = max(settings["fontSizeMult"] * 0.2 * zoom, MIN_FONT_SIZE)
-    lineSizeMult = round(settings["lineSizeMult"] / settings["fontSizeMult"], 2)
-    rangefinderFontSizeMult = round(1 / settings["fontSizeMult"], 2)
-
+    # Replace other direct dictionary accesses with calls to settings.get_setting
+    distLength = settings.get_setting("distLength")
+    crosshairColor = settings.get_setting("crosshairColor")
+    crosshairLightColor = settings.get_setting("crosshairLightColor")
+    rangefinderProgressBarColor1 = settings.get_setting("rangefinderProgressBarColor1")
+    rangefinderProgressBarColor2 = settings.get_setting("rangefinderProgressBarColor2")
+    drawCentralLineVert = settings.get_setting("drawCentralLineVert")
+    drawCentralLineHorz = settings.get_setting("drawCentralLineHorz")
+    crosshair = settings.get_setting("crosshair")
+    fontSizeMult = max(settings.get_setting("fontSizeMult") * 0.2 * zoom, MIN_FONT_SIZE)
+    lineSizeMult = round(settings.get_setting("lineSizeMult") / settings.get_setting("fontSizeMult"), 2)
+    rangefinderFontSizeMult = round(1 / settings.get_setting("fontSizeMult"), 2)
     isLeft = True if coord[1] < 0 else False
     distancePos = round(float(point(DIST_POINT).split(',')[0]) * -0.01, 4)
     if bigFloppa == 2:
