@@ -11,11 +11,10 @@ __author__ = "Shubbe Leontij"
 __version__ = "3.8"
 
 
-def reader(MODE, FLOPPA, sheets=None, _print=print, _input=input):
+def reader(MODE, sheets=None, _print=print, _input=input):
     """
     Function that reads the table and creates sights for every row. This is the core of whole program.
     :param MODE: output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3
-    :param FLOPPA: whether sights will have BIG FLOPPA; No Floppa - 0 (default); With Floppa - 1 ; Floppa with distances - 2
     :param sheets: list of sheet names that will be used. By default, all sheets will be used
     :param _print: output function
     :param _input: input function
@@ -93,7 +92,7 @@ def reader(MODE, FLOPPA, sheets=None, _print=print, _input=input):
                     if type_list[i] in ['sim_HEAT', 'sim_HE']:
                         speed_list[-1] *= 0.95
                 # Create sight using generator
-                _output(generator.generator(wt_path + row[0], speed_list, float(row[3]), type_list, coords, list(map(int, str(row[1]).split(';'))), FLOPPA), 0)
+                _output(generator.generator(wt_path + row[0], speed_list, float(row[3]), type_list, coords, list(map(int, str(row[1]).split(';')))), 0)
             except:  # If something went wrong
                 wrong_strings[-1] += 1
                 _output('Wrong string format. Sheet: ' + sheet_name + ' Row: ' + str(row_num), 1)
@@ -146,8 +145,6 @@ if __name__ == "__main__":
     # Read all arguments from terminal and run main function
     parser = argparse.ArgumentParser(description='Creates UserSights folder with WarThunder sights.')
     parser.add_argument('-m', '--mode', help='Output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3', default=1)
-    parser.add_argument('-f', '--floppa', help='Whether sights will have BIG FLOPPA; No Floppa - 0 (default); With Floppa - 1 ; Floppa with distances - 2', default=0)
     MODE = int(vars(parser.parse_args())['mode'])
-    FLOPPA = int(vars(parser.parse_args())['floppa'])
 
-    reader(MODE, FLOPPA, _print=print, _input=input)
+    reader(MODE, _print=print, _input=input)
