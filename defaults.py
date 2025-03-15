@@ -1,4 +1,5 @@
 # Some setting that I don't want to include in .json. Normally you don't want to change this.
+SIGHT_BLOCK_IDENTIFIER = "tankSightSettings{\n"
 MIN_FONT_SIZE = 0.35
 BAD_ZOOM_THRESHOLD = 4.99
 RANGEFINDER_BAD = 0.66
@@ -6,11 +7,12 @@ RANGEFINDER_GOOD = 0.45
 DIST_INDENT = 0.01
 DIST_MULT = 0.66
 DIST_POINT = 2000
+TRANSPARENT = "0, 0, 0, 0"
 ALL_TANKS_TOP = "matchExpClass {\nexp_tank:b = yes\nexp_heavy_tank:b = yes\nexp_tank_destroyer:b = yes\nexp_SPAA:b = yes\n}\n\n"
 PARTIAL_CROSSHAIR = "line{\nline:p4= 0, -2.5, 0, -400\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 2.5, 0, 400, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -2.5, 0, -400, 0\nmove:b=no\nthousandth:b=yes\n}\n"
 BRACKETS_CENTRAL_LINES = "line{\nline:p4= 0.6, 0, 1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0, -1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, 0.6, 0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0.6, -0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\n"
 STANDARD_CENTRAL_LINES = "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n"
-START_BLK = "rangefinderProgressBarColor1:c=$rangefinderProgressBarColor1$\nrangefinderProgressBarColor2:c=$rangefinderProgressBarColor2$\nrangefinderTextScale:r=1.0\nrangefinderVerticalOffset:r=1.6\nrangefinderHorizontalOffset:r=55\nfontSizeMult:r=$fontSizeMult$\nlineSizeMult:r=$lineSizeMult$\ndrawCentralLineVert:b=$drawCentralLineVert$\ndrawCentralLineHorz:b=$drawCentralLineHorz$\ndrawDistanceCorrection:b=yes\ndistanceCorrectionPos:p2=-0.1, -0.05\ndrawSightMask:b=yes\ncrosshairDistHorSizeMain:p2=0, 0\ncrosshairHorVertSize:p2=0.5, 0.5\ncrosshairDistHorSizeAdditional:p2=0.007, 0.0025\nrangefinderUseThousandth:b=yes\ncrosshair_hor_ranges{}\ncrosshairColor:c = $crosshairColor$\ncrosshairLightColor:c = $crosshairLightColor$\n\n// ballistic range indicators\ndrawUpward:b = no\ndistancePos:p2 = $distancePos$,0\nmove:b = yes\ncrosshairDistHorSizeMain:p2 = 0,0\ntextPos:p2 = 0.010, 0\ntextAlign:i = 1\ntextShift:r = 0\ndrawAdditionalLines:b = no\ncrosshairDistHorSizeAdditional:p2 = 0.0,0.0\ndrawDistanceCorrection:b = no\n"
+START_BLK = "\nrangefinderTextScale:r=1.0\nrangefinderVerticalOffset:r=1.6\nrangefinderHorizontalOffset:r=55\nfontSizeMult:r=$fontSizeMult$\nlineSizeMult:r=$lineSizeMult$\ndrawCentralLineVert:b=$drawCentralLineVert$\ndrawCentralLineHorz:b=$drawCentralLineHorz$\ndrawDistanceCorrection:b=yes\ndistanceCorrectionPos:p2=-0.1, -0.05\ndrawSightMask:b=yes\ncrosshairDistHorSizeMain:p2=0, 0\ncrosshairHorVertSize:p2=0.5, 0.5\ncrosshairDistHorSizeAdditional:p2=0.007, 0.0025\nrangefinderUseThousandth:b=yes\ncrosshair_hor_ranges{}\n\n// ballistic range indicators\ndrawUpward:b = no\ndistancePos:p2 = $distancePos$,0\nmove:b = yes\ncrosshairDistHorSizeMain:p2 = 0,0\ntextPos:p2 = 0.010, 0\ntextAlign:i = 1\ntextShift:r = 0\ndrawAdditionalLines:b = no\ncrosshairDistHorSizeAdditional:p2 = 0.0,0.0\ndrawDistanceCorrection:b = no\n"
 CENTRAL_CIRCLE_BLK = "circle {\nsegment:p2 = 0, 360;\npos:p2 = 0, 0;\ndiameter:r = 0;\nsize:r = $size$;\nmove:b = no\nthousandth:b = yes;\n}"
 RANGEFINDERS_BLK = {
     "BadZoom": {
@@ -42,7 +44,7 @@ LABELS = {
     'EN': {
         "Sightgenerator GUI": "Sightgenerator GUI by Leontij",
         'Aliases: ': 'Aliases: ',
-        'EDIT SIM CIRCLES': ['EDIT SIM\nCIRCLES', "Circles helpful mostly for simulator gamemode. There are parallax mechanic in tank sim and to counter it, this program creates flight path of shell, so basically circles are distance markers."],
+        'EDIT SIM CIRCLES': ['EDIT SIM\nCIRCLES', "Circles helpful mostly for simulator gamemode. There is parallax mechanic in tank sim and to counter it, this program creates flight path of shell, so basically circles are distance markers."],
         'SAVE SETTINGS': 'SAVE SETTINGS AND\nEXIT TO MAIN MENU',
         "Stadiametric rangefinder": ["Stadiametric rangefinder", "Should program draw stadiametric rangefinder. This rangefinder helps find distance, by measuring enemy tank height."],
         "right_dist_list": ["Distance marks on right side", "Those marks drawn by game engine and compatible with all type of shells. Write integers (in meters) separated by a space. Creating two marks less than 20 meters apart may cause the sight to not be drawn."],
@@ -54,10 +56,15 @@ LABELS = {
         'G:': 'G:',
         'B:': 'B:',
         'Opacity:': 'Opacity:',
-        'MainColor': 'Sight Color. Each must be integer from 0 to 255',
-        "LightColor": ["Highlight color", "Bind this button in game control settings."],
+        'MainColor': 'Sight Color. Must be integer from 0 to 255',
+        "LightColor": ["Highlight color. Must be integer from 0 to 255", "Bind this button in game control settings."],
         "rangefinderProgressBarColor1": ["Rangefinder Progress Bar Color 1", "Color that fills gunner rangefinder bar."],
         "rangefinderProgressBarColor2": ["Rangefinder Progress Bar Color 2", "Color behind gunner rangefinder bar."],
+        "rangefinderFont": "Rangefinder font",
+        "rangefinderPos": "Rangefinder position",
+        "gunReadyFont": "Gun ready font",
+        "gunReadyPos": "Gun ready position",
+        "loadPreset": "LOAD PRESET",
         "lineSizeMult:": ["Line size multiplier:", "Line size affects only how thick lines and distance lines."],
         "fontSizeMult:": ["Font size multiplier:", "Font size affects on distance marks numbers, progress bars, circles, numbers and letters."],
         'distLength:': 'Game marker length:',
@@ -72,11 +79,12 @@ LABELS = {
         'textPos': ['Text Position\n(x, y)', "Relative offset of distance label."],
         'textSize': ['Text\nsize', "Distance label size."],
         'Edit Circles': 'Edit Circles',
-        'Save': 'Save path',
+        'Save': 'Save\npaths',
         'CHANGE SETTINGS': 'EDIT SIGHTS SETTINGS',
         'RUN': ['RUN*', "Make sure that you set all the settings according to your preferences"],
-        'Clear Logs': 'Clear Logs',
-        'path': 'Path where sights should\nbe created. For example\nC:\\Games\\War Thunder\nEmpty means project folder',
+        'Clear Bindings': 'Clear Bindings',
+        'path': ['Sights folder path', 'Path where sights should\nbe created. For example\nC:\\Games\\War Thunder\nEmpty means project folder'],
+        'savesPath': ['Saves folder path', 'Path where sights should\nbe created. For example\nC:\\Games\\War Thunder\nEmpty means project folder'],
         'Dev mode': 'Dev mode',
         'Normal output': 'Normal output',
         'Silent output': 'Silent output',
@@ -106,9 +114,14 @@ LABELS = {
         'B:': 'B:',
         'Opacity:': 'Opacity:',
         'MainColor': 'Основной цвет. Целые числа от 0 до 255',
-        'LightColor': ["Цвет с подсветкой", "Назначьте эту кнопку в настройках управления."],
+        'LightColor': ["Цвет с подсветкой. Целые числа от 0 до 255", "Назначьте эту кнопку в настройках управления."],
         "rangefinderProgressBarColor1": ["Цвет индикатора прогресса дальномера 1","Цвет заполняющий шкалу замера дистанции наводчика."],
         "rangefinderProgressBarColor2": ["Цвет индикатора прогресса дальномера 2","Цвет фона шкалы замера дистанции наводчиком."],
+        "rangefinderFont": "Шрифт дальномера",
+        "rangefinderPos": "Позиция дальномера",
+        "gunReadyFont": "Шрифт индикации пушки",
+        "gunReadyPos": "Позиция индикации пушки",
+        "loadPreset": "ЗАГРУЗИТЬ ПРЕСЕТ",
         "lineSizeMult:": ["Множитель толщины линий:","Размер линий влияет только на толщину линий и линий идущих от меток дистанций."],
         "fontSizeMult:": ["Множитель размера текста:","Размер шрифта влияет на размер цифр у меток дистанций, прогресс-бары, круги, цифры и буквы."],
         'distLength:': 'Длина игровых меток:',
@@ -123,11 +136,12 @@ LABELS = {
         'textPos': ['Положение\nтекста (x, y)', "Относительное смещение подписи дистанции."],
         'textSize': ['Размер\nтекста', "Размер подписи дистанции."],
         'Edit Circles': 'Редактировать круги',
-        'Save': 'Сохранить путь',
+        'Save': 'Сохранить\nпути',
         'CHANGE SETTINGS': 'НАСТРОИТЬ ПРИЦЕЛЫ',
         'RUN': ['ЗАПУСК*', "Удостоверьтесь что все настройки выставлены по вашим предпочтениям"],
-        'Clear Logs': 'Очистить Логи',
-        'path': 'Путь до папки, в которой будут\nсозданы прицелы. Например\nC:\\Games\\War Thunder\nПустое поле означает папку проекта',
+        'Clear Bindings': 'Очистить Привязку прицелов',
+        'path': ['Путь до папки с прицелами', 'Путь до папки, в которой будут\nсозданы прицелы. Например\nC:\\Games\\War Thunder\nПустое поле означает папку проекта'],
+        'savesPath': ['Путь до папки с сохранениями', 'Путь до папки, в которой будут\nсозданы прицелы. Например\nC:\\Games\\War Thunder\nПустое поле означает папку проекта'],
         'Dev mode': 'Dev mode',
         'Normal output': 'Normal output',
         'Silent output': 'Silent output',

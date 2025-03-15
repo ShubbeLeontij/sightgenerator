@@ -1,10 +1,7 @@
 {
-    "path": "",
     "lang": "EN",
-    "crosshairColor": "0, 0, 0, 255",
-    "crosshairLightColor": "220, 255, 0, 255",
-    "rangefinderProgressBarColor1": "255, 255, 255, 255",
-    "rangefinderProgressBarColor2": "0, 0, 0, 255",
+    "path": "/home/shubbe/Games/WarThunder",
+    "savesPath": "/home/shubbe/.config/WarThunder",
     "drawCentralLineVert": "no",
     "drawCentralLineHorz": "no",
     "crosshair": "partial",
@@ -642,5 +639,6 @@
             "centralLines": "standard",
             "centralCircleSize": 3.0
         }
-    ]
+    ],
+    "preset": "crosshairColor:c=220, 255, 0, 255\ncrosshairLightColor:c=0, 0, 0, 255\ncrosshairNvColor:c=0, 0, 0, 255\ncrosshairThermalColor:c=0, 0, 0, 255\nshotDistScaleOffset:i=0\n\nrangefinder{\n  visible:b=yes\n  textColor:c=220, 255, 0, 255\n  bgColor:c=0, 0, 0, 0\n  nightVisionTextColor:c=220, 255, 0, 255\n  nightVisionBgColor:c=0, 0, 0, 0\n  lightTextColor:c=0, 0, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  thermalTextColor:c=220, 255, 0, 255\n  thermalBgColor:c=0, 0, 0, 0\n  position:p2=1000, 500\n  textSize:i=30\n  font:t=\"hud\"\n  progressColor:c=0, 255, 0, 64\n  progressBackgroundColor:c=255, 255, 255, 64\n}\n\ngunReady{\n  visible:b=yes\n  color:c=220, 255, 0, 255\n  lightColor:c=0, 0, 0, 255\n  nvColor:c=220, 255, 0, 255\n  thermalColor:c=220, 255, 0, 255\n  textSize:i=30\n  font:t=\"hud\"\n  position:p2=1070, 500\n  gunReadyMarkVisible:b=yes\n  gunReadyReloadCountdownVisible:b=yes\n}\n\nbulletType{\n  visible:b=no\n  isShortName:b=no\n  textColor:c=0, 0, 0, 255\n  bgColor:c=0, 0, 0, 0\n  nightVisionTextColor:c=0, 0, 0, 255\n  nightVisionBgColor:c=0, 0, 0, 0\n  lightTextColor:c=0, 0, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  thermalTextColor:c=0, 0, 0, 255\n  thermalBgColor:c=0, 0, 0, 0\n  position:p2=700, 202\n  textSize:i=30\n  font:t=\"hud\"\n}\n"
 }

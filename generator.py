@@ -5,6 +5,11 @@ import os
 import re
 import json
 
+
+__author__ = "Shubbe Leontij"
+__version__ = "4.0"
+
+
 class Settings:
     def __init__(self, settings_path):
         with open(settings_path, 'r') as f:
@@ -21,8 +26,8 @@ class Settings:
             json.dump(self.settings, f, indent=4)
 
 
-__author__ = "Shubbe Leontij"
-__version__ = "3.8"
+insert_str = dict[str, str]()
+settings = Settings('settings.json')
 
 
 def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
@@ -80,10 +85,6 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
         return 'text\n{\ntext: t = "' + (str(distance) if distance < 100 else str(distance//100)) + '"\nalign: i = 0\npos: p2 = ' + \
                str(round(x, 2)) + ', ' + str(round(y, 2)) + '\nmove: b = yes\nthousandth: b = yes\nsize: r = ' + str(size) + '\nhighlight: b = yes\n}\n'
 
-    # Loading settings from json
-    # Loading settings from json
-    settings = Settings('settings.json')
-
     s_type = None
     for t in settings.get_setting("sightTypes"):
         if sight_type in t["names"]:
@@ -100,10 +101,6 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
 
     # Replace other direct dictionary accesses with calls to settings.get_setting
     distLength = settings.get_setting("distLength")
-    crosshairColor = settings.get_setting("crosshairColor")
-    crosshairLightColor = settings.get_setting("crosshairLightColor")
-    rangefinderProgressBarColor1 = settings.get_setting("rangefinderProgressBarColor1")
-    rangefinderProgressBarColor2 = settings.get_setting("rangefinderProgressBarColor2")
     drawCentralLineVert = settings.get_setting("drawCentralLineVert")
     drawCentralLineHorz = settings.get_setting("drawCentralLineHorz")
     crosshair = settings.get_setting("crosshair")
@@ -126,11 +123,8 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
         rangefinder_lines = d["Lines"].replace('$main$', (d["MainLine"] if crosshair == '' or crosshair == 'no' or crosshair == 'false' or crosshair == 'empty' else ''))
         rangefinder_text = d["Text"].replace('$size$', str(round(rangefinderFontSizeMult * (RANGEFINDER_BAD if zoom < BAD_ZOOM_THRESHOLD else RANGEFINDER_GOOD), 2)))
 
-
     # Start settings
-    replacements = {'$crosshairColor$': crosshairColor, '$crosshairLightColor$': crosshairLightColor, '$rangefinderProgressBarColor1$': rangefinderProgressBarColor1,
-                    '$rangefinderProgressBarColor2$': rangefinderProgressBarColor2, '$drawCentralLineVert$': drawCentralLineVert, '$drawCentralLineHorz$': drawCentralLineHorz,
-                    '$fontSizeMult$': str(round(fontSizeMult, 2)), '$lineSizeMult$': str(round(lineSizeMult, 2)), '$distancePos$': str(distancePos)}
+    replacements = {'$drawCentralLineVert$': drawCentralLineVert, '$drawCentralLineHorz$': drawCentralLineHorz, '$fontSizeMult$': str(round(fontSizeMult, 2)), '$lineSizeMult$': str(round(lineSizeMult, 2)), '$distancePos$': str(distancePos)}
     rep = dict((re.escape(k), v) for k, v in replacements.items())
     start = re.compile("|".join(rep.keys())).sub(lambda m: rep[re.escape(m.group(0))], START_BLK)
 
@@ -184,6 +178,63 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     return [start, distances_blk, lines_blk, circles_blk, text_blk]
 
 
+def clear_sight_bindings():
+    global_blk_path = ""
+    for f in os.scandir(settings.get_setting("savesPath") + "/Saves"):
+        if f.is_dir() and f.name.isnumeric():
+            global_blk_path = f.path + "/production/global.blk"
+            break
+    if global_blk_path == "":
+        return "Error"
+    with open(global_blk_path, "r", encoding="utf-8") as f:
+        read_file = f.read()
+    depth = 1
+    start_idx = read_file.find(SIGHT_BLOCK_IDENTIFIER) + len(SIGHT_BLOCK_IDENTIFIER)
+    end_idx = start_idx
+    for char in read_file[start_idx:]:
+        if char == '{':
+            depth += 1
+        if char == '}':
+            depth -= 1
+        if depth <= 0:
+            break
+        end_idx += 1
+    with open(global_blk_path, "w", encoding="utf-8") as f:
+        f.write(read_file[:start_idx] + "      " + read_file[end_idx:])
+    return "Cleared sight bindings with presets"
+
+
+def save_presets():
+    global_blk_path = ""
+    for f in os.scandir(settings.get_setting("savesPath") + "/Saves"):
+        if f.is_dir() and f.name.isnumeric():
+            global_blk_path = f.path + "/production/global.blk"
+            break
+    if global_blk_path == "":
+        return "Error"
+    with open(global_blk_path, "r", encoding="utf-8") as f:
+        read_file = f.read()
+    depth = 1
+    start_idx = read_file.find(SIGHT_BLOCK_IDENTIFIER) + len(SIGHT_BLOCK_IDENTIFIER)
+    end_idx = start_idx
+    for char in read_file[start_idx:]:
+        if char == '{':
+            depth += 1
+        if char == '}':
+            depth -= 1
+        if depth <= 0:
+            break
+        end_idx += 1
+
+    with open(global_blk_path, "w") as f:
+        f.write(read_file[:start_idx])
+        for tankname in list(insert_str.keys()):
+            if read_file[start_idx:end_idx].find(tankname + '{') == -1:
+                f.write(insert_str[tankname])
+        f.write(read_file[start_idx:])
+    return "\nPresets saved!"
+
+
 def generator(path, speed, zoom, sight_type, coord, convergence):
     """
     Function that creates sight .blk file.
@@ -200,21 +251,25 @@ def generator(path, speed, zoom, sight_type, coord, convergence):
         sight_list[2] += cur_sight_list[2]
         sight_list[3] += cur_sight_list[3]
         sight_list[4] += cur_sight_list[4]
-    output = (ALL_TANKS_TOP if path.endswith('all_tanks') else '') + sight_list[0] + '\ncrosshair_distances{\n' + sight_list[1] + '}\n\ndrawLines{\n' + sight_list[2] + '}\n\ndrawCircles{\n' + sight_list[3] + '}\n\ndrawTexts{\n' + sight_list[4] + '}\n'
-    suffix = '/'
+    tankname = path.rpartition('/')[2]
+    filename = '_'.join(sight_type) + '_' + tankname
+    cur_path = path + '/' + filename + '.blk'
+    output = (ALL_TANKS_TOP if tankname == 'all_tanks' else '') + sight_list[0] + '\ncrosshair_distances{\n' + sight_list[1] + '}\n\ndrawLines{\n' + sight_list[2] + '}\n\ndrawCircles{\n' + sight_list[3] + '}\n\ndrawTexts{\n' + sight_list[4] + '}\n'
     try:
         os.mkdir(path)
     except:
         pass
-    cur_path = path + suffix + '_'.join(sight_type) + '_' + path.rpartition('/')[2] + '.blk'
     with open(cur_path, 'w') as f:
         f.write(output)
-        return "Successfully created sight at %s " % cur_path
+    if tankname != 'all_tanks' and tankname not in insert_str:
+        insert_str[tankname] = ("        " + tankname + "{\n          crosshair:t=\"" + filename + "\"\n" + settings.get_setting("preset") + "\n        }\n")
+    return "Successfully created sight at %s " % cur_path
 
 
 if __name__ == '__main__':
     # Requesting all requirements and creating sight in output
     try:
+        insert_str = dict[str, str]()
         path = os.path.dirname(os.path.realpath('settings.json')) + '/UserSights/' + input('Tank name: ')
         speed = int(input('Shell speed in m/s: '))
         convergence = int(input('Convergence in meters: '))
@@ -226,6 +281,7 @@ if __name__ == '__main__':
         except:
             pass
         print(generator(path, [speed], zoom, [sight_type], [coord], [convergence]))
+        print(save_presets())
     except ValueError:
         print('Wrong format string')
 

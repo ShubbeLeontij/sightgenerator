@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import generator
 import reader
 from defaults import *
 import tkinter as tk
@@ -7,17 +8,19 @@ import json
 import openpyxl
 from tktooltip import ToolTip
 from tkinter import messagebox
+from ttkthemes.themed_tk import ThemedTk
+from tkinter import filedialog
 
 __author__ = "Shubbe Leontij"
-__version__ = "3.8"
+__version__ = "4.0"
 
 
-class Root(tk.Tk):
+class Root(ThemedTk):
     """
     Enlarged tk.Tk class for easier usage. Simpler create objects and tooltips, clear window and bind function on destroy.
     """
 
-    def __init__(self, title='', geometry='', on_destroy=None, icon=''):
+    def __init__(self, theme='', title='', geometry='', on_destroy=None, icon=''):
         """
         Function that creates root and sets title, geometry and icon.
         :param title: title text (str)
@@ -25,7 +28,7 @@ class Root(tk.Tk):
         :param on_destroy: function that will run when root destroys
         :param icon: data for creating IconPhoto
         """
-        super().__init__()
+        super().__init__(theme=theme)
         self.objects = []
         self.on_destroy = on_destroy
         if title:
@@ -142,9 +145,9 @@ class Output(tk.Text):
         self.config(state=tk.DISABLED)
 
 
-class Input(tk.Entry):
+class Input(ttk.Entry):
     """
-    Enlarged tk.Entry class for using as input box.
+    Enlarged ttk.Entry class for using as input box.
     """
 
     def __init__(self, *args, text='', **kwargs):
@@ -156,10 +159,18 @@ class Input(tk.Entry):
         if text:
             self.insert(0, text)
 
+    def set(self, value):
+        """
+        Function that sets new value for IntVar.
+        :param value: new text
+        """
+        self.delete(0, tk.END)
+        self.insert(0, value)
 
-class Flag(tk.Checkbutton):
+
+class Flag(ttk.Checkbutton):
     """
-    Enlarged tk.Checkbutton class for using as input box.
+    Enlarged ttk.Checkbutton class for using as input box.
     """
 
     def __init__(self, *args, default=0, **kwargs):
@@ -194,15 +205,17 @@ def main_menu():
         """
         Function that runs reader.
         """
-        reader.reader(mode_var.get(), 0, sheets=[flag['text'] if flag.get() else None for flag in sheet_flags],
+        save_paths()
+        reader.reader(0 if mode_flag.get() else 1, sheets=[flag['text'] if flag.get() else None for flag in sheet_flags],
                       _print=output_text.print, _input=lambda *args: None)
 
     def clear():
         """
         Function that runs cleaner.
         """
+        save_paths()
         if messagebox.askokcancel(title=LABELS[LANG]['Deleting'], message=LABELS[LANG]['Are you sure?']):
-            reader.cleaner(mode_var.get(), True, _print=output_text.print, _input=lambda *args: None)
+            reader.cleaner(0 if mode_flag.get() else 1, True, _print=output_text.print, _input=lambda *args: None)
 
     def change_language():
         """
@@ -215,33 +228,37 @@ def main_menu():
         settings["lang"] = LANG
         with open('settings.json', 'w') as f:
             json.dump(settings, f, indent=4)
+        generator.settings = generator.Settings('settings.json')
         main_menu()
 
-    def save_path():
+    def save_paths():
         """
         Function that saves path to json file.
         """
         with open('settings.json', 'r') as f:
             settings = json.load(f)
         settings["path"] = path_input.get()
+        settings["savesPath"] = saves_path_input.get()
         with open('settings.json', 'w') as f:
             json.dump(settings, f, indent=4)
-        output_text.print('Path saved!\n')
+        generator.settings = generator.Settings('settings.json')
+        output_text.print('Paths saved!\n')
+
+    def clear_bindings():
+        save_paths()
+        output_text.print(generator.clear_sight_bindings())
 
     # Create output frame with scrollbar
     root.clear()
     output_text = root.create(Output, relx=0.0, rely=0.5, relwidth=0.97, relheight=0.50, bg='black', fg='white')
-    scrollbar = root.create(tk.Scrollbar, relx=0.97, rely=0.50, relwidth=0.03, relheight=0.50,
+    scrollbar = root.create(ttk.Scrollbar, relx=0.97, rely=0.50, relwidth=0.03, relheight=0.50,
                             command=output_text.yview)
     output_text['yscrollcommand'] = scrollbar.set
     output_text.clear()
 
     # Create output mode radiobuttons
-    mode_var = tk.IntVar()
-    mode_var.set(1)
-    root.create(tk.Radiobutton, relx=0.01, rely=0.35, variable=mode_var, value=0, text=LABELS[LANG]['Dev mode'])
-    root.create(tk.Radiobutton, relx=0.01, rely=0.40, variable=mode_var, value=1, text=LABELS[LANG]['Normal output'])
-    root.create(tk.Radiobutton, relx=0.01, rely=0.45, variable=mode_var, value=2, text=LABELS[LANG]['Silent output'])
+    mode_flag = root.create(Flag, relx=0.02, rely=0.30, text=LABELS[LANG]['Dev mode'])
+    mode_flag.set(0)
 
     # Create checkbuttons for table sheets
     workbook = openpyxl.load_workbook('data.xlsx')
@@ -252,41 +269,42 @@ def main_menu():
     for sheet_name in workbook.sheetnames:
         if sheet_name in ab_list:
             if not i.get():
-                root.create(tk.Label, relx=0.40, rely=0.15, relwidth=0.10, relheight=0.04,
-                            text=LABELS[LANG]['ab/rb']).bind('<Button-1>', lambda event: [
-                            [((flag.set(0) if i.get() else flag.set(1)) if flag['text'] in ab_list else 0) for flag in
-                            sheet_flags], i.set(not i.get())])
+                root.create(ttk.Label, relx=0.40, rely=0.20, relwidth=0.10, relheight=0.04,
+                            text=LABELS[LANG]['ab/rb']).bind('<Button-1>', lambda event: [[((flag.set(0) if i.get() else flag.set(1)) if flag['text'] in ab_list else 0) for flag in sheet_flags], i.set(not i.get())])
             i.set(i.get() + 1)
-            sheet_flags.append(root.create(Flag, relx=0.40, rely=0.15 + 0.05 * i.get(), text=sheet_name, default=1))
+            sheet_flags.append(root.create(Flag, relx=0.40, rely=0.20 + 0.05 * i.get(), text=sheet_name, default=1))
         elif sheet_name in sim_list:
             if not j.get():
-                root.create(tk.Label, relx=0.52, rely=0.15, relwidth=0.10, relheight=0.04,
-                            text=LABELS[LANG]['sim']).bind('<Button-1>', lambda event: [
-                            [((flag.set(0) if j.get() else flag.set(1)) if flag['text'] in sim_list else 0) for flag in
-                            sheet_flags], j.set(not j.get())])
+                root.create(ttk.Label, relx=0.52, rely=0.20, relwidth=0.10, relheight=0.04,
+                            text=LABELS[LANG]['sim']).bind('<Button-1>', lambda event: [[((flag.set(0) if j.get() else flag.set(1)) if flag['text'] in sim_list else 0) for flag in sheet_flags], j.set(not j.get())])
             j.set(j.get() + 1)
-            sheet_flags.append(root.create(Flag, relx=0.52, rely=0.15 + 0.05 * j.get(), text=sheet_name, default=1))
+            sheet_flags.append(root.create(Flag, relx=0.52, rely=0.20 + 0.05 * j.get(), text=sheet_name, default=1))
         else:
             if not k.get():
-                root.create(tk.Label, relx=0.64, rely=0.15, relwidth=0.10, relheight=0.04,
-                            text=LABELS[LANG]['other']).bind('<Button-1>', lambda event: [
-                            [((flag.set(0) if k.get() else flag.set(1)) if flag['text'] not in ab_list + sim_list else 0) for
-                            flag in sheet_flags], k.set(not k.get())])
+                root.create(ttk.Label, relx=0.64, rely=0.20, relwidth=0.10, relheight=0.04,
+                            text=LABELS[LANG]['other']).bind('<Button-1>', lambda event: [[((flag.set(0) if k.get() else flag.set(1)) if flag['text'] not in ab_list + sim_list else 0) for flag in sheet_flags], k.set(not k.get())])
             k.set(k.get() + 1)
-            sheet_flags.append(root.create(Flag, relx=0.64, rely=0.15 + 0.05 * k.get(), text=sheet_name, default=1))
+            sheet_flags.append(root.create(Flag, relx=0.64, rely=0.20 + 0.05 * k.get(), text=sheet_name, default=1))
 
     # Create action buttons
     root.bind('<Return>', lambda event: run())
-    root.create(tk.Button, relx=0.21, rely=0.35, relwidth=0.17, relheight=0.14, command=run, text=LABELS[LANG]['RUN'])
-    root.create(tk.Button, relx=0.02, rely=0.26, relwidth=0.36, relheight=0.08, command=settings_menu, text=LABELS[LANG]['CHANGE SETTINGS'])
+    root.create(ttk.Button, relx=0.02, rely=0.35, relwidth=0.17, relheight=0.14, command=run, text=LABELS[LANG]['RUN'])
+    root.create(ttk.Button, relx=0.02, rely=0.21, relwidth=0.36, relheight=0.08, command=settings_menu, text=LABELS[LANG]['CHANGE SETTINGS'])
 
-    root.create(tk.Button, relx=0.80, rely=0.04, relwidth=0.17, relheight=0.08, command=save_path, text=LABELS[LANG]['Save'])
-    root.create(tk.Button, relx=0.80, rely=0.15, relwidth=0.17, relheight=0.08, command=output_text.clear, text=LABELS[LANG]['Clear Logs'])
-    root.create(tk.Button, relx=0.80, rely=0.26, relwidth=0.17, relheight=0.08, command=clear, text=LABELS[LANG]['CLEAR'])
-    root.create(tk.Button, relx=0.80, rely=0.37, relwidth=0.17, relheight=0.08, command=change_language, text=LABELS[LANG]["Change Language"])
-    with open('settings.json', 'r') as f:
-        path_input = root.create(Input, relx=0.40, rely=0.04, relwidth=0.39, relheight=0.08, text=json.load(f)["path"])
-    root.create(tk.Label, relx=0.00, rely=0.01, relwidth=0.40, relheight=0.17, text=LABELS[LANG]['path'])
+    # root.create(ttk.Button, relx=0.83, rely=0.02, relwidth=0.15, relheight=0.17, command=save_path, text=LABELS[LANG]['Save'])
+    root.create(ttk.Button, relx=0.21, rely=0.31, relwidth=0.17, relheight=0.08, command=clear_bindings, text=LABELS[LANG]['Clear Bindings'])
+    root.create(ttk.Button, relx=0.21, rely=0.41, relwidth=0.17, relheight=0.08, command=clear, text=LABELS[LANG]['CLEAR'])
+    root.create(ttk.Button, relx=0.80, rely=0.37, relwidth=0.17, relheight=0.08, command=change_language, text=LABELS[LANG]["Change Language"])
+    settings = generator.Settings("settings.json")
+    root.create(ttk.Label, relx=0.02, rely=0.02, relwidth=0.30, relheight=0.08, text=LABELS[LANG]['path'])
+    path_input = root.create(Input, relx=0.34, rely=0.02, relwidth=0.54, relheight=0.08, text=settings.get_setting("path"))
+    root.create(ttk.Button, relx=0.89, rely=0.02, relwidth=0.08, relheight=0.08, text="...", command=lambda : path_input.set(filedialog.askdirectory()))
+    root.create(ttk.Label, relx=0.02, rely=0.11, relwidth=0.30, relheight=0.08, text=LABELS[LANG]['savesPath'])
+    saves_path_input = root.create(Input, relx=0.34, rely=0.11, relwidth=0.54, relheight=0.08, text=settings.get_setting("savesPath"))
+    root.create(ttk.Button, relx=0.89, rely=0.11, relwidth=0.08, relheight=0.08, text="...", command=lambda : saves_path_input.set(filedialog.askdirectory()))
+
+
+curPreset = ""
 
 
 def settings_menu():
@@ -299,36 +317,30 @@ def settings_menu():
         Function that saves all settings to json file.
         """
         load_sight_type('save')
-        settings["crosshairColor"] = ', '.join([i.get() for i in crosshairColor])
-        settings["crosshairLightColor"] = ', '.join([j.get() for j in crosshairLightColor])
-        settings["rangefinderProgressBarColor1"] = ', '.join([i.get() for i in rangefinderProgressBarColor1])
-        settings["rangefinderProgressBarColor2"] = ', '.join([j.get() for j in rangefinderProgressBarColor2])
+        if curPreset != "":
+            #if fixThermals.get() != 0:  TODO
+            settings["preset"] = curPreset
         settings["lineSizeMult"] = float(lineSizeMult.get())
         settings["fontSizeMult"] = float(fontSizeMult.get())
         settings["distLength"] = float(distLength.get())
         with open('settings.json', 'w') as f:
             json.dump(settings, f, indent=4)
+        generator.settings = generator.Settings('settings.json')
 
     def preview():
         """
         Function that creates tkinter window for preview for certain sight type and draws whole sight model.
         """
-        color = '#' + ''.join(map('{0:02X}'.format, [int(i.get()) for i in crosshairColor]))[:-2]
-        alpha = int(crosshairColor[-1].get())
-        canvas_tk = Root(title=LABELS[LANG]['CANVAS'] + ' ' + settings['sightTypes'][cur_type_index]['names'][0],
+        color = 'black'
+        canvas_tk = Root(theme="breeze", title=LABELS[LANG]['CANVAS'] + ' ' + settings['sightTypes'][cur_type_index]['names'][0],
                          geometry='300x300')
         canvas_tk.resizable(False, False)
-        canvas = canvas_tk.create(tk.Canvas, x=0, y=0, width=300, height=300, background='lightgrey' if sum(
-            [int(i.get()) for i in crosshairColor][:-2]) < 380 else '#333333')
+        canvas = canvas_tk.create(tk.Canvas, x=0, y=0, width=300, height=300, background='lightgrey')
 
         canvas.create_oval(150 - float(items['centralCircleSize'].get()) / 2,
                            100 - float(items['centralCircleSize'].get()) / 2,
                            150 + float(items['centralCircleSize'].get()) / 2,
                            100 + float(items['centralCircleSize'].get()) / 2, fill=color, outline='')
-        canvas.create_rectangle(210, 75, 250, 90, fill='#' + ''.join(
-            map('{0:02X}'.format, [int(i.get()) for i in rangefinderProgressBarColor1]))[:-2], outline='')
-        canvas.create_rectangle(295, 75, 250, 90, fill='#' + ''.join(
-            map('{0:02X}'.format, [int(i.get()) for i in rangefinderProgressBarColor2]))[:-2], outline='')
         if items['rangefinder'].get():
             canvas.create_line(195, 100, 285, 100, fill=color, width=float(lineSizeMult.get()))
             canvas.create_line(195, 131, 210, 131, fill=color, width=float(lineSizeMult.get()))
@@ -452,36 +464,27 @@ def settings_menu():
                 :param dist: distance of this circle
                 """
                 d = dict()
-                d['button'] = edit_tk.create(tk.Button, x=3, y=45 + 33 * i, width=30, height=30, text='🗑️',
+                d['button'] = edit_tk.create(ttk.Button, x=3, y=45 + 33 * i, width=30, height=30, text='🗑️',
                                              command=lambda: ([obj.destroy() for obj in list(circles[i].values())],
                                                               circles.__setitem__(i, dict())))
                 d['dist'] = edit_tk.create(Input, x=36, y=45 + 33 * i, width=60, height=30,
                                            text=dist if dist else str(i))
                 d['size'] = edit_tk.create(Input, x=99, y=45 + 33 * i, width=60, height=30, text=str(
                     settings['sightTypes'][cur_type_index]['circles'][dist]['size']) if dist else '1.0')
-                d['textPos'] = edit_tk.create(Input, x=162, y=45 + 33 * i, width=72, height=30, text=', '.join(map(str,
-                                                                                                                   settings[
-                                                                                                                       'sightTypes'][
-                                                                                                                       cur_type_index][
-                                                                                                                       'circles'][
-                                                                                                                       dist][
-                                                                                                                       'textPos'] if dist else [
-                                                                                                                       0.0,
-                                                                                                                       0.0])))
-                d['textSize'] = edit_tk.create(Input, x=237, y=45 + 33 * i, width=60, height=30, text=str(
-                    settings['sightTypes'][cur_type_index]['circles'][dist]['textSize']) if dist else '1.0')
+                d['textPos'] = edit_tk.create(Input, x=162, y=45 + 33 * i, width=72, height=30, text=', '.join(map(str, settings['sightTypes'][cur_type_index]['circles'][dist]['textPos'] if dist else [0.0, 0.0])))
+                d['textSize'] = edit_tk.create(Input, x=237, y=45 + 33 * i, width=60, height=30, text=str(settings['sightTypes'][cur_type_index]['circles'][dist]['textSize']) if dist else '1.0')
                 return d
 
-            edit_tk = Root(title=LABELS[LANG]['Edit Circles'], on_destroy=save_circles)
+            edit_tk = Root(theme="breeze", title=LABELS[LANG]['Edit Circles'], on_destroy=save_circles)
             edit_tk.resizable(False, False)
 
-            edit_tk.create(tk.Button, x=3, y=3, width=30, height=30, text='+', command=lambda: (
+            edit_tk.create(ttk.Button, x=3, y=3, width=30, height=30, text='+', command=lambda: (
                 circles.__setitem__(i.get(), create_row(i.get())), i.set(i.get() + 1),
                 edit_tk.geometry('300x' + str(45 + 33 * i.get()))))
-            edit_tk.create(tk.Label, x=36, y=3, text=LABELS[LANG]['Distance'])
-            edit_tk.create(tk.Label, x=99, y=3, text=LABELS[LANG]['size'])
-            edit_tk.create(tk.Label, x=153, y=3, text=LABELS[LANG]['textPos'])
-            edit_tk.create(tk.Label, x=240, y=3, text=LABELS[LANG]['textSize'])
+            edit_tk.create(ttk.Label, x=36, y=3, text=LABELS[LANG]['Distance'])
+            edit_tk.create(ttk.Label, x=99, y=3, text=LABELS[LANG]['size'])
+            edit_tk.create(ttk.Label, x=153, y=3, text=LABELS[LANG]['textPos'])
+            edit_tk.create(ttk.Label, x=240, y=3, text=LABELS[LANG]['textSize'])
             circles = dict()
             i = tk.IntVar()
             i.set(0)
@@ -509,36 +512,21 @@ def settings_menu():
             if types_box.get() in s_type["names"]:
                 cur_type_index = settings["sightTypes"].index(s_type)
                 break
-        items['aliases_label'] = root.create(tk.Label, relx=0.73, rely=0.02, relwidth=0.28, relheight=0.23,
-                                             text=LABELS[LANG]['Aliases: '] + ', '.join(
-                                                 settings["sightTypes"][cur_type_index]['names']), justify=tk.LEFT,
-                                             anchor='nw', wraplength=170)
-        items['edit_button'] = root.create(tk.Button, relx=0.52, rely=0.11, relwidth=0.20, relheight=0.11,
-                                           text=LABELS[LANG]['EDIT SIM CIRCLES'], command=edit_circles)
-        items['rangefinder'] = root.create(Flag, relx=0.52, rely=0.25, text=LABELS[LANG]['Stadiametric rangefinder'],
-                                           default=1 if settings["sightTypes"][cur_type_index]["rangefinder"] else 0)
+        items['aliases_label'] = root.create(ttk.Label, relx=0.73, rely=0.02, relwidth=0.28, relheight=0.23, text=LABELS[LANG]['Aliases: '] + ', '.join(settings["sightTypes"][cur_type_index]['names']), justify=tk.LEFT, anchor='nw', wraplength=170)
+        items['edit_button'] = root.create(ttk.Button, relx=0.52, rely=0.11, relwidth=0.20, relheight=0.11, text=LABELS[LANG]['EDIT SIM CIRCLES'], command=edit_circles)
+        items['rangefinder'] = root.create(Flag, relx=0.52, rely=0.25, text=LABELS[LANG]['Stadiametric rangefinder'], default=1 if settings["sightTypes"][cur_type_index]["rangefinder"] else 0)
 
-        items['right_dist_list_label'] = root.create(tk.Label, relx=0.52, rely=0.32,
-                                                     text=LABELS[LANG]['right_dist_list'])
-        items['right_dist_list'] = root.create(Input, relx=0.52, rely=0.37, relwidth=0.45, relheight=0.05,
-                                               text=' '.join(
-                                                   map(str, settings["sightTypes"][cur_type_index]['right_dist_list'])))
-        items['left_dist_list_label'] = root.create(tk.Label, relx=0.52, rely=0.42, text=LABELS[LANG]['left_dist_list'])
-        items['left_dist_list'] = root.create(Input, relx=0.52, rely=0.47, relwidth=0.45, relheight=0.05, text=' '.join(
-            map(str, settings["sightTypes"][cur_type_index]['left_dist_list'])))
-        items['small_dist_list_label'] = root.create(tk.Label, relx=0.52, rely=0.52,
-                                                     text=LABELS[LANG]['small_dist_list'])
-        items['small_dist_list'] = root.create(Input, relx=0.52, rely=0.57, relwidth=0.45, relheight=0.05,
-                                               text=' '.join(
-                                                   map(str, settings["sightTypes"][cur_type_index]['small_dist_list'])))
-        items['line_dist_list_label'] = root.create(tk.Label, relx=0.52, rely=0.62, text=LABELS[LANG]['line_dist_list'])
-        items['line_dist_list'] = root.create(Input, relx=0.52, rely=0.67, relwidth=0.45, relheight=0.05, text=' '.join(
-            map(str, settings["sightTypes"][cur_type_index]['line_dist_list'])))
+        items['right_dist_list_label'] = root.create(ttk.Label, relx=0.52, rely=0.32, text=LABELS[LANG]['right_dist_list'])
+        items['right_dist_list'] = root.create(Input, relx=0.52, rely=0.35, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]['right_dist_list'])))
+        items['left_dist_list_label'] = root.create(ttk.Label, relx=0.52, rely=0.42, text=LABELS[LANG]['left_dist_list'])
+        items['left_dist_list'] = root.create(Input, relx=0.52, rely=0.46, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]['left_dist_list'])))
+        items['small_dist_list_label'] = root.create(ttk.Label, relx=0.52, rely=0.52, text=LABELS[LANG]['small_dist_list'])
+        items['small_dist_list'] = root.create(Input, relx=0.52, rely=0.56, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]['small_dist_list'])))
+        items['line_dist_list_label'] = root.create(ttk.Label, relx=0.52, rely=0.62, text=LABELS[LANG]['line_dist_list'])
+        items['line_dist_list'] = root.create(Input, relx=0.52, rely=0.66, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]['line_dist_list'])))
 
-        items['centralCircle_label'] = root.create(tk.Label, relx=0.52, rely=0.75,
-                                                   text=LABELS[LANG]['centralCircleSize'])
-        items['centralCircleSize'] = root.create(Input, relx=0.85, rely=0.75, relwidth=0.07, relheight=0.05,
-                                                 text=settings["sightTypes"][cur_type_index]['centralCircleSize'])
+        items['centralCircle_label'] = root.create(ttk.Label, relx=0.52, rely=0.75, text=LABELS[LANG]['centralCircleSize'])
+        items['centralCircleSize'] = root.create(Input, relx=0.85, rely=0.74, relwidth=0.07, relheight=0.06, text=settings["sightTypes"][cur_type_index]['centralCircleSize'])
         central_lines_var = tk.IntVar()
         if settings["sightTypes"][cur_type_index]['centralLines'] == "brackets":
             central_lines_var.set(2)
@@ -548,15 +536,9 @@ def settings_menu():
             central_lines_var.set(0)
         else:
             central_lines_var.set(-1)
-        root.create(tk.Radiobutton, relx=0.52, rely=0.82, variable=central_lines_var, value=0,
-                    command=lambda: settings["sightTypes"][cur_type_index].__setitem__('centralLines', "no"),
-                    text=LABELS[LANG]['no_lines'])
-        root.create(tk.Radiobutton, relx=0.52, rely=0.87, variable=central_lines_var, value=1,
-                    command=lambda: settings["sightTypes"][cur_type_index].__setitem__('centralLines', "standard"),
-                    text=LABELS[LANG]['standard_lines'])
-        root.create(tk.Radiobutton, relx=0.52, rely=0.92, variable=central_lines_var, value=2,
-                    command=lambda: settings["sightTypes"][cur_type_index].__setitem__('centralLines', "brackets"),
-                    text=LABELS[LANG]['brackets_lines'])
+        root.create(ttk.Radiobutton, relx=0.52, rely=0.82, variable=central_lines_var, value=0, command=lambda: settings["sightTypes"][cur_type_index].__setitem__('centralLines', "no"), text=LABELS[LANG]['no_lines'])
+        root.create(ttk.Radiobutton, relx=0.52, rely=0.87, variable=central_lines_var, value=1, command=lambda: settings["sightTypes"][cur_type_index].__setitem__('centralLines', "standard"), text=LABELS[LANG]['standard_lines'])
+        root.create(ttk.Radiobutton, relx=0.52, rely=0.92, variable=central_lines_var, value=2, command=lambda: settings["sightTypes"][cur_type_index].__setitem__('centralLines', "brackets"), text=LABELS[LANG]['brackets_lines'])
 
     def no_crosshair():
         """
@@ -582,83 +564,28 @@ def settings_menu():
         settings["drawCentralLineHorz"] = "yes"
         settings["crosshair"] = ""
 
+    def load_preset():
+        global curPreset
+        with open(filedialog.askopenfilename(), "r") as f:
+            curPreset = "".join(f.readlines()[1:])
+
+
     with open('settings.json', 'r') as f:
         settings = json.loads(f.read())
     root.clear()
     root.bind('<Return>', lambda event: (save(), main_menu()))
-    root.create(tk.Button, relx=0.01, rely=0.88, relwidth=0.32, relheight=0.10, command=lambda: (save(), main_menu()),
-                text=LABELS[LANG]['SAVE SETTINGS'])
-    root.create(tk.Button, relx=0.34, rely=0.88, relwidth=0.18, relheight=0.10, command=preview,
-                text=LABELS[LANG]['preview'])
+    root.create(ttk.Button, relx=0.02, rely=0.88, relwidth=0.35, relheight=0.10, command=lambda: (save(), main_menu()), text=LABELS[LANG]['SAVE SETTINGS'])
+    root.create(ttk.Button, relx=0.02, rely=0.76, relwidth=0.35, relheight=0.10, command=preview, text=LABELS[LANG]['preview'])
 
-    root.create(tk.Label, relx=0.02, rely=0.02, text=LABELS[LANG]['MainColor'])
-    crosshairColor = []
-    root.create(tk.Label, relx=0.02, rely=0.07, text=LABELS[LANG]['R:'])
-    crosshairColor.append(root.create(Input, relx=0.05, rely=0.07, relwidth=0.07, relheight=0.05,
-                                      text=settings["crosshairColor"].split(", ")[0]))
-    root.create(tk.Label, relx=0.12, rely=0.07, text=LABELS[LANG]['G:'])
-    crosshairColor.append(root.create(Input, relx=0.15, rely=0.07, relwidth=0.07, relheight=0.05,
-                                      text=settings["crosshairColor"].split(", ")[1]))
-    root.create(tk.Label, relx=0.22, rely=0.07, text=LABELS[LANG]['B:'])
-    crosshairColor.append(root.create(Input, relx=0.25, rely=0.07, relwidth=0.07, relheight=0.05,
-                                      text=settings["crosshairColor"].split(", ")[2]))
-    root.create(tk.Label, relx=0.32, rely=0.07, text=LABELS[LANG]['Opacity:'])
-    crosshairColor.append(root.create(Input, relx=0.42, rely=0.07, relwidth=0.07, relheight=0.05,
-                                      text=settings["crosshairColor"].split(", ")[3]))
+    root.create(ttk.Button, relx=0.02, rely=0.02, relwidth=0.35, relheight=0.10, text=LABELS[LANG]["loadPreset"], command=load_preset)
+    #fixThermals = root.create(Flag, relx=0.02, rely=0.15, text="fix thermals") TODO
 
-    root.create(tk.Label, relx=0.02, rely=0.12, text=LABELS[LANG]['LightColor'])
-    crosshairLightColor = []
-    root.create(tk.Label, relx=0.02, rely=0.17, text=LABELS[LANG]['R:'])
-    crosshairLightColor.append(root.create(Input, relx=0.05, rely=0.17, relwidth=0.07, relheight=0.05,
-                                           text=settings["crosshairLightColor"].split(", ")[0]))
-    root.create(tk.Label, relx=0.12, rely=0.17, text=LABELS[LANG]['G:'])
-    crosshairLightColor.append(root.create(Input, relx=0.15, rely=0.17, relwidth=0.07, relheight=0.05,
-                                           text=settings["crosshairLightColor"].split(", ")[1]))
-    root.create(tk.Label, relx=0.22, rely=0.17, text=LABELS[LANG]['B:'])
-    crosshairLightColor.append(root.create(Input, relx=0.25, rely=0.17, relwidth=0.07, relheight=0.05,
-                                           text=settings["crosshairLightColor"].split(", ")[2]))
-    root.create(tk.Label, relx=0.32, rely=0.17, text=LABELS[LANG]['Opacity:'])
-    crosshairLightColor.append(root.create(Input, relx=0.42, rely=0.17, relwidth=0.07, relheight=0.05,
-                                           text=settings["crosshairLightColor"].split(", ")[3]))
-
-    root.create(tk.Label, relx=0.02, rely=0.22, text=LABELS[LANG]['rangefinderProgressBarColor1'])
-    rangefinderProgressBarColor1 = []
-    root.create(tk.Label, relx=0.02, rely=0.27, text=LABELS[LANG]['R:'])
-    rangefinderProgressBarColor1.append(root.create(Input, relx=0.05, rely=0.27, relwidth=0.07, relheight=0.05,
-                                                    text=settings["rangefinderProgressBarColor1"].split(", ")[0]))
-    root.create(tk.Label, relx=0.12, rely=0.27, text=LABELS[LANG]['G:'])
-    rangefinderProgressBarColor1.append(root.create(Input, relx=0.15, rely=0.27, relwidth=0.07, relheight=0.05,
-                                                    text=settings["rangefinderProgressBarColor1"].split(", ")[1]))
-    root.create(tk.Label, relx=0.22, rely=0.27, text=LABELS[LANG]['B:'])
-    rangefinderProgressBarColor1.append(root.create(Input, relx=0.25, rely=0.27, relwidth=0.07, relheight=0.05,
-                                                    text=settings["rangefinderProgressBarColor1"].split(", ")[2]))
-    root.create(tk.Label, relx=0.32, rely=0.27, text=LABELS[LANG]['Opacity:'])
-    rangefinderProgressBarColor1.append(root.create(Input, relx=0.42, rely=0.27, relwidth=0.07, relheight=0.05,
-                                                    text=settings["rangefinderProgressBarColor1"].split(", ")[3]))
-
-    root.create(tk.Label, relx=0.02, rely=0.32, text=LABELS[LANG]['rangefinderProgressBarColor2'])
-    rangefinderProgressBarColor2 = []
-    root.create(tk.Label, relx=0.02, rely=0.37, text=LABELS[LANG]['R:'])
-    rangefinderProgressBarColor2.append(root.create(Input, relx=0.05, rely=0.37, relwidth=0.07, relheight=0.05,
-                                                    text=settings["rangefinderProgressBarColor2"].split(", ")[0]))
-    root.create(tk.Label, relx=0.12, rely=0.37, text=LABELS[LANG]['G:'])
-    rangefinderProgressBarColor2.append(root.create(Input, relx=0.15, rely=0.37, relwidth=0.07, relheight=0.05,
-                                                    text=settings["rangefinderProgressBarColor2"].split(", ")[1]))
-    root.create(tk.Label, relx=0.22, rely=0.37, text=LABELS[LANG]['B:'])
-    rangefinderProgressBarColor2.append(root.create(Input, relx=0.25, rely=0.37, relwidth=0.07, relheight=0.05,
-                                                    text=settings["rangefinderProgressBarColor2"].split(", ")[2]))
-    root.create(tk.Label, relx=0.32, rely=0.37, text=LABELS[LANG]['Opacity:'])
-    rangefinderProgressBarColor2.append(root.create(Input, relx=0.42, rely=0.37, relwidth=0.07, relheight=0.05,
-                                                    text=settings["rangefinderProgressBarColor2"].split(", ")[3]))
-
-    root.create(tk.Label, relx=0.02, rely=0.60, text=LABELS[LANG]['lineSizeMult:'])
-    lineSizeMult = root.create(Input, relx=0.38, rely=0.60, relwidth=0.07, relheight=0.05,
-                               text=settings["lineSizeMult"])
-    root.create(tk.Label, relx=0.02, rely=0.65, text=LABELS[LANG]['fontSizeMult:'])
-    fontSizeMult = root.create(Input, relx=0.38, rely=0.65, relwidth=0.07, relheight=0.05,
-                               text=settings["fontSizeMult"])
-    root.create(tk.Label, relx=0.02, rely=0.72, text=LABELS[LANG]['distLength:'])
-    distLength = root.create(Input, relx=0.38, rely=0.72, relwidth=0.07, relheight=0.05, text=settings["distLength"])
+    root.create(ttk.Label, relx=0.02, rely=0.55, text=LABELS[LANG]['lineSizeMult:'])
+    lineSizeMult = root.create(Input, relx=0.38, rely=0.54, relwidth=0.07, relheight=0.06, text=settings["lineSizeMult"])
+    root.create(ttk.Label, relx=0.02, rely=0.60, text=LABELS[LANG]['fontSizeMult:'])
+    fontSizeMult = root.create(Input, relx=0.38, rely=0.59, relwidth=0.07, relheight=0.06, text=settings["fontSizeMult"])
+    root.create(ttk.Label, relx=0.02, rely=0.67, text=LABELS[LANG]['distLength:'])
+    distLength = root.create(Input, relx=0.38, rely=0.66, relwidth=0.07, relheight=0.06, text=settings["distLength"])
 
     crosshair_var = tk.IntVar()
     if settings["drawCentralLineVert"] == "yes" and settings["drawCentralLineHorz"] == "yes":
@@ -669,15 +596,15 @@ def settings_menu():
         crosshair_var.set(0)
     else:
         crosshair_var.set(-1)
-    root.create(tk.Radiobutton, relx=0.02, rely=0.43, variable=crosshair_var, value=0, command=no_crosshair,
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.33, variable=crosshair_var, value=0, command=no_crosshair,
                 text=LABELS[LANG]['no_crosshair'])
-    root.create(tk.Radiobutton, relx=0.02, rely=0.48, variable=crosshair_var, value=1, command=partial_crosshair,
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.38, variable=crosshair_var, value=1, command=partial_crosshair,
                 text=LABELS[LANG]['partial_crosshair'])
-    root.create(tk.Radiobutton, relx=0.02, rely=0.53, variable=crosshair_var, value=2, command=full_crosshair,
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.43, variable=crosshair_var, value=2, command=full_crosshair,
                 text=LABELS[LANG]['full_crosshair'])
     sight_types = [s_type['names'][0] for s_type in settings['sightTypes']]
     items = {}
-    types_box = root.create(ttk.Combobox, relx=0.52, rely=0.03, relwidth=0.20, relheight=0.05, values=sight_types,
+    types_box = root.create(ttk.Combobox, relx=0.52, rely=0.03, relwidth=0.20, relheight=0.06, values=sight_types,
                             state='readonly')
     types_box.set(sight_types[0])
     types_box.bind('<<ComboboxSelected>>', load_sight_type)
@@ -700,6 +627,6 @@ if __name__ == "__main__":
             LANG = "RU"
         else:
             LANG = "EN"
-    root = Root(title=LABELS[LANG]['Sightgenerator GUI'], geometry='650x500', icon=ICON)
+    root = Root(theme="breeze", title=LABELS[LANG]['Sightgenerator GUI'], geometry='650x500', icon=ICON)
     main_menu()
     root.mainloop()
