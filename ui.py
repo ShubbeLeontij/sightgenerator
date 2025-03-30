@@ -12,7 +12,7 @@ from ttkthemes.themed_tk import ThemedTk
 from tkinter import filedialog
 
 __author__ = "Shubbe Leontij"
-__version__ = "4.0"
+__version__ = "4.1"
 
 
 class Root(ThemedTk):
@@ -316,10 +316,18 @@ def settings_menu():
         """
         Function that saves all settings to json file.
         """
+        def is_parasite_string(line: str) -> bool:
+            if line.find("nv") != -1:
+                return True
+            if line.find("thermal") != -1:
+                return True
+            if line.find("nightvision") != -1:
+                return True
+            return False
+
         load_sight_type('save')
         if curPreset != "":
-            #if fixThermals.get() != 0:  TODO
-            settings["preset"] = curPreset
+            settings["preset"] = '\n'.join(line for line in curPreset.split('\n') if not is_parasite_string(line.lower())) if fixThermals.get() else curPreset
         settings["lineSizeMult"] = float(lineSizeMult.get())
         settings["fontSizeMult"] = float(fontSizeMult.get())
         settings["distLength"] = float(distLength.get())
@@ -578,7 +586,7 @@ def settings_menu():
     root.create(ttk.Button, relx=0.02, rely=0.76, relwidth=0.35, relheight=0.10, command=preview, text=LABELS[LANG]['preview'])
 
     root.create(ttk.Button, relx=0.02, rely=0.02, relwidth=0.35, relheight=0.10, text=LABELS[LANG]["loadPreset"], command=load_preset)
-    #fixThermals = root.create(Flag, relx=0.02, rely=0.15, text="fix thermals") TODO
+    fixThermals = root.create(Flag, relx=0.02, rely=0.15, text=LABELS[LANG]['fixThermals'])
 
     root.create(ttk.Label, relx=0.02, rely=0.55, text=LABELS[LANG]['lineSizeMult:'])
     lineSizeMult = root.create(Input, relx=0.38, rely=0.54, relwidth=0.07, relheight=0.06, text=settings["lineSizeMult"])

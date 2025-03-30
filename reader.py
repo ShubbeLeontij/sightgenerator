@@ -8,7 +8,7 @@ import openpyxl
 import argparse
 
 __author__ = "Shubbe Leontij"
-__version__ = "4.0"
+__version__ = "4.1"
 
 
 def reader(MODE, sheets=None, _print=print, _input=input):

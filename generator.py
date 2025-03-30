@@ -7,7 +7,7 @@ import json
 
 
 __author__ = "Shubbe Leontij"
-__version__ = "4.0"
+__version__ = "4.1"
 
 
 class Settings:
