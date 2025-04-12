@@ -29,28 +29,28 @@ def reader(MODE, sheets=None, _print=print, _input=input):
             _print(string)
 
     # Loading path from json and making it correct
-    with open('settings.json', 'r') as f:
+    with open("settings.json", 'r') as f:
         wt_path = json.load(f)["path"].replace('\\', '/')
-    if wt_path == '':
-        wt_path = os.path.dirname(os.path.realpath('settings.json')) + '/UserSights/'
+    if wt_path == "":
+        wt_path = os.path.dirname(os.path.realpath("settings.json")) + "/UserSights/"
     else:
         wt_path_list = wt_path.split('/')
-        wt_path = '/' if wt_path[0] == '/' else ''
+        wt_path = '/' if wt_path[0] == '/' else ""
         for folder in wt_path_list:
             if folder:
                 wt_path += folder + '/'
-        if not wt_path.endswith('/UserSights/'):
-            wt_path += 'UserSights/'
+        if not wt_path.endswith("/UserSights/"):
+            wt_path += "UserSights/"
     try:
         os.mkdir(wt_path)
-        _output('Created folder ' + wt_path, 1)
+        _output("Created folder " + wt_path, 1)
     except:
         pass
-    _output('Writing in %s' % wt_path, 1)
+    _output("Writing in %s" % wt_path, 1)
 
     # Loading the table
     wrong_strings = []
-    workbook = openpyxl.load_workbook('data.xlsx')
+    workbook = openpyxl.load_workbook("data.xlsx")
 
     generator.insert_str = dict[str, str]()
     for sheet_name in workbook.sheetnames:  # Iterating sheets
@@ -69,7 +69,7 @@ def reader(MODE, sheets=None, _print=print, _input=input):
                     empty_rows += 1
                     continue
                 elif empty_rows:
-                    _output(str(empty_rows) + ' empty rows', 0)
+                    _output(str(empty_rows) + " empty rows", 0)
                     empty_rows = 0
                 _output(str(row), 0)
                 coords = list(map(lambda string: list(map(float, string.split(','))), row[5].split(';')))  # Reading first coords
@@ -88,18 +88,18 @@ def reader(MODE, sheets=None, _print=print, _input=input):
                 speed_list = []
                 for i in range(len(type_list)):
                     speed_list.append(int(str(row[2]).split(';')[i]))
-                    if type_list[i] in ['sim_AP']:
+                    if type_list[i] in ["sim_AP"]:
                         speed_list[-1] *= 0.97
-                    if type_list[i] in ['sim_HEAT', 'sim_HE']:
+                    if type_list[i] in ["sim_HEAT", "sim_HE"]:
                         speed_list[-1] *= 0.95
                 # Create sight using generator
                 _output(generator.generator(wt_path + row[0], speed_list, float(row[3]), type_list, coords, list(map(int, str(row[1]).split(';')))), 0)
             except:  # If something went wrong
                 wrong_strings[-1] += 1
-                _output('Wrong string format. Sheet: ' + sheet_name + ' Row: ' + str(row_num), 1)
+                _output("Wrong string format. Sheet: " + sheet_name + " Row: " + str(row_num), 1)
 
-        _output(str(empty_rows) + ' empty rows', 0)
-        _output(str(wrong_strings[-1]) + ' errors', 1)
+        _output(str(empty_rows) + " empty rows", 0)
+        _output(str(wrong_strings[-1]) + " errors", 1)
 
     _output(generator.save_presets(), 1)
     _output("Working directory was " + wt_path, 1)
@@ -119,22 +119,22 @@ def cleaner(MODE, remove_all_tanks=False, _print=print, _input=input):
             _print(string)
 
     # Loading path from json and making it correct
-    with open('settings.json', 'r') as f:
+    with open("settings.json", 'r') as f:
         wt_path = json.load(f)["path"].replace('\\', '/')
-    if wt_path == '':
-        wt_path = os.path.dirname(os.path.realpath('settings.json')) + '/UserSights/'
+    if wt_path == "":
+        wt_path = os.path.dirname(os.path.realpath("settings.json")) + "/UserSights/"
     else:
         wt_path_list = wt_path.split('/')
-        wt_path = '/' if wt_path[0] == '/' else ''
+        wt_path = '/' if wt_path[0] == '/' else ""
         for folder in wt_path_list:
             if folder:
                 wt_path += folder + '/'
-        if not wt_path.endswith('/UserSights/'):
-            wt_path += 'UserSights/'
+        if not wt_path.endswith("/UserSights/"):
+            wt_path += "UserSights/"
 
     _output("Deleting all from " + wt_path + '\n', 1)
     for dir_name in os.listdir(wt_path):
-        if remove_all_tanks or dir_name != 'all_tanks':
+        if remove_all_tanks or dir_name != "all_tanks":
             try:
                 _output("Deleting " + dir_name, 0)
                 shutil.rmtree(os.path.join(wt_path, dir_name))
@@ -145,8 +145,8 @@ def cleaner(MODE, remove_all_tanks=False, _print=print, _input=input):
 
 if __name__ == "__main__":
     # Read all arguments from terminal and run main function
-    parser = argparse.ArgumentParser(description='Creates UserSights folder with WarThunder sights.')
-    parser.add_argument('-m', '--mode', help='Output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3', default=1)
-    MODE = int(vars(parser.parse_args())['mode'])
+    parser = argparse.ArgumentParser(description="Creates UserSights folder with WarThunder sights.")
+    parser.add_argument("-m", "--mode", help="Output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3", default=1)
+    MODE = int(vars(parser.parse_args())["mode"])
 
     reader(MODE, _print=print, _input=input)

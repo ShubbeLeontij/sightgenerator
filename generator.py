@@ -27,7 +27,7 @@ class Settings:
 
 
 insert_str = dict[str, str]()
-settings = Settings('settings.json')
+settings = Settings("settings.json")
 
 
 def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
@@ -45,13 +45,13 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
         """
         Function that finds location of point on sight depending on distance.
         :param distance: int distance in meters
-        :return: str with two parallaxes in milliradian split by ', '
+        :return: str with two parallaxes in milliradian split by ", "
         """
         if distance == 0:
-            return '0, 0'
+            return "0, 0"
         parallax_x, parallax_y = - coord[1] * (1 / distance - 1 / convergence), coord[0] * (1 / distance - 1 / convergence)
         gravity = 5.0 * distance / speed ** 2  # 5.0 is g/2
-        return str(round(parallax_x * 1000, 2)) + ', ' + str(round((parallax_y + gravity) * 1000, 2))
+        return str(round(parallax_x * 1000, 2)) + ", " + str(round((parallax_y + gravity) * 1000, 2))
 
     def crosshair_distance(distance, size, side):
         """
@@ -61,7 +61,7 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
         :return: str type generated text
         """
         x = distLength if size else round(distLength * DIST_MULT, 4)
-        return 'distance { distance:p3=' + str(distance) + ',' + (str(distance // 100) if size else '0') + ',' + ('-' if side == 'right' else '') + str(x) + '; textPos:p2=' + ('' if side == 'right' else '-') + str(x + DIST_INDENT) + ',0; }\n'
+        return "distance { distance:p3=" + str(distance) + ',' + (str(distance // 100) if size else '0') + ',' + ('-' if side == "right" else "") + str(x) + "; textPos:p2=" + ("" if side == "right" else '-') + str(x + DIST_INDENT) + ",0; }\n"
 
     def circle(distance, size, move=True, diameter=0):
         """
@@ -70,7 +70,7 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
         :param size: diameter of circle
         :return: str type generated text
         """
-        return 'circle {    //' + str(distance) + '\nsegment:p2 = 0, 360;\npos:p2 = ' + point(distance) + ';\ndiameter:r = ' + str(diameter) + ';\nsize:r = ' + str(size) + ';\nmove:b = ' + ('yes' if move else 'no') + '\nthousandth:b = yes;\n}\n'
+        return "circle {    //" + str(distance) + "\nsegment:p2 = 0, 360;\npos:p2 = " + point(distance) + ";\ndiameter:r = " + str(diameter) + ";\nsize:r = " + str(size) + ";\nmove:b = " + ("yes" if move else "no") + "\nthousandth:b = yes;\n}\n"
 
     def text(distance, delta, size):
         """
@@ -80,10 +80,10 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
         :param size: size of text
         :return: str type generated text
         """
-        x, y = tuple(map(float, point(distance).split(', ')))
+        x, y = tuple(map(float, point(distance).split(", ")))
         x, y = x + delta[0], y + delta[1]
-        return 'text\n{\ntext: t = "' + (str(distance) if distance < 100 else str(distance//100)) + '"\nalign: i = 0\npos: p2 = ' + \
-               str(round(x, 2)) + ', ' + str(round(y, 2)) + '\nmove: b = yes\nthousandth: b = yes\nsize: r = ' + str(size) + '\nhighlight: b = yes\n}\n'
+        return "text\n{\ntext: t = \"" + (str(distance) if distance < 100 else str(distance//100)) + "\"\nalign: i = 0\npos: p2 = " + \
+               str(round(x, 2)) + ", " + str(round(y, 2)) + "\nmove: b = yes\nthousandth: b = yes\nsize: r = " + str(size) + "\nhighlight: b = yes\n}\n"
 
     s_type = None
     for t in settings.get_setting("sightTypes"):
@@ -110,21 +110,21 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     isLeft = True if coord[1] < 0 else False
     distancePos = round(float(point(DIST_POINT).split(',')[0]) * -0.01, 4)
 
-    distances_blk = ''
-    circles_blk = ''
-    lines_blk = ''
-    text_blk = ''
-    rangefinder_lines = ''
-    rangefinder_text = ''
+    distances_blk = ""
+    circles_blk = ""
+    lines_blk = ""
+    text_blk = ""
+    rangefinder_lines = ""
+    rangefinder_text = ""
 
     # Load rangefinder depending on gamemode and zoom
     if rangefinder:
         d = RANGEFINDERS_BLK["GoodZoom" if zoom > BAD_ZOOM_THRESHOLD else "BadZoom"]["Left" if isLeft else "Right"]
-        rangefinder_lines = d["Lines"].replace('$main$', (d["MainLine"] if crosshair == '' or crosshair == 'no' or crosshair == 'false' or crosshair == 'empty' else ''))
-        rangefinder_text = d["Text"].replace('$size$', str(round(rangefinderFontSizeMult * (RANGEFINDER_BAD if zoom < BAD_ZOOM_THRESHOLD else RANGEFINDER_GOOD), 2)))
+        rangefinder_lines = d["Lines"].replace("$main$", (d["MainLine"] if crosshair == "" or crosshair == "no" or crosshair == "false" or crosshair == "empty" else ""))
+        rangefinder_text = d["Text"].replace("$size$", str(round(rangefinderFontSizeMult * (RANGEFINDER_BAD if zoom < BAD_ZOOM_THRESHOLD else RANGEFINDER_GOOD), 2)))
 
     # Start settings
-    replacements = {'$drawCentralLineVert$': drawCentralLineVert, '$drawCentralLineHorz$': drawCentralLineHorz, '$fontSizeMult$': str(round(fontSizeMult, 2)), '$lineSizeMult$': str(round(lineSizeMult, 2)), '$distancePos$': str(distancePos)}
+    replacements = {"$drawCentralLineVert$": drawCentralLineVert, "$drawCentralLineHorz$": drawCentralLineHorz, "$fontSizeMult$": str(round(fontSizeMult, 2)), "$lineSizeMult$": str(round(lineSizeMult, 2)), "$distancePos$": str(distancePos)}
     rep = dict((re.escape(k), v) for k, v in replacements.items())
     start = re.compile("|".join(rep.keys())).sub(lambda m: rep[re.escape(m.group(0))], START_BLK)
 
@@ -132,28 +132,28 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     if isMain:
         for dist in sorted(right_dist_list + left_dist_list + small_dist_list):
             if dist in left_dist_list:
-                distances_blk += crosshair_distance(dist, 1, 'right' if isLeft else 'left')
+                distances_blk += crosshair_distance(dist, 1, "right" if isLeft else "left")
             if dist in right_dist_list:
-                distances_blk += crosshair_distance(dist, 1, 'left' if isLeft else 'right')
+                distances_blk += crosshair_distance(dist, 1, "left" if isLeft else "right")
             if dist in small_dist_list:
-                distances_blk += crosshair_distance(dist, 0, 'left' if isLeft else 'right')
+                distances_blk += crosshair_distance(dist, 0, "left" if isLeft else "right")
 
     # Lines
     if len(line_dist_list) > 1:
         points = [point(line_dist_list[0])]
         for dist in line_dist_list[1:]:
             points.append(point(dist))
-            lines_blk += 'line    //to ' + str(dist) + '\n{\nline: p4 = ' + points[-1] + ', ' + points[-2] + '\nmove: b = yes\nthousandth: b = yes\n}\n'
+            lines_blk += "line    //to " + str(dist) + "\n{\nline: p4 = " + points[-1] + ", " + points[-2] + "\nmove: b = yes\nthousandth: b = yes\n}\n"
     if isMain:
-        if crosshair != '' and crosshair != 'no' and crosshair != 'false' and crosshair != 'empty':
-            if crosshair == 'partial':
+        if crosshair != "" and crosshair != "no" and crosshair != "false" and crosshair != "empty":
+            if crosshair == "partial":
                 lines_blk += PARTIAL_CROSSHAIR
             else:
                 lines_blk += crosshair
-        if centralLines != '' and centralLines != 'no' and centralLines != 'false' and centralLines != 'empty':
-            if centralLines == 'brackets':
+        if centralLines != "" and centralLines != "no" and centralLines != "false" and centralLines != "empty":
+            if centralLines == "brackets":
                 lines_blk += BRACKETS_CENTRAL_LINES
-            elif centralLines == 'standard':
+            elif centralLines == "standard":
                 lines_blk += STANDARD_CENTRAL_LINES
             else:
                 centralLines += centralLines
@@ -161,17 +161,17 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
 
     # Circles
     if isMain:
-        circles_blk += CENTRAL_CIRCLE_BLK.replace('$size$', str(centralCircleSize)) + '\n'
+        circles_blk += CENTRAL_CIRCLE_BLK.replace("$size$", str(centralCircleSize)) + "\n"
     for dist in circles_list.keys():
-        circles_blk += circle(int(dist), circles_list[dist]['size'])
+        circles_blk += circle(int(dist), circles_list[dist]["size"])
 
     # Text
     if isMain:
         text_blk += rangefinder_text
     for dist in circles_list.keys():
-        textPos = circles_list[dist]['textPos']
+        textPos = circles_list[dist]["textPos"]
         textPos[0] = textPos[0] if isLeft else -textPos[0]
-        textSize = circles_list[dist]['textSize']
+        textSize = circles_list[dist]["textSize"]
         if textSize:
             text_blk += text(int(dist), textPos, textSize)
 
@@ -253,36 +253,36 @@ def generator(path, speed, zoom, sight_type, coord, convergence):
         sight_list[4] += cur_sight_list[4]
     tankname = path.rpartition('/')[2]
     filename = '_'.join(sight_type) + '_' + tankname
-    cur_path = path + '/' + filename + '.blk'
-    output = (ALL_TANKS_TOP if tankname == 'all_tanks' else '') + sight_list[0] + '\ncrosshair_distances{\n' + sight_list[1] + '}\n\ndrawLines{\n' + sight_list[2] + '}\n\ndrawCircles{\n' + sight_list[3] + '}\n\ndrawTexts{\n' + sight_list[4] + '}\n'
+    cur_path = path + '/' + filename + ".blk"
+    output = (ALL_TANKS_TOP if tankname == "all_tanks" else "") + sight_list[0] + "\ncrosshair_distances{\n" + sight_list[1] + "}\n\ndrawLines{\n" + sight_list[2] + "}\n\ndrawCircles{\n" + sight_list[3] + "}\n\ndrawTexts{\n" + sight_list[4] + "}\n"
     try:
         os.mkdir(path)
     except:
         pass
     with open(cur_path, 'w') as f:
         f.write(output)
-    if tankname != 'all_tanks' and tankname not in insert_str:
+    if tankname != "all_tanks" and tankname not in insert_str:
         insert_str[tankname] = ("        " + tankname + "{\n          crosshair:t=\"" + filename + "\"\n" + settings.get_setting("preset") + "\n        }\n")
     return "Successfully created sight at %s " % cur_path
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Requesting all requirements and creating sight in output
     try:
         insert_str = dict[str, str]()
-        path = os.path.dirname(os.path.realpath('settings.json')) + '/UserSights/' + input('Tank name: ')
-        speed = int(input('Shell speed in m/s: '))
-        convergence = int(input('Convergence in meters: '))
-        zoom = float(input('Zoom: '))
-        sight_type = input('Sight type: ')
-        coord = list(map(float, input('Sight coordinates: ').split(',')))
+        path = os.path.dirname(os.path.realpath("settings.json")) + "/UserSights/" + input("Tank name: ")
+        speed = int(input("Shell speed in m/s: "))
+        convergence = int(input("Convergence in meters: "))
+        zoom = float(input("Zoom: "))
+        sight_type = input("Sight type: ")
+        coord = list(map(float, input("Sight coordinates: ").split(',')))
         try:
-            os.mkdir(os.path.dirname(os.path.realpath('settings.json')) + '/UserSights/')
+            os.mkdir(os.path.dirname(os.path.realpath("settings.json")) + "/UserSights/")
         except:
             pass
         print(generator(path, [speed], zoom, [sight_type], [coord], [convergence]))
         print(save_presets())
     except ValueError:
-        print('Wrong format string')
+        print("Wrong format string")
 
     input("\nPress enter to exit")
