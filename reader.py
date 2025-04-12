@@ -104,7 +104,7 @@ def reader(MODE, sheets=None, _print=print, _input=input):
     try:
         res = generator.save_presets()
     except:
-        res = "\nError saving resets!\n"
+        res = "\nError saving presets!\n"
     _output(res, 1)
     _output("Working directory was " + wt_path, 1)
     _output("Execution ended with " + str(sum(wrong_strings)) + " errors\n", 2)
