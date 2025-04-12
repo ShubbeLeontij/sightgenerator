@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 from defaults import *
-import json
 import os
 import re
 import json
 
 
 __author__ = "Shubbe Leontij"
-__version__ = "4.1"
+__version__ = "4.2"
 
 
 class Settings:
@@ -204,14 +203,21 @@ def clear_sight_bindings():
     return "Cleared sight bindings with presets"
 
 
-def save_presets():
+def save_presets() -> str:
+    home = os.path.expanduser("~")
     global_blk_path = ""
-    for f in os.scandir(settings.get_setting("savesPath") + "/Saves"):
-        if f.is_dir() and f.name.isnumeric():
-            global_blk_path = f.path + "/production/global.blk"
-            break
-    if global_blk_path == "":
-        return "Error"
+    if os.name == 'nt':
+        # Windows
+        for f in os.scandir(home + "\\Documents\\My Games\\WarThunder\\Saves"):
+            if f.is_dir() and f.name.isnumeric():
+                global_blk_path = f.path + "\\production\\global.blk"
+                break
+    else:
+        # Linux or mac
+        for f in os.scandir(home + "/.config/WarThunder/Saves/"):
+            if f.is_dir() and f.name.isnumeric():
+                global_blk_path = f.path + "/production/global.blk"
+                break
     with open(global_blk_path, "r", encoding="utf-8") as f:
         read_file = f.read()
     depth = 1
@@ -232,7 +238,7 @@ def save_presets():
             if read_file[start_idx:end_idx].find(tankname + '{') == -1:
                 f.write(insert_str[tankname])
         f.write(read_file[start_idx:])
-    return "\nPresets saved!"
+    return "\nPresets saved at " + global_blk_path + '\n'
 
 
 def generator(path, speed, zoom, sight_type, coord, convergence):

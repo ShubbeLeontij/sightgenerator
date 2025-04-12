@@ -12,7 +12,7 @@ from ttkthemes.themed_tk import ThemedTk
 from tkinter import filedialog
 
 __author__ = "Shubbe Leontij"
-__version__ = "4.1"
+__version__ = "4.2"
 
 
 class Root(ThemedTk):
@@ -238,7 +238,6 @@ def main_menu():
         with open("settings.json", 'r') as f:
             settings = json.load(f)
         settings["path"] = path_input.get()
-        settings["savesPath"] = saves_path_input.get()
         with open("settings.json", 'w') as f:
             json.dump(settings, f, indent=4)
         generator.settings = generator.Settings("settings.json")
@@ -299,9 +298,6 @@ def main_menu():
     root.create(ttk.Label, relx=0.02, rely=0.02, relwidth=0.30, relheight=0.08, text=LABELS[LANG]["path"])
     path_input = root.create(Input, relx=0.34, rely=0.02, relwidth=0.54, relheight=0.08, text=settings.get_setting("path"))
     root.create(ttk.Button, relx=0.89, rely=0.02, relwidth=0.08, relheight=0.08, text="...", command=lambda : path_input.set(filedialog.askdirectory()))
-    root.create(ttk.Label, relx=0.02, rely=0.11, relwidth=0.30, relheight=0.08, text=LABELS[LANG]["savesPath"])
-    saves_path_input = root.create(Input, relx=0.34, rely=0.11, relwidth=0.54, relheight=0.08, text=settings.get_setting("savesPath"))
-    root.create(ttk.Button, relx=0.89, rely=0.11, relwidth=0.08, relheight=0.08, text="...", command=lambda : saves_path_input.set(filedialog.askdirectory()))
 
 
 curPreset = ""

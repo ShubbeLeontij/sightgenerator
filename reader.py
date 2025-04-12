@@ -8,7 +8,7 @@ import openpyxl
 import argparse
 
 __author__ = "Shubbe Leontij"
-__version__ = "4.1"
+__version__ = "4.2"
 
 
 def reader(MODE, sheets=None, _print=print, _input=input):
@@ -101,7 +101,11 @@ def reader(MODE, sheets=None, _print=print, _input=input):
         _output(str(empty_rows) + " empty rows", 0)
         _output(str(wrong_strings[-1]) + " errors", 1)
 
-    _output(generator.save_presets(), 1)
+    try:
+        res = generator.save_presets()
+    except:
+        res = "\nError saving resets!\n"
+    _output(res, 1)
     _output("Working directory was " + wt_path, 1)
     _output("Execution ended with " + str(sum(wrong_strings)) + " errors\n", 2)
     if MODE <= 2:
