@@ -41,7 +41,7 @@ RANGEFINDERS_BLK = {
 }
 LABELS = {
     "EN": {
-        "title": "Sightgenerator GUI by Leontij",
+        "title": "Sightgenerator by Leontij",
         "aliases": "Aliases: ",
         "editSimCircles": ["EDIT SIM\nCIRCLES", "Circles helpful mostly for simulator gamemode. There is parallax mechanic in tank sim and to counter it, this program creates flight path of shell, so basically circles are distance markers."],
         "saveSettings": "SAVE SETTINGS AND\nEXIT TO MAIN MENU",
@@ -51,8 +51,8 @@ LABELS = {
         "smallDistList": ["Distance marks without number near it", "Narrow marks without number near it. Write integers (in meters) separated by a space. Creating two marks less than 20 meters apart may cause the sight to not be drawn."],
         "lineDistList": ["Distances by which the line is built", "More distances can be added to make the line smoother. Because of the difficulty in calculating this distance usually does not match what the game draws, set a higher number. Write integers (in meters) separated by a space."],
         "centralCircleSize": ["Central circle size:", "Dot in the middle of the screen, your crosshair"],
-        "loadPreset": "LOAD PRESET",
-        "fixThermals": "Fix light color\nin thermals",
+        "loadPreset": ["LOAD PRESET", "Presets you can make in WT sight settings menu. Once saved they are located at WarThunder/UserSights/tank_sight_presets"],
+        "fixThermals": ["Fix light color\nin thermals", "With this you can enable crosshair lighting while in thermals."],
         "lineSizeMult": ["Line size multiplier:", "Line size affects only how thick lines and distance lines."],
         "fontSizeMult": ["Font size multiplier:", "Font size affects on distance marks numbers, progress bars, circles, numbers and letters."],
         "distLength": "Game marker length:",
@@ -67,7 +67,7 @@ LABELS = {
         "textPos": ["Text Position\n(x, y)", "Relative offset of distance label."],
         "textSize": ["Text\nsize", "Distance label size."],
         "editCircles": "Edit Circles",
-        "changeSettings": "EDIT SIGHTS SETTINGS",
+        "changeSettings": "SIGHT SETTINGS",
         "run": ["RUN*", "Make sure that you set all the settings according to your preferences"],
         "clearBindings": "Clear Bindings",
         "path": ["Sights folder path", "Path where sights should\nbe created. For example\nC:\\Games\\War Thunder\nEmpty means project folder"],
@@ -83,7 +83,7 @@ LABELS = {
         "canvas": "Preview"
     },
     "RU": {
-        "title": "Sightgenerator GUI by Leontij",
+        "title": "Sightgenerator by Leontij",
         "aliases": "Псевдонимы: ",
         "editSimCircles": ["РЕДАКТИРОВАТЬ\nКРУГИ", "Круги полезны в основном для симуляторного режима, в нем есть механика параллакса, и чтобы компенсировать его, эта программа создает траекторию полета снаряда относительно прицела и пушки, так что в основном круги являются метками дистанции."],
         "saveSettings": "СОХРАНИТЬ НАСТРОЙКИ\nИ ВЫЙТИ В ГЛАВНОЕ МЕНЮ",
@@ -93,8 +93,8 @@ LABELS = {
         "smallDistList": ["Метки дистанции без обозначения", "Узкие метки без циферного обозначения. Указывать целые числа (в метрах) через пробел. Создание двух меток с разницей менее 20 метров может вызвать непрорисовку прицела."],
         "lineDistList": ["Дистанции, по которым строится линия", "Для большей плавности линии можно добавить больше дистанций. Из-за сложности в вычислениях обычно эта дистанция не совпадает с тем что рисует игра, указывайте с запасом. Указывать целые числа (в метрах) через пробел."],
         "centralCircleSize": ["Размер центрального круга:", "Точка в середине вашего экрана."],
-        "loadPreset": "ЗАГРУЗИТЬ ПРЕСЕТ",
-        "fixThermals": "Fix light color\nin thermals",
+        "loadPreset": ["ЗАГРУЗИТЬ КОНФИГУРАЦИЮ", "Конфигурации из меню настройки прицела WT. После сохраниения они находятся в WarThunder/UserSights/tank_sight_presets"],
+        "fixThermals": ["Исправление подсветки\nв тепловизоре", "С этим можно включать подсветку прицела в тепловизоре."],
         "lineSizeMult": ["Множитель толщины линий:","Размер линий влияет только на толщину линий и линий идущих от меток дистанций."],
         "fontSizeMult": ["Множитель размера текста:","Размер шрифта влияет на размер цифр у меток дистанций, прогресс-бары, круги, цифры и буквы."],
         "distLength": "Длина игровых меток:",
@@ -109,7 +109,7 @@ LABELS = {
         "textPos": ["Положение\nтекста (x, y)", "Относительное смещение подписи дистанции."],
         "textSize": ["Размер\nтекста", "Размер подписи дистанции."],
         "editCircles": "Редактировать круги",
-        "changeSettings": "НАСТРОИТЬ ПРИЦЕЛЫ",
+        "changeSettings": "НАСТРОЙКИ ПРИЦЕЛА",
         "run": ["ЗАПУСК*", "Удостоверьтесь что все настройки выставлены по вашим предпочтениям"],
         "clearBindings": "Очистить Привязку прицелов",
         "path": ["Путь до папки с прицелами", "Путь до папки, в которой будут\nсозданы прицелы. Например\nC:\\Games\\War Thunder\nПустое поле означает папку проекта"],

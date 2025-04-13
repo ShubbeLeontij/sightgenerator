@@ -12,7 +12,7 @@ from ttkthemes.themed_tk import ThemedTk
 from tkinter import filedialog
 
 __author__ = "Shubbe Leontij"
-__version__ = "4.2"
+__version__ = "4.3"
 
 
 class Root(ThemedTk):
@@ -244,14 +244,12 @@ def main_menu():
         output_text.print("Paths saved!\n")
 
     def clear_bindings():
-        save_paths()
         output_text.print(generator.clear_sight_bindings())
 
     # Create output frame with scrollbar
     root.clear()
     output_text = root.create(Output, relx=0.0, rely=0.5, relwidth=0.97, relheight=0.50, bg="black", fg="white")
-    scrollbar = root.create(ttk.Scrollbar, relx=0.97, rely=0.50, relwidth=0.03, relheight=0.50,
-                            command=output_text.yview)
+    scrollbar = root.create(ttk.Scrollbar, relx=0.97, rely=0.50, relwidth=0.03, relheight=0.50, command=output_text.yview)
     output_text["yscrollcommand"] = scrollbar.set
     output_text.clear()
 
@@ -268,32 +266,32 @@ def main_menu():
     for sheet_name in workbook.sheetnames:
         if sheet_name in ab_list:
             if not i.get():
-                root.create(ttk.Label, relx=0.40, rely=0.20, relwidth=0.10, relheight=0.04,
+                root.create(ttk.Label, relx=0.45, rely=0.15, relwidth=0.10, relheight=0.04,
                             text=LABELS[LANG]["abrb"]).bind("<Button-1>", lambda event: [[((flag.set(0) if i.get() else flag.set(1)) if flag["text"] in ab_list else 0) for flag in sheet_flags], i.set(not i.get())])
             i.set(i.get() + 1)
-            sheet_flags.append(root.create(Flag, relx=0.40, rely=0.20 + 0.05 * i.get(), text=sheet_name, default=1))
+            sheet_flags.append(root.create(Flag, relx=0.45, rely=0.15 + 0.05 * i.get(), text=sheet_name, default=1))
         elif sheet_name in sim_list:
             if not j.get():
-                root.create(ttk.Label, relx=0.52, rely=0.20, relwidth=0.10, relheight=0.04,
+                root.create(ttk.Label, relx=0.57, rely=0.15, relwidth=0.10, relheight=0.04,
                             text=LABELS[LANG]["sim"]).bind("<Button-1>", lambda event: [[((flag.set(0) if j.get() else flag.set(1)) if flag["text"] in sim_list else 0) for flag in sheet_flags], j.set(not j.get())])
             j.set(j.get() + 1)
-            sheet_flags.append(root.create(Flag, relx=0.52, rely=0.20 + 0.05 * j.get(), text=sheet_name, default=1))
+            sheet_flags.append(root.create(Flag, relx=0.57, rely=0.15 + 0.05 * j.get(), text=sheet_name, default=1))
         else:
             if not k.get():
-                root.create(ttk.Label, relx=0.64, rely=0.20, relwidth=0.10, relheight=0.04,
+                root.create(ttk.Label, relx=0.69, rely=0.15, relwidth=0.10, relheight=0.04,
                             text=LABELS[LANG]["other"]).bind("<Button-1>", lambda event: [[((flag.set(0) if k.get() else flag.set(1)) if flag["text"] not in ab_list + sim_list else 0) for flag in sheet_flags], k.set(not k.get())])
             k.set(k.get() + 1)
-            sheet_flags.append(root.create(Flag, relx=0.64, rely=0.20 + 0.05 * k.get(), text=sheet_name, default=1))
+            sheet_flags.append(root.create(Flag, relx=0.69, rely=0.15 + 0.05 * k.get(), text=sheet_name, default=1))
 
     # Create action buttons
     root.bind("<Return>", lambda event: run())
     root.create(ttk.Button, relx=0.02, rely=0.35, relwidth=0.17, relheight=0.14, command=run, text=LABELS[LANG]["run"])
-    root.create(ttk.Button, relx=0.02, rely=0.21, relwidth=0.36, relheight=0.08, command=settings_menu, text=LABELS[LANG]["changeSettings"])
+    root.create(ttk.Button, relx=0.02, rely=0.21, relwidth=0.41, relheight=0.08, command=settings_menu, text=LABELS[LANG]["changeSettings"])
 
     # root.create(ttk.Button, relx=0.83, rely=0.02, relwidth=0.15, relheight=0.17, command=save_path, text=LABELS[LANG]["Save"])
-    root.create(ttk.Button, relx=0.21, rely=0.31, relwidth=0.17, relheight=0.08, command=clear_bindings, text=LABELS[LANG]["clearBindings"])
-    root.create(ttk.Button, relx=0.21, rely=0.41, relwidth=0.17, relheight=0.08, command=clear, text=LABELS[LANG]["clear"])
-    root.create(ttk.Button, relx=0.80, rely=0.37, relwidth=0.17, relheight=0.08, command=change_language, text=LABELS[LANG]["changeLanguage"])
+    root.create(ttk.Button, relx=0.21, rely=0.31, relwidth=0.22, relheight=0.08, command=clear_bindings, text=LABELS[LANG]["clearBindings"])
+    root.create(ttk.Button, relx=0.21, rely=0.41, relwidth=0.22, relheight=0.08, command=clear, text=LABELS[LANG]["clear"])
+    root.create(ttk.Button, relx=0.75, rely=0.37, relwidth=0.22, relheight=0.08, command=change_language, text=LABELS[LANG]["changeLanguage"])
     settings = generator.Settings("settings.json")
     root.create(ttk.Label, relx=0.02, rely=0.02, relwidth=0.30, relheight=0.08, text=LABELS[LANG]["path"])
     path_input = root.create(Input, relx=0.34, rely=0.02, relwidth=0.54, relheight=0.08, text=settings.get_setting("path"))

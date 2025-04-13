@@ -1,15 +1,15 @@
 Installation
 ---------
 
-There are two installation methods, the first is simpler, and the second gives more freedom of customization (if GUI offers not enough, you can try editing the defaults.py file or other program files), but requires the user to have basic terminal skills for installation.
+There are two installation methods, the first is simpler, and the second gives more freedom of customization (if ui offers not enough, you can try editing the defaults.py file or other program files), but requires the user to have basic terminal skills for installation.
 1) Folder with exe file\
-Download zip https://github.com/ShubbeLeontij/sightgenerator-exe/archive/refs/heads/master.zip \
+Download zip https://github.com/ShubbeLeontij/sightgenerator/releases/download/4.2/sightgenerator-4.2.zip \
 You do not need to download anything additionally, however, at the first start, the antivirus may react - allow it to run the file.
 
 2) Python project\
 Clone the project https://github.com/ShubbeLeontij/sightgenerator, download and install python3 (if not already installed) https://www.python.org/downloads/, make sure "ADD Python to PATH" and "td/tk and IDLE" are checked.
-Install the required libraries (pip install -r requirements.txt).
-In the project folder, you need to run GUI.py.
+Install the required libraries (python3 -m pip install -r requirements.txt).
+In the project folder, you need to run ui.py.
 
 Settings
 ---------
@@ -34,7 +34,7 @@ Columns from left to right: tank name, convergence in meters, muzzle velocity in
 Launch
 ------
 
-In the main menu, there is a choice between three options for logging details, a field for entering the path to the game (don't forget to save) and columns for selecting sight types (pages from data.xlsx) in case you don't want to litter with unnecessary ones. Clicking on the top label will remove or add a tick to the entire column.
+In the main menu, there is a field for entering the path to the game and columns for selecting sight types (pages from data.xlsx) in case you don't want to litter with unnecessary ones. Clicking on the top label will remove or add a tick to the entire column.
 
 Next, to create sights, press RUN or Enter button on the keyboard.
 If everything went well (if you did not set the path to the game, do not forget to transfer the folder), press Alt + F9 in the game to update the sights and select the desired sight in the settings (the name contains a prefix depending on the presence of sight enlightenment, then the sight type and the name of the tank).
@@ -42,9 +42,4 @@ If everything went well (if you did not set the path to the game, do not forget 
 Contacts
 --------
 
-For all questions Discord https://discord.gg/qjvECBPUxq or Leontij#8405
-
-Support
----------
-
-If you like what I did https://www.donationalerts.com/r/leontij
+For all questions Discord https://discord.gg/qjvECBPUxq

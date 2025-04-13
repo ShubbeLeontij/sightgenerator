@@ -6,7 +6,7 @@ import json
 
 
 __author__ = "Shubbe Leontij"
-__version__ = "4.2"
+__version__ = "4.3"
 
 
 class Settings:
@@ -177,14 +177,22 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     return [start, distances_blk, lines_blk, circles_blk, text_blk]
 
 
+def get_global_blk_path() -> str:
+    home = os.path.expanduser("~")
+    if os.name == "nt":
+        # Windows
+        for f in os.scandir(home + "\\Documents\\My Games\\WarThunder\\Saves"):
+            if f.is_dir() and f.name.isnumeric():
+                return f.path + "\\production\\global.blk"
+    else:
+        # Linux or mac
+        for f in os.scandir(home + "/.config/WarThunder/Saves/"):
+            if f.is_dir() and f.name.isnumeric():
+                return f.path + "/production/global.blk"
+
+
 def clear_sight_bindings():
-    global_blk_path = ""
-    for f in os.scandir(settings.get_setting("savesPath") + "/Saves"):
-        if f.is_dir() and f.name.isnumeric():
-            global_blk_path = f.path + "/production/global.blk"
-            break
-    if global_blk_path == "":
-        return "Error"
+    global_blk_path = get_global_blk_path()
     with open(global_blk_path, "r", encoding="utf-8") as f:
         read_file = f.read()
     depth = 1
@@ -204,20 +212,7 @@ def clear_sight_bindings():
 
 
 def save_presets() -> str:
-    home = os.path.expanduser("~")
-    global_blk_path = ""
-    if os.name == 'nt':
-        # Windows
-        for f in os.scandir(home + "\\Documents\\My Games\\WarThunder\\Saves"):
-            if f.is_dir() and f.name.isnumeric():
-                global_blk_path = f.path + "\\production\\global.blk"
-                break
-    else:
-        # Linux or mac
-        for f in os.scandir(home + "/.config/WarThunder/Saves/"):
-            if f.is_dir() and f.name.isnumeric():
-                global_blk_path = f.path + "/production/global.blk"
-                break
+    global_blk_path = get_global_blk_path()
     with open(global_blk_path, "r", encoding="utf-8") as f:
         read_file = f.read()
     depth = 1
@@ -232,7 +227,7 @@ def save_presets() -> str:
             break
         end_idx += 1
 
-    with open(global_blk_path, "w") as f:
+    with open(global_blk_path, "w", encoding="utf-8") as f:
         f.write(read_file[:start_idx])
         for tankname in list(insert_str.keys()):
             if read_file[start_idx:end_idx].find(tankname + '{') == -1:
