@@ -3,6 +3,7 @@ from defaults import *
 import os
 import re
 import json
+import userpaths
 
 
 __author__ = "Shubbe Leontij"
@@ -181,14 +182,26 @@ def get_global_blk_path() -> str:
     home = os.path.expanduser("~")
     if os.name == "nt":
         # Windows
-        for f in os.scandir(home + "\\Documents\\My Games\\WarThunder\\Saves"):
-            if f.is_dir() and f.name.isnumeric():
-                return f.path + "\\production\\global.blk"
+        saves_folder = userpaths.get_my_documents() + "\\My Games\\WarThunder\\Saves"
     else:
         # Linux or mac
-        for f in os.scandir(home + "/.config/WarThunder/Saves/"):
-            if f.is_dir() and f.name.isnumeric():
-                return f.path + "/production/global.blk"
+        saves_folder = os.path.expanduser("~/.config/WarThunder/Saves/")
+    for f in os.scandir(saves_folder):
+        if f.is_dir() and f.name.isnumeric():
+            return f.path + "/production/global.blk"
+
+
+def increment_version():
+    global_blk_path = get_global_blk_path()
+    with open(global_blk_path, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    findstr = "version:i="
+    idx = lines[0].find(findstr)
+    if idx == -1:
+        return
+    new_version = int(lines[0][idx + len(findstr):]) + 1
+    with open(global_blk_path, "w", encoding="utf-8") as f:
+        f.write(findstr + str(new_version) + '\n' + "".join(lines[1:]))
 
 
 def clear_sight_bindings():

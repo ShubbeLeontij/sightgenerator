@@ -1,5 +1,5 @@
 # Some setting that I don't want to include in .json. Normally you don't want to change this.
-SIGHT_BLOCK_IDENTIFIER = "tankSightSettings{\n"
+SIGHT_BLOCK_IDENTIFIER = "tankSightSettings{"
 MIN_FONT_SIZE = 0.35
 BAD_ZOOM_THRESHOLD = 4.99
 RANGEFINDER_BAD = 0.66

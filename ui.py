@@ -245,6 +245,7 @@ def main_menu():
 
     def clear_bindings():
         output_text.print(generator.clear_sight_bindings())
+        generator.increment_version()
 
     # Create output frame with scrollbar
     root.clear()
