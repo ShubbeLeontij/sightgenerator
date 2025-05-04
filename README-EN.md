@@ -3,13 +3,13 @@ Installation
 
 There are two installation methods, the first is simpler, and the second gives more freedom of customization (if ui offers not enough, you can try editing the defaults.py file or other program files), but requires the user to have basic terminal skills for installation.
 1) Folder with exe file\
-Download zip https://github.com/ShubbeLeontij/sightgenerator/releases/download/4.2/sightgenerator-4.2.zip \
+Download [zip](https://github.com/ShubbeLeontij/sightgenerator/releases/download/4.3/sightgenerator.zip) \
 You do not need to download anything additionally, however, at the first start, the antivirus may react - allow it to run the file.
 
 2) Python project\
-Clone the project https://github.com/ShubbeLeontij/sightgenerator, download and install python3 (if not already installed) https://www.python.org/downloads/, make sure "ADD Python to PATH" and "td/tk and IDLE" are checked.
-Install the required libraries (python3 -m pip install -r requirements.txt).
-In the project folder, you need to run ui.py.
+Clone [the project](https://github.com/ShubbeLeontij/sightgenerator), download and install [python3](https://www.python.org/downloads/) (if not already installed), make sure `ADD Python to PATH` and `td/tk and IDLE` are checked.
+Install the required libraries `python -m pip install -r requirements.txt`.
+In the project folder, you need to run `ui.py`.
 
 Settings
 ---------
@@ -31,6 +31,21 @@ After changing the settings, remember to press SAVE SETTINGS AND EXIT TO MAIN ME
 If you want to know what sight types the tank uses, you can open data.xlsx - a table based on which sights are built. Each line is a separate sight. For convenience, the data is divided into pages.
 Columns from left to right: tank name, convergence in meters, muzzle velocity in m/s, gunner's sight zoom (minimum), sight type, then data from AssetViewer related to the location of the sight relative to the barrel (zeros in case of no parallax).
 
+Presets 
+------- 
+
+The project supports presets created in the in-game sight editing menu. 
+After saving, they will be located in WarThunder/UserSights/tank_sight_presets/. 
+You can select a saved preset using the button in the settings menu - when launched it will be applied to tanks where no other sight with preset was selected. 
+Thus, when entering the game, all sights will be selected, you only need to go to the in-game menu if you need a different sight. 
+
+This is implemented by editing the global.blk file linked to your account. 
+It is located at ~/.config/WarThunder/Saves/account-id/production/ for Linux and MacOS or Documents/My Games/WarThunder/Saves/account-id/production/ for Windows. 
+If you have several account-id folders, delete all of them except the [account](https://api.thunderinsights.dk/docs#/users/get_user_direct_v1_users_direct__userid__get) to which you want to link the sight selection - when you log in to an account with a deleted Saves/account-id/ folder, it will be restored from the cloud. 
+Also, to avoid accidental changes and bugs from this project, it is recommended to make a backup of global.blk (or better the entire Saves folder) before launching the program.
+
+To clear sight preset bindings, use the Clear Bindings button in the main menu.
+
 Launch
 ------
 
@@ -42,4 +57,4 @@ If everything went well (if you did not set the path to the game, do not forget 
 Contacts
 --------
 
-For all questions Discord https://discord.gg/qjvECBPUxq
+For all questions [Discord](https://discord.gg/qjvECBPUxq)
