@@ -11,9 +11,6 @@ from tkinter import messagebox
 from ttkthemes.themed_tk import ThemedTk
 from tkinter import filedialog
 
-__author__ = "Shubbe Leontij"
-__version__ = "4.3"
-
 
 class Root(ThemedTk):
     """

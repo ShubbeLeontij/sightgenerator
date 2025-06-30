@@ -6,10 +6,6 @@ import json
 import userpaths
 
 
-__author__ = "Shubbe Leontij"
-__version__ = "4.3"
-
-
 class Settings:
     def __init__(self, settings_path):
         with open(settings_path, 'r') as f:
