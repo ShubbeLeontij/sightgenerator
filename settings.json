@@ -1,21 +1,21 @@
 {
-    "path": "A:\\Steam Games\\steamapps\\common\\War Thunder\\UserSights\\3\\UserSights",
-    "crosshairColor": "0, 0, 0, 255",
-    "crosshairLightColor": "220, 255, 0, 255",
-    "rangefinderProgressBarColor1": "0, 0, 255, 100",
-    "rangefinderProgressBarColor2": "255, 255, 255, 100",
+    "lang": "RU",
+    "path": "A:/Steam Games/steamapps/common/War Thunder/UserSights/3",
     "drawCentralLineVert": "no",
     "drawCentralLineHorz": "no",
     "crosshair": "drop",
-    "distLength": 0.01,
-    "lineSizeMult": 1.0,
-    "lineSizeMultSmallZoom": 1.3,
-    "fontSizeMult": 1.0,
+    "distLength": 0.007,
+    "lineSizeMult": 0.5,
+    "fontSizeMult": 0.7,
+    "lineSizeMultSmallZoom": 1.5,
     "fontSizeMultSmallZoom": 2.0,
     "rangefinderFontSizeMult": 1.0,
     "rangefinderFontSizeMultSmallZoom": 1.2,
     "centralCircleSizeSmallZoom": 7.0,
     "bracketsScaleSmallZoom": 2.0,
+    "rangefinderHorizontalScaleSmallZoom": 2.0,
+    "badZoomThreshold": 3.49,
+    "preset": "crosshairColor:c=0, 0, 0, 255\ncrosshairLightColor:c=255, 255, 0, 255\ncrosshairNvColor:c=255, 255, 255, 255\ncrosshairThermalColor:c=255, 255, 0, 255\nshotDistScaleOffset:i=0\n\nrangefinder{\n  visible:b=yes\n  textColor:c=0, 0, 0, 255\n  bgColor:c=0, 0, 0, 0\n  nightVisionTextColor:c=255, 255, 255, 255\n  nightVisionBgColor:c=0, 0, 0, 0\n  lightTextColor:c=255, 255, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  thermalTextColor:c=255, 255, 0, 255\n  thermalBgColor:c=0, 0, 0, 0\n  position:p2=985, 511.5\n  textSize:i=40\n  font:t=\"ils31\"\n  progressColor:c=0, 255, 0, 64\n  progressBackgroundColor:c=255, 255, 255, 64\n}\n\nturret{\n  visible:b=yes\n  color:c=0, 0, 0, 255\n  lightColor:c=255, 255, 0, 255\n  nvColor:c=255, 255, 255, 255\n  thermalColor:c=255, 255, 0, 255\n  position:p2=1388, 723.5\n}\n\nfov{\n  visible:b=yes\n  color:c=0, 0, 0, 255\n  lightColor:c=255, 255, 0, 255\n  nvColor:c=255, 255, 255, 255\n  thermalColor:c=255, 255, 0, 255\n}\n\ngunReady{\n  visible:b=yes\n  color:c=0, 0, 0, 255\n  lightColor:c=255, 255, 0, 255\n  nvColor:c=255, 255, 255, 255\n  thermalColor:c=255, 255, 0, 255\n  textSize:i=30\n  font:t=\"ils31\"\n  position:p2=864, 563\n  gunReadyMarkVisible:b=yes\n  gunReadyReloadCountdownVisible:b=yes\n}\n\nbulletType{\n  visible:b=yes\n  isShortName:b=yes\n  textColor:c=0, 0, 0, 255\n  bgColor:c=0, 0, 0, 0\n  nightVisionTextColor:c=255, 255, 255, 255\n  nightVisionBgColor:c=0, 0, 0, 0\n  lightTextColor:c=255, 255, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  thermalTextColor:c=255, 255, 0, 255\n  thermalBgColor:c=0, 0, 0, 0\n  position:p2=827, 495.5\n  textSize:i=30\n  font:t=\"hud\"\n}\n",
     "sightTypes": [
         {
             "names": [
@@ -432,14 +432,14 @@
             "small_dist_list": [],
             "circles": {},
             "line_dist_list": [],
-            "centralLines": "no",
+            "centralLines": "brackets",
             "centralCircleSize": 5.0
         },
         {
             "names": [
                 "AB_f"
             ],
-            "rangefinder": 1,
+            "rangefinder": 0,
             "right_dist_list": [
                 400,
                 1200,
@@ -465,7 +465,7 @@
             "names": [
                 "AB"
             ],
-            "rangefinder": 1,
+            "rangefinder": 0,
             "right_dist_list": [
                 200,
                 600,
@@ -497,7 +497,7 @@
             "names": [
                 "AB_s"
             ],
-            "rangefinder": 1,
+            "rangefinder": 0,
             "right_dist_list": [
                 100,
                 300,
@@ -560,7 +560,10 @@
             ],
             "small_dist_list": [],
             "circles": {},
-            "line_dist_list": [],
+            "line_dist_list": [
+                0,
+                4000
+            ],
             "centralLines": "brackets",
             "centralCircleSize": 5.0
         },
@@ -589,7 +592,10 @@
             ],
             "small_dist_list": [],
             "circles": {},
-            "line_dist_list": [],
+            "line_dist_list": [
+                0,
+                4000
+            ],
             "centralLines": "brackets",
             "centralCircleSize": 5.0
         },
@@ -634,11 +640,12 @@
             ],
             "small_dist_list": [],
             "circles": {},
-            "line_dist_list": [],
+            "line_dist_list": [
+                0,
+                4000
+            ],
             "centralLines": "brackets",
             "centralCircleSize": 5.0
         }
-    ],
-    "rangefinderHorizontalScaleSmallZoom": 2.0,
-    "badZoomThreshold": 3.49
+    ]
 }
