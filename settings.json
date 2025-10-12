@@ -1,19 +1,27 @@
 {
-    "lang": "EN",
-    "path": "",
+    "lang": "RU",
+    "path": "A:/Steam Games/steamapps/common/War Thunder/UserSights/3",
     "drawCentralLineVert": "no",
     "drawCentralLineHorz": "no",
-    "crosshair": "partial",
+    "crosshair": "drop",
     "distLength": 0.007,
-    "lineSizeMult": 0.7,
+    "lineSizeMult": 0.5,
     "fontSizeMult": 0.7,
-    "preset": "crosshairColor:c=220, 255, 0, 255\ncrosshairLightColor:c=0, 0, 0, 255\nshotDistScaleOffset:i=0\n\nrangefinder{\n  visible:b=yes\n  textColor:c=220, 255, 0, 255\n  bgColor:c=0, 0, 0, 0\n  lightTextColor:c=0, 0, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  position:p2=1000, 500\n  textSize:i=30\n  font:t=\"hud\"\n  progressColor:c=0, 255, 0, 64\n  progressBackgroundColor:c=255, 255, 255, 64\n}\n\ngunReady{\n  visible:b=yes\n  color:c=220, 255, 0, 255\n  lightColor:c=0, 0, 0, 255\n  textSize:i=30\n  font:t=\"hud\"\n  position:p2=1070, 500\n  gunReadyMarkVisible:b=no\n}\n\nbulletType{\n  visible:b=no\n  isShortName:b=no\n  textColor:c=0, 0, 0, 255\n  bgColor:c=0, 0, 0, 0\n  lightTextColor:c=0, 0, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  position:p2=700, 202\n  textSize:i=30\n  font:t=\"hud\"\n}\n",
+    "lineSizeMultSmallZoom": 1.5,
+    "fontSizeMultSmallZoom": 2.0,
+    "rangefinderFontSizeMult": 1.0,
+    "rangefinderFontSizeMultSmallZoom": 1.2,
+    "centralCircleSizeSmallZoom": 7.0,
+    "bracketsScaleSmallZoom": 2.0,
+    "rangefinderHorizontalScaleSmallZoom": 2.0,
+    "badZoomThreshold": 3.49,
+    "preset": "crosshairColor:c=0, 0, 0, 255\ncrosshairLightColor:c=255, 255, 0, 255\ncrosshairNvColor:c=255, 255, 255, 255\ncrosshairThermalColor:c=255, 255, 0, 255\nshotDistScaleOffset:i=0\n\nrangefinder{\n  visible:b=yes\n  textColor:c=0, 0, 0, 255\n  bgColor:c=0, 0, 0, 0\n  nightVisionTextColor:c=255, 255, 255, 255\n  nightVisionBgColor:c=0, 0, 0, 0\n  lightTextColor:c=255, 255, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  thermalTextColor:c=255, 255, 0, 255\n  thermalBgColor:c=0, 0, 0, 0\n  position:p2=985, 511.5\n  textSize:i=40\n  font:t=\"ils31\"\n  progressColor:c=0, 255, 0, 64\n  progressBackgroundColor:c=255, 255, 255, 64\n}\n\nturret{\n  visible:b=yes\n  color:c=0, 0, 0, 255\n  lightColor:c=255, 255, 0, 255\n  nvColor:c=255, 255, 255, 255\n  thermalColor:c=255, 255, 0, 255\n  position:p2=1388, 723.5\n}\n\nfov{\n  visible:b=yes\n  color:c=0, 0, 0, 255\n  lightColor:c=255, 255, 0, 255\n  nvColor:c=255, 255, 255, 255\n  thermalColor:c=255, 255, 0, 255\n}\n\ngunReady{\n  visible:b=yes\n  color:c=0, 0, 0, 255\n  lightColor:c=255, 255, 0, 255\n  nvColor:c=255, 255, 255, 255\n  thermalColor:c=255, 255, 0, 255\n  textSize:i=30\n  font:t=\"ils31\"\n  position:p2=864, 563\n  gunReadyMarkVisible:b=yes\n  gunReadyReloadCountdownVisible:b=yes\n}\n\nbulletType{\n  visible:b=yes\n  isShortName:b=yes\n  textColor:c=0, 0, 0, 255\n  bgColor:c=0, 0, 0, 0\n  nightVisionTextColor:c=255, 255, 255, 255\n  nightVisionBgColor:c=0, 0, 0, 0\n  lightTextColor:c=255, 255, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  thermalTextColor:c=255, 255, 0, 255\n  thermalBgColor:c=0, 0, 0, 0\n  position:p2=827, 495.5\n  textSize:i=30\n  font:t=\"hud\"\n}\n",
     "sightTypes": [
         {
             "names": [
                 "sim_LASER"
             ],
-            "rangefinder": 0,
+            "rangefinder": 1,
             "left_dist_list": [],
             "right_dist_list": [],
             "small_dist_list": [],
@@ -86,7 +94,7 @@
                 800
             ],
             "centralLines": "brackets",
-            "centralCircleSize": 2.0
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -187,7 +195,7 @@
                 4000
             ],
             "centralLines": "brackets",
-            "centralCircleSize": 2.5
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -294,7 +302,7 @@
                 4000
             ],
             "centralLines": "brackets",
-            "centralCircleSize": 2.5
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -412,7 +420,7 @@
                 4000
             ],
             "centralLines": "brackets",
-            "centralCircleSize": 3.0
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -424,8 +432,8 @@
             "small_dist_list": [],
             "circles": {},
             "line_dist_list": [],
-            "centralLines": "line{\nline:p4= 0, 400, 0, 2.5\nmove:b=no\nthousandth:b=yes\n}\n",
-            "centralCircleSize": 3.0
+            "centralLines": "brackets",
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -450,8 +458,8 @@
                 0,
                 4000
             ],
-            "centralLines": "standard",
-            "centralCircleSize": 3.0
+            "centralLines": "brackets",
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -482,8 +490,8 @@
                 0,
                 4000
             ],
-            "centralLines": "standard",
-            "centralCircleSize": 3.0
+            "centralLines": "brackets",
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -530,8 +538,8 @@
                 0,
                 4000
             ],
-            "centralLines": "standard",
-            "centralCircleSize": 3.0
+            "centralLines": "brackets",
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -556,8 +564,8 @@
                 0,
                 4000
             ],
-            "centralLines": "standard",
-            "centralCircleSize": 3.0
+            "centralLines": "brackets",
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -588,8 +596,8 @@
                 0,
                 4000
             ],
-            "centralLines": "standard",
-            "centralCircleSize": 3.0
+            "centralLines": "brackets",
+            "centralCircleSize": 5.0
         },
         {
             "names": [
@@ -636,8 +644,8 @@
                 0,
                 4000
             ],
-            "centralLines": "standard",
-            "centralCircleSize": 3.0
+            "centralLines": "brackets",
+            "centralCircleSize": 5.0
         }
     ]
 }

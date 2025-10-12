@@ -91,9 +91,9 @@ def reader(MODE, sheets=None, _print=print, _input=input):
                         speed_list[-1] *= 0.95
                 # Create sight using generator
                 _output(generator.generator(wt_path + row[0], speed_list, float(row[3]), type_list, coords, list(map(int, str(row[1]).split(';')))), 0)
-            except:  # If something went wrong
+            except Exception as e:  # If something went wrong
                 wrong_strings[-1] += 1
-                _output("Wrong string format. Sheet: " + sheet_name + " Row: " + str(row_num), 1)
+                _output("Wrong string format. Sheet: " + sheet_name + " Row: " + str(row_num) + ". Error: " + str(e), 1)
 
         _output(str(empty_rows) + " empty rows", 0)
         _output(str(wrong_strings[-1]) + " errors", 1)

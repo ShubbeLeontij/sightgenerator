@@ -1,7 +1,7 @@
 # Some setting that I don't want to include in .json. Normally you don't want to change this.
 SIGHT_BLOCK_IDENTIFIER = "tankSightSettings{"
 MIN_FONT_SIZE = 0.35
-BAD_ZOOM_THRESHOLD = 4.99
+BAD_ZOOM_THRESHOLD = 3.49
 RANGEFINDER_BAD = 0.66
 RANGEFINDER_GOOD = 0.45
 DIST_INDENT = 0.01
@@ -9,6 +9,7 @@ DIST_MULT = 0.66
 DIST_POINT = 2000
 ALL_TANKS_TOP = "matchExpClass {\nexp_tank:b = yes\nexp_heavy_tank:b = yes\nexp_tank_destroyer:b = yes\nexp_SPAA:b = yes\n}\n\n"
 PARTIAL_CROSSHAIR = "line{\nline:p4= 0, -2.5, 0, -400\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 2.5, 0, 400, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -2.5, 0, -400, 0\nmove:b=no\nthousandth:b=yes\n}\n"
+DROP_LINE_CROSSHAIR = "line{\nline:p4= 0, 0, 0, 400\nmove:b=no\nthousandth:b=yes\n}\n"
 BRACKETS_CENTRAL_LINES = "line{\nline:p4= 0.6, 0, 1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0, -1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, 0.6, 0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0.6, -0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\n"
 STANDARD_CENTRAL_LINES = "line{\nline:p4= -0.7, 0, -2, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.7, 0, 2, 0\nmove:b=no\nthousandth:b=yes\n}\n"
 START_BLK = "\nrangefinderTextScale:r=1.0\nrangefinderVerticalOffset:r=1.6\nrangefinderHorizontalOffset:r=55\nfontSizeMult:r=$fontSizeMult$\nlineSizeMult:r=$lineSizeMult$\ndrawCentralLineVert:b=$drawCentralLineVert$\ndrawCentralLineHorz:b=$drawCentralLineHorz$\ndrawDistanceCorrection:b=yes\ndistanceCorrectionPos:p2=-0.1, -0.05\ndrawSightMask:b=yes\ncrosshairDistHorSizeMain:p2=0, 0\ncrosshairHorVertSize:p2=0.5, 0.5\ncrosshairDistHorSizeAdditional:p2=0.007, 0.0025\nrangefinderUseThousandth:b=yes\ncrosshair_hor_ranges{}\n\n// ballistic range indicators\ndrawUpward:b = no\ndistancePos:p2 = $distancePos$,0\nmove:b = yes\ncrosshairDistHorSizeMain:p2 = 0,0\ntextPos:p2 = 0.010, 0\ntextAlign:i = 1\ntextShift:r = 0\ndrawAdditionalLines:b = no\ncrosshairDistHorSizeAdditional:p2 = 0.0,0.0\ndrawDistanceCorrection:b = no\n"
@@ -41,7 +42,7 @@ RANGEFINDERS_BLK = {
 }
 LABELS = {
     "EN": {
-        "title": "Sightgenerator by Leontij",
+        "title": "Sightgenerator by Leontij, mod by Ian",
         "aliases": "Aliases: ",
         "editSimCircles": ["EDIT SIM\nCIRCLES", "Circles helpful mostly for simulator gamemode. There is parallax mechanic in tank sim and to counter it, this program creates flight path of shell, so basically circles are distance markers."],
         "saveSettings": "SAVE SETTINGS AND\nEXIT TO MAIN MENU",
@@ -62,6 +63,22 @@ LABELS = {
         "noCrosshair": ["No lines", "Clear view, but might be offbeat."],
         "partialCrosshair": ["Partial lines", "Lines goes from edges, but does not touch middle of screen. Clearer view, has benefits of other variations."],
         "fullCrosshair": ["Full lines", "Continuous lines from right to left and from top to bottom. May interfere with the view, but gives better understanding of the positioning of the sight."],
+        "dropLineCrosshair": ["Vertical line", "Clear view, but with shell trajectory drop line."],
+        "sightType": "Sight Type:",
+        "noCentralCrosshair": "No central crosshair",
+        "standardCrosshair": "Standard crosshair",
+        "bracketsCrosshair": "Brackets",
+        "centralLines": "Central Lines",
+        "badZoomThreshold": "Bad zoom threshold:",
+        "smallZoomSettings": "Small Zoom Settings",
+        "basicSettings": "Basic Settings",
+        "lineSizeSmallZoom": "Line Size (Small Zoom)",
+        "fontSizeSmallZoom": "Font Size (Small Zoom)",
+        "rangefinderFontMult": "Rangefinder Font Mult",
+        "rangefinderFontSmall": "Rangefinder Font (Small)",
+        "centralCircleSmall": "Central Circle (Small)",
+        "bracketsScaleSmall": "Brackets Scale (Small)",
+        "rangefinderHScaleSmall": "Rangefinder H-Scale (Small)",
         "distance": ["Distance", "The distance at which the circle will be drawn. One integer in meters."],
         "size": ["Circle\nsize", "The size of the mark itself."],
         "textPos": ["Text Position\n(x, y)", "Relative offset of distance label."],
@@ -80,10 +97,11 @@ LABELS = {
         "areYouSure": "Are you sure you want to remove all sigths?",
         "preview": ["SIGHT PREVIEW", "If you have any questions, just test how it looks by this feature. Exact repetition not guaranteed, approximate result shown."],
         "changeLanguage": "Сменить язык",
-        "canvas": "Preview"
+        "canvas": "Preview",
+        "sightConfiguration": "Sight Configuration"
     },
     "RU": {
-        "title": "Sightgenerator by Leontij",
+        "title": "Sightgenerator by Leontij, mod by Ian",
         "aliases": "Псевдонимы: ",
         "editSimCircles": ["РЕДАКТИРОВАТЬ\nКРУГИ", "Круги полезны в основном для симуляторного режима, в нем есть механика параллакса, и чтобы компенсировать его, эта программа создает траекторию полета снаряда относительно прицела и пушки, так что в основном круги являются метками дистанции."],
         "saveSettings": "СОХРАНИТЬ НАСТРОЙКИ\nИ ВЫЙТИ В ГЛАВНОЕ МЕНЮ",
@@ -104,6 +122,22 @@ LABELS = {
         "noCrosshair": ["Без линий", "Минимум занятого пространства, но может быть непривычно."],
         "partialCrosshair": ["Частичные линии", "Линии идут от краёв, но не касаются центра экрана. Лучше видимость, есть плюсы от обоих вариантов."],
         "fullCrosshair": ["Сплошные линии", "Непрерывные линии справа налево и сверху вниз. Может мешать обзору, но даёт хорошее понимание позиционирования прицела."],
+        "dropLineCrosshair": ["Вертикальная линия", "Минимум занятого пространства, но с линией траектории падения снаряда."],
+        "sightType": "Тип прицела:",
+        "noCentralCrosshair": "Без центрального перекрестия",
+        "standardCrosshair": "Стандартное перекрестие", 
+        "bracketsCrosshair": "Скобочки",
+        "centralLines": "Центральные линии",
+        "badZoomThreshold": "Предел \"малого зума\":",
+        "smallZoomSettings": "Настройки малого зума",
+        "basicSettings": "Основные настройки",
+        "lineSizeSmallZoom": "Размер линий (м. зум)",
+        "fontSizeSmallZoom": "Размер шрифта (м. зум)",
+        "rangefinderFontMult": "Шрифт дальномера",
+        "rangefinderFontSmall": "Шрифт дальномера (м. зум)",
+        "centralCircleSmall": "Центр. круг (м. зум)",
+        "bracketsScaleSmall": "Масштаб скобок (м. зум)",
+        "rangefinderHScaleSmall": "Гориз. масштаб д-мера (м. зум)",
         "distance": ["Дистан-\nция", "Дистанция, на которой будет нарисован круг. Одно целое число метров."],
         "size": ["Размер\nкруга", "Размер самой метки."],
         "textPos": ["Положение\nтекста (x, y)", "Относительное смещение подписи дистанции."],
@@ -122,7 +156,8 @@ LABELS = {
         "areYouSure": "Вы уверены, что хотите удалить все прицелы?",
         "preview": ["ПРЕДПРОСМОТР", "Если у вас есть вопросы к работе какого-то из пунктов, просто нажмите эту кнопку и проверьте как оно будет выглядеть. Точное повторение не гарантировано, показан приблизительный результат."],
         "changeLanguage": "Change language",
-        "canvas": "Предпросмотр"
+        "canvas": "Предпросмотр",
+        "sightConfiguration": "Конфигурация прицела"
     }
 }
 ICON = ("iVBORw0KGgoAAAANSUhEUgAAAOAAAADhCAYAAADRcblEAAAhUXpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjarZtpch03sKX/YxW9BMwJL"

@@ -119,27 +119,35 @@ class Output(tk.Text):
         :param sep: separator between two texts
         :param end: ending after printing
         """
-        output_string = ""
-        for i in args:
-            if isinstance(i, int):
-                i = str(i)
-            elif not isinstance(i, str):
-                i = json.dumps(i)
-            output_string += sep + i
+        try:
+            output_string = ""
+            for i in args:
+                if isinstance(i, int):
+                    i = str(i)
+                elif not isinstance(i, str):
+                    i = json.dumps(i)
+                output_string += sep + i
 
-        self.config(state=tk.NORMAL)
-        self.insert(tk.END, output_string + end)
-        self.config(state=tk.DISABLED)
-        self.see(tk.END)
-        self.master.update()
+            self.config(state=tk.NORMAL)
+            self.insert(tk.END, output_string + end)
+            self.config(state=tk.DISABLED)
+            self.see(tk.END)
+            self.master.update()
+        except tk.TclError:
+            # Widget has been destroyed, ignore the error
+            pass
 
     def clear(self):
         """
         Function that clears whole output field.
         """
-        self.config(state=tk.NORMAL)
-        self.delete(1.0, tk.END)
-        self.config(state=tk.DISABLED)
+        try:
+            self.config(state=tk.NORMAL)
+            self.delete(1.0, tk.END)
+            self.config(state=tk.DISABLED)
+        except tk.TclError:
+            # Widget has been destroyed, ignore the error
+            pass
 
 
 class Input(ttk.Entry):
@@ -323,6 +331,14 @@ def settings_menu():
         settings["lineSizeMult"] = float(lineSizeMult.get())
         settings["fontSizeMult"] = float(fontSizeMult.get())
         settings["distLength"] = float(distLength.get())
+        settings["lineSizeMultSmallZoom"] = float(lineSizeMultSmallZoom.get())
+        settings["fontSizeMultSmallZoom"] = float(fontSizeMultSmallZoom.get())
+        settings["rangefinderFontSizeMult"] = float(rangefinderFontSizeMult.get())
+        settings["rangefinderFontSizeMultSmallZoom"] = float(rangefinderFontSizeMultSmallZoom.get())
+        settings["centralCircleSizeSmallZoom"] = float(centralCircleSizeSmallZoom.get())
+        settings["bracketsScaleSmallZoom"] = float(bracketsScaleSmallZoom.get())
+        settings["badZoomThreshold"] = float(badZoomThreshold.get())
+        settings["rangefinderHorizontalScaleSmallZoom"] = float(rangefinderHorizontalScaleSmallZoom.get())
         with open("settings.json", 'w') as f:
             json.dump(settings, f, indent=4)
         generator.settings = generator.Settings("settings.json")
@@ -359,6 +375,8 @@ def settings_menu():
             canvas.create_line(0, 100, 125, 100, fill=color, width=float(lineSizeMult.get()))
             canvas.create_line(175, 100, 300, 100, fill=color, width=float(lineSizeMult.get()))
             canvas.create_line(150, 0, 150, 75, fill=color, width=float(lineSizeMult.get()))
+        if settings["crosshair"] == "drop":
+            canvas.create_line(150, 100, 150, 300, fill=color, width=float(lineSizeMult.get()))
         if settings["drawCentralLineHorz"] == "yes":
             canvas.create_line(0, 100, 300, 100, fill=color, width=float(lineSizeMult.get()))
         if settings["drawCentralLineVert"] == "yes":
@@ -512,22 +530,23 @@ def settings_menu():
             if types_box.get() in s_type["names"]:
                 cur_type_index = settings["sightTypes"].index(s_type)
                 break
-        items["aliases_label"] = root.create(ttk.Label, relx=0.73, rely=0.02, relwidth=0.28, relheight=0.23, text=LABELS[LANG]["aliases"] + ", ".join(settings["sightTypes"][cur_type_index]["names"]), justify=tk.LEFT, anchor="nw", wraplength=170)
-        items["edit_button"] = root.create(ttk.Button, relx=0.52, rely=0.11, relwidth=0.20, relheight=0.11, text=LABELS[LANG]["editSimCircles"], command=edit_circles)
-        items["rangefinder"] = root.create(Flag, relx=0.52, rely=0.25, text=LABELS[LANG]["stadiametricRangefinder"], default=1 if settings["sightTypes"][cur_type_index]["rangefinder"] else 0)
+        items["aliases_label"] = root.create(ttk.Label, relx=0.66, rely=0.29, relwidth=0.31, relheight=0.04, text=LABELS[LANG]["aliases"] + ", ".join(settings["sightTypes"][cur_type_index]["names"]), justify=tk.LEFT, anchor="nw", wraplength=200)
+        items["edit_button"] = root.create(ttk.Button, relx=0.66, rely=0.34, relwidth=0.31, relheight=0.05, text=LABELS[LANG]["editSimCircles"], command=edit_circles)
+        items["rangefinder"] = root.create(Flag, relx=0.66, rely=0.40, text=LABELS[LANG]["stadiametricRangefinder"], default=1 if settings["sightTypes"][cur_type_index]["rangefinder"] else 0)
 
-        items["right_dist_list_label"] = root.create(ttk.Label, relx=0.52, rely=0.32, text=LABELS[LANG]["rightDistList"])
-        items["right_dist_list"] = root.create(Input, relx=0.52, rely=0.35, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["right_dist_list"])))
-        items["left_dist_list_label"] = root.create(ttk.Label, relx=0.52, rely=0.42, text=LABELS[LANG]["leftDistList"])
-        items["left_dist_list"] = root.create(Input, relx=0.52, rely=0.46, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["left_dist_list"])))
-        items["small_dist_list_label"] = root.create(ttk.Label, relx=0.52, rely=0.52, text=LABELS[LANG]["smallDistList"])
-        items["small_dist_list"] = root.create(Input, relx=0.52, rely=0.56, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["small_dist_list"])))
-        items["line_dist_list_label"] = root.create(ttk.Label, relx=0.52, rely=0.62, text=LABELS[LANG]["lineDistList"])
-        items["line_dist_list"] = root.create(Input, relx=0.52, rely=0.66, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["line_dist_list"])))
+        items["right_dist_list_label"] = root.create(ttk.Label, relx=0.66, rely=0.44, text=LABELS[LANG]["rightDistList"])
+        items["right_dist_list"] = root.create(Input, relx=0.66, rely=0.47, relwidth=0.31, relheight=0.05, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["right_dist_list"])))
+        items["left_dist_list_label"] = root.create(ttk.Label, relx=0.66, rely=0.53, text=LABELS[LANG]["leftDistList"])
+        items["left_dist_list"] = root.create(Input, relx=0.66, rely=0.56, relwidth=0.31, relheight=0.05, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["left_dist_list"])))
+        items["small_dist_list_label"] = root.create(ttk.Label, relx=0.66, rely=0.62, text=LABELS[LANG]["smallDistList"])
+        items["small_dist_list"] = root.create(Input, relx=0.66, rely=0.65, relwidth=0.31, relheight=0.05, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["small_dist_list"])))
+        items["line_dist_list_label"] = root.create(ttk.Label, relx=0.66, rely=0.71, text=LABELS[LANG]["lineDistList"])
+        items["line_dist_list"] = root.create(Input, relx=0.66, rely=0.74, relwidth=0.31, relheight=0.05, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["line_dist_list"])))
 
-        items["centralCircle_label"] = root.create(ttk.Label, relx=0.52, rely=0.75, text=LABELS[LANG]["centralCircleSize"])
-        items["centralCircleSize"] = root.create(Input, relx=0.85, rely=0.74, relwidth=0.07, relheight=0.06, text=settings["sightTypes"][cur_type_index]["centralCircleSize"])
-        central_lines_var = tk.IntVar()
+        items["centralCircle_label"] = root.create(ttk.Label, relx=0.66, rely=0.80, text=LABELS[LANG]["centralCircleSize"])
+        items["centralCircleSize"] = root.create(Input, relx=0.86, rely=0.80, relwidth=0.11, relheight=0.05, text=settings["sightTypes"][cur_type_index]["centralCircleSize"])
+        
+        # Update central lines variable based on sight type settings
         if settings["sightTypes"][cur_type_index]["centralLines"] == "brackets":
             central_lines_var.set(2)
         elif settings["sightTypes"][cur_type_index]["centralLines"] == "standard":
@@ -536,9 +555,6 @@ def settings_menu():
             central_lines_var.set(0)
         else:
             central_lines_var.set(-1)
-        root.create(ttk.Radiobutton, relx=0.52, rely=0.82, variable=central_lines_var, value=0, command=lambda: settings["sightTypes"][cur_type_index].__setitem__("centralLines", "no"), text=LABELS[LANG]["noLines"])
-        root.create(ttk.Radiobutton, relx=0.52, rely=0.87, variable=central_lines_var, value=1, command=lambda: settings["sightTypes"][cur_type_index].__setitem__("centralLines", "standard"), text=LABELS[LANG]["standardLines"])
-        root.create(ttk.Radiobutton, relx=0.52, rely=0.92, variable=central_lines_var, value=2, command=lambda: settings["sightTypes"][cur_type_index].__setitem__("centralLines", "brackets"), text=LABELS[LANG]["bracketsLines"])
 
     def no_crosshair():
         """
@@ -564,6 +580,22 @@ def settings_menu():
         settings["drawCentralLineHorz"] = "yes"
         settings["crosshair"] = ""
 
+    def drop_line_crosshair():
+        """
+        Function for saving crosshair setting.
+        """
+        settings["drawCentralLineVert"] = "no"
+        settings["drawCentralLineHorz"] = "no"
+        settings["crosshair"] = "drop"
+
+    def update_central_lines(line_type):
+        """
+        Function for updating central lines setting for current sight type.
+        """
+        global cur_type_index
+        if cur_type_index is not None and cur_type_index < len(settings["sightTypes"]):
+            settings["sightTypes"][cur_type_index]["centralLines"] = line_type
+
     def load_preset():
         global curPreset
         with open(filedialog.askopenfilename(), "r") as f:
@@ -572,39 +604,97 @@ def settings_menu():
 
     with open("settings.json", 'r') as f:
         settings = json.loads(f.read())
+    
+    # Initialize current type index
+    global cur_type_index
+    cur_type_index = 0
+    
     root.clear()
     root.bind("<Return>", lambda event: (save(), main_menu()))
-    root.create(ttk.Button, relx=0.02, rely=0.88, relwidth=0.35, relheight=0.10, command=lambda: (save(), main_menu()), text=LABELS[LANG]["saveSettings"])
-    root.create(ttk.Button, relx=0.02, rely=0.76, relwidth=0.35, relheight=0.10, command=preview, text=LABELS[LANG]["preview"])
+    # Top row - main action buttons
+    root.create(ttk.Button, relx=0.02, rely=0.02, relwidth=0.20, relheight=0.10, text=LABELS[LANG]["loadPreset"], command=load_preset)
+    root.create(ttk.Button, relx=0.24, rely=0.02, relwidth=0.15, relheight=0.10, command=preview, text=LABELS[LANG]["preview"])
+    root.create(ttk.Button, relx=0.41, rely=0.02, relwidth=0.30, relheight=0.10, command=lambda: (save(), main_menu()), text=LABELS[LANG]["saveSettings"])
+    fixThermals = root.create(Flag, relx=0.73, rely=0.02, text=LABELS[LANG]["fixThermals"])
+    
+    # Left column - Basic settings and crosshair types
+    root.create(ttk.Label, relx=0.02, rely=0.15, text="=== " + LABELS[LANG]["basicSettings"] + " ===", font=("TkDefaultFont", 10, "bold"))
+    root.create(ttk.Label, relx=0.02, rely=0.21, text=LABELS[LANG]["lineSizeMult"])
+    lineSizeMult = root.create(Input, relx=0.20, rely=0.21, relwidth=0.08, relheight=0.05, text=settings["lineSizeMult"])
+    root.create(ttk.Label, relx=0.02, rely=0.27, text=LABELS[LANG]["fontSizeMult"])
+    fontSizeMult = root.create(Input, relx=0.20, rely=0.27, relwidth=0.08, relheight=0.05, text=settings["fontSizeMult"])
+    root.create(ttk.Label, relx=0.02, rely=0.33, text=LABELS[LANG]["distLength"])
+    distLength = root.create(Input, relx=0.20, rely=0.33, relwidth=0.08, relheight=0.05, text=settings["distLength"])
+    root.create(ttk.Label, relx=0.02, rely=0.39, text=LABELS[LANG]["badZoomThreshold"])
+    badZoomThreshold = root.create(Input, relx=0.20, rely=0.39, relwidth=0.08, relheight=0.05, text=settings.get("badZoomThreshold", 3.49))
 
-    root.create(ttk.Button, relx=0.02, rely=0.02, relwidth=0.35, relheight=0.10, text=LABELS[LANG]["loadPreset"], command=load_preset)
-    fixThermals = root.create(Flag, relx=0.02, rely=0.15, text=LABELS[LANG]["fixThermals"])
-
-    root.create(ttk.Label, relx=0.02, rely=0.55, text=LABELS[LANG]["lineSizeMult"])
-    lineSizeMult = root.create(Input, relx=0.38, rely=0.54, relwidth=0.07, relheight=0.06, text=settings["lineSizeMult"])
-    root.create(ttk.Label, relx=0.02, rely=0.60, text=LABELS[LANG]["fontSizeMult"])
-    fontSizeMult = root.create(Input, relx=0.38, rely=0.59, relwidth=0.07, relheight=0.06, text=settings["fontSizeMult"])
-    root.create(ttk.Label, relx=0.02, rely=0.67, text=LABELS[LANG]["distLength"])
-    distLength = root.create(Input, relx=0.38, rely=0.66, relwidth=0.07, relheight=0.06, text=settings["distLength"])
-
+    # Vertical separator
+    root.create(ttk.Separator, relx=0.30, rely=0.14, relwidth=0.002, relheight=0.80, orient='vertical')
+    
+    # Central Lines (crosshair settings)
+    root.create(ttk.Label, relx=0.02, rely=0.45, text="=== " + LABELS[LANG]["centralLines"] + " ===", font=("TkDefaultFont", 10, "bold"))
+    
+    # Initialize variables for both crosshair and sight type central lines
     crosshair_var = tk.IntVar()
+    central_lines_var = tk.IntVar()
+    
+    # Set crosshair variable based on current settings
     if settings["drawCentralLineVert"] == "yes" and settings["drawCentralLineHorz"] == "yes":
-        crosshair_var.set(2)
+        crosshair_var.set(3)
     elif settings["crosshair"] == "partial":
+        crosshair_var.set(2)
+    elif settings["crosshair"] == "drop":
         crosshair_var.set(1)
     elif settings["crosshair"] == "" or settings["crosshair"] == "no" or settings["crosshair"] == "false":
         crosshair_var.set(0)
     else:
         crosshair_var.set(-1)
-    root.create(ttk.Radiobutton, relx=0.02, rely=0.33, variable=crosshair_var, value=0, command=no_crosshair,
+    
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.51, variable=crosshair_var, value=0, command=no_crosshair,
                 text=LABELS[LANG]["noCrosshair"])
-    root.create(ttk.Radiobutton, relx=0.02, rely=0.38, variable=crosshair_var, value=1, command=partial_crosshair,
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.55, variable=crosshair_var, value=1, command=drop_line_crosshair,
+                text=LABELS[LANG]["dropLineCrosshair"][0], 
+                msg=LABELS[LANG]["dropLineCrosshair"][1])
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.59, variable=crosshair_var, value=2, command=partial_crosshair,
                 text=LABELS[LANG]["partialCrosshair"])
-    root.create(ttk.Radiobutton, relx=0.02, rely=0.43, variable=crosshair_var, value=2, command=full_crosshair,
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.63, variable=crosshair_var, value=3, command=full_crosshair,
                 text=LABELS[LANG]["fullCrosshair"])
+    
+    # Sight Type Central Lines (below crosshair settings)
+    root.create(ttk.Label, relx=0.02, rely=0.68, text=LABELS[LANG]["sightType"], font=("TkDefaultFont", 9, "bold"))
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.72, variable=central_lines_var, value=0, command=lambda: update_central_lines("no"),
+                text=LABELS[LANG]["noCentralCrosshair"])
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.76, variable=central_lines_var, value=1, command=lambda: update_central_lines("standard"), 
+                text=LABELS[LANG]["standardCrosshair"])
+    root.create(ttk.Radiobutton, relx=0.02, rely=0.80, variable=central_lines_var, value=2, command=lambda: update_central_lines("brackets"),
+                text=LABELS[LANG]["bracketsCrosshair"])
+
+    # Middle column - Small zoom settings
+    root.create(ttk.Label, relx=0.33, rely=0.15, text="=== " + LABELS[LANG]["smallZoomSettings"] + " ===", font=("TkDefaultFont", 10, "bold"))
+    root.create(ttk.Label, relx=0.33, rely=0.21, text=LABELS[LANG]["lineSizeSmallZoom"])
+    lineSizeMultSmallZoom = root.create(Input, relx=0.53, rely=0.21, relwidth=0.08, relheight=0.05, text=settings.get("lineSizeMultSmallZoom", 1.3))
+    root.create(ttk.Label, relx=0.33, rely=0.28, text=LABELS[LANG]["fontSizeSmallZoom"])
+    fontSizeMultSmallZoom = root.create(Input, relx=0.53, rely=0.28, relwidth=0.08, relheight=0.05, text=settings.get("fontSizeMultSmallZoom", 2.0))
+    root.create(ttk.Label, relx=0.33, rely=0.35, text=LABELS[LANG]["rangefinderFontMult"])
+    rangefinderFontSizeMult = root.create(Input, relx=0.53, rely=0.35, relwidth=0.08, relheight=0.05, text=settings.get("rangefinderFontSizeMult", 1.0))
+    root.create(ttk.Label, relx=0.33, rely=0.42, text=LABELS[LANG]["rangefinderFontSmall"])
+    rangefinderFontSizeMultSmallZoom = root.create(Input, relx=0.53, rely=0.42, relwidth=0.08, relheight=0.05, text=settings.get("rangefinderFontSizeMultSmallZoom", 1.2))
+    root.create(ttk.Label, relx=0.33, rely=0.49, text=LABELS[LANG]["centralCircleSmall"])
+    centralCircleSizeSmallZoom = root.create(Input, relx=0.53, rely=0.49, relwidth=0.08, relheight=0.05, text=settings.get("centralCircleSizeSmallZoom", 7.0))
+    root.create(ttk.Label, relx=0.33, rely=0.56, text=LABELS[LANG]["bracketsScaleSmall"])
+    bracketsScaleSmallZoom = root.create(Input, relx=0.53, rely=0.56, relwidth=0.08, relheight=0.05, text=settings.get("bracketsScaleSmallZoom", 2.0))
+    root.create(ttk.Label, relx=0.33, rely=0.63, text=LABELS[LANG]["rangefinderHScaleSmall"])
+    rangefinderHorizontalScaleSmallZoom = root.create(Input, relx=0.53, rely=0.63, relwidth=0.08, relheight=0.05, text=settings.get("rangefinderHorizontalScaleSmallZoom", 1.0))
+    
+    # Vertical separator
+    root.create(ttk.Separator, relx=0.63, rely=0.14, relwidth=0.002, relheight=0.80, orient='vertical')
+
+    # Right column - Sight types and controls
+    root.create(ttk.Label, relx=0.66, rely=0.15, text="=== " + LABELS[LANG]["sightConfiguration"] + " ===", font=("TkDefaultFont", 10, "bold"))
+    root.create(ttk.Label, relx=0.66, rely=0.20, text=LABELS[LANG]["sightType"])
     sight_types = [s_type["names"][0] for s_type in settings["sightTypes"]]
     items = {}
-    types_box = root.create(ttk.Combobox, relx=0.52, rely=0.03, relwidth=0.20, relheight=0.06, values=sight_types,
+    types_box = root.create(ttk.Combobox, relx=0.66, rely=0.23, relwidth=0.31, relheight=0.05, values=sight_types,
                             state="readonly")
     types_box.set(sight_types[0])
     types_box.bind("<<ComboboxSelected>>", load_sight_type)
@@ -627,6 +717,6 @@ if __name__ == "__main__":
             LANG = "RU"
         else:
             LANG = "EN"
-    root = Root(theme="breeze", title=LABELS[LANG]["title"], geometry="650x500", icon=ICON)
+    root = Root(theme="breeze", title=LABELS[LANG]["title"], geometry="1000x650", icon=ICON)
     main_menu()
     root.mainloop()

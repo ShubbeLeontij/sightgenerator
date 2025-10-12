@@ -26,6 +26,35 @@ insert_str = dict[str, str]()
 settings = Settings("settings.json")
 
 
+def get_scaled_brackets(scale_factor):
+    """
+    Function that generates brackets with scaling.
+    :param scale_factor: float multiplier for bracket size
+    :return: str type generated brackets blk
+    """
+    # Original coordinates from BRACKETS_CENTRAL_LINES
+    lines = [
+        (0.6, 0, 1.6, 0),     # right horizontal
+        (-0.6, 0, -1.6, 0),   # left horizontal  
+        (-0.6, -0.6, -0.6, 0.6), # left vertical
+        (0.6, -0.6, 0.6, 0.6),   # right vertical
+        (0.6, 0.6, 0.3, 0.6),    # top right
+        (-0.6, 0.6, -0.3, 0.6),  # top left
+        (0.6, -0.6, 0.3, -0.6),  # bottom right
+        (-0.6, -0.6, -0.3, -0.6) # bottom left
+    ]
+    
+    brackets_blk = ""
+    for x1, y1, x2, y2 in lines:
+        scaled_x1 = x1 * scale_factor
+        scaled_y1 = y1 * scale_factor
+        scaled_x2 = x2 * scale_factor
+        scaled_y2 = y2 * scale_factor
+        brackets_blk += f"line{{\nline:p4= {scaled_x1}, {scaled_y1}, {scaled_x2}, {scaled_y2}\nmove:b=no\nthousandth:b=yes\n}}\n"
+    
+    return brackets_blk
+
+
 def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     """
     Function that creates sight layout.
@@ -93,16 +122,36 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     small_dist_list = s_type["small_dist_list"]
     circles_list = s_type["circles"]
     centralLines = s_type["centralLines"]
-    centralCircleSize = s_type["centralCircleSize"]
 
     # Replace other direct dictionary accesses with calls to settings.get_setting
     distLength = settings.get_setting("distLength")
     drawCentralLineVert = settings.get_setting("drawCentralLineVert")
     drawCentralLineHorz = settings.get_setting("drawCentralLineHorz")
     crosshair = settings.get_setting("crosshair")
-    fontSizeMult = max(settings.get_setting("fontSizeMult") * 0.2 * zoom, MIN_FONT_SIZE)
-    lineSizeMult = round(settings.get_setting("lineSizeMult") / settings.get_setting("fontSizeMult"), 2)
-    rangefinderFontSizeMult = round(1 / settings.get_setting("fontSizeMult"), 2)
+    
+    # Get configurable zoom threshold from settings
+    bad_zoom_threshold = settings.get_setting("badZoomThreshold") or BAD_ZOOM_THRESHOLD
+    
+    # Choose central circle size based on zoom level
+    small_zoom_circle_size = settings.get_setting("centralCircleSizeSmallZoom") or s_type["centralCircleSize"]
+    centralCircleSize = small_zoom_circle_size if zoom <= bad_zoom_threshold else s_type["centralCircleSize"]
+    
+    # Choose font size multiplier based on zoom level
+    small_zoom_font_mult = settings.get_setting("fontSizeMultSmallZoom") or settings.get_setting("fontSizeMult")
+    base_font_mult = small_zoom_font_mult if zoom <= bad_zoom_threshold else settings.get_setting("fontSizeMult")
+    fontSizeMult = max(base_font_mult * 0.2 * zoom, MIN_FONT_SIZE)
+    
+    # Choose line size multiplier based on zoom level
+    small_zoom_line_mult = settings.get_setting("lineSizeMultSmallZoom") or settings.get_setting("lineSizeMult")
+    base_line_mult = small_zoom_line_mult if zoom <= bad_zoom_threshold else settings.get_setting("lineSizeMult")
+    lineSizeMult = round(base_line_mult / base_font_mult, 2)
+    
+    # Choose rangefinder font size multiplier based on zoom level
+    rangefinder_small_zoom_font_mult = settings.get_setting("rangefinderFontSizeMultSmallZoom") or settings.get_setting("rangefinderFontSizeMult") or 1.0
+    rangefinder_base_font_mult = rangefinder_small_zoom_font_mult if zoom <= bad_zoom_threshold else (settings.get_setting("rangefinderFontSizeMult") or 1.0)
+    rangefinderTextScale = round(rangefinder_base_font_mult * (RANGEFINDER_BAD if zoom < bad_zoom_threshold else RANGEFINDER_GOOD), 2)
+    
+    rangefinderFontSizeMult = round(1 / base_font_mult, 2)
     isLeft = True if coord[1] < 0 else False
     distancePos = round(float(point(DIST_POINT).split(',')[0]) * -0.01, 4)
 
@@ -113,16 +162,70 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     rangefinder_lines = ""
     rangefinder_text = ""
 
+    # Function to scale rangefinder coordinates horizontally
+    def scale_rangefinder_horizontal(text_content, scale_factor):
+        """
+        Scale x-coordinates of rangefinder lines and text positions by the given factor.
+        Only affects x-coordinates, keeping y-coordinates unchanged.
+        """
+        if scale_factor == 1.0:
+            return text_content
+        
+        import re
+        
+        # Scale line coordinates: line:p4 = x1, y1, x2, y2
+        def replace_line_coords(match):
+            coords = match.group(1).split(',')
+            if len(coords) >= 4:
+                # Scale x1 and x2, keep y1 and y2 unchanged
+                x1 = float(coords[0].strip()) * scale_factor
+                y1 = float(coords[1].strip())
+                x2 = float(coords[2].strip()) * scale_factor  
+                y2 = float(coords[3].strip())
+                return f"line:p4 = {x1}, {y1}, {x2}, {y2}"
+            return match.group(0)
+        
+        # Scale text positions: pos:p2 = x, y
+        def replace_pos_coords(match):
+            coords = match.group(1).split(',')
+            if len(coords) >= 2:
+                # Scale x, keep y unchanged
+                x = float(coords[0].strip()) * scale_factor
+                y = float(coords[1].strip())
+                return f"pos:p2 = {x}, {y}"
+            return match.group(0)
+        
+        # Apply scaling to line coordinates
+        result = re.sub(r'line:p4\s*=\s*([^\n;]+)', replace_line_coords, text_content)
+        # Apply scaling to position coordinates - match only until end of line
+        result = re.sub(r'pos:p2\s*=\s*([^\n]+)', replace_pos_coords, result)
+        
+        return result
+
     # Load rangefinder depending on gamemode and zoom
     if rangefinder:
-        d = RANGEFINDERS_BLK["GoodZoom" if zoom > BAD_ZOOM_THRESHOLD else "BadZoom"]["Left" if isLeft else "Right"]
-        rangefinder_lines = d["Lines"].replace("$main$", (d["MainLine"] if crosshair == "" or crosshair == "no" or crosshair == "false" or crosshair == "empty" else ""))
-        rangefinder_text = d["Text"].replace("$size$", str(round(rangefinderFontSizeMult * (RANGEFINDER_BAD if zoom < BAD_ZOOM_THRESHOLD else RANGEFINDER_GOOD), 2)))
+        d = RANGEFINDERS_BLK["GoodZoom" if zoom > bad_zoom_threshold else "BadZoom"]["Left" if isLeft else "Right"]
+        rangefinder_lines = d["Lines"].replace('$main$', (d["MainLine"] if crosshair in ['', 'no', 'false', 'empty', 'drop'] else ''))
+        rangefinder_text = d["Text"].replace('$size$', str(rangefinderTextScale))
+        
+        # Apply horizontal scaling for small zoom
+        if zoom <= bad_zoom_threshold:
+            horizontal_scale = settings.get_setting("rangefinderHorizontalScaleSmallZoom") or 1.0
+            if horizontal_scale != 1.0:
+                rangefinder_lines = scale_rangefinder_horizontal(rangefinder_lines, horizontal_scale)
+                rangefinder_text = scale_rangefinder_horizontal(rangefinder_text, horizontal_scale)
 
     # Start settings
-    replacements = {"$drawCentralLineVert$": drawCentralLineVert, "$drawCentralLineHorz$": drawCentralLineHorz, "$fontSizeMult$": str(round(fontSizeMult, 2)), "$lineSizeMult$": str(round(lineSizeMult, 2)), "$distancePos$": str(distancePos)}
+    replacements = {
+        "$drawCentralLineVert$": drawCentralLineVert, 
+        "$drawCentralLineHorz$": drawCentralLineHorz, 
+        "$fontSizeMult$": str(round(fontSizeMult, 2)), 
+        "$lineSizeMult$": str(round(lineSizeMult, 2)), 
+        "$distancePos$": str(distancePos)
+    }
     rep = dict((re.escape(k), v) for k, v in replacements.items())
-    start = re.compile("|".join(rep.keys())).sub(lambda m: rep[re.escape(m.group(0))], START_BLK)
+    start_blk_with_rangefinder_scale = START_BLK.replace("rangefinderTextScale:r=1.0", f"rangefinderTextScale:r={rangefinderTextScale}")
+    start = re.compile("|".join(rep.keys())).sub(lambda m: rep[re.escape(m.group(0))], start_blk_with_rangefinder_scale)
 
     # Distances
     if isMain:
@@ -135,7 +238,7 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
                 distances_blk += crosshair_distance(dist, 0, "left" if isLeft else "right")
 
     # Lines
-    if len(line_dist_list) > 1:
+    if len(line_dist_list) > 1 and crosshair != "drop":
         points = [point(line_dist_list[0])]
         for dist in line_dist_list[1:]:
             points.append(point(dist))
@@ -144,15 +247,22 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
         if crosshair != "" and crosshair != "no" and crosshair != "false" and crosshair != "empty":
             if crosshair == "partial":
                 lines_blk += PARTIAL_CROSSHAIR
+            elif crosshair == "drop":
+                lines_blk += DROP_LINE_CROSSHAIR
             else:
                 lines_blk += crosshair
         if centralLines != "" and centralLines != "no" and centralLines != "false" and centralLines != "empty":
             if centralLines == "brackets":
-                lines_blk += BRACKETS_CENTRAL_LINES
+                # Apply bracket scaling for small zoom
+                brackets_scale = settings.get_setting("bracketsScaleSmallZoom") or 1.0
+                if zoom <= bad_zoom_threshold and brackets_scale != 1.0:
+                    lines_blk += get_scaled_brackets(brackets_scale)
+                else:
+                    lines_blk += BRACKETS_CENTRAL_LINES
             elif centralLines == "standard":
                 lines_blk += STANDARD_CENTRAL_LINES
             else:
-                centralLines += centralLines
+                lines_blk += centralLines
         lines_blk += rangefinder_lines
 
     # Circles
