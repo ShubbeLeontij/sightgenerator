@@ -174,35 +174,36 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     return [start, distances_blk, lines_blk, circles_blk, text_blk]
 
 
-def get_global_blk_path() -> str:
-    home = os.path.expanduser("~")
+def get_path() -> str:
     if os.name == "nt":
         # Windows
-        saves_folder = userpaths.get_my_documents() + "\\My Games\\WarThunder\\Saves"
+        saves_folder = userpaths.get_my_documents() + "\\My Games\\WarThunder\\Saves\\"
     else:
         # Linux or mac
         saves_folder = os.path.expanduser("~/.config/WarThunder/Saves/")
+    id = Settings("settings.json").get_setting("id")
+    if id != "":
+        return saves_folder + str(id) + "/production"
     for f in os.scandir(saves_folder):
         if f.is_dir() and f.name.isnumeric():
-            return f.path + "/production/global.blk"
+            return f.path + "/production"
+    raise Exception("Can not find UserSights location")
 
 
 def increment_version():
-    global_blk_path = get_global_blk_path()
-    with open(global_blk_path, "r", encoding="utf-8") as f:
+    with open(get_path() + "/global.blk", "r", encoding="utf-8") as f:
         lines = f.readlines()
     findstr = "version:i="
     idx = lines[0].find(findstr)
     if idx == -1:
         return
     new_version = int(lines[0][idx + len(findstr):]) + 1
-    with open(global_blk_path, "w", encoding="utf-8") as f:
+    with open(get_path() + "/global.blk", "w", encoding="utf-8") as f:
         f.write(findstr + str(new_version) + '\n' + "".join(lines[1:]))
 
 
 def clear_sight_bindings():
-    global_blk_path = get_global_blk_path()
-    with open(global_blk_path, "r", encoding="utf-8") as f:
+    with open(get_path() + "/global.blk", "r", encoding="utf-8") as f:
         read_file = f.read()
     depth = 1
     start_idx = read_file.find(SIGHT_BLOCK_IDENTIFIER) + len(SIGHT_BLOCK_IDENTIFIER)
@@ -215,14 +216,13 @@ def clear_sight_bindings():
         if depth <= 0:
             break
         end_idx += 1
-    with open(global_blk_path, "w", encoding="utf-8") as f:
+    with open(get_path() + "/global.blk", "w", encoding="utf-8") as f:
         f.write(read_file[:start_idx] + "      " + read_file[end_idx:])
     return "Cleared sight bindings with presets"
 
 
 def save_presets() -> str:
-    global_blk_path = get_global_blk_path()
-    with open(global_blk_path, "r", encoding="utf-8") as f:
+    with open(get_path() + "/global.blk", "r", encoding="utf-8") as f:
         read_file = f.read()
     depth = 1
     start_idx = read_file.find(SIGHT_BLOCK_IDENTIFIER) + len(SIGHT_BLOCK_IDENTIFIER)
@@ -236,19 +236,19 @@ def save_presets() -> str:
             break
         end_idx += 1
 
-    with open(global_blk_path, "w", encoding="utf-8") as f:
+    with open(get_path() + "/global.blk", "w", encoding="utf-8") as f:
         f.write(read_file[:start_idx])
         for tankname in list(insert_str.keys()):
             if read_file[start_idx:end_idx].find(tankname + '{') == -1:
                 f.write(insert_str[tankname])
         f.write(read_file[start_idx:])
-    return "\nPresets saved at " + global_blk_path + '\n'
+    return "\nPresets saved at " + get_path() + "/global.blk\n"
 
 
-def generator(path, speed, zoom, sight_type, coord, convergence):
+def generator(name, speed, zoom, sight_type, coord, convergence):
     """
     Function that creates sight .blk file.
-    :param path: path where sight should be created
+    :param name: tank name
     :param speed: list of shells' speed in m/s (int type)
     :param zoom: list of minimum zooms (float type)
     :param sight_type: list of sight types according to settings.json
@@ -261,36 +261,35 @@ def generator(path, speed, zoom, sight_type, coord, convergence):
         sight_list[2] += cur_sight_list[2]
         sight_list[3] += cur_sight_list[3]
         sight_list[4] += cur_sight_list[4]
-    tankname = path.rpartition('/')[2]
-    filename = '_'.join(sight_type) + '_' + tankname
-    cur_path = path + '/' + filename + ".blk"
-    output = (ALL_TANKS_TOP if tankname == "all_tanks" else "") + sight_list[0] + "\ncrosshair_distances{\n" + sight_list[1] + "}\n\ndrawLines{\n" + sight_list[2] + "}\n\ndrawCircles{\n" + sight_list[3] + "}\n\ndrawTexts{\n" + sight_list[4] + "}\n"
+    filename = '_'.join(sight_type) + '_' + name
+    folder = get_path() + "/UserSights/" + name
+    output = (ALL_TANKS_TOP if name == "all_tanks" else "") + sight_list[0] + "\ncrosshair_distances{\n" + sight_list[1] + "}\n\ndrawLines{\n" + sight_list[2] + "}\n\ndrawCircles{\n" + sight_list[3] + "}\n\ndrawTexts{\n" + sight_list[4] + "}\n"
     try:
-        os.mkdir(path)
+        os.mkdir(folder)
     except:
         pass
-    with open(cur_path, 'w') as f:
+    with open(folder + "/" + filename + ".blk", 'w') as f:
         f.write(output)
-    if tankname != "all_tanks" and tankname not in insert_str:
-        insert_str[tankname] = ("        " + tankname + "{\n          crosshair:t=\"" + filename + "\"\n" + settings.get_setting("preset") + "\n        }\n")
-    return "Successfully created sight at %s " % cur_path
+    if name != "all_tanks" and name not in insert_str:
+        insert_str[name] = ("        " + name + "{\n          crosshair:t=\"" + filename + "\"\n" + settings.get_setting("preset") + "\n        }\n")
+    return "Successfully created sight at %s " % (folder + "/" + filename + ".blk")
 
 
 if __name__ == "__main__":
     # Requesting all requirements and creating sight in output
     try:
         insert_str = dict[str, str]()
-        path = os.path.dirname(os.path.realpath("settings.json")) + "/UserSights/" + input("Tank name: ")
+        name = input("Tank name: ")
         speed = int(input("Shell speed in m/s: "))
         convergence = int(input("Convergence in meters: "))
         zoom = float(input("Zoom: "))
         sight_type = input("Sight type: ")
         coord = list(map(float, input("Sight coordinates: ").split(',')))
         try:
-            os.mkdir(os.path.dirname(os.path.realpath("settings.json")) + "/UserSights/")
+            os.mkdir(get_path() + "/UserSights/")
         except:
             pass
-        print(generator(path, [speed], zoom, [sight_type], [coord], [convergence]))
+        print(generator(name, [speed], zoom, [sight_type], [coord], [convergence]))
         print(save_presets())
     except ValueError:
         print("Wrong format string")

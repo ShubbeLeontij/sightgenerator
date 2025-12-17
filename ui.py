@@ -234,11 +234,10 @@ def main_menu():
         """
         with open("settings.json", 'r') as f:
             settings = json.load(f)
-        settings["path"] = path_input.get()
+        settings["id"] = id_input.get()
         with open("settings.json", 'w') as f:
             json.dump(settings, f, indent=4)
         generator.settings = generator.Settings("settings.json")
-        output_text.print("Paths saved!\n")
 
     def clear_bindings():
         output_text.print(generator.clear_sight_bindings())
@@ -290,11 +289,8 @@ def main_menu():
     root.create(ttk.Button, relx=0.21, rely=0.31, relwidth=0.22, relheight=0.08, command=clear_bindings, text=LABELS[LANG]["clearBindings"])
     root.create(ttk.Button, relx=0.21, rely=0.41, relwidth=0.22, relheight=0.08, command=clear, text=LABELS[LANG]["clear"])
     root.create(ttk.Button, relx=0.75, rely=0.37, relwidth=0.22, relheight=0.08, command=change_language, text=LABELS[LANG]["changeLanguage"])
-    settings = generator.Settings("settings.json")
-    root.create(ttk.Label, relx=0.02, rely=0.02, relwidth=0.30, relheight=0.08, text=LABELS[LANG]["path"])
-    path_input = root.create(Input, relx=0.34, rely=0.02, relwidth=0.54, relheight=0.08, text=settings.get_setting("path"))
-    root.create(ttk.Button, relx=0.89, rely=0.02, relwidth=0.08, relheight=0.08, text="...", command=lambda : path_input.set(filedialog.askdirectory()))
-
+    root.create(ttk.Label, relx=0.02, rely=0.02, relwidth=0.16, relheight=0.08, text=LABELS[LANG]["id"])
+    id_input = root.create(Input, relx=0.20, rely=0.02, relwidth=0.10, relheight=0.08, text=generator.Settings("settings.json").get_setting("id"))
 
 curPreset = ""
 
@@ -566,8 +562,10 @@ def settings_menu():
 
     def load_preset():
         global curPreset
-        with open(filedialog.askopenfilename(), "r") as f:
-            curPreset = "".join(f.readlines()[1:])
+        presetFile = filedialog.askopenfilename(initialdir=generator.get_path() + "/UserSights/tank_sight_presets/")
+        if presetFile:
+            with open(presetFile, "r") as f:
+                curPreset = "".join(f.readlines()[1:])
 
 
     with open("settings.json", 'r') as f:

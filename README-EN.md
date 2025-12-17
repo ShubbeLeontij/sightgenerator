@@ -3,7 +3,7 @@ Installation
 
 There are two installation methods, the first is simpler, and the second gives more freedom of customization (if ui offers not enough, you can try editing the defaults.py file or other program files), but requires the user to have basic terminal skills for installation.
 1) Folder with exe file\
-Download [zip](https://github.com/ShubbeLeontij/sightgenerator/releases/download/4.5/sightgenerator.zip) \
+Download [zip](https://github.com/ShubbeLeontij/sightgenerator/releases/download/5.0/sightgenerator.zip) \
 You do not need to download anything additionally, however, at the first start, the antivirus may react - allow it to run the file.
 
 2) Python project\
@@ -35,13 +35,12 @@ Presets
 ------- 
 
 The project supports presets created in the in-game sight editing menu. 
-After saving, they will be located in WarThunder/UserSights/tank_sight_presets/. 
 You can select a saved preset using the button in the settings menu - when launched it will be applied to tanks where no other sight with preset was selected. 
 Thus, when entering the game, all sights will be selected, you only need to go to the in-game menu if you need a different sight. 
 
 This is implemented by editing the global.blk file linked to your account. 
-It is located at ~/.config/WarThunder/Saves/account-id/production/ for Linux and MacOS or Documents/My Games/WarThunder/Saves/account-id/production/ for Windows. 
-If you have several account-id folders, delete all of them except the [account](https://api.thunderinsights.dk/docs#/users/get_user_direct_v1_users_direct__userid__get) to which you want to link the sight selection - when you log in to an account with a deleted Saves/account-id/ folder, it will be restored from the cloud. 
+It is located at ~/.config/WarThunder/Saves/account-id/production/ for Linux and MacOS or Documents/My Games/WarThunder/Saves/account-id/production/ for Windows.
+You can get your ID at https://store.gaijin.net/user.php.
 Also, to avoid accidental changes and bugs from this project, it is recommended to make a backup of global.blk (or better the entire Saves folder) before launching the program.
 
 To clear sight preset bindings, use the Clear Bindings button in the main menu.
@@ -49,10 +48,9 @@ To clear sight preset bindings, use the Clear Bindings button in the main menu.
 Launch
 ------
 
-In the main menu, there is a field for entering the path to the game and columns for selecting sight types (pages from data.xlsx) in case you don't want to litter with unnecessary ones. Clicking on the top label will remove or add a tick to the entire column.
-
-Next, to create sights, press RUN or Enter button on the keyboard.
-If everything went well (if you did not set the path to the game, do not forget to transfer the folder), press Alt + F9 in the game to update the sights and select the desired sight in the settings (the name contains a prefix depending on the presence of sight enlightenment, then the sight type and the name of the tank).
+In the main menu there are columns for selecting sight types (pages from data.xlsx) in case you don't want to litter with unnecessary ones.
+Clicking on the top label will remove or add a tick to the entire column.
+To create sights, press RUN or Enter button on the keyboard.
 
 Contacts
 --------

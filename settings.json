@@ -1,6 +1,6 @@
 {
-    "lang": "EN",
-    "path": "",
+    "lang": "RU",
+    "id": "",
     "drawCentralLineVert": "no",
     "drawCentralLineHorz": "no",
     "crosshair": "partial",
@@ -639,5 +639,6 @@
             "centralLines": "standard",
             "centralCircleSize": 3.0
         }
-    ]
+    ],
+    "path": ""
 }

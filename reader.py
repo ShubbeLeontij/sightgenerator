@@ -25,25 +25,12 @@ def reader(MODE, sheets=None, _print=print, _input=input):
         if MODE <= severity:
             _print(string)
 
-    # Loading path from json and making it correct
-    with open("settings.json", 'r') as f:
-        wt_path = json.load(f)["path"].replace('\\', '/')
-    if wt_path == "":
-        wt_path = os.path.dirname(os.path.realpath("settings.json")) + "/UserSights/"
-    else:
-        wt_path_list = wt_path.split('/')
-        wt_path = '/' if wt_path[0] == '/' else ""
-        for folder in wt_path_list:
-            if folder:
-                wt_path += folder + '/'
-        if not wt_path.endswith("/UserSights/"):
-            wt_path += "UserSights/"
     try:
-        os.mkdir(wt_path)
-        _output("Created folder " + wt_path, 1)
+        os.mkdir(generator.get_path() + "/UserSights")
+        _output("Created folder " + generator.get_path() + "/UserSights", 1)
     except:
         pass
-    _output("Writing in %s" % wt_path, 1)
+    _output("Writing in " + generator.get_path() + "/UserSights", 1)
 
     # Loading the table
     wrong_strings = []
@@ -90,7 +77,7 @@ def reader(MODE, sheets=None, _print=print, _input=input):
                     if type_list[i] in ["sim_HEAT", "sim_HE"]:
                         speed_list[-1] *= 0.95
                 # Create sight using generator
-                _output(generator.generator(wt_path + row[0], speed_list, float(row[3]), type_list, coords, list(map(int, str(row[1]).split(';')))), 0)
+                _output(generator.generator(row[0], speed_list, float(row[3]), type_list, coords, list(map(int, str(row[1]).split(';')))), 0)
             except:  # If something went wrong
                 wrong_strings[-1] += 1
                 _output("Wrong string format. Sheet: " + sheet_name + " Row: " + str(row_num), 1)
@@ -104,7 +91,6 @@ def reader(MODE, sheets=None, _print=print, _input=input):
         generator.increment_version()
     except:
         _output("\nError saving presets!\n", 1)
-    _output("Working directory was " + wt_path, 1)
     _output("Execution ended with " + str(sum(wrong_strings)) + " errors\n", 2)
     if MODE <= 2:
         _input("Press Enter to exit")
@@ -120,29 +106,15 @@ def cleaner(MODE, remove_all_tanks=False, _print=print, _input=input):
         if MODE <= severity:
             _print(string)
 
-    # Loading path from json and making it correct
-    with open("settings.json", 'r') as f:
-        wt_path = json.load(f)["path"].replace('\\', '/')
-    if wt_path == "":
-        wt_path = os.path.dirname(os.path.realpath("settings.json")) + "/UserSights/"
-    else:
-        wt_path_list = wt_path.split('/')
-        wt_path = '/' if wt_path[0] == '/' else ""
-        for folder in wt_path_list:
-            if folder:
-                wt_path += folder + '/'
-        if not wt_path.endswith("/UserSights/"):
-            wt_path += "UserSights/"
-
-    _output("Deleting all from " + wt_path + '\n', 1)
-    for dir_name in os.listdir(wt_path):
+    _output("Deleting all from " + generator.get_path() + "/UserSights\n", 1)
+    for dir_name in os.listdir(generator.get_path() + "/UserSights"):
         if remove_all_tanks or dir_name != "all_tanks":
             try:
                 _output("Deleting " + dir_name, 0)
-                shutil.rmtree(os.path.join(wt_path, dir_name))
+                shutil.rmtree(os.path.join(generator.get_path() + "/UserSights", dir_name))
             except:
                 pass
-    _output("Deleted " + wt_path + '\n', 1)
+    _output("Deleted " + generator.get_path() + "/UserSights\n", 1)
 
 
 if __name__ == "__main__":
