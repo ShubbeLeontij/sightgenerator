@@ -1,6 +1,6 @@
 {
   "cn_al_khalid_1": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1770,
@@ -24,7 +24,7 @@
     }
   },
   "cn_cm11": {
-    "zoom": 8,
+    "zoom": 2.6,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -55,7 +55,7 @@
     }
   },
   "cn_cm_34": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -113,7 +113,7 @@
     }
   },
   "cn_is_2_1944": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 795,
@@ -215,7 +215,7 @@
     }
   },
   "cn_m1a2t": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1700,
@@ -246,7 +246,7 @@
     }
   },
   "cn_m24_chaffee": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -263,7 +263,7 @@
     }
   },
   "cn_m36": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 813,
@@ -314,7 +314,7 @@
     }
   },
   "cn_m41_a3_walker_bulldog": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_AP": {
       "velocity": 975,
@@ -331,7 +331,7 @@
     }
   },
   "cn_m48a1_patton_III": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1249,
@@ -362,7 +362,7 @@
     }
   },
   "cn_m4a1_76w_sherman": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -414,7 +414,6 @@
   },
   "cn_m55": {
     "zoom": 4,
-    "convergence": 9999,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -431,7 +430,7 @@
   },
   "cn_m5a1_stuart": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 883,
       "coords": [
@@ -505,7 +504,7 @@
     }
   },
   "cn_m_41d": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_LASER": {
       "velocity": 1480,
@@ -536,7 +535,7 @@
     }
   },
   "cn_mbt2000": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1730,
@@ -612,8 +611,8 @@
     }
   },
   "cn_object_211": {
-    "zoom": 4,
-    "convergence": 800,
+    "zoom": 3.5,
+    "convergence": 1000,
     "sim_AP": {
       "velocity": 792,
       "coords": [
@@ -660,7 +659,7 @@
     }
   },
   "cn_plz_05": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_AP": {
       "velocity": 933,
@@ -725,7 +724,7 @@
     }
   },
   "cn_pt_76": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 700,
@@ -742,7 +741,7 @@
     }
   },
   "cn_ptl_02": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1610,
@@ -767,7 +766,7 @@
   },
   "cn_ptz_89": {
     "zoom": 3.5,
-    "convergence": 1000,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 1740,
       "coords": [
@@ -790,7 +789,7 @@
     }
   },
   "cn_qn506": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1190,
@@ -814,8 +813,8 @@
     }
   },
   "cn_sdkfz_222_early": {
-    "zoom": 5,
-    "convergence": 1000,
+    "zoom": 1.9,
+    "convergence": 400,
     "RB": {
       "velocity": 800
     },
@@ -824,7 +823,7 @@
     }
   },
   "cn_su_100_1945": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 887,
@@ -841,7 +840,7 @@
     }
   },
   "cn_su_76m_1943": {
-    "zoom": 3.5,
+    "zoom": 1.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 655,
@@ -909,7 +908,7 @@
     }
   },
   "cn_t_34_85_d_5t": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -926,7 +925,7 @@
     }
   },
   "cn_t_34_85_zis_53_no215": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -944,7 +943,7 @@
   },
   "cn_t_62": {
     "zoom": 3.5,
-    "convergence": 800,
+    "convergence": 1200,
     "sim_APDS": {
       "velocity": 1615,
       "coords": [
@@ -960,7 +959,7 @@
     }
   },
   "cn_type_58": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -1009,7 +1008,7 @@
   },
   "cn_type_59d": {
     "zoom": 3.5,
-    "convergence": 1000,
+    "convergence": 800,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -1063,7 +1062,7 @@
     }
   },
   "cn_type_63_I": {
-    "zoom": 4,
+    "zoom": 3.5,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -1173,8 +1172,8 @@
     }
   },
   "cn_type_69_2g": {
-    "zoom": 6,
-    "convergence": 1000,
+    "zoom": 5.6,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 1500,
       "coords": [
@@ -1197,7 +1196,7 @@
     }
   },
   "cn_type_86": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 665,
@@ -1231,7 +1230,7 @@
     }
   },
   "cn_type_97_kai": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 808,
@@ -1248,7 +1247,7 @@
     }
   },
   "cn_vt_4": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1770,
@@ -1286,7 +1285,7 @@
     }
   },
   "cn_vt_4b": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1770,
@@ -1324,7 +1323,7 @@
     }
   },
   "cn_vt_5": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1530,
@@ -1355,7 +1354,7 @@
     }
   },
   "cn_wma_301": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -1379,7 +1378,7 @@
     }
   },
   "cn_wz_1001": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1810,
@@ -1411,7 +1410,6 @@
   },
   "cn_zbd_04a": {
     "zoom": 8,
-    "convergence": 9999,
     "sim_LASER": {
       "velocity": 1180,
       "coords": [
@@ -1434,8 +1432,8 @@
     }
   },
   "cn_zsl_92": {
-    "zoom": 1.7,
-    "convergence": 800,
+    "zoom": 1.6,
+    "convergence": 1000,
     "sim_AP": {
       "velocity": 1050,
       "coords": [
@@ -1445,7 +1443,7 @@
     }
   },
   "cn_ztl_11": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1530,
@@ -1515,7 +1513,7 @@
   },
   "cn_ztz_59a": {
     "zoom": 3.5,
-    "convergence": 1000,
+    "convergence": 800,
     "sim_LASER": {
       "velocity": 1432,
       "coords": [
@@ -1525,7 +1523,7 @@
     }
   },
   "cn_ztz_88a": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1500,
@@ -1556,8 +1554,8 @@
     }
   },
   "cn_ztz_88b": {
-    "zoom": 8,
-    "convergence": 1200,
+    "zoom": 7.2,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -1587,7 +1585,7 @@
     }
   },
   "cn_ztz_96": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1730,
@@ -1618,7 +1616,7 @@
     }
   },
   "cn_ztz_96a": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1730,
@@ -1649,7 +1647,7 @@
     }
   },
   "cn_ztz_96a_prot": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1730,
@@ -1673,7 +1671,7 @@
     }
   },
   "cn_ztz_99": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1730,
@@ -1704,7 +1702,7 @@
     }
   },
   "cn_ztz_99_w": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1730,
@@ -1735,7 +1733,7 @@
     }
   },
   "cn_ztz_99a": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1770,
@@ -1800,7 +1798,7 @@
     }
   },
   "fr_amd_35": {
-    "zoom": 1.9,
+    "zoom": 3.8,
     "convergence": 400,
     "sim_AP": {
       "velocity": 950,
@@ -1818,7 +1816,7 @@
   },
   "fr_amd_35_kwk39": {
     "zoom": 1.9,
-    "convergence": 600,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 835,
       "coords": [
@@ -1851,7 +1849,7 @@
     }
   },
   "fr_aml_90": {
-    "zoom": 6,
+    "zoom": 5.7,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 750,
@@ -1869,7 +1867,7 @@
   },
   "fr_amr_35_zt3": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 950,
       "coords": [
@@ -1885,7 +1883,7 @@
     }
   },
   "fr_amx_10p": {
-    "zoom": 2,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_APDS": {
       "velocity": 1150,
@@ -1896,7 +1894,7 @@
     }
   },
   "fr_amx_10rc": {
-    "zoom": 8.8,
+    "zoom": 10.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1400,
@@ -1927,7 +1925,7 @@
     }
   },
   "fr_amx_13_75": {
-    "zoom": 7.5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -1944,7 +1942,7 @@
     }
   },
   "fr_amx_13_75_ss11": {
-    "zoom": 7.5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -1961,7 +1959,7 @@
     }
   },
   "fr_amx_13_90": {
-    "zoom": 7.5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 950,
@@ -1978,7 +1976,7 @@
     }
   },
   "fr_amx_13_chaffee": {
-    "zoom": 5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -1995,7 +1993,7 @@
     }
   },
   "fr_amx_13_fl_11": {
-    "zoom": 5.8,
+    "zoom": 5.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -2012,7 +2010,7 @@
     }
   },
   "fr_amx_13_hot": {
-    "zoom": 7.5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -2029,7 +2027,7 @@
     }
   },
   "fr_amx_30": {
-    "zoom": 6.8,
+    "zoom": 6.9,
     "convergence": 1200,
     "sim_HEAT": {
       "velocity": 1000,
@@ -2046,7 +2044,7 @@
     }
   },
   "fr_amx_30_1972": {
-    "zoom": 6.8,
+    "zoom": 6.9,
     "convergence": 1200,
     "sim_HEAT": {
       "velocity": 1000,
@@ -2063,7 +2061,7 @@
     }
   },
   "fr_amx_30_auf_1": {
-    "zoom": 6.8,
+    "zoom": 6.9,
     "convergence": 1200,
     "sim_HE": {
       "velocity": 810,
@@ -2087,7 +2085,7 @@
     }
   },
   "fr_amx_30_b2": {
-    "zoom": 10,
+    "zoom": 10.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1525,
@@ -2118,7 +2116,7 @@
     }
   },
   "fr_amx_30_b2_brenus": {
-    "zoom": 10,
+    "zoom": 10.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1525,
@@ -2149,7 +2147,7 @@
     }
   },
   "fr_amx_30_super": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1525,
@@ -2173,7 +2171,7 @@
     }
   },
   "fr_amx_32": {
-    "zoom": 10,
+    "zoom": 10.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1650,
@@ -2204,7 +2202,7 @@
     }
   },
   "fr_amx_32_105": {
-    "zoom": 10,
+    "zoom": 10.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1535,
@@ -2235,7 +2233,7 @@
     }
   },
   "fr_amx_40": {
-    "zoom": 10,
+    "zoom": 10.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1650,
@@ -2266,7 +2264,7 @@
     }
   },
   "fr_amx_50": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -2284,7 +2282,6 @@
   },
   "fr_amx_50_1950": {
     "zoom": 7.9,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 930,
       "coords": [
@@ -2300,7 +2297,7 @@
     }
   },
   "fr_amx_50_foch": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1067,
@@ -2317,7 +2314,7 @@
     }
   },
   "fr_amx_50_surbaisse": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1067,
@@ -2334,7 +2331,7 @@
     }
   },
   "fr_amx_50_surblinde": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1067,
@@ -2368,7 +2365,7 @@
     }
   },
   "fr_amx_m4": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -2385,7 +2382,7 @@
     }
   },
   "fr_arl_44": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -2419,8 +2416,8 @@
     }
   },
   "fr_b1_bis": {
-    "zoom": 4,
-    "convergence": 800,
+    "zoom": 3.8,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 660,
       "coords": [
@@ -2436,8 +2433,8 @@
     }
   },
   "fr_b1_ter": {
-    "zoom": 4,
-    "convergence": 800,
+    "zoom": 3.8,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 660,
       "coords": [
@@ -2471,7 +2468,6 @@
   },
   "fr_cckw_353_bofors": {
     "zoom": 1.9,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 874,
       "coords": [
@@ -2487,8 +2483,8 @@
     }
   },
   "fr_char_2c": {
-    "zoom": 5,
-    "convergence": 1000,
+    "zoom": 3.8,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 500,
       "coords": [
@@ -2504,7 +2500,7 @@
     }
   },
   "fr_char_2c_bis": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 400,
     "RB_s": {
       "velocity": 240
@@ -2531,7 +2527,7 @@
     }
   },
   "fr_cv_9035_nl": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1400,
@@ -2623,7 +2619,7 @@
     }
   },
   "fr_jaguar_ebrc": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1510,
@@ -2647,7 +2643,7 @@
     }
   },
   "fr_leclerc_azur": {
-    "zoom": 4,
+    "zoom": 3.3,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1790,
@@ -2678,7 +2674,7 @@
     }
   },
   "fr_leclerc_s1": {
-    "zoom": 4,
+    "zoom": 3.3,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1790,
@@ -2709,7 +2705,7 @@
     }
   },
   "fr_leclerc_s2": {
-    "zoom": 4,
+    "zoom": 3.3,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1790,
@@ -2740,7 +2736,7 @@
     }
   },
   "fr_leclerc_sxxi": {
-    "zoom": 4,
+    "zoom": 3.3,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1790,
@@ -2778,7 +2774,7 @@
     }
   },
   "fr_leopard_2a4nl": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -2806,7 +2802,7 @@
     }
   },
   "fr_leopard_2a4nl_les": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -2837,7 +2833,7 @@
     }
   },
   "fr_leopard_2a5nl": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1670,
@@ -2868,7 +2864,7 @@
     }
   },
   "fr_leopard_2a6nl": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1750,
@@ -2899,7 +2895,7 @@
     }
   },
   "fr_lorraine_100": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -2916,7 +2912,7 @@
     }
   },
   "fr_lorraine_155": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_HE": {
       "velocity": 563,
@@ -2950,7 +2946,7 @@
     }
   },
   "fr_lorraine_40t": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -3001,7 +2997,7 @@
     }
   },
   "fr_m26_pershing": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 813,
@@ -3012,7 +3008,7 @@
     }
   },
   "fr_m36b2_cefeo": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -3087,7 +3083,7 @@
     }
   },
   "fr_m4a1_sherman_fl_10": {
-    "zoom": 7.5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -3128,7 +3124,7 @@
     }
   },
   "fr_m4a3e2_sherman_jumbo": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -3145,7 +3141,7 @@
     }
   },
   "fr_m4a4_cn_75_50": {
-    "zoom": 7.5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -3180,7 +3176,6 @@
   },
   "fr_m55": {
     "zoom": 4,
-    "convergence": 9999,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -3196,7 +3191,7 @@
     }
   },
   "fr_marder_clovis": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 800,
@@ -3213,8 +3208,8 @@
     }
   },
   "fr_mars_15": {
-    "zoom": 6.8,
-    "convergence": 1000,
+    "zoom": 6.9,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 1275,
       "coords": [
@@ -3245,7 +3240,7 @@
   },
   "fr_msc": {
     "zoom": 3.3,
-    "convergence": 1200,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1780,
       "coords": [
@@ -3275,7 +3270,7 @@
     }
   },
   "fr_panhard_ebr_1951": {
-    "zoom": 5.8,
+    "zoom": 5.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -3292,7 +3287,7 @@
     }
   },
   "fr_panhard_ebr_1954": {
-    "zoom": 7.5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -3309,7 +3304,7 @@
     }
   },
   "fr_panhard_ebr_1963": {
-    "zoom": 7.5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 750,
@@ -3343,7 +3338,7 @@
     }
   },
   "fr_renault_d2": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 400,
     "sim_AP": {
       "velocity": 660,
@@ -3378,7 +3373,7 @@
   },
   "fr_saint_chamond": {
     "zoom": 1.9,
-    "convergence": 1000,
+    "convergence": 800,
     "sim_AP_s": {
       "velocity": 552,
       "coords": [
@@ -3388,8 +3383,8 @@
     }
   },
   "fr_sk105_a2": {
-    "zoom": 6.8,
-    "convergence": 1000,
+    "zoom": 6.9,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 1475,
       "coords": [
@@ -3419,8 +3414,8 @@
     }
   },
   "fr_somua_s35": {
-    "zoom": 4,
-    "convergence": 800,
+    "zoom": 3.8,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 660,
       "coords": [
@@ -3453,7 +3448,7 @@
     }
   },
   "fr_somua_sm": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -3471,7 +3466,6 @@
   },
   "fr_tpk_641_vpc": {
     "zoom": 1.9,
-    "convergence": 9999,
     "RB": {
       "velocity": 1100
     },
@@ -3480,7 +3474,7 @@
     }
   },
   "fr_vbci": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_APDS": {
       "velocity": 1335,
@@ -3497,7 +3491,7 @@
     }
   },
   "fr_vbci2_mct30": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -3521,7 +3515,7 @@
     }
   },
   "fr_vextra_105": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1525,
@@ -3553,7 +3547,7 @@
   },
   "germ_a7v": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP_s": {
       "velocity": 472,
       "coords": [
@@ -3564,7 +3558,7 @@
   },
   "germ_amd_35_kwk39": {
     "zoom": 1.9,
-    "convergence": 600,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 835,
       "coords": [
@@ -3580,7 +3574,7 @@
     }
   },
   "germ_begleitpanzer_57": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_LASER": {
       "velocity": 950,
@@ -3604,8 +3598,8 @@
     }
   },
   "germ_beutepanzer_mk_iv": {
-    "zoom": 4,
-    "convergence": 800,
+    "zoom": 3.8,
+    "convergence": 400,
     "sim_AP_s": {
       "velocity": 472,
       "coords": [
@@ -3615,7 +3609,7 @@
     }
   },
   "germ_bmp_1_ddr": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 665,
@@ -3632,7 +3626,7 @@
     }
   },
   "germ_boxer_3105": {
-    "zoom": 3,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -3663,7 +3657,7 @@
     }
   },
   "germ_erprobungstrager_3_achs_turm": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -3688,7 +3682,6 @@
   },
   "germ_garford_putilov": {
     "zoom": 1.9,
-    "convergence": 600,
     "sim_HE_s": {
       "velocity": 365,
       "coords": [
@@ -3721,7 +3714,7 @@
     }
   },
   "germ_jgdpz_38t": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 750,
@@ -3738,7 +3731,7 @@
     }
   },
   "germ_jgdpz_IV_L48": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 750,
@@ -3755,7 +3748,7 @@
     }
   },
   "germ_kanonenjagdpanzer": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 800,
     "sim_HEAT_f": {
       "velocity": 1216,
@@ -3772,7 +3765,7 @@
     }
   },
   "germ_kpz_70": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1478,
@@ -3803,7 +3796,7 @@
     }
   },
   "germ_kpz_t72m1": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1760,
@@ -3885,7 +3878,7 @@
     }
   },
   "germ_le_kpz_m41": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1231,
@@ -3909,7 +3902,7 @@
     }
   },
   "germ_leopard_1a5": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -3940,7 +3933,7 @@
     }
   },
   "germ_leopard_2_pt14": {
-    "zoom": 9,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -3971,7 +3964,7 @@
     }
   },
   "germ_leopard_2a4": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -4002,7 +3995,7 @@
     }
   },
   "germ_leopard_2a4_pzbtl_123": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -4033,7 +4026,7 @@
     }
   },
   "germ_leopard_2a4m_can": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1585,
@@ -4057,7 +4050,7 @@
     }
   },
   "germ_leopard_2a5": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1670,
@@ -4088,7 +4081,7 @@
     }
   },
   "germ_leopard_2a5_pso": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1670,
@@ -4119,7 +4112,7 @@
     }
   },
   "germ_leopard_2a6": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1750,
@@ -4150,7 +4143,7 @@
     }
   },
   "germ_leopard_2a7v": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1750,
@@ -4181,7 +4174,7 @@
     }
   },
   "germ_leopard_2av": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -4212,7 +4205,7 @@
     }
   },
   "germ_leopard_2k": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -4243,7 +4236,7 @@
     }
   },
   "germ_leopard_2pl": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1660,
@@ -4274,7 +4267,7 @@
     }
   },
   "germ_leopard_I": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -4298,7 +4291,7 @@
     }
   },
   "germ_leopard_I_a1": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1200,
     "sim_LASER": {
       "velocity": 1455,
@@ -4322,7 +4315,7 @@
     }
   },
   "germ_leopard_a1a1_120": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1650,
@@ -4346,7 +4339,7 @@
     }
   },
   "germ_leopard_c2_mexas": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1200,
     "sim_LASER": {
       "velocity": 1455,
@@ -4378,7 +4371,6 @@
   },
   "germ_m109g": {
     "zoom": 4,
-    "convergence": 1000,
     "sim_HE": {
       "velocity": 563,
       "coords": [
@@ -4412,7 +4404,6 @@
   },
   "germ_m55": {
     "zoom": 4,
-    "convergence": 9999,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -4428,7 +4419,7 @@
     }
   },
   "germ_marder_1a1": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_AP_f": {
       "velocity": 1100,
@@ -4445,7 +4436,7 @@
     }
   },
   "germ_marder_1a3": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_AP_f": {
       "velocity": 1150,
@@ -4462,7 +4453,7 @@
     }
   },
   "germ_marder_clovis": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 800,
@@ -4479,7 +4470,7 @@
     }
   },
   "germ_marder_df_105": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_AP": {
       "velocity": 800,
@@ -4496,7 +4487,7 @@
     }
   },
   "germ_mkpz_m47": {
-    "zoom": 7.5,
+    "zoom": 6.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -4520,7 +4511,7 @@
     }
   },
   "germ_mkpz_m48a2c": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1249,
@@ -4551,7 +4542,7 @@
     }
   },
   "germ_mkpz_m48a2ga2": {
-    "zoom": 8,
+    "zoom": 6.0,
     "convergence": 1200,
     "sim_LASER": {
       "velocity": 1455,
@@ -4582,7 +4573,7 @@
     }
   },
   "germ_mkpz_super_m48": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1200,
     "sim_LASER": {
       "velocity": 1455,
@@ -4664,7 +4655,7 @@
     }
   },
   "germ_panzerbefelhswagen_jagdpanther": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -4698,7 +4689,7 @@
     }
   },
   "germ_panzerjager_nashorn": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -4715,7 +4706,7 @@
     }
   },
   "germ_panzerjager_panther": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -4732,7 +4723,7 @@
     }
   },
   "germ_panzerjager_tiger": {
-    "zoom": 10,
+    "zoom": 9.2,
     "convergence": 800,
     "sim_AP": {
       "velocity": 940,
@@ -4749,7 +4740,7 @@
     }
   },
   "germ_panzerjager_tiger_P_elefant": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -4766,7 +4757,7 @@
     }
   },
   "germ_panzerjager_tiger_P_ferdinand": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -4783,7 +4774,7 @@
     }
   },
   "germ_pz_IV_L70": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 935,
@@ -4800,7 +4791,7 @@
     }
   },
   "germ_pz_IV_L70_A": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 935,
@@ -4817,7 +4808,7 @@
     }
   },
   "germ_pzh_2000": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_HE_f": {
       "velocity": 935,
@@ -4876,7 +4867,7 @@
   },
   "germ_pzkpfw_38t_Aufklarungspanzer": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 780,
       "coords": [
@@ -5317,7 +5308,7 @@
     }
   },
   "germ_pzkpfw_Maus": {
-    "zoom": 10,
+    "zoom": 9.2,
     "convergence": 800,
     "RB": {
       "velocity": 930
@@ -5582,7 +5573,7 @@
     }
   },
   "germ_pzkpfw_e_100": {
-    "zoom": 10,
+    "zoom": 9.2,
     "convergence": 800,
     "RB": {
       "velocity": 930
@@ -5592,7 +5583,7 @@
     }
   },
   "germ_pzsfl_IVa_dickermax": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 822,
@@ -5609,7 +5600,7 @@
     }
   },
   "germ_pzsflk40_sturer_emil": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 880,
@@ -5626,7 +5617,7 @@
     }
   },
   "germ_radpanzer_90": {
-    "zoom": 4,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -5657,7 +5648,7 @@
     }
   },
   "germ_ru251": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_HEAT_f": {
       "velocity": 1216,
@@ -5674,7 +5665,7 @@
     }
   },
   "germ_schutzenpanzer_puma": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1405,
@@ -5698,7 +5689,7 @@
     }
   },
   "germ_schutzenpanzer_puma_vjtf": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1405,
@@ -5739,8 +5730,8 @@
     }
   },
   "germ_sdkfz_222": {
-    "zoom": 5,
-    "convergence": 1000,
+    "zoom": 1.9,
+    "convergence": 400,
     "RB": {
       "velocity": 800
     },
@@ -5800,7 +5791,7 @@
     }
   },
   "germ_sdkfz_234_3": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 400,
     "sim_HEAT_s": {
       "velocity": 450,
@@ -5817,7 +5808,7 @@
     }
   },
   "germ_sdkfz_234_4": {
-    "zoom": 5,
+    "zoom": 1.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -5868,8 +5859,8 @@
     }
   },
   "germ_sdkfz_251_9": {
-    "zoom": 5,
-    "convergence": 400,
+    "zoom": 4.7,
+    "convergence": 800,
     "sim_HEAT_s": {
       "velocity": 450,
       "coords": [
@@ -5886,7 +5877,6 @@
   },
   "germ_sdkfz_6_2_flak36": {
     "zoom": 1.9,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 770,
       "coords": [
@@ -5903,7 +5893,6 @@
   },
   "germ_sdkfz_9_flak37": {
     "zoom": 4,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 810,
       "coords": [
@@ -5919,8 +5908,8 @@
     }
   },
   "germ_sk105_a2": {
-    "zoom": 6.8,
-    "convergence": 1000,
+    "zoom": 6.9,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 1475,
       "coords": [
@@ -5950,8 +5939,8 @@
     }
   },
   "germ_sppz2_luchs_a2": {
-    "zoom": 4,
-    "convergence": 800,
+    "zoom": 4.0,
+    "convergence": 1000,
     "sim_APDS": {
       "velocity": 1150,
       "coords": [
@@ -5975,7 +5964,7 @@
   },
   "germ_spz_12_3": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 1000,
     "sim_HE_s": {
       "velocity": 503,
       "coords": [
@@ -5991,7 +5980,7 @@
     }
   },
   "germ_stug_III_ausf_A": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 400,
     "sim_AP_s": {
       "velocity": 450,
@@ -6008,7 +5997,7 @@
     }
   },
   "germ_stug_III_ausf_F": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 740,
@@ -6025,7 +6014,7 @@
     }
   },
   "germ_stug_III_ausf_G": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 750,
@@ -6042,7 +6031,7 @@
     }
   },
   "germ_stuh_III_ausf_G": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_HEAT_s": {
       "velocity": 495,
@@ -6134,8 +6123,8 @@
     }
   },
   "germ_th_400": {
-    "zoom": 8,
-    "convergence": 1200,
+    "zoom": 8.0,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -6165,7 +6154,7 @@
     }
   },
   "germ_th_800_bismark": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -6196,7 +6185,7 @@
     }
   },
   "germ_thyssen_henschel_tam": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -6227,7 +6216,7 @@
     }
   },
   "germ_thyssen_henschel_tam_2c": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -6258,8 +6247,8 @@
     }
   },
   "germ_thyssen_henschel_tam_2ip": {
-    "zoom": 8,
-    "convergence": 1200,
+    "zoom": 7.2,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -6282,7 +6271,7 @@
     }
   },
   "germ_vilkas": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -6324,7 +6313,6 @@
   },
   "germ_vsw_flak_41": {
     "zoom": 5,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 980,
       "coords": [
@@ -6340,7 +6328,7 @@
     }
   },
   "germ_waffentrager_krupp_steyr": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -6357,8 +6345,8 @@
     }
   },
   "germ_wiesel_1_mk20": {
-    "zoom": 1.9,
-    "convergence": 800,
+    "zoom": 2.0,
+    "convergence": 1000,
     "sim_APDS": {
       "velocity": 1300,
       "coords": [
@@ -6374,7 +6362,7 @@
     }
   },
   "il_aml_90": {
-    "zoom": 6,
+    "zoom": 5.7,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 750,
@@ -6391,7 +6379,7 @@
     }
   },
   "il_amx_13_75": {
-    "zoom": 7.5,
+    "zoom": 6.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -6408,7 +6396,7 @@
     }
   },
   "il_centurion_mk_5_shot": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1430,
@@ -6432,8 +6420,8 @@
     }
   },
   "il_centurion_shot_kal_alef": {
-    "zoom": 6,
-    "convergence": 1200,
+    "zoom": 5.6,
+    "convergence": 1000,
     "sim_APDS": {
       "velocity": 1426,
       "coords": [
@@ -6456,7 +6444,7 @@
     }
   },
   "il_centurion_shot_kal_d": {
-    "zoom": 4.9,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -6480,7 +6468,7 @@
     }
   },
   "il_centurion_shot_kal_gimel": {
-    "zoom": 4.9,
+    "zoom": 5.6,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -6512,7 +6500,6 @@
   },
   "il_m109": {
     "zoom": 4,
-    "convergence": 1000,
     "sim_HE": {
       "velocity": 563,
       "coords": [
@@ -6529,7 +6516,6 @@
   },
   "il_m109a1": {
     "zoom": 4,
-    "convergence": 1000,
     "sim_HE": {
       "velocity": 684,
       "coords": [
@@ -6545,7 +6531,7 @@
     }
   },
   "il_m113_hvms": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1000,
     "sim_APDS": {
       "velocity": 1620,
@@ -6563,7 +6549,6 @@
   },
   "il_m163_vulcan": {
     "zoom": 1.9,
-    "convergence": 800,
     "sim_AP": {
       "velocity": 1030,
       "coords": [
@@ -6579,7 +6564,7 @@
     }
   },
   "il_m48a1_patton_III": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1249,
@@ -6610,7 +6595,7 @@
     }
   },
   "il_m_51": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 800,
@@ -6627,7 +6612,7 @@
     }
   },
   "il_m_51_w": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 800,
@@ -6645,7 +6630,6 @@
   },
   "il_machbet": {
     "zoom": 1.9,
-    "convergence": 800,
     "sim_AP": {
       "velocity": 1030,
       "coords": [
@@ -6661,7 +6645,7 @@
     }
   },
   "il_magach_2": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1249,
@@ -6692,7 +6676,7 @@
     }
   },
   "il_magach_3": {
-    "zoom": 8,
+    "zoom": 6.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -6716,7 +6700,7 @@
     }
   },
   "il_magach_3_idf": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -6740,7 +6724,7 @@
     }
   },
   "il_magach_5": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -6764,7 +6748,7 @@
     }
   },
   "il_magach_6": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -6788,7 +6772,7 @@
     }
   },
   "il_magach_6_rocket": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1455,
@@ -6819,7 +6803,7 @@
     }
   },
   "il_magach_6a": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -6843,7 +6827,7 @@
     }
   },
   "il_magach_6b": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1455,
@@ -6867,8 +6851,8 @@
     }
   },
   "il_magach_6b_gal": {
-    "zoom": 6,
-    "convergence": 1200,
+    "zoom": 6.0,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -6898,7 +6882,7 @@
     }
   },
   "il_magach_6b_gal_batash": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -6929,7 +6913,7 @@
     }
   },
   "il_magach_6c": {
-    "zoom": 5,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -6967,8 +6951,8 @@
     }
   },
   "il_magach_6m": {
-    "zoom": 8,
-    "convergence": 1200,
+    "zoom": 7.4,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -6998,7 +6982,7 @@
     }
   },
   "il_magach_6r": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1455,
@@ -7029,7 +7013,7 @@
     }
   },
   "il_magach_7c": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -7060,8 +7044,8 @@
     }
   },
   "il_merkava_mk_1": {
-    "zoom": 8,
-    "convergence": 1200,
+    "zoom": 7.2,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -7091,7 +7075,7 @@
     }
   },
   "il_merkava_mk_1b": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -7122,7 +7106,7 @@
     }
   },
   "il_merkava_mk_2b_early": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -7153,7 +7137,7 @@
     }
   },
   "il_merkava_mk_2d": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -7177,7 +7161,7 @@
     }
   },
   "il_merkava_mk_3_raam_segol": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1705,
@@ -7201,7 +7185,7 @@
     }
   },
   "il_merkava_mk_3b": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1705,
@@ -7232,7 +7216,7 @@
     }
   },
   "il_merkava_mk_3c": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1705,
@@ -7263,7 +7247,7 @@
     }
   },
   "il_merkava_mk_4_lic": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1680,
@@ -7294,7 +7278,7 @@
     }
   },
   "il_merkava_mk_4b": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1705,
@@ -7325,7 +7309,7 @@
     }
   },
   "il_merkava_mk_4m": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1680,
@@ -7356,7 +7340,7 @@
     }
   },
   "il_namer_rcws_30": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -7380,7 +7364,7 @@
     }
   },
   "il_namer_tsrikhon": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_APDS": {
       "velocity": 1480,
@@ -7404,7 +7388,7 @@
     }
   },
   "il_sabra_mk1": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1703,
@@ -7436,7 +7420,6 @@
   },
   "il_sholef": {
     "zoom": 4,
-    "convergence": 9999,
     "sim_HE": {
       "velocity": 897,
       "coords": [
@@ -7549,7 +7532,7 @@
   },
   "it_39m_csaba": {
     "zoom": 1.9,
-    "convergence": 600,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 762,
       "coords": [
@@ -7565,8 +7548,8 @@
     }
   },
   "it_40_43m_zrinyi_2": {
-    "zoom": 5,
-    "convergence": 600,
+    "zoom": 4.7,
+    "convergence": 800,
     "sim_HEAT_s": {
       "velocity": 444,
       "coords": [
@@ -7590,7 +7573,7 @@
   },
   "it_40m_turan_1": {
     "zoom": 1.9,
-    "convergence": 600,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 812,
       "coords": [
@@ -7607,7 +7590,7 @@
   },
   "it_41m_turan_2": {
     "zoom": 1.9,
-    "convergence": 600,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 400,
       "coords": [
@@ -7631,7 +7614,7 @@
   },
   "it_43m_turan_3": {
     "zoom": 1.9,
-    "convergence": 600,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 792,
       "coords": [
@@ -7647,7 +7630,7 @@
     }
   },
   "it_44m_zrinyi_1": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 770,
@@ -7705,7 +7688,7 @@
     }
   },
   "it_ariete_amv_pt1": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1670,
@@ -7736,7 +7719,7 @@
     }
   },
   "it_aubl_74_60_70m": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1620,
@@ -7753,7 +7736,7 @@
     }
   },
   "it_b1_centauro": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -7784,7 +7767,7 @@
     }
   },
   "it_b1_centauro_romor": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -7816,7 +7799,7 @@
   },
   "it_breda_52_autocannone": {
     "zoom": 1.9,
-    "convergence": 1000,
+    "convergence": 800,
     "sim_AP": {
       "velocity": 740,
       "coords": [
@@ -7832,8 +7815,8 @@
     }
   },
   "it_btr_80a_hungary": {
-    "zoom": 2,
-    "convergence": 800,
+    "zoom": 2.0,
+    "convergence": 1000,
     "sim_APDS": {
       "velocity": 1120,
       "coords": [
@@ -7862,7 +7845,7 @@
     }
   },
   "it_c13_t90": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1200,
     "sim_HEAT": {
       "velocity": 890,
@@ -7879,7 +7862,7 @@
     }
   },
   "it_c1_ariete": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1705,
@@ -7910,7 +7893,7 @@
     }
   },
   "it_c1_ariete_certezza": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1670,
@@ -7934,7 +7917,7 @@
     }
   },
   "it_c1_ariete_preserie": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -7965,7 +7948,7 @@
     }
   },
   "it_c1_ariete_pso": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1705,
@@ -7996,7 +7979,7 @@
     }
   },
   "it_centauro_mgs_120": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1705,
@@ -8027,7 +8010,7 @@
     }
   },
   "it_centauro_rgo_120": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1705,
@@ -8051,7 +8034,7 @@
     }
   },
   "it_dardo_vcc": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_APDS": {
       "velocity": 1385,
@@ -8085,7 +8068,7 @@
     }
   },
   "it_fiat_6616_cockerill": {
-    "zoom": 1.9,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 890,
@@ -8102,7 +8085,7 @@
     }
   },
   "it_freccia": {
-    "zoom": 2,
+    "zoom": 9.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1385,
@@ -8126,8 +8109,8 @@
     }
   },
   "it_freccia_hitfist_ows": {
-    "zoom": 9,
-    "convergence": 1200,
+    "zoom": 9.0,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
       "coords": [
@@ -8235,7 +8218,7 @@
     }
   },
   "it_leopard_1a2": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1455,
@@ -8259,7 +8242,7 @@
     }
   },
   "it_leopard_1a5": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -8290,7 +8273,7 @@
     }
   },
   "it_leopard_2a4": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -8301,7 +8284,7 @@
     }
   },
   "it_leopard_2a7_hungary": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1750,
@@ -8325,7 +8308,7 @@
     }
   },
   "it_leopard_bofors": {
-    "zoom": 4,
+    "zoom": 1.9,
     "convergence": 1000,
     "sim_AP": {
       "velocity": 1005,
@@ -8343,7 +8326,6 @@
   },
   "it_m109g": {
     "zoom": 4,
-    "convergence": 1000,
     "sim_HE": {
       "velocity": 563,
       "coords": [
@@ -8495,7 +8477,7 @@
     }
   },
   "it_m24_chaffee": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -8512,7 +8494,7 @@
     }
   },
   "it_m26_ariete": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 831,
@@ -8529,7 +8511,7 @@
     }
   },
   "it_m26a1_pershing": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -8546,7 +8528,7 @@
     }
   },
   "it_m36b1": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -8597,7 +8579,7 @@
     }
   },
   "it_m47_105": {
-    "zoom": 8,
+    "zoom": 6.8,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -8621,7 +8603,7 @@
     }
   },
   "it_m4a4_sherman": {
-    "zoom": 5,
+    "zoom": 1.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -8639,7 +8621,6 @@
   },
   "it_m55": {
     "zoom": 4,
-    "convergence": 9999,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -8655,7 +8636,7 @@
     }
   },
   "it_m60a1_ariete": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1426,
@@ -8679,7 +8660,7 @@
     }
   },
   "it_of_40_mk_1": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1200,
     "sim_LASER": {
       "velocity": 1478,
@@ -8710,8 +8691,8 @@
     }
   },
   "it_of_40_mk_2a": {
-    "zoom": 8,
-    "convergence": 1000,
+    "zoom": 7.0,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -8741,8 +8722,8 @@
     }
   },
   "it_of_40_mtca": {
-    "zoom": 8,
-    "convergence": 1000,
+    "zoom": 7.0,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -8766,7 +8747,6 @@
   },
   "it_otomatic": {
     "zoom": 8,
-    "convergence": 9999,
     "sim_LASER": {
       "velocity": 1580,
       "coords": [
@@ -8844,7 +8824,7 @@
     }
   },
   "it_pzh_2000_hu": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_HE_f": {
       "velocity": 935,
@@ -9117,7 +9097,7 @@
     }
   },
   "it_sherman_75_37": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -9134,7 +9114,7 @@
     }
   },
   "it_sherman_VII": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 883,
@@ -9151,7 +9131,7 @@
     }
   },
   "it_sherman_vc_firefly": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1203,
@@ -9175,7 +9155,7 @@
     }
   },
   "it_stug_III_ausf_G": {
-    "zoom": 5,
+    "zoom": 4.7,
     "convergence": 800,
     "sim_AP": {
       "velocity": 750,
@@ -9192,7 +9172,7 @@
     }
   },
   "it_t_72m1": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1760,
@@ -9220,7 +9200,7 @@
     }
   },
   "it_vbc_pt2": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1385,
@@ -9244,7 +9224,7 @@
     }
   },
   "it_vcc_80_hitfist_30": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -9268,7 +9248,7 @@
     }
   },
   "it_vcc_80_hitfist_60": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1620,
@@ -9292,7 +9272,7 @@
     }
   },
   "it_vrcc_centauro": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -9340,7 +9320,7 @@
     }
   },
   "jp_icv_ifv_prototype": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1480,
@@ -9364,7 +9344,7 @@
     }
   },
   "jp_icv_prototype": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -9389,7 +9369,6 @@
   },
   "jp_m163_vulcan": {
     "zoom": 1.9,
-    "convergence": 800,
     "sim_AP": {
       "velocity": 1030,
       "coords": [
@@ -9405,7 +9384,7 @@
     }
   },
   "jp_m24_chaffee": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -9422,7 +9401,7 @@
     }
   },
   "jp_m36b2_jgsdf": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -9439,7 +9418,7 @@
     }
   },
   "jp_m41_walker_bulldog": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1231,
@@ -9480,7 +9459,7 @@
     }
   },
   "jp_m47_patton_II": {
-    "zoom": 7.5,
+    "zoom": 6.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -9504,7 +9483,7 @@
     }
   },
   "jp_m4a3e8_76w_sherman": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -9624,7 +9603,7 @@
     }
   },
   "jp_st_a1": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -9648,7 +9627,7 @@
     }
   },
   "jp_st_a2": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -9672,7 +9651,7 @@
     }
   },
   "jp_st_a3": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -9696,8 +9675,8 @@
     }
   },
   "jp_st_b1": {
-    "zoom": 8,
-    "convergence": 800,
+    "zoom": 7.4,
+    "convergence": 1000,
     "sim_APDS": {
       "velocity": 1478,
       "coords": [
@@ -9714,7 +9693,6 @@
   },
   "jp_stingray": {
     "zoom": 7,
-    "convergence": 9999,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -9744,7 +9722,7 @@
     }
   },
   "jp_tkx_prot": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1780,
@@ -9775,7 +9753,7 @@
     }
   },
   "jp_type_10": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1780,
@@ -9806,7 +9784,7 @@
     }
   },
   "jp_type_10_prototype": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -9837,7 +9815,7 @@
     }
   },
   "jp_type_16": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1501,
@@ -9868,7 +9846,7 @@
     }
   },
   "jp_type_16_mcv_prot": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1501,
@@ -9899,7 +9877,7 @@
     }
   },
   "jp_type_16_mod": {
-    "zoom": 5,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1501,
@@ -9923,7 +9901,7 @@
     }
   },
   "jp_type_1_chi_he": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 808,
@@ -9940,7 +9918,7 @@
     }
   },
   "jp_type_1_chi_he_5th_regiment": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 808,
@@ -9957,7 +9935,7 @@
     }
   },
   "jp_type_2_ho_i": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP_s": {
       "velocity": 450,
@@ -9981,7 +9959,7 @@
     }
   },
   "jp_type_2_ka_mi": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 400,
     "sim_AP": {
       "velocity": 800,
@@ -9998,7 +9976,7 @@
     }
   },
   "jp_type_3_chi_nu": {
-    "zoom": 1.9,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 668,
@@ -10015,7 +9993,7 @@
     }
   },
   "jp_type_3_chi_nu_75cm_type_5": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 865,
@@ -10032,7 +10010,7 @@
     }
   },
   "jp_type_3_ho_ni_I": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 668,
@@ -10049,7 +10027,7 @@
     }
   },
   "jp_type_3_ho_ni_III": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 668,
@@ -10083,7 +10061,7 @@
     }
   },
   "jp_type_4_chi_to": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 865,
@@ -10100,7 +10078,7 @@
     }
   },
   "jp_type_4_chi_to_late": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 865,
@@ -10134,7 +10112,7 @@
     }
   },
   "jp_type_5_chi_ri": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 865,
@@ -10151,7 +10129,7 @@
     }
   },
   "jp_type_5_ho_ri_production": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -10168,7 +10146,7 @@
     }
   },
   "jp_type_5_ho_ri_prototype": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_AP": {
       "velocity": 916,
@@ -10185,7 +10163,7 @@
     }
   },
   "jp_type_5_na_to": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 830,
@@ -10202,8 +10180,8 @@
     }
   },
   "jp_type_60_sprg": {
-    "zoom": 5,
-    "convergence": 1000,
+    "zoom": 4.4,
+    "convergence": 800,
     "sim_HEAT_s": {
       "velocity": 503,
       "coords": [
@@ -10226,7 +10204,7 @@
     }
   },
   "jp_type_61": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -10250,7 +10228,7 @@
     }
   },
   "jp_type_61_mod": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -10274,7 +10252,7 @@
     }
   },
   "jp_type_74": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1501,
@@ -10305,7 +10283,7 @@
     }
   },
   "jp_type_74_c": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1478,
@@ -10336,7 +10314,7 @@
     }
   },
   "jp_type_74_f": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1501,
@@ -10367,7 +10345,7 @@
     }
   },
   "jp_type_74_mod_g_kai": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1501,
@@ -10391,7 +10369,7 @@
     }
   },
   "jp_type_74_red_star": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1478,
@@ -10423,7 +10401,6 @@
   },
   "jp_type_75": {
     "zoom": 8,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 720,
       "coords": [
@@ -10440,7 +10417,6 @@
   },
   "jp_type_87_rcv": {
     "zoom": 8,
-    "convergence": 9999,
     "sim_APDS": {
       "velocity": 1385,
       "coords": [
@@ -10457,7 +10433,6 @@
   },
   "jp_type_87_rcv_prot": {
     "zoom": 8,
-    "convergence": 9999,
     "sim_APDS": {
       "velocity": 1150,
       "coords": [
@@ -10480,7 +10455,7 @@
     }
   },
   "jp_type_89": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1400,
@@ -10505,7 +10480,7 @@
   },
   "jp_type_89b_i_go_otsu": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_HEAT_s": {
       "velocity": 380,
       "coords": [
@@ -10521,7 +10496,7 @@
     }
   },
   "jp_type_90": {
-    "zoom": 8,
+    "zoom": 8.8,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -10552,7 +10527,7 @@
     }
   },
   "jp_type_90b": {
-    "zoom": 8,
+    "zoom": 8.8,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -10583,7 +10558,7 @@
     }
   },
   "jp_type_90b_camo": {
-    "zoom": 8,
+    "zoom": 8.8,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -10608,7 +10583,6 @@
   },
   "jp_type_94": {
     "zoom": 1.9,
-    "convergence": 800,
     "sim_AP": {
       "velocity": 928,
       "coords": [
@@ -10692,7 +10666,7 @@
     }
   },
   "jp_type_97_kai": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 808,
@@ -10709,7 +10683,7 @@
     }
   },
   "jp_type_97_kai_td": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 808,
@@ -10761,7 +10735,6 @@
   },
   "jp_type_99": {
     "zoom": 8,
-    "convergence": 9999,
     "sim_HE": {
       "velocity": 940,
       "coords": [
@@ -10777,7 +10750,7 @@
     }
   },
   "sw_a_34_comet": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1120,
@@ -10794,8 +10767,8 @@
     }
   },
   "sw_bkan_1c": {
-    "zoom": 4,
-    "convergence": 800,
+    "zoom": 4.0,
+    "convergence": 1000,
     "sim_HE": {
       "velocity": 850,
       "coords": [
@@ -10811,8 +10784,8 @@
     }
   },
   "sw_bmp_2md": {
-    "zoom": 6,
-    "convergence": 1000,
+    "zoom": 5.6,
+    "convergence": 800,
     "sim_APDS": {
       "velocity": 1120,
       "coords": [
@@ -10900,7 +10873,7 @@
     }
   },
   "sw_cv_90105_tml": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -10924,7 +10897,7 @@
     }
   },
   "sw_cv_90120": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1740,
@@ -10955,8 +10928,8 @@
     }
   },
   "sw_cv_9030_fin": {
-    "zoom": 8,
-    "convergence": 1200,
+    "zoom": 7.2,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
       "coords": [
@@ -10979,7 +10952,7 @@
     }
   },
   "sw_cv_9035_dk": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1400,
@@ -11003,7 +10976,7 @@
     }
   },
   "sw_cv_90_mk4": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_APDS": {
       "velocity": 1480,
@@ -11078,8 +11051,8 @@
     }
   },
   "sw_ikv_91": {
-    "zoom": 10,
-    "convergence": 1000,
+    "zoom": 10.0,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 825,
       "coords": [
@@ -11102,8 +11075,8 @@
     }
   },
   "sw_ikv_91_105": {
-    "zoom": 10,
-    "convergence": 1000,
+    "zoom": 10.0,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -11185,7 +11158,6 @@
   },
   "sw_l_62_anti_II": {
     "zoom": 1.9,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 874,
       "coords": [
@@ -11226,7 +11198,6 @@
   },
   "sw_landsverk_ush_204_gk": {
     "zoom": 7,
-    "convergence": 800,
     "sim_AP": {
       "velocity": 1100,
       "coords": [
@@ -11236,7 +11207,7 @@
     }
   },
   "sw_leopard_1a5no": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -11260,7 +11231,7 @@
     }
   },
   "sw_leopard_2a4_fin": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -11291,7 +11262,7 @@
     }
   },
   "sw_leopard_2a6nl": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1750,
@@ -11323,7 +11294,6 @@
   },
   "sw_lvkv_42": {
     "zoom": 7,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 845,
       "coords": [
@@ -11339,7 +11309,7 @@
     }
   },
   "sw_lvkv_90c": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1465,
@@ -11363,7 +11333,7 @@
     }
   },
   "sw_m24_chaffee_dk": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -11374,7 +11344,7 @@
     }
   },
   "sw_patria_amv_ctcv_105": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -11406,7 +11376,7 @@
   },
   "sw_pbil_m40": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 845,
       "coords": [
@@ -11423,7 +11393,6 @@
   },
   "sw_pbv_302_bill": {
     "zoom": 4,
-    "convergence": 1000,
     "RB": {
       "velocity": 885
     },
@@ -11432,7 +11401,7 @@
     }
   },
   "sw_pbv_501": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 665,
@@ -11449,7 +11418,7 @@
     }
   },
   "sw_pt_76b": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 700,
@@ -11466,7 +11435,7 @@
     }
   },
   "sw_pvkv_II": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 940,
@@ -11484,7 +11453,6 @@
   },
   "sw_pvkv_III": {
     "zoom": 7,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 850,
       "coords": [
@@ -11501,7 +11469,7 @@
   },
   "sw_pvkv_iv": {
     "zoom": 1.9,
-    "convergence": 600,
+    "convergence": 400,
     "sim_APDS": {
       "velocity": 1150,
       "coords": [
@@ -11524,7 +11492,7 @@
     }
   },
   "sw_pvkv_m43_1946": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 890,
@@ -11541,7 +11509,7 @@
     }
   },
   "sw_pvkv_m43_1963": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1110,
@@ -11650,7 +11618,7 @@
     }
   },
   "sw_strf_9056": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1465,
@@ -11674,7 +11642,7 @@
     }
   },
   "sw_strf_90b": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1465,
@@ -11698,7 +11666,7 @@
     }
   },
   "sw_strf_90c": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1465,
@@ -11722,7 +11690,7 @@
     }
   },
   "sw_strv121b_christian2": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -11746,7 +11714,7 @@
     }
   },
   "sw_strv_101": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -11763,7 +11731,7 @@
     }
   },
   "sw_strv_103_0": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1450,
@@ -11787,7 +11755,7 @@
     }
   },
   "sw_strv_103a": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1450,
@@ -11811,7 +11779,7 @@
     }
   },
   "sw_strv_103c": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -11835,7 +11803,7 @@
     }
   },
   "sw_strv_104": {
-    "zoom": 4.9,
+    "zoom": 7.4,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -11859,7 +11827,7 @@
     }
   },
   "sw_strv_105": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -11883,7 +11851,7 @@
     }
   },
   "sw_strv_121": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -11907,7 +11875,7 @@
     }
   },
   "sw_strv_122": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -11931,7 +11899,7 @@
     }
   },
   "sw_strv_122b_plss": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -11955,7 +11923,7 @@
     }
   },
   "sw_strv_122b_plus": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1640,
@@ -11979,7 +11947,7 @@
     }
   },
   "sw_strv_74": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1160,
@@ -12003,7 +11971,7 @@
     }
   },
   "sw_strv_81": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1430,
@@ -12027,7 +11995,7 @@
     }
   },
   "sw_strv_81_rb52": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1430,
@@ -12287,7 +12255,7 @@
     }
   },
   "sw_t_34_85_zis_53": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -12335,7 +12303,7 @@
     }
   },
   "sw_t_55m": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1475,
@@ -12373,7 +12341,7 @@
     }
   },
   "sw_t_72m1": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1760,
@@ -12436,7 +12404,6 @@
   },
   "sw_tgdgb_m40_lv": {
     "zoom": 1.9,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 874,
       "coords": [
@@ -12486,7 +12453,7 @@
     }
   },
   "uk_17_pdr_m10_achilles": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 883,
@@ -12503,7 +12470,7 @@
     }
   },
   "uk_17_pdr_m10_achilles_norfolk_yeomanry": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 883,
@@ -12572,7 +12539,7 @@
   },
   "uk_a25_mk_8": {
     "zoom": 1.9,
-    "convergence": 600,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 792,
       "coords": [
@@ -12605,7 +12572,7 @@
     }
   },
   "uk_a27m_cromwell_5": {
-    "zoom": 5,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -12622,7 +12589,7 @@
     }
   },
   "uk_a27m_cromwell_5_rp3": {
-    "zoom": 5,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -12639,7 +12606,7 @@
     }
   },
   "uk_a30_challenger": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1203,
@@ -12663,7 +12630,7 @@
     }
   },
   "uk_a30_sp_avenger": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 883,
@@ -12680,7 +12647,7 @@
     }
   },
   "uk_a30_sp_avenger_kit_3rank": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 883,
@@ -12697,7 +12664,7 @@
     }
   },
   "uk_a39_tortoise": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 929,
@@ -12833,7 +12800,7 @@
     }
   },
   "uk_a_22f_mk_7_churchill_1944": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -12850,7 +12817,7 @@
     }
   },
   "uk_a_22f_mk_7_churchill_crocodile": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -12884,7 +12851,7 @@
     }
   },
   "uk_a_34_comet": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1120,
@@ -12908,7 +12875,7 @@
     }
   },
   "uk_a_34_comet_iron_duke": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1120,
@@ -12925,7 +12892,7 @@
     }
   },
   "uk_a_43_black_prince": {
-    "zoom": 1.9,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1203,
@@ -12976,8 +12943,8 @@
     }
   },
   "uk_ajax": {
-    "zoom": 6,
-    "convergence": 1200,
+    "zoom": 6.0,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1510,
       "coords": [
@@ -13000,7 +12967,7 @@
     }
   },
   "uk_alecto_mk_1": {
-    "zoom": 1.9,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_HEAT_s": {
       "velocity": 502,
@@ -13034,8 +13001,8 @@
     }
   },
   "uk_badger": {
-    "zoom": 8,
-    "convergence": 1200,
+    "zoom": 8.0,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
       "coords": [
@@ -13058,7 +13025,7 @@
     }
   },
   "uk_centurion_action_x": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1430,
@@ -13082,7 +13049,7 @@
     }
   },
   "uk_centurion_mk_1": {
-    "zoom": 6,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1203,
@@ -13106,7 +13073,7 @@
     }
   },
   "uk_centurion_mk_10": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -13130,7 +13097,7 @@
     }
   },
   "uk_centurion_mk_2": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 883,
@@ -13154,7 +13121,7 @@
     }
   },
   "uk_centurion_mk_3": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1430,
@@ -13178,7 +13145,7 @@
     }
   },
   "uk_centurion_mk_3_ss11": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1430,
@@ -13195,7 +13162,7 @@
     }
   },
   "uk_centurion_mk_5_avre_era": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_HE_s": {
       "velocity": 259,
@@ -13212,7 +13179,7 @@
     }
   },
   "uk_centurion_mk_5_raac": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1430,
@@ -13229,7 +13196,7 @@
     }
   },
   "uk_centurion_shot_kal_d": {
-    "zoom": 4.9,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -13253,7 +13220,7 @@
     }
   },
   "uk_challenger_1": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1535,
@@ -13277,7 +13244,7 @@
     }
   },
   "uk_challenger_1_mk_3_gulf": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1535,
@@ -13301,7 +13268,7 @@
     }
   },
   "uk_challenger_2_bn": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1650,
@@ -13325,7 +13292,7 @@
     }
   },
   "uk_challenger_2_dorchester": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1650,
@@ -13349,7 +13316,7 @@
     }
   },
   "uk_challenger_2_lep": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1750,
@@ -13380,7 +13347,7 @@
     }
   },
   "uk_challenger_2_megatron": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1650,
@@ -13404,7 +13371,7 @@
     }
   },
   "uk_challenger_2_tes": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1650,
@@ -13428,7 +13395,7 @@
     }
   },
   "uk_challenger_2e": {
-    "zoom": 5,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1650,
@@ -13452,7 +13419,7 @@
     }
   },
   "uk_challenger_II": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1650,
@@ -13476,7 +13443,7 @@
     }
   },
   "uk_challenger_mk_3": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1535,
@@ -13517,7 +13484,7 @@
     }
   },
   "uk_chieftain_900": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1200,
     "sim_LASER": {
       "velocity": 1535,
@@ -13541,7 +13508,7 @@
     }
   },
   "uk_chieftain_mk_10": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1200,
     "sim_LASER": {
       "velocity": 1535,
@@ -13565,7 +13532,7 @@
     }
   },
   "uk_chieftain_mk_3": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1370,
@@ -13582,7 +13549,7 @@
     }
   },
   "uk_chieftain_mk_5": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1370,
@@ -13599,8 +13566,8 @@
     }
   },
   "uk_churchill_na75": {
-    "zoom": 5,
-    "convergence": 1000,
+    "zoom": 3.0,
+    "convergence": 800,
     "sim_AP": {
       "velocity": 618,
       "coords": [
@@ -13617,7 +13584,7 @@
   },
   "uk_concept3_ngac": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 1000,
     "sim_AP": {
       "velocity": 754,
       "coords": [
@@ -13633,7 +13600,7 @@
     }
   },
   "uk_conqueror_mk_2": {
-    "zoom": 6,
+    "zoom": 5.3,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1493,
@@ -13675,7 +13642,6 @@
   },
   "uk_crusader_aa_mk_1": {
     "zoom": 1.9,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 874,
       "coords": [
@@ -13759,7 +13725,7 @@
     }
   },
   "uk_desert_warrior": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1375,
@@ -13783,7 +13749,7 @@
     }
   },
   "uk_eland_90_mk_7": {
-    "zoom": 6,
+    "zoom": 5.7,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 750,
@@ -13800,8 +13766,8 @@
     }
   },
   "uk_fv107_scimitar": {
-    "zoom": 10,
-    "convergence": 800,
+    "zoom": 9.8,
+    "convergence": 1000,
     "sim_APDS": {
       "velocity": 1175,
       "coords": [
@@ -13824,7 +13790,7 @@
     }
   },
   "uk_fv221_caernarvon": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1430,
@@ -13848,7 +13814,7 @@
     }
   },
   "uk_fv4004_conway": {
-    "zoom": 6,
+    "zoom": 5.3,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1463,
@@ -13882,7 +13848,7 @@
     }
   },
   "uk_fv4202": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1430,
@@ -13906,7 +13872,7 @@
     }
   },
   "uk_fv510_isv": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1175,
@@ -13930,7 +13896,7 @@
     }
   },
   "uk_fv721_fox": {
-    "zoom": 10,
+    "zoom": 9.8,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1175,
@@ -13954,8 +13920,8 @@
     }
   },
   "uk_g6_spg": {
-    "zoom": 8,
-    "convergence": 800,
+    "zoom": 8.0,
+    "convergence": 1000,
     "sim_HE": {
       "velocity": 897,
       "coords": [
@@ -13971,7 +13937,7 @@
     }
   },
   "uk_khalid": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1200,
     "sim_LASER": {
       "velocity": 1535,
@@ -13996,7 +13962,6 @@
   },
   "uk_m109a1": {
     "zoom": 4,
-    "convergence": 1000,
     "sim_HE": {
       "velocity": 684,
       "coords": [
@@ -14142,7 +14107,7 @@
     }
   },
   "uk_olifant_mk_1a": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -14173,7 +14138,7 @@
     }
   },
   "uk_olifant_mk_2": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -14204,7 +14169,7 @@
     }
   },
   "uk_ram_90mm_aa": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -14221,7 +14186,7 @@
     }
   },
   "uk_ratel_20": {
-    "zoom": 6,
+    "zoom": 5.5,
     "convergence": 800,
     "sim_AP_f": {
       "velocity": 1100,
@@ -14238,7 +14203,7 @@
     }
   },
   "uk_ratel_90": {
-    "zoom": 6,
+    "zoom": 5.7,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 750,
@@ -14255,7 +14220,7 @@
     }
   },
   "uk_rooikat_105_td": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -14279,7 +14244,7 @@
     }
   },
   "uk_rooikat_76": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1615,
@@ -14303,7 +14268,7 @@
     }
   },
   "uk_rooikat_mttd": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -14368,7 +14333,7 @@
     }
   },
   "uk_sherman_ic_firefly": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 883,
@@ -14385,7 +14350,7 @@
     }
   },
   "uk_sherman_vc_firefly": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 883,
@@ -14402,7 +14367,7 @@
     }
   },
   "uk_sherman_vc_firefly_kit_3rank": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 883,
@@ -14419,7 +14384,7 @@
     }
   },
   "uk_shir_2": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1535,
@@ -14443,7 +14408,7 @@
     }
   },
   "uk_sp_17_pdr_valentine": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 883,
@@ -14498,7 +14463,7 @@
     }
   },
   "uk_tog_2": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -14515,7 +14480,7 @@
     }
   },
   "uk_ttd": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -14563,7 +14528,7 @@
     }
   },
   "uk_valentine_mk_11": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -14597,7 +14562,7 @@
     }
   },
   "uk_vfm_5": {
-    "zoom": 10,
+    "zoom": 10.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -14645,8 +14610,8 @@
     }
   },
   "uk_vickers_mbt_mk_3": {
-    "zoom": 10,
-    "convergence": 800,
+    "zoom": 10.0,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1478,
       "coords": [
@@ -14676,7 +14641,7 @@
     }
   },
   "uk_vickers_mk7": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1550,
@@ -14700,7 +14665,7 @@
     }
   },
   "uk_vickers_mk_11": {
-    "zoom": 10,
+    "zoom": 10.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1509,
@@ -14793,8 +14758,8 @@
     }
   },
   "us_ccvl": {
-    "zoom": 3,
-    "convergence": 1000,
+    "zoom": 3.0,
+    "convergence": 800,
     "sim_LASER": {
       "velocity": 1509,
       "coords": [
@@ -14824,7 +14789,7 @@
     }
   },
   "us_efv_p1": {
-    "zoom": 4,
+    "zoom": 3.3,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -14865,7 +14830,7 @@
     }
   },
   "us_hstv_l": {
-    "zoom": 8,
+    "zoom": 2.0,
     "convergence": 800,
     "sim_LASER": {
       "velocity": 1463,
@@ -14889,7 +14854,7 @@
     }
   },
   "us_lav_ad": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1036,
@@ -14931,7 +14896,6 @@
   },
   "us_lvt_a1_m24": {
     "zoom": 5,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 618,
       "coords": [
@@ -14998,7 +14962,7 @@
     }
   },
   "us_m103": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1067,
@@ -15023,7 +14987,6 @@
   },
   "us_m109a1": {
     "zoom": 4,
-    "convergence": 1000,
     "sim_HE": {
       "velocity": 684,
       "coords": [
@@ -15039,7 +15002,7 @@
     }
   },
   "us_m10_booker_late": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_LASER": {
       "velocity": 1505,
@@ -15133,7 +15096,6 @@
   },
   "us_m163_vulcan": {
     "zoom": 1.9,
-    "convergence": 800,
     "sim_AP": {
       "velocity": 1030,
       "coords": [
@@ -15200,7 +15162,7 @@
     }
   },
   "us_m18_super_hellcat": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 813,
@@ -15217,7 +15179,7 @@
     }
   },
   "us_m1_abrams": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1509,
@@ -15248,7 +15210,7 @@
     }
   },
   "us_m1_abrams_kvt": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1509,
@@ -15279,7 +15241,7 @@
     }
   },
   "us_m1_ip_abrams": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1509,
@@ -15310,7 +15272,7 @@
     }
   },
   "us_m1a1_abrams": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1670,
@@ -15341,7 +15303,7 @@
     }
   },
   "us_m1a1_aim_abrams": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1585,
@@ -15372,7 +15334,7 @@
     }
   },
   "us_m1a1_hc_abrams": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1569,
@@ -15403,7 +15365,7 @@
     }
   },
   "us_m1a1_hc_usmc": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1569,
@@ -15434,7 +15396,7 @@
     }
   },
   "us_m1a2_abrams": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1680,
@@ -15465,7 +15427,7 @@
     }
   },
   "us_m1a2_sep2_abrams": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1680,
@@ -15496,7 +15458,7 @@
     }
   },
   "us_m1a2_sep_abrams": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1680,
@@ -15544,7 +15506,7 @@
     }
   },
   "us_m24_chaffee": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -15561,7 +15523,7 @@
     }
   },
   "us_m24_chaffee_tl": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -15578,7 +15540,7 @@
     }
   },
   "us_m26_pershing": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 813,
@@ -15595,7 +15557,7 @@
     }
   },
   "us_m26_t99": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 813,
@@ -15612,7 +15574,7 @@
     }
   },
   "us_m26e1_pershing": {
-    "zoom": 5,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 975,
@@ -15630,7 +15592,7 @@
   },
   "us_m2_medium": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 792,
       "coords": [
@@ -15680,7 +15642,7 @@
     }
   },
   "us_m36": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 813,
@@ -15697,7 +15659,7 @@
     }
   },
   "us_m36b2": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -15721,7 +15683,7 @@
     }
   },
   "us_m3_bradley": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1345,
@@ -15796,7 +15758,7 @@
     }
   },
   "us_m3a3_bradley": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1385,
@@ -15820,7 +15782,7 @@
     }
   },
   "us_m41_walker_bulldog": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1231,
@@ -15844,7 +15806,7 @@
     }
   },
   "us_m46_patton": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -15861,7 +15823,7 @@
     }
   },
   "us_m46_patton_73_armor_bat": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -15878,7 +15840,7 @@
     }
   },
   "us_m47_patton_II": {
-    "zoom": 7.5,
+    "zoom": 6.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -15902,7 +15864,7 @@
     }
   },
   "us_m48a1_patton_III": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1249,
@@ -15984,7 +15946,7 @@
     }
   },
   "us_m4_t26": {
-    "zoom": 4.3,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 853,
@@ -16018,7 +15980,7 @@
     }
   },
   "us_m4a1_76w_sherman": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -16069,7 +16031,7 @@
     }
   },
   "us_m4a2_76w_sherman": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -16144,7 +16106,7 @@
     }
   },
   "us_m4a3e2_76w_sherman_jumbo": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -16161,7 +16123,7 @@
     }
   },
   "us_m4a3e2_sherman_jumbo": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -16178,7 +16140,7 @@
     }
   },
   "us_m4a3e2_sherman_jumbo_cobra_king": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 618,
@@ -16195,7 +16157,7 @@
     }
   },
   "us_m4a3e8_76w_sherman": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -16212,7 +16174,7 @@
     }
   },
   "us_m4a3e8_76w_sherman_kit_3rank": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -16247,7 +16209,6 @@
   },
   "us_m55": {
     "zoom": 4,
-    "convergence": 9999,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -16264,7 +16225,6 @@
   },
   "us_m551": {
     "zoom": 8,
-    "convergence": 9999,
     "sim_HEAT": {
       "velocity": 682,
       "coords": [
@@ -16281,7 +16241,6 @@
   },
   "us_m551_76": {
     "zoom": 8,
-    "convergence": 9999,
     "sim_APDS": {
       "velocity": 1257,
       "coords": [
@@ -16336,7 +16295,7 @@
   },
   "us_m5a1_stuart": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 883,
       "coords": [
@@ -16353,7 +16312,7 @@
   },
   "us_m5a1_stuart_canadian_5st_arm": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 883,
       "coords": [
@@ -16370,7 +16329,7 @@
   },
   "us_m5a1_stuart_td": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 883,
       "coords": [
@@ -16386,7 +16345,7 @@
     }
   },
   "us_m60": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -16410,7 +16369,7 @@
     }
   },
   "us_m60_120s": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1575,
@@ -16441,7 +16400,7 @@
     }
   },
   "us_m60a1": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1426,
@@ -16465,7 +16424,7 @@
     }
   },
   "us_m60a1_rise_passive_era": {
-    "zoom": 8,
+    "zoom": 7.4,
     "convergence": 1200,
     "sim_LASER": {
       "velocity": 1501,
@@ -16496,7 +16455,7 @@
     }
   },
   "us_m60a2": {
-    "zoom": 8,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_HEAT": {
       "velocity": 682,
@@ -16513,7 +16472,7 @@
     }
   },
   "us_m60a3_slep": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1585,
@@ -16609,8 +16568,8 @@
     }
   },
   "us_m728": {
-    "zoom": 8,
-    "convergence": 800,
+    "zoom": 7.4,
+    "convergence": 1200,
     "sim_HE_s": {
       "velocity": 259,
       "coords": [
@@ -16677,7 +16636,7 @@
     }
   },
   "us_magach_3": {
-    "zoom": 8,
+    "zoom": 6.0,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1478,
@@ -16701,7 +16660,7 @@
     }
   },
   "us_mbt_70": {
-    "zoom": 7,
+    "zoom": 7.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1478,
@@ -16732,8 +16691,8 @@
     }
   },
   "us_merkava_mk_1": {
-    "zoom": 8,
-    "convergence": 1200,
+    "zoom": 7.2,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -16763,7 +16722,7 @@
     }
   },
   "us_merkava_mk_2b_late": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1455,
@@ -16825,7 +16784,7 @@
     }
   },
   "us_merkava_mk_3d": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1705,
@@ -16856,7 +16815,7 @@
     }
   },
   "us_rdf_lt": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 800,
     "sim_LASER": {
       "velocity": 1463,
@@ -16881,7 +16840,6 @@
   },
   "us_stingray": {
     "zoom": 7,
-    "convergence": 9999,
     "sim_LASER": {
       "velocity": 1455,
       "coords": [
@@ -16911,7 +16869,7 @@
     }
   },
   "us_t114": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_HEAT_s": {
       "velocity": 502,
@@ -16962,8 +16920,8 @@
     }
   },
   "us_t1e1": {
-    "zoom": 5,
-    "convergence": 1000,
+    "zoom": 1.9,
+    "convergence": 800,
     "sim_AP": {
       "velocity": 792,
       "coords": [
@@ -16996,7 +16954,7 @@
     }
   },
   "us_t20": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -17013,7 +16971,7 @@
     }
   },
   "us_t25": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 813,
@@ -17030,7 +16988,7 @@
     }
   },
   "us_t26e4_superpershing": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 975,
@@ -17047,7 +17005,7 @@
     }
   },
   "us_t26e5": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 813,
@@ -17081,7 +17039,7 @@
     }
   },
   "us_t29": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 899,
@@ -17098,7 +17056,7 @@
     }
   },
   "us_t30": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 670,
@@ -17115,7 +17073,7 @@
     }
   },
   "us_t32": {
-    "zoom": 5,
+    "zoom": 4.6,
     "convergence": 800,
     "sim_AP": {
       "velocity": 975,
@@ -17132,7 +17090,7 @@
     }
   },
   "us_t32e1": {
-    "zoom": 5,
+    "zoom": 4.6,
     "convergence": 800,
     "sim_AP": {
       "velocity": 975,
@@ -17149,7 +17107,7 @@
     }
   },
   "us_t34": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 960,
@@ -17166,7 +17124,7 @@
     }
   },
   "us_t54e1": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1554,
@@ -17197,7 +17155,7 @@
     }
   },
   "us_t54e2": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1554,
@@ -17229,7 +17187,7 @@
   },
   "us_t55e1": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 1000,
     "sim_AP": {
       "velocity": 792,
       "coords": [
@@ -17245,7 +17203,7 @@
     }
   },
   "us_t58": {
-    "zoom": 6,
+    "zoom": 6.0,
     "convergence": 800,
     "sim_AP": {
       "velocity": 670,
@@ -17277,7 +17235,7 @@
   },
   "us_t86": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 792,
       "coords": [
@@ -17293,7 +17251,7 @@
     }
   },
   "us_t92": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1231,
@@ -17334,8 +17292,8 @@
     }
   },
   "us_t95e1": {
-    "zoom": 8,
-    "convergence": 800,
+    "zoom": 8.0,
+    "convergence": 1200,
     "sim_APDS": {
       "velocity": 1570,
       "coords": [
@@ -17351,7 +17309,7 @@
     }
   },
   "us_xm1_chrysler": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1501,
@@ -17375,7 +17333,7 @@
     }
   },
   "us_xm1_gm": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1501,
@@ -17399,8 +17357,8 @@
     }
   },
   "us_xm_8": {
-    "zoom": 3,
-    "convergence": 1000,
+    "zoom": 3.0,
+    "convergence": 800,
     "sim_LASER": {
       "velocity": 1501,
       "coords": [
@@ -17430,7 +17388,7 @@
     }
   },
   "us_xm_800t": {
-    "zoom": 3,
+    "zoom": 3.0,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1150,
@@ -17454,7 +17412,7 @@
     }
   },
   "us_xm_803": {
-    "zoom": 7,
+    "zoom": 8.0,
     "convergence": 1000,
     "sim_APDS": {
       "velocity": 1478,
@@ -17567,7 +17525,7 @@
     }
   },
   "ussr_2s25": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1700,
@@ -17598,7 +17556,7 @@
     }
   },
   "ussr_2s25m": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1700,
@@ -17629,7 +17587,7 @@
     }
   },
   "ussr_2s38": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1500,
@@ -17701,7 +17659,7 @@
     }
   },
   "ussr_asu_57": {
-    "zoom": 5.5,
+    "zoom": 5.1,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1020,
@@ -17718,7 +17676,7 @@
     }
   },
   "ussr_asu_85": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1040,
@@ -17760,7 +17718,6 @@
   },
   "ussr_bmd_4": {
     "zoom": 2.5,
-    "convergence": 9999,
     "sim_LASER": {
       "velocity": 1120,
       "coords": [
@@ -17791,7 +17748,6 @@
   },
   "ussr_bmd_4m": {
     "zoom": 2.5,
-    "convergence": 9999,
     "sim_LASER": {
       "velocity": 1120,
       "coords": [
@@ -17822,7 +17778,6 @@
   },
   "ussr_bmd_4m2": {
     "zoom": 2.5,
-    "convergence": 9999,
     "sim_LASER": {
       "velocity": 1120,
       "coords": [
@@ -17852,7 +17807,7 @@
     }
   },
   "ussr_bmp_1": {
-    "zoom": 6,
+    "zoom": 5.6,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 665,
@@ -17869,8 +17824,8 @@
     }
   },
   "ussr_bmp_2": {
-    "zoom": 6,
-    "convergence": 1000,
+    "zoom": 5.6,
+    "convergence": 800,
     "sim_LASER": {
       "velocity": 1120,
       "coords": [
@@ -17901,7 +17856,7 @@
   },
   "ussr_bmp_2m": {
     "zoom": 2.5,
-    "convergence": 1000,
+    "convergence": 800,
     "sim_LASER": {
       "velocity": 1120,
       "coords": [
@@ -17932,7 +17887,6 @@
   },
   "ussr_bmp_3": {
     "zoom": 2.5,
-    "convergence": 9999,
     "sim_LASER": {
       "velocity": 1120,
       "coords": [
@@ -17962,7 +17916,7 @@
     }
   },
   "ussr_bmpt": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_LASER": {
       "velocity": 1030,
@@ -17993,7 +17947,7 @@
     }
   },
   "ussr_bmpt_72": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 800,
     "sim_LASER": {
       "velocity": 1030,
@@ -18109,8 +18063,8 @@
     }
   },
   "ussr_btr_80a": {
-    "zoom": 2,
-    "convergence": 800,
+    "zoom": 2.0,
+    "convergence": 1000,
     "sim_APDS": {
       "velocity": 1120,
       "coords": [
@@ -18133,7 +18087,7 @@
     }
   },
   "ussr_btr_82at": {
-    "zoom": 2,
+    "zoom": 2.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1120,
@@ -18165,7 +18119,6 @@
   },
   "ussr_garford_putilov": {
     "zoom": 1.9,
-    "convergence": 600,
     "sim_HE_s": {
       "velocity": 365,
       "coords": [
@@ -18232,7 +18185,7 @@
     }
   },
   "ussr_is_2_1944": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 795,
@@ -18249,7 +18202,7 @@
     }
   },
   "ussr_is_2_1944_321": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 795,
@@ -18266,7 +18219,7 @@
     }
   },
   "ussr_is_2_1944_revenge": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 795,
@@ -18283,7 +18236,7 @@
     }
   },
   "ussr_is_3": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 800,
@@ -18368,7 +18321,7 @@
     }
   },
   "ussr_isu_122s": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 795,
@@ -18603,7 +18556,7 @@
     }
   },
   "ussr_m4a2_76w_sherman": {
-    "zoom": 5,
+    "zoom": 4.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -18621,7 +18574,6 @@
   },
   "ussr_m53_59": {
     "zoom": 5,
-    "convergence": 1000,
     "sim_AP": {
       "velocity": 1000,
       "coords": [
@@ -18637,8 +18589,8 @@
     }
   },
   "ussr_object_120": {
-    "zoom": 5,
-    "convergence": 800,
+    "zoom": 3.5,
+    "convergence": 1200,
     "sim_APDS": {
       "velocity": 1710,
       "coords": [
@@ -18655,7 +18607,7 @@
   },
   "ussr_object_140": {
     "zoom": 3.5,
-    "convergence": 9999,
+    "convergence": 1200,
     "sim_APDS": {
       "velocity": 1535,
       "coords": [
@@ -18719,7 +18671,7 @@
     }
   },
   "ussr_object_279": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 800,
     "sim_AP": {
       "velocity": 1000,
@@ -18767,7 +18719,7 @@
     }
   },
   "ussr_object_435": {
-    "zoom": 8,
+    "zoom": 7.3,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1615,
@@ -18798,7 +18750,7 @@
     }
   },
   "ussr_object_685": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -18853,7 +18805,7 @@
     }
   },
   "ussr_pt_76_57": {
-    "zoom": 5,
+    "zoom": 5.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1000,
@@ -18877,7 +18829,7 @@
     }
   },
   "ussr_pt_76b": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_HEAT": {
       "velocity": 700,
@@ -18895,7 +18847,7 @@
   },
   "ussr_pzkpfw_III_ausf_J_L42": {
     "zoom": 1.9,
-    "convergence": 800,
+    "convergence": 400,
     "sim_AP": {
       "velocity": 835,
       "coords": [
@@ -18911,7 +18863,7 @@
     }
   },
   "ussr_pzkpfw_V": {
-    "zoom": 1.9,
+    "zoom": 2.5,
     "convergence": 800,
     "sim_AP": {
       "velocity": 935,
@@ -18979,7 +18931,7 @@
     }
   },
   "ussr_su_100_1945": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 887,
@@ -18996,7 +18948,7 @@
     }
   },
   "ussr_su_100p": {
-    "zoom": 5.5,
+    "zoom": 5.1,
     "convergence": 800,
     "sim_AP": {
       "velocity": 887,
@@ -19037,7 +18989,7 @@
     }
   },
   "ussr_su_122P": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 800,
@@ -19102,7 +19054,7 @@
     }
   },
   "ussr_su_57": {
-    "zoom": 4,
+    "zoom": 1.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 822,
@@ -19120,7 +19072,6 @@
   },
   "ussr_su_57b": {
     "zoom": 4,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 990,
       "coords": [
@@ -19154,7 +19105,6 @@
   },
   "ussr_su_76d": {
     "zoom": 3.5,
-    "convergence": 800,
     "sim_AP": {
       "velocity": 655,
       "coords": [
@@ -19170,7 +19120,7 @@
     }
   },
   "ussr_su_76m_1943": {
-    "zoom": 3.5,
+    "zoom": 1.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 655,
@@ -19187,7 +19137,7 @@
     }
   },
   "ussr_su_76m_5st_kav_corps": {
-    "zoom": 3.5,
+    "zoom": 1.9,
     "convergence": 800,
     "sim_AP": {
       "velocity": 655,
@@ -19473,7 +19423,7 @@
     }
   },
   "ussr_t_34_100": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 887,
@@ -19609,7 +19559,7 @@
     }
   },
   "ussr_t_34_85E": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -19626,7 +19576,7 @@
     }
   },
   "ussr_t_34_85_d_5t": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -19643,7 +19593,7 @@
     }
   },
   "ussr_t_34_85_stp_s53": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -19660,7 +19610,7 @@
     }
   },
   "ussr_t_34_85_zis_53": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -19677,7 +19627,7 @@
     }
   },
   "ussr_t_34_85_zis_53_kit_3rank": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -19694,7 +19644,7 @@
     }
   },
   "ussr_t_34_85_zis_53_v80": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -19711,7 +19661,7 @@
     }
   },
   "ussr_t_44": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -19728,7 +19678,7 @@
     }
   },
   "ussr_t_44_100": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 887,
@@ -19745,7 +19695,7 @@
     }
   },
   "ussr_t_44_122": {
-    "zoom": 4,
+    "zoom": 3.4,
     "convergence": 800,
     "sim_AP": {
       "velocity": 795,
@@ -19762,7 +19712,7 @@
     }
   },
   "ussr_t_44_po": {
-    "zoom": 3.5,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 792,
@@ -19790,7 +19740,7 @@
     }
   },
   "ussr_t_54_1947": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_AP": {
       "velocity": 887,
@@ -19807,7 +19757,7 @@
     }
   },
   "ussr_t_54_1949": {
-    "zoom": 4,
+    "zoom": 3.8,
     "convergence": 800,
     "sim_APDS": {
       "velocity": 1415,
@@ -19869,7 +19819,7 @@
     }
   },
   "ussr_t_55_am": {
-    "zoom": 8,
+    "zoom": 3.5,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -19893,7 +19843,7 @@
     }
   },
   "ussr_t_55_amd_1": {
-    "zoom": 8,
+    "zoom": 3.5,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1430,
@@ -19918,7 +19868,7 @@
   },
   "ussr_t_55a": {
     "zoom": 3.5,
-    "convergence": 800,
+    "convergence": 1200,
     "sim_APDS": {
       "velocity": 1415,
       "coords": [
@@ -19935,7 +19885,7 @@
   },
   "ussr_t_62": {
     "zoom": 3.5,
-    "convergence": 1000,
+    "convergence": 1200,
     "sim_LASER": {
       "velocity": 1615,
       "coords": [
@@ -19958,7 +19908,7 @@
     }
   },
   "ussr_t_62m1": {
-    "zoom": 8,
+    "zoom": 3.5,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1600,
@@ -20020,7 +19970,7 @@
     }
   },
   "ussr_t_64a_1971": {
-    "zoom": 8,
+    "zoom": 7.3,
     "convergence": 1200,
     "sim_APDS": {
       "velocity": 1760,
@@ -20061,7 +20011,7 @@
     }
   },
   "ussr_t_72a": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1760,
@@ -20092,7 +20042,7 @@
     }
   },
   "ussr_t_72av_turms": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1700,
@@ -20116,7 +20066,7 @@
     }
   },
   "ussr_t_72b": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1700,
@@ -20147,7 +20097,7 @@
     }
   },
   "ussr_t_72b3_2011": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1660,
@@ -20178,7 +20128,7 @@
     }
   },
   "ussr_t_72b3_arena_m": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1660,
@@ -20209,7 +20159,7 @@
     }
   },
   "ussr_t_72b_1989": {
-    "zoom": 8,
+    "zoom": 7.2,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1700,
@@ -20241,7 +20191,7 @@
   },
   "ussr_t_72m2_moderna": {
     "zoom": 4.5,
-    "convergence": 1200,
+    "convergence": 1000,
     "sim_LASER": {
       "velocity": 1690,
       "coords": [
@@ -20319,7 +20269,7 @@
     }
   },
   "ussr_t_80bvm": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1660,
@@ -20522,7 +20472,7 @@
     }
   },
   "ussr_t_90m_2020": {
-    "zoom": 4,
+    "zoom": 4.0,
     "convergence": 1000,
     "sim_LASER": {
       "velocity": 1660,
@@ -20561,7 +20511,7 @@
   },
   "ussr_to_55": {
     "zoom": 3.5,
-    "convergence": 800,
+    "convergence": 1200,
     "sim_APDS": {
       "velocity": 1415,
       "coords": [
@@ -20650,7 +20600,6 @@
   },
   "ussr_zis_43": {
     "zoom": 1.9,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 880,
       "coords": [
@@ -20684,7 +20633,6 @@
   },
   "ussr_zsu_37": {
     "zoom": 1.9,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 880,
       "coords": [
@@ -20701,7 +20649,6 @@
   },
   "ussr_zut_37": {
     "zoom": 1.9,
-    "convergence": 9999,
     "sim_AP": {
       "velocity": 880,
       "coords": [
@@ -20715,5 +20662,267 @@
     "AB": {
       "velocity": 880
     }
-  }
+  },
+  "cn_antelope_tc_1l_ads": {},
+  "cn_bt_5": {},
+  "cn_cm_25": {},
+  "cn_gmc_cckw_353_m45_quad": {},
+  "cn_hj_9": {},
+  "cn_hq_11": {},
+  "cn_hq_17": {},
+  "cn_m113a1_tow": {},
+  "cn_m42_duster": {},
+  "cn_mbt2000_sm": {},
+  "cn_pgz_04a": {},
+  "cn_pgz_09": {},
+  "cn_pgz_625_fb10": {},
+  "cn_pgz_88": {},
+  "cn_t_80ud_478be": {},
+  "cn_tor_m1": {},
+  "cn_type_65_aa": {},
+  "cn_type_95_ha_go": {},
+  "cn_wz_141": {},
+  "cn_wz_305": {},
+  "cn_zsd63_pg87": {},
+  "cn_ztz_96a_race": {},
+  "cn_ztz_96b": {},
+  "fr_amx_10m_acra": {},
+  "fr_amx_13_dca_40": {},
+  "fr_amx_30_ACRA": {},
+  "fr_amx_30_dca": {},
+  "fr_amx_30_roland": {},
+  "fr_amx_elc_901": {},
+  "fr_amx_vtt_dca": {},
+  "fr_citroen_kegresse_p4t": {},
+  "fr_crotale_ng": {},
+  "fr_leopard_1a5be": {},
+  "fr_m46_patton": {},
+  "fr_marder_df_105": {},
+  "fr_samp_t_fcs": {},
+  "fr_samp_t_launcher": {},
+  "fr_vab_santal": {},
+  "fr_vcac_mephisto": {},
+  "germ_9a33bm3": {},
+  "germ_9a35_m": {},
+  "germ_a7v_event": {},
+  "germ_amd_35_kwk": {},
+  "germ_beutepanzer_mk_iv_event": {},
+  "germ_boxer_swatrinf": {},
+  "germ_flakpanzer_38t_Gepard": {},
+  "germ_flakpanzer_IV_Kugelblitz": {},
+  "germ_flakpanzer_IV_Ostwind": {},
+  "germ_flakpanzer_IV_Ostwind_2": {},
+  "germ_flakpanzer_IV_Ostwind_2_net": {},
+  "germ_flakpanzer_IV_Wirbelwind": {},
+  "germ_flakpanzer_I_ausf_A": {},
+  "germ_flakpanzer_V_Coelian": {},
+  "germ_flakpanzer_zerstorer_45": {},
+  "germ_flakpz_1a2_Gepard": {},
+  "germ_flakpz_I_Gepard": {},
+  "germ_flarakpz_1": {},
+  "germ_flarakrad": {},
+  "germ_garford_putilov_event": {},
+  "germ_hummel": {},
+  "germ_iris_slm_fcs": {},
+  "germ_iris_slm_launcher": {},
+  "germ_jaguar_2": {},
+  "germ_leopard_2a4m_can_sm": {},
+  "germ_leopard_2a5_yt_cup_2019": {},
+  "germ_nbfz_VI": {},
+  "germ_panther_II_tutorial": {},
+  "germ_panzerwerfer_42": {},
+  "germ_pzkpfw_38t_na": {},
+  "germ_pzkpfw_VI_ausf_h1_tiger_east": {},
+  "germ_raketenjagdpanzer_2": {},
+  "germ_raketenjagdpanzer_2_hot": {},
+  "germ_schutzenpanzer_puma_vjtf_mod": {},
+  "germ_sdkfz_234_2_mod": {},
+  "germ_sdkfz_251_21": {},
+  "germ_spz_oerlikon_raketenautomat": {},
+  "germ_sturmmorser_sturmtiger_event": {},
+  "germ_vt_1_2": {},
+  "germ_wiesel_1_tow": {},
+  "germ_wiesel_2_adwc": {},
+  "il_eitan": {},
+  "il_hunter_afv": {},
+  "il_m113a1_tow": {},
+  "il_mim_72_chaparral": {},
+  "il_spyder_aio": {},
+  "il_ss_11_halftrack": {},
+  "il_tcm_20": {},
+  "il_zsu_23_4": {},
+  "il_zsu_57_2": {},
+  "it_9a33bm3": {},
+  "it_9a35_m": {},
+  "it_as_42_47": {},
+  "it_as_42_metropolitana": {},
+  "it_c13_tua": {},
+  "it_centauro_2": {},
+  "it_fiat_6614_firos": {},
+  "it_fiat_6616_ub": {},
+  "it_fiat_cm52": {},
+  "it_m113a1_tow": {},
+  "it_m15_42_contraereo": {},
+  "it_oto_r3_106sr": {},
+  "it_oto_r3_t20_fa": {},
+  "it_otobreda_sidam_25": {},
+  "it_otobreda_sidam_25_mistral": {},
+  "it_palmaria": {},
+  "it_samp_t_fcs": {},
+  "it_samp_t_launcher": {},
+  "it_semovente_m43_105_leoncello": {},
+  "it_zsu_23_4": {},
+  "it_zsu_57_2": {},
+  "jp_btr_3e1": {},
+  "jp_halftrack_m16": {},
+  "jp_leopard_2ri": {},
+  "jp_m19": {},
+  "jp_m42_duster": {},
+  "jp_sub_i_ii_20mm": {},
+  "jp_type_03_chusam_fcs": {},
+  "jp_type_03_chusam_launcher": {},
+  "jp_type_2_ho_ni_2": {},
+  "jp_type_60_atm": {},
+  "jp_type_75_mlrs": {},
+  "jp_type_81_tansam": {},
+  "jp_type_81_tansam_fcs": {},
+  "jp_type_81_tansam_launcher": {},
+  "jp_type_87": {},
+  "jp_type_90b_sm": {},
+  "jp_type_93": {},
+  "jp_type_95_heavy": {},
+  "jp_type_95_so_ki": {},
+  "sw_asrad_r": {},
+  "sw_crotale_ng": {},
+  "sw_eldenhet_98": {},
+  "sw_itpsv_90": {},
+  "sw_landsverk_ush_405": {},
+  "sw_lvrbv_701": {},
+  "sw_nasams_fcs": {},
+  "sw_nasams_launcher": {},
+  "sw_nomads": {},
+  "sw_pbv_301": {},
+  "sw_pvlvv_fm42": {},
+  "sw_pvrbv_551": {},
+  "sw_sav_fm48": {},
+  "sw_t_50_fin": {},
+  "sw_udes_33": {},
+  "sw_veak_40": {},
+  "sw_zsu_57_2": {},
+  "uk_9a33bm2": {},
+  "uk_9a35_m": {},
+  "uk_adats_m113a3": {},
+  "uk_armored_car_mk_2_aa": {},
+  "uk_as_90_mk_2": {},
+  "uk_bosvark": {},
+  "uk_boxer_crv_block2": {},
+  "uk_challenger_2_megatron_sm": {},
+  "uk_challenger_II_yt_cup_2019": {},
+  "uk_chieftain_marksman": {},
+  "uk_churchill_avre": {},
+  "uk_crusader_aa_mk_2": {},
+  "uk_crusader_aa_mk_2_kit_3rank": {},
+  "uk_crusader_aa_mk_2_tutorial": {},
+  "uk_falcon": {},
+  "uk_fv102_striker": {},
+  "uk_fv107_scimitar_mk2": {},
+  "uk_fv438_swingfire": {},
+  "uk_garford_putilov_event": {},
+  "uk_m1a1_aim_abrams": {},
+  "uk_m1a2_sep3_abrams": {},
+  "uk_mark_v_event": {},
+  "uk_mk1_grant": {},
+  "uk_ratel_zt3": {},
+  "uk_rooikat_za_35": {},
+  "uk_saint_chamond_event": {},
+  "uk_skink_aa": {},
+  "uk_sky_sabre_fcs": {},
+  "uk_sky_sabre_launcher": {},
+  "uk_stormer_air_defence": {},
+  "uk_stormer_hvm": {},
+  "uk_t17e2": {},
+  "uk_tracked_rapier": {},
+  "uk_vickers_gbt_155": {},
+  "uk_vickers_mk_6_aa_mk_1": {},
+  "uk_ystervark_spaa": {},
+  "us_adats_bradley": {},
+  "us_amx_13_75": {},
+  "us_amx_13_90": {},
+  "us_halftrack_m13": {},
+  "us_halftrack_m15": {},
+  "us_halftrack_m16": {},
+  "us_losat_ccv": {},
+  "us_lvt_a_1_trb": {},
+  "us_m1296_dragoon": {},
+  "us_m18_hellcat_black_cat_race": {},
+  "us_m19": {},
+  "us_m1a1_abrams_yt_cup_2019": {},
+  "us_m1a1_hc_usmc_sm": {},
+  "us_m1a2_sep2_abrams_trophy": {},
+  "us_m1a2_sep3_abrams": {},
+  "us_m247": {},
+  "us_m26_pershing_tutorial": {},
+  "us_m2a2": {},
+  "us_m3_lee": {},
+  "us_m42_duster": {},
+  "us_m44": {},
+  "us_m4a2_76w_sherman_tutorial": {},
+  "us_m50_ontos": {},
+  "us_m551_football": {},
+  "us_m60a1_rise_mod": {},
+  "us_m8_scott_snowball": {},
+  "us_m901_itv": {},
+  "us_mim_72_chaparral": {},
+  "us_mk1_grant": {},
+  "us_nasams_fcs": {},
+  "us_nasams_launcher": {},
+  "us_skink_aa": {},
+  "us_skink_aa_kit_3rank": {},
+  "us_sl_amraam_fcs": {},
+  "us_sl_amraam_launcher": {},
+  "us_t77e1": {},
+  "us_xm246": {},
+  "us_xm_975_roland": {},
+  "ussr_9a33bm3": {},
+  "ussr_9a35_m2": {},
+  "ussr_9p149": {},
+  "ussr_9p157": {},
+  "ussr_bm_13n": {},
+  "ussr_bm_31_12": {},
+  "ussr_bm_8_24": {},
+  "ussr_btr_152a": {},
+  "ussr_btr_152d": {},
+  "ussr_btr_zd": {},
+  "ussr_buk_m3_fcs": {},
+  "ussr_buk_m3_launcher": {},
+  "ussr_gaz_4m": {},
+  "ussr_gaz_dshk": {},
+  "ussr_gaz_mm_72k": {},
+  "ussr_it_1": {},
+  "ussr_kv_8": {},
+  "ussr_m3c": {},
+  "ussr_m551_football": {},
+  "ussr_object_775": {},
+  "ussr_pantsyr_s1": {},
+  "ussr_pantsyr_sm_sv": {},
+  "ussr_sdkfz_251_21_kit_3rank": {},
+  "ussr_smk": {},
+  "ussr_t_35": {},
+  "ussr_t_50_for_tutorial": {},
+  "ussr_t_60_1941": {},
+  "ussr_t_72b3_2017_race": {},
+  "ussr_t_72b3_arena": {},
+  "ussr_t_80u_race": {},
+  "ussr_t_80u_yt_cup_2019": {},
+  "ussr_t_80ue1_sm": {},
+  "ussr_t_90m_arena_m": {},
+  "ussr_tor_m1": {},
+  "ussr_type_65_aa": {},
+  "ussr_zis_12_94KM_1945": {},
+  "ussr_zprk_2s6": {},
+  "ussr_zsu_23_4": {},
+  "ussr_zsu_23_4m2": {},
+  "ussr_zsu_23_4m4": {},
+  "ussr_zsu_37_2": {},
+  "ussr_zsu_57_2": {}
 }
