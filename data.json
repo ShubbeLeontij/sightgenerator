@@ -413,7 +413,7 @@
     }
   },
   "cn_m55": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -1409,7 +1409,7 @@
     }
   },
   "cn_zbd_04a": {
-    "zoom": 8,
+    "zoom": 6.0,
     "sim_LASER": {
       "velocity": 1180,
       "coords": [
@@ -3175,7 +3175,7 @@
     }
   },
   "fr_m55": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -4370,7 +4370,7 @@
     }
   },
   "germ_m109g": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 563,
       "coords": [
@@ -4403,7 +4403,7 @@
     }
   },
   "germ_m55": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -5892,7 +5892,7 @@
     }
   },
   "germ_sdkfz_9_flak37": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_AP": {
       "velocity": 810,
       "coords": [
@@ -6312,7 +6312,7 @@
     }
   },
   "germ_vsw_flak_41": {
-    "zoom": 5,
+    "zoom": 5.6,
     "sim_AP": {
       "velocity": 980,
       "coords": [
@@ -6499,7 +6499,7 @@
     }
   },
   "il_m109": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 563,
       "coords": [
@@ -6515,7 +6515,7 @@
     }
   },
   "il_m109a1": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 684,
       "coords": [
@@ -6548,7 +6548,7 @@
     }
   },
   "il_m163_vulcan": {
-    "zoom": 1.9,
+    "zoom": 6.0,
     "sim_AP": {
       "velocity": 1030,
       "coords": [
@@ -6629,7 +6629,7 @@
     }
   },
   "il_machbet": {
-    "zoom": 1.9,
+    "zoom": 6.0,
     "sim_AP": {
       "velocity": 1030,
       "coords": [
@@ -7419,7 +7419,7 @@
     }
   },
   "il_sholef": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 897,
       "coords": [
@@ -8325,7 +8325,7 @@
     }
   },
   "it_m109g": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 563,
       "coords": [
@@ -8620,7 +8620,7 @@
     }
   },
   "it_m55": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -9368,7 +9368,7 @@
     }
   },
   "jp_m163_vulcan": {
-    "zoom": 1.9,
+    "zoom": 6.0,
     "sim_AP": {
       "velocity": 1030,
       "coords": [
@@ -10400,7 +10400,7 @@
     }
   },
   "jp_type_75": {
-    "zoom": 8,
+    "zoom": 3.8,
     "sim_AP": {
       "velocity": 720,
       "coords": [
@@ -10416,7 +10416,7 @@
     }
   },
   "jp_type_87_rcv": {
-    "zoom": 8,
+    "zoom": 7.4,
     "sim_APDS": {
       "velocity": 1385,
       "coords": [
@@ -10432,7 +10432,7 @@
     }
   },
   "jp_type_87_rcv_prot": {
-    "zoom": 8,
+    "zoom": 7.4,
     "sim_APDS": {
       "velocity": 1150,
       "coords": [
@@ -11197,7 +11197,7 @@
     }
   },
   "sw_landsverk_ush_204_gk": {
-    "zoom": 7,
+    "zoom": 6.4,
     "sim_AP": {
       "velocity": 1100,
       "coords": [
@@ -11293,7 +11293,7 @@
     }
   },
   "sw_lvkv_42": {
-    "zoom": 7,
+    "zoom": 4.7,
     "sim_AP": {
       "velocity": 845,
       "coords": [
@@ -13961,7 +13961,7 @@
     }
   },
   "uk_m109a1": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 684,
       "coords": [
@@ -14895,7 +14895,7 @@
     }
   },
   "us_lvt_a1_m24": {
-    "zoom": 5,
+    "zoom": 4.4,
     "sim_AP": {
       "velocity": 618,
       "coords": [
@@ -14986,7 +14986,7 @@
     }
   },
   "us_m109a1": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 684,
       "coords": [
@@ -15095,7 +15095,7 @@
     }
   },
   "us_m163_vulcan": {
-    "zoom": 1.9,
+    "zoom": 6.0,
     "sim_AP": {
       "velocity": 1030,
       "coords": [
@@ -16208,7 +16208,7 @@
     }
   },
   "us_m55": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_HE": {
       "velocity": 594,
       "coords": [
@@ -17886,7 +17886,7 @@
     }
   },
   "ussr_bmp_3": {
-    "zoom": 2.5,
+    "zoom": 7.4,
     "sim_LASER": {
       "velocity": 1120,
       "coords": [
@@ -18573,7 +18573,7 @@
     }
   },
   "ussr_m53_59": {
-    "zoom": 5,
+    "zoom": 1.9,
     "sim_AP": {
       "velocity": 1000,
       "coords": [
@@ -19071,7 +19071,7 @@
     }
   },
   "ussr_su_57b": {
-    "zoom": 4,
+    "zoom": 3.8,
     "sim_AP": {
       "velocity": 990,
       "coords": [
@@ -19104,7 +19104,7 @@
     }
   },
   "ussr_su_76d": {
-    "zoom": 3.5,
+    "zoom": 1.9,
     "sim_AP": {
       "velocity": 655,
       "coords": [
