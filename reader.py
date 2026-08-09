@@ -3,16 +3,30 @@ import shutil
 
 import generator
 import json
+import math
 import os
-import openpyxl
 import argparse
+
+
+def sight_category(sight_type):
+    """
+    Function that maps a data.json sight-type key (e.g. "sim_AP_f", "RB_s", "sim_LASER")
+    to its coarse category (e.g. "AP", "RB", "LASER"), stripping the "sim_" prefix and
+    any "_f"/"_s" (fast/slow shell) suffix.
+    :param sight_type: sight-type key as found in data.json
+    :return: str category name
+    """
+    base = sight_type[len("sim_"):] if sight_type.startswith("sim_") else sight_type
+    if base.endswith("_f") or base.endswith("_s"):
+        base = base[:-2]
+    return base
 
 
 def reader(MODE, sheets=None, _print=print, _input=input):
     """
-    Function that reads the table and creates sights for every row. This is the core of whole program.
+    Function that reads data.json and creates sights for every tank/sight-type. This is the core of whole program.
     :param MODE: output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3
-    :param sheets: list of sheet names that will be used. By default, all sheets will be used
+    :param sheets: list of sight-type categories that will be used (e.g. "AP", "RB", "LASER"). By default, all are used
     :param _print: output function
     :param _input: input function
     """
@@ -32,58 +46,40 @@ def reader(MODE, sheets=None, _print=print, _input=input):
         pass
     _output("Writing in " + generator.get_path() + "/UserSights", 1)
 
-    # Loading the table
-    wrong_strings = []
-    workbook = openpyxl.load_workbook("data.xlsx")
+    # Loading the data
+    wrong_entries = 0
+    with open("data.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
 
     generator.insert_str = dict[str, str]()
-    for sheet_name in workbook.sheetnames:  # Iterating sheets
-        if sheets and sheet_name not in sheets:  # Checking allowed list
+    _output("\nReading data.json", 1)
+    for unit_id, entry in data.items():  # Iterating tanks
+        if not entry:  # "{}" marker means "don't generate a sight for this tank"
             continue
-        sheet = workbook[sheet_name]
-        _output("\nReading " + sheet_name, 1)
-        wrong_strings.append(0)
-        empty_rows = 0
-        row_num = 0
+        # convergence missing (e.g. SPAA without gunConvergence in game files) is treated as infinite,
+        # i.e. parallax depends only on distance, never zeroes out
+        convergence = entry.get("convergence", math.inf)
+        zoom = float(entry["zoom"])
 
-        for row in sheet.iter_rows(min_row=1, min_col=1, max_row=sheet.max_row, max_col=9, values_only=True):  # Iterating rows inside certain sheet
-            row_num += 1
+        for sight_type, type_data in entry.items():
+            if sight_type in ("zoom", "convergence"):
+                continue
+            if sheets and sight_category(sight_type) not in sheets:  # Checking allowed list
+                continue
+            _output(str((unit_id, sight_type, type_data)), 0)
             try:
-                if row.count(None) == len(row):  # Checking emptiness
-                    empty_rows += 1
-                    continue
-                elif empty_rows:
-                    _output(str(empty_rows) + " empty rows", 0)
-                    empty_rows = 0
-                _output(str(row), 0)
-                coords = list(map(lambda string: list(map(float, string.split(','))), row[5].split(';')))  # Reading first coords
-                for i in 6, 7, 8:  # Continue reading coords
-                    if row[i] is not None:
-                        cur = list(map(lambda string: list(map(float, string.split(','))), row[i].split(';')))
-                        for j in range(len(coords)):
-                            for k in 0, 1:  # Coords summation
-                                if i == 6:
-                                    coords[j][k] += cur[j][k]
-                                else:
-                                    coords[j][k] -= cur[j][k]
-                _output(str(coords), 0)
+                speed = type_data["velocity"]
+                coord = list(type_data.get("coords", [0.0, 0.0]))
                 # Removing 3% speed from AP, 5% from HE and HEAT
-                type_list = row[4].split(';')
-                speed_list = []
-                for i in range(len(type_list)):
-                    speed_list.append(int(str(row[2]).split(';')[i]))
-                    if type_list[i] in ["sim_AP"]:
-                        speed_list[-1] *= 0.97
-                    if type_list[i] in ["sim_HEAT", "sim_HE"]:
-                        speed_list[-1] *= 0.95
+                if sight_type == "sim_AP":
+                    speed *= 0.97
+                if sight_type in ("sim_HEAT", "sim_HE"):
+                    speed *= 0.95
                 # Create sight using generator
-                _output(generator.generator(row[0], speed_list, float(row[3]), type_list, coords, list(map(int, str(row[1]).split(';')))), 0)
+                _output(generator.generator(unit_id, [speed], zoom, [sight_type], [coord], [convergence]), 0)
             except:  # If something went wrong
-                wrong_strings[-1] += 1
-                _output("Wrong string format. Sheet: " + sheet_name + " Row: " + str(row_num), 1)
-
-        _output(str(empty_rows) + " empty rows", 0)
-        _output(str(wrong_strings[-1]) + " errors", 1)
+                wrong_entries += 1
+                _output("Wrong entry format. Unit: " + unit_id + " Type: " + sight_type, 1)
 
     try:
         res = generator.save_presets()
@@ -91,7 +87,8 @@ def reader(MODE, sheets=None, _print=print, _input=input):
         generator.increment_version()
     except:
         _output("\nError saving presets!\n", 1)
-    _output("Execution ended with " + str(sum(wrong_strings)) + " errors\n", 2)
+    _output(str(wrong_entries) + " errors", 1)
+    _output("Execution ended with " + str(wrong_entries) + " errors\n", 2)
     if MODE <= 2:
         _input("Press Enter to exit")
 

@@ -5,7 +5,6 @@ from defaults import *
 import tkinter as tk
 import tkinter.ttk as ttk
 import json
-import openpyxl
 from tktooltip import ToolTip
 from tkinter import messagebox
 from ttkthemes.themed_tk import ThemedTk
@@ -254,13 +253,22 @@ def main_menu():
     mode_flag = root.create(Flag, relx=0.02, rely=0.30, text=LABELS[LANG]["devMode"])
     mode_flag.set(0)
 
-    # Create checkbuttons for table sheets
-    workbook = openpyxl.load_workbook("data.xlsx")
+    # Create checkbuttons for sight-type categories found in data.json
+    with open("data.json", 'r', encoding="utf-8") as f:
+        data = json.load(f)
+    categories = set()
+    for entry in data.values():
+        for key in entry:
+            if key not in ("zoom", "convergence"):
+                categories.add(reader.sight_category(key))
+    category_order = ["LASER", "APDS", "AP", "HEAT", "HE", "RB", "AB", "CLEAN"]
+    sheet_names = [c for c in category_order if c in categories] + sorted(categories - set(category_order))
+
     sheet_flags = []
     ab_list = ["AB", "RB", "CLEAN"]
     sim_list = ["AP", "HE", "HEAT", "APDS", "LASER"]
     i, j, k = tk.IntVar(value=0), tk.IntVar(value=0), tk.IntVar(value=0)
-    for sheet_name in workbook.sheetnames:
+    for sheet_name in sheet_names:
         if sheet_name in ab_list:
             if not i.get():
                 root.create(ttk.Label, relx=0.45, rely=0.15, relwidth=0.10, relheight=0.04,

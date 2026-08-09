@@ -28,8 +28,8 @@ For simulator sights or if you just want to use circles instead of the standard 
 
 After changing the settings, remember to press SAVE SETTINGS AND EXIT TO MAIN MENU, simply closing the window will cancel all changes.
 
-If you want to know what sight types the tank uses, you can open data.xlsx - a table based on which sights are built. Each line is a separate sight. For convenience, the data is divided into pages.
-Columns from left to right: tank name, convergence in meters, muzzle velocity in m/s, gunner's sight zoom (minimum), sight type, then data from AssetViewer related to the location of the sight relative to the barrel (zeros in case of no parallax).
+If you want to know what sight types the tank uses, you can open data.json - the file sights are built from. Each top-level key is a tank's unit id.
+Inside it, "zoom" is the gunner's sight zoom (minimum) and "convergence" is the convergence distance in meters (zero-parallax distance); every other key is a sight type to generate, holding the shell's muzzle "velocity" in m/s and, unless there is no parallax (typically AB/RB), a "coords" pair - the sight's height/side offset from the gun in meters. An empty `{}` entry means no sight is generated for that tank.
 
 Presets 
 ------- 
@@ -48,7 +48,7 @@ To clear sight preset bindings, use the Clear Bindings button in the main menu.
 Launch
 ------
 
-In the main menu there are columns for selecting sight types (pages from data.xlsx) in case you don't want to litter with unnecessary ones.
+In the main menu there are columns for selecting sight types (categories derived from data.json) in case you don't want to litter with unnecessary ones.
 Clicking on the top label will remove or add a tick to the entire column.
 To create sights, press RUN or Enter button on the keyboard.
 
