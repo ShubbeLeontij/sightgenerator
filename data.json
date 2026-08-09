@@ -1,6 +1,6 @@
 {
   "all_tanks": {
-    "zoom" : 5.0,
+    "zoom": 5.0,
     "CLEAN": {
       "velocity": 1000
     }
@@ -2772,13 +2772,6 @@
       "velocity": 1790
     }
   },
-  "fr_leopard_2a4_nl": {
-    "zoom": 4,
-    "convergence": 1000,
-    "AB_f": {
-      "velocity": 1640
-    }
-  },
   "fr_leopard_2a4nl": {
     "zoom": 4.0,
     "convergence": 1000,
@@ -2804,6 +2797,9 @@
       ]
     },
     "RB_f": {
+      "velocity": 1640
+    },
+    "AB_f": {
       "velocity": 1640
     }
   },
@@ -5442,7 +5438,7 @@
       "velocity": 810
     }
   },
-  "germ_pzkpfw_VI_ausf_h1_tiger_ost": {
+  "germ_pzkpfw_VI_ausf_h1_tiger_east": {
     "zoom": 1.9,
     "convergence": 800,
     "sim_AP": {
@@ -16002,23 +15998,6 @@
       "velocity": 792
     }
   },
-  "us_m4a2_1944": {
-    "zoom": 1.9,
-    "convergence": 800,
-    "sim_AP": {
-      "velocity": 618,
-      "coords": [
-        0.1513,
-        0.3736
-      ]
-    },
-    "RB": {
-      "velocity": 618
-    },
-    "AB": {
-      "velocity": 618
-    }
-  },
   "us_m4a2_1944_germ": {
     "zoom": 1.9,
     "convergence": 800,
@@ -16061,23 +16040,6 @@
       "coords": [
         0.1513,
         0.3736
-      ]
-    },
-    "RB": {
-      "velocity": 618
-    },
-    "AB": {
-      "velocity": 618
-    }
-  },
-  "us_m4a2_sherman_1944": {
-    "zoom": 1.9,
-    "convergence": 800,
-    "sim_AP": {
-      "velocity": 618,
-      "coords": [
-        0.151,
-        0.374
       ]
     },
     "RB": {
@@ -16758,37 +16720,6 @@
       "velocity": 1455
     }
   },
-  "us_merkava_mk_3c": {
-    "zoom": 5,
-    "convergence": 1000,
-    "sim_LASER": {
-      "velocity": 1705,
-      "coords": [
-        0.385,
-        0.798
-      ]
-    },
-    "sim_APDS": {
-      "velocity": 1705,
-      "coords": [
-        0.385,
-        0.798
-      ]
-    },
-    "sim_HEAT_f": {
-      "velocity": 1078,
-      "coords": [
-        0.385,
-        0.798
-      ]
-    },
-    "RB_f": {
-      "velocity": 1705
-    },
-    "AB_f": {
-      "velocity": 1705
-    }
-  },
   "us_merkava_mk_3d": {
     "zoom": 5.0,
     "convergence": 1000,
@@ -17441,14 +17372,14 @@
       "velocity": 1478
     }
   },
-  "usa_m44": {
+  "us_m44": {
     "zoom": 4.1,
     "convergence": 800,
     "sim_HE_s": {
       "velocity": 563,
       "coords": [
-        0.393,
-        0.236
+        0.3933,
+        0.2362
       ]
     },
     "RB_s": {
@@ -18900,23 +18831,6 @@
     },
     "AB": {
       "velocity": 760
-    }
-  },
-  "ussr_su_100": {
-    "zoom": 4,
-    "convergence": 800,
-    "sim_AP": {
-      "velocity": 887,
-      "coords": [
-        0.023,
-        -0.302
-      ]
-    },
-    "RB": {
-      "velocity": 887
-    },
-    "AB": {
-      "velocity": 887
     }
   },
   "ussr_su_100Y": {
@@ -20669,8 +20583,270 @@
       "velocity": 880
     }
   },
+  "cn_bt_5": {
+    "zoom": 1.9,
+    "convergence": 400,
+    "sim_AP": {
+      "velocity": 760,
+      "coords": [
+        0.0594,
+        -0.1391
+      ]
+    },
+    "RB": {
+      "velocity": 760
+    },
+    "AB": {
+      "velocity": 760
+    }
+  },
+  "cn_mbt2000_sm": {},
+  "cn_t_80ud_478be": {},
+  "cn_ztz_96b": {},
+  "cn_ztz_96a_race": {},
+  "fr_amx_elc_901": {},
+  "fr_leopard_1a5be": {},
+  "fr_m46_patton": {},
+  "fr_marder_df_105": {},
+  "germ_amd_35_kwk": {},
+  "germ_boxer_swatrinf": {},
+  "germ_hummel": {},
+  "germ_leopard_2a4m_can_sm": {},
+  "germ_leopard_2a5_yt_cup_2019": {},
+  "germ_panther_II_tutorial": {},
+  "germ_pzkpfw_38t_na": {},
+  "germ_schutzenpanzer_puma_vjtf_mod": {},
+  "germ_sdkfz_234_2_mod": {},
+  "it_centauro_2": {},
+  "ussr_t_72b3_2017_race": {
+    "zoom": 7.2,
+    "convergence": 1000,
+    "sim_LASER": {
+      "velocity": 1660,
+      "coords": [
+        0.4207,
+        -0.5022
+      ]
+    },
+    "sim_APDS": {
+      "velocity": 1660,
+      "coords": [
+        0.4207,
+        -0.5022
+      ]
+    },
+    "sim_HEAT": {
+      "velocity": 905,
+      "coords": [
+        0.4207,
+        -0.5022
+      ]
+    },
+    "sim_HE": {
+      "velocity": 850,
+      "coords": [
+        0.4207,
+        -0.5022
+      ]
+    },
+    "RB": {
+      "velocity": 850
+    },
+    "AB": {
+      "velocity": 850
+    }
+  },
+  "ussr_t_72b3_arena": {
+    "zoom": 4.0,
+    "convergence": 1000,
+    "sim_LASER": {
+      "velocity": 1660,
+      "coords": [
+        0.4207,
+        -0.5022
+      ]
+    },
+    "sim_APDS": {
+      "velocity": 1660,
+      "coords": [
+        0.4207,
+        -0.5022
+      ]
+    },
+    "sim_HEAT": {
+      "velocity": 905,
+      "coords": [
+        0.4207,
+        -0.5022
+      ]
+    },
+    "sim_HE": {
+      "velocity": 850,
+      "coords": [
+        0.4207,
+        -0.5022
+      ]
+    },
+    "RB": {
+      "velocity": 850
+    },
+    "AB": {
+      "velocity": 850
+    }
+  },
+  "ussr_t_80u_race": {
+    "zoom": 2.7,
+    "convergence": 1000,
+    "sim_LASER": {
+      "velocity": 1660,
+      "coords": [
+        0.4417,
+        -0.487
+      ]
+    },
+    "sim_APDS": {
+      "velocity": 1660,
+      "coords": [
+        0.4417,
+        -0.487
+      ]
+    },
+    "sim_HEAT": {
+      "velocity": 905,
+      "coords": [
+        0.4417,
+        -0.487
+      ]
+    },
+    "sim_HE": {
+      "velocity": 850,
+      "coords": [
+        0.4417,
+        -0.487
+      ]
+    },
+    "RB": {
+      "velocity": 850
+    },
+    "AB": {
+      "velocity": 850
+    }
+  },
+  "ussr_t_80u_yt_cup_2019": {
+    "zoom": 2.7,
+    "convergence": 1000,
+    "sim_LASER": {
+      "velocity": 1660,
+      "coords": [
+        0.4417,
+        -0.487
+      ]
+    },
+    "sim_APDS": {
+      "velocity": 1660,
+      "coords": [
+        0.4417,
+        -0.487
+      ]
+    },
+    "sim_HEAT": {
+      "velocity": 905,
+      "coords": [
+        0.4417,
+        -0.487
+      ]
+    },
+    "sim_HE": {
+      "velocity": 850,
+      "coords": [
+        0.4417,
+        -0.487
+      ]
+    },
+    "RB": {
+      "velocity": 850
+    },
+    "AB": {
+      "velocity": 850
+    }
+  },
+  "ussr_t_80ue1_sm": {
+    "zoom": 2.7,
+    "convergence": 1000,
+    "sim_LASER": {
+      "velocity": 1660,
+      "coords": [
+        0.4383,
+        -0.4856
+      ]
+    },
+    "sim_APDS": {
+      "velocity": 1660,
+      "coords": [
+        0.4383,
+        -0.4856
+      ]
+    },
+    "sim_HEAT": {
+      "velocity": 905,
+      "coords": [
+        0.4383,
+        -0.4856
+      ]
+    },
+    "sim_HE": {
+      "velocity": 850,
+      "coords": [
+        0.4383,
+        -0.4856
+      ]
+    },
+    "RB": {
+      "velocity": 850
+    },
+    "AB": {
+      "velocity": 850
+    }
+  },
+  "ussr_t_90m_arena_m": {
+    "zoom": 4.0,
+    "convergence": 1000,
+    "sim_LASER": {
+      "velocity": 1660,
+      "coords": [
+        0.5294,
+        -0.7017
+      ]
+    },
+    "sim_APDS": {
+      "velocity": 1660,
+      "coords": [
+        0.5294,
+        -0.7017
+      ]
+    },
+    "sim_HEAT": {
+      "velocity": 905,
+      "coords": [
+        0.5294,
+        -0.7017
+      ]
+    },
+    "sim_HE": {
+      "velocity": 850,
+      "coords": [
+        0.5294,
+        -0.7017
+      ]
+    },
+    "RB": {
+      "velocity": 850
+    },
+    "AB": {
+      "velocity": 850
+    }
+  },
   "cn_antelope_tc_1l_ads": {},
-  "cn_bt_5": {},
   "cn_cm_25": {},
   "cn_gmc_cckw_353_m45_quad": {},
   "cn_hj_9": {},
@@ -20678,32 +20854,24 @@
   "cn_hq_17": {},
   "cn_m113a1_tow": {},
   "cn_m42_duster": {},
-  "cn_mbt2000_sm": {},
   "cn_pgz_04a": {},
   "cn_pgz_09": {},
   "cn_pgz_625_fb10": {},
   "cn_pgz_88": {},
-  "cn_t_80ud_478be": {},
   "cn_tor_m1": {},
   "cn_type_65_aa": {},
   "cn_type_95_ha_go": {},
   "cn_wz_141": {},
   "cn_wz_305": {},
   "cn_zsd63_pg87": {},
-  "cn_ztz_96a_race": {},
-  "cn_ztz_96b": {},
   "fr_amx_10m_acra": {},
   "fr_amx_13_dca_40": {},
   "fr_amx_30_ACRA": {},
   "fr_amx_30_dca": {},
   "fr_amx_30_roland": {},
-  "fr_amx_elc_901": {},
   "fr_amx_vtt_dca": {},
   "fr_citroen_kegresse_p4t": {},
   "fr_crotale_ng": {},
-  "fr_leopard_1a5be": {},
-  "fr_m46_patton": {},
-  "fr_marder_df_105": {},
   "fr_samp_t_fcs": {},
   "fr_samp_t_launcher": {},
   "fr_vab_santal": {},
@@ -20711,9 +20879,7 @@
   "germ_9a33bm3": {},
   "germ_9a35_m": {},
   "germ_a7v_event": {},
-  "germ_amd_35_kwk": {},
   "germ_beutepanzer_mk_iv_event": {},
-  "germ_boxer_swatrinf": {},
   "germ_flakpanzer_38t_Gepard": {},
   "germ_flakpanzer_IV_Kugelblitz": {},
   "germ_flakpanzer_IV_Ostwind": {},
@@ -20728,21 +20894,13 @@
   "germ_flarakpz_1": {},
   "germ_flarakrad": {},
   "germ_garford_putilov_event": {},
-  "germ_hummel": {},
   "germ_iris_slm_fcs": {},
   "germ_iris_slm_launcher": {},
   "germ_jaguar_2": {},
-  "germ_leopard_2a4m_can_sm": {},
-  "germ_leopard_2a5_yt_cup_2019": {},
   "germ_nbfz_VI": {},
-  "germ_panther_II_tutorial": {},
   "germ_panzerwerfer_42": {},
-  "germ_pzkpfw_38t_na": {},
-  "germ_pzkpfw_VI_ausf_h1_tiger_east": {},
   "germ_raketenjagdpanzer_2": {},
   "germ_raketenjagdpanzer_2_hot": {},
-  "germ_schutzenpanzer_puma_vjtf_mod": {},
-  "germ_sdkfz_234_2_mod": {},
   "germ_sdkfz_251_21": {},
   "germ_spz_oerlikon_raketenautomat": {},
   "germ_sturmmorser_sturmtiger_event": {},
@@ -20763,7 +20921,6 @@
   "it_as_42_47": {},
   "it_as_42_metropolitana": {},
   "it_c13_tua": {},
-  "it_centauro_2": {},
   "it_fiat_6614_firos": {},
   "it_fiat_6616_ub": {},
   "it_fiat_cm52": {},
@@ -20871,7 +21028,6 @@
   "us_m2a2": {},
   "us_m3_lee": {},
   "us_m42_duster": {},
-  "us_m44": {},
   "us_m4a2_76w_sherman_tutorial": {},
   "us_m50_ontos": {},
   "us_m551_football": {},
@@ -20916,12 +21072,6 @@
   "ussr_t_35": {},
   "ussr_t_50_for_tutorial": {},
   "ussr_t_60_1941": {},
-  "ussr_t_72b3_2017_race": {},
-  "ussr_t_72b3_arena": {},
-  "ussr_t_80u_race": {},
-  "ussr_t_80u_yt_cup_2019": {},
-  "ussr_t_80ue1_sm": {},
-  "ussr_t_90m_arena_m": {},
   "ussr_tor_m1": {},
   "ussr_type_65_aa": {},
   "ussr_zis_12_94KM_1945": {},
