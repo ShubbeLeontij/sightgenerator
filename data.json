@@ -1,4 +1,10 @@
 {
+  "all_tanks": {
+    "zoom" : 5.0,
+    "CLEAN": {
+      "velocity": 1000
+    }
+  },
   "cn_al_khalid_1": {
     "zoom": 6.0,
     "convergence": 1000,
