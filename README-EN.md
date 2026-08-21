@@ -19,17 +19,20 @@ If it is still not clear what this setting is responsible for, there is PREVIEW,
 
 The left side of the menu is the global settings that apply to all sights.
 The right part is separate for each sight type - they are switched using the menu in the upper right corner.
-The name of each sight type begins with the mode for which it was created (AB, RB or sim) - the arcade one differs from the realistic one by default only in the presence of a rangefinder, while in the simulator ones parallax is taken into account.
-In the case of the sim, the projectile type is next (AP, HEAT, APDS or HE), and there is also sim_LASER for tanks with a laser rangefinder.
-Postfix can follow - _s for slow (<500m/s) shells and _f for fast (>1100m/s) shells.
-There is also a CLEAN type - an empty sight, which is convenient to use on ATGM carriers and AA.
+Sights are generated with three types, chosen by the shell's muzzle velocity: simulator_s (below 600 m/s), simulator (600-1100 m/s) and simulator_f (above 1100 m/s).
+All of them take parallax into account and differ mainly in the distances the markers are drawn for - the slower the shell, the closer together the markers are.
+On top of that every tank gets an arcade and a realistic sight, built from its standard shell: there is no parallax in those gamemodes, so the sight sits on the gun and convergence is ignored, and the arcade one differs from the realistic one only by the absence of a rangefinder.
+Those two also come in three speed variants (arcade_s/arcade/arcade_f and realistic_s/realistic/realistic_f in settings.json), picked by the same speed thresholds.
+Finally, a tank with a laser rangefinder gets one more sight - simulator_laser. Such a tank measures the range in game and its ballistic computer aims the gun itself, so this sight carries neither the stadiametric rangefinder nor the far distance marks, only the parallax markers of the near distances.
 
 For simulator sights or if you just want to use circles instead of the standard markers, there is the EDIT SIM CIRCLES menu - in it each line creates a distance marker using a circle.
 
 After changing the settings, remember to press SAVE SETTINGS AND EXIT TO MAIN MENU, simply closing the window will cancel all changes.
 
-If you want to know what sight types the tank uses, you can open data.json - the file sights are built from. Each top-level key is a tank's unit id.
-Inside it, "zoom" is the gunner's sight zoom (minimum) and "convergence" is the convergence distance in meters (zero-parallax distance); every other key is a sight type to generate, holding the shell's muzzle "velocity" in m/s and, unless there is no parallax (typically AB/RB), a "coords" pair - the sight's height/side offset from the gun in meters. An empty `{}` entry means no sight is generated for that tank.
+If you want to know what sights the tank gets, you can open data.json - the file sights are built from. Each top-level key is a tank's unit id.
+Inside it, "zoom" is the gunner's sight zoom (minimum), "convergence" is the convergence distance in meters (zero-parallax distance, null means no convergence), "coords" is the sight's height/side offset from the gun in meters, "standard" is the shell whose sight is bound to the tank in global.blk and "laser" tells whether the tank has a laser rangefinder.
+Every other key is a shell of that tank - one sight is created for each of them, named after the shell, plus arcade.blk and realistic.blk for the standard one and simulator_laser.blk when "laser" is true. A shell holds its "speed" in m/s (the sight type is chosen by it), the game's shell "type", and "mass", "caliber" and "cx", which are not used yet.
+An empty `{}` entry means no sight is generated for that tank, and shells without "speed" (missiles and rockets) are skipped.
 
 Presets 
 ------- 
@@ -48,8 +51,7 @@ To clear sight preset bindings, use the Clear Bindings button in the main menu.
 Launch
 ------
 
-In the main menu there are columns for selecting sight types (categories derived from data.json) in case you don't want to litter with unnecessary ones.
-Clicking on the top label will remove or add a tick to the entire column.
+In the main menu every sight is always created, and the radiobuttons only choose which one becomes the default sight written to global.blk: arcade, realistic, or simulator - the tank's laser sight if it has a laser rangefinder, otherwise the sight of its standard shell.
 To create sights, press RUN or Enter button on the keyboard.
 
 Contacts
