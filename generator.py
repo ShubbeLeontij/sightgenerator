@@ -26,6 +26,19 @@ insert_str = dict[str, str]()
 settings = Settings("settings.json")
 
 
+def speed_category(speed) -> str:
+    """
+    Function that chooses sight type by shell's muzzle velocity.
+    :param speed: shell's speed in m/s
+    :return: sight type suffix
+    """
+    if speed < SLOW_SPEED_THRESHOLD:
+        return "_s"
+    if speed > FAST_SPEED_THRESHOLD:
+        return "_f"
+    return ""
+
+
 def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     """
     Function that creates sight layout.
@@ -81,11 +94,7 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
         return "text\n{\ntext: t = \"" + (str(distance) if distance < 100 else str(distance//100)) + "\"\nalign: i = 0\npos: p2 = " + \
                str(round(x, 2)) + ", " + str(round(y, 2)) + "\nmove: b = yes\nthousandth: b = yes\nsize: r = " + str(size) + "\nhighlight: b = yes\n}\n"
 
-    s_type = None
-    for t in settings.get_setting("sightTypes"):
-        if sight_type in t["names"]:
-            s_type = t
-            break
+    s_type = settings.get_setting("sightTypes")[sight_type]
     line_dist_list = s_type["line_dist_list"]
     rangefinder = s_type["rangefinder"]
     right_dist_list = s_type["right_dist_list"]
@@ -245,7 +254,20 @@ def save_presets() -> str:
     return "\nPresets saved at " + get_path() + "/global.blk\n"
 
 
-def generator(name, speed, zoom, sight_type, coord, convergence):
+def bind_preset(name, filename):
+    """
+    Function that remembers which sight should be bound to the tank in global.blk.
+    :param name: tank name
+    :param filename: name of the .blk sight file (without extension)
+    """
+    if name == "all_tanks":
+        return
+    if name in insert_str:
+        return
+    insert_str[name] = ("        " + name + "{\n          crosshair:t=\"" + filename + "\"\n" + settings.get_setting("preset") + "\n        }\n")
+
+
+def generator(name, speed, zoom, sight_type, coord, convergence, filename=None, bind=True):
     """
     Function that creates sight .blk file.
     :param name: tank name
@@ -254,6 +276,8 @@ def generator(name, speed, zoom, sight_type, coord, convergence):
     :param sight_type: list of sight types according to settings.json
     :param coord: list of lists with two floats inside - height and width location of sight relatively to the gun in meters
     :param convergence: list of convergences in meters i.e. distance with zero parallax (int type)
+    :param filename: name of the .blk file to create. By default it is built from the sight types and tank name
+    :param bind: boolean showing whether this sight should be bound to the tank in global.blk
     """
     sight_list = create_sight(speed[0], zoom, sight_type[0], coord[0], convergence[0], True)
     for i in range(1, len(coord)):
@@ -261,7 +285,7 @@ def generator(name, speed, zoom, sight_type, coord, convergence):
         sight_list[2] += cur_sight_list[2]
         sight_list[3] += cur_sight_list[3]
         sight_list[4] += cur_sight_list[4]
-    filename = '_'.join(sight_type) + '_' + name
+    filename = filename if filename else '_'.join(sight_type) + '_' + name
     folder = get_path() + "/UserSights/" + name
     output = (ALL_TANKS_TOP if name == "all_tanks" else "") + sight_list[0] + "\ncrosshair_distances{\n" + sight_list[1] + "}\n\ndrawLines{\n" + sight_list[2] + "}\n\ndrawCircles{\n" + sight_list[3] + "}\n\ndrawTexts{\n" + sight_list[4] + "}\n"
     try:
@@ -270,8 +294,8 @@ def generator(name, speed, zoom, sight_type, coord, convergence):
         pass
     with open(folder + "/" + filename + ".blk", 'w') as f:
         f.write(output)
-    if name != "all_tanks" and name not in insert_str:
-        insert_str[name] = ("        " + name + "{\n          crosshair:t=\"" + filename + "\"\n" + settings.get_setting("preset") + "\n        }\n")
+    if bind:
+        bind_preset(name, filename)
     return "Successfully created sight at %s " % (folder + "/" + filename + ".blk")
 
 
@@ -283,13 +307,14 @@ if __name__ == "__main__":
         speed = int(input("Shell speed in m/s: "))
         convergence = int(input("Convergence in meters: "))
         zoom = float(input("Zoom: "))
-        sight_type = input("Sight type: ")
+        sight_type = speed_category(speed)
+        filename = input("Sight name: ")
         coord = list(map(float, input("Sight coordinates: ").split(',')))
         try:
             os.mkdir(get_path() + "/UserSights/")
         except:
             pass
-        print(generator(name, [speed], zoom, [sight_type], [coord], [convergence]))
+        print(generator(name, [speed], zoom, [sight_type], [coord], [convergence], filename=filename))
         print(save_presets())
     except ValueError:
         print("Wrong format string")

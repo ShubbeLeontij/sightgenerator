@@ -2,31 +2,19 @@
 import shutil
 
 import generator
+from defaults import *
 import json
 import math
 import os
 import argparse
 
 
-def sight_category(sight_type):
+def reader(MODE, default_mode=SIM_SIGHT_MODE, _print=print, _input=input):
     """
-    Function that maps a data.json sight-type key (e.g. "sim_AP_f", "RB_s", "sim_LASER")
-    to its coarse category (e.g. "AP", "RB", "LASER"), stripping the "sim_" prefix and
-    any "_f"/"_s" (fast/slow shell) suffix.
-    :param sight_type: sight-type key as found in data.json
-    :return: str category name
-    """
-    base = sight_type[len("sim_"):] if sight_type.startswith("sim_") else sight_type
-    if base.endswith("_f") or base.endswith("_s"):
-        base = base[:-2]
-    return base
-
-
-def reader(MODE, sheets=None, _print=print, _input=input):
-    """
-    Function that reads data.json and creates sights for every tank/sight-type. This is the core of whole program.
+    Function that reads data.json and creates every sight of every tank. This is the core of whole program.
     :param MODE: output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3
-    :param sheets: list of sight-type categories that will be used (e.g. "AP", "RB", "LASER"). By default, all are used
+    :param default_mode: sight that is written to global.blk as the default one - "arcade", "realistic" or
+    "simulator" (the standard shell's sight)
     :param _print: output function
     :param _input: input function
     """
@@ -56,30 +44,54 @@ def reader(MODE, sheets=None, _print=print, _input=input):
     for unit_id, entry in data.items():  # Iterating tanks
         if not entry:  # "{}" marker means "don't generate a sight for this tank"
             continue
-        # convergence missing (e.g. SPAA without gunConvergence in game files) is treated as infinite,
-        # i.e. parallax depends only on distance, never zeroes out
-        convergence = entry.get("convergence", math.inf)
+        # convergence missing or null (e.g. SPAA without gunConvergence in game files) is treated as
+        # infinite, i.e. parallax depends only on distance, never zeroes out
+        convergence = entry.get("convergence") or math.inf
         zoom = float(entry["zoom"])
+        coord = list(entry.get("coords", [0.0, 0.0]))
+        standard = entry.get("standard")
 
-        for sight_type, type_data in entry.items():
-            if sight_type in ("zoom", "convergence"):
-                continue
-            if sheets and sight_category(sight_type) not in sheets:  # Checking allowed list
-                continue
-            _output(str((unit_id, sight_type, type_data)), 0)
+        # Arcade and realistic sights are made once per tank from its standard shell - there is no parallax
+        # in those gamemodes, so the sight sits on the gun (no coords) and convergence never matters
+        # Standard shell without speed is reported by the shell loop below, so here it is simply skipped
+        standard_speed = entry.get(standard, {}).get("speed") if standard else None
+        for gamemode in GAMEMODE_SIGHT_TYPES if standard_speed else ():
+            sight_type = gamemode + generator.speed_category(standard_speed)
+            _output(str((unit_id, gamemode, sight_type, standard, standard_speed)), 0)
             try:
-                speed = type_data["velocity"]
-                coord = list(type_data.get("coords", [0.0, 0.0]))
-                # Removing 3% speed from AP, 5% from HE and HEAT
-                if sight_type == "sim_AP":
-                    speed *= 0.97
-                if sight_type in ("sim_HEAT", "sim_HE"):
-                    speed *= 0.95
-                # Create sight using generator
-                _output(generator.generator(unit_id, [speed], zoom, [sight_type], [coord], [convergence]), 0)
+                _output(generator.generator(unit_id, [standard_speed], zoom, [sight_type], [[0.0, 0.0]],
+                                            [math.inf], filename=gamemode, bind=gamemode == default_mode), 0)
             except:  # If something went wrong
                 wrong_entries += 1
-                _output("Wrong entry format. Unit: " + unit_id + " Type: " + sight_type, 1)
+                _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + gamemode, 1)
+
+        if entry.get("laser"):
+            sight_type = "simulator_laser"
+            try:
+                _output(generator.generator(unit_id, [standard_speed], zoom, [sight_type], [coord],
+                                            [convergence], filename=sight_type, bind=True), 0)
+            except:  # If something went wrong
+                wrong_entries += 1
+                _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + sight_type, 1)
+
+        for shell_name, shell in entry.items():  # Iterating shells of the tank
+            if shell_name in ("zoom", "convergence", "coords", "standard", "laser"):
+                continue
+            speed = shell.get("speed") if isinstance(shell, dict) else None
+            if not speed:  # Shells without muzzle velocity (missiles and rockets) get no sight
+                # wrong_entries += 1
+                _output("No shell speed. Unit: " + unit_id + " Shell: " + shell_name, 0)
+                continue
+            sight_type = SIM_SIGHT_MODE + generator.speed_category(speed)
+            _output(str((unit_id, shell_name, sight_type, shell)), 0)
+            try:
+                # Create sight using generator, the standard shell being the default sight in simulator mode
+                _output(generator.generator(unit_id, [speed], zoom, [sight_type], [coord], [convergence],
+                                            filename=shell_name,
+                                            bind=default_mode == SIM_SIGHT_MODE and shell_name == standard), 0)
+            except:  # If something went wrong
+                wrong_entries += 1
+                _output("Wrong entry format. Unit: " + unit_id + " Shell: " + shell_name, 1)
 
     try:
         res = generator.save_presets()
@@ -118,6 +130,7 @@ if __name__ == "__main__":
     # Read all arguments from terminal and run main function
     parser = argparse.ArgumentParser(description="Creates UserSights folder with WarThunder sights.")
     parser.add_argument("-m", "--mode", help="Output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3", default=1)
-    MODE = int(vars(parser.parse_args())["mode"])
+    parser.add_argument("-d", "--default", help="Sight written to global.blk as the default one", choices=DEFAULT_SIGHT_MODES, default=SIM_SIGHT_MODE)
+    args = vars(parser.parse_args())
 
-    reader(MODE, _print=print, _input=input)
+    reader(int(args["mode"]), args["default"], _print=print, _input=input)

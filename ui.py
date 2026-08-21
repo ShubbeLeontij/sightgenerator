@@ -202,7 +202,7 @@ def main_menu():
         Function that runs reader.
         """
         save_paths()
-        reader.reader(0 if mode_flag.get() else 1, sheets=[flag["text"] if flag.get() else None for flag in sheet_flags],
+        reader.reader(0 if mode_flag.get() else 1, default_mode=default_sight_var.get(),
                       _print=output_text.print, _input=lambda *args: None)
 
     def clear():
@@ -253,40 +253,12 @@ def main_menu():
     mode_flag = root.create(Flag, relx=0.02, rely=0.30, text=LABELS[LANG]["devMode"])
     mode_flag.set(0)
 
-    # Create checkbuttons for sight-type categories found in data.json
-    with open("data.json", 'r', encoding="utf-8") as f:
-        data = json.load(f)
-    categories = set()
-    for entry in data.values():
-        for key in entry:
-            if key not in ("zoom", "convergence"):
-                categories.add(reader.sight_category(key))
-    category_order = ["LASER", "APDS", "AP", "HEAT", "HE", "RB", "AB", "CLEAN"]
-    sheet_names = [c for c in category_order if c in categories] + sorted(categories - set(category_order))
-
-    sheet_flags = []
-    ab_list = ["AB", "RB", "CLEAN"]
-    sim_list = ["AP", "HE", "HEAT", "APDS", "LASER"]
-    i, j, k = tk.IntVar(value=0), tk.IntVar(value=0), tk.IntVar(value=0)
-    for sheet_name in sheet_names:
-        if sheet_name in ab_list:
-            if not i.get():
-                root.create(ttk.Label, relx=0.45, rely=0.15, relwidth=0.10, relheight=0.04,
-                            text=LABELS[LANG]["abrb"]).bind("<Button-1>", lambda event: [[((flag.set(0) if i.get() else flag.set(1)) if flag["text"] in ab_list else 0) for flag in sheet_flags], i.set(not i.get())])
-            i.set(i.get() + 1)
-            sheet_flags.append(root.create(Flag, relx=0.45, rely=0.15 + 0.05 * i.get(), text=sheet_name, default=1))
-        elif sheet_name in sim_list:
-            if not j.get():
-                root.create(ttk.Label, relx=0.57, rely=0.15, relwidth=0.10, relheight=0.04,
-                            text=LABELS[LANG]["sim"]).bind("<Button-1>", lambda event: [[((flag.set(0) if j.get() else flag.set(1)) if flag["text"] in sim_list else 0) for flag in sheet_flags], j.set(not j.get())])
-            j.set(j.get() + 1)
-            sheet_flags.append(root.create(Flag, relx=0.57, rely=0.15 + 0.05 * j.get(), text=sheet_name, default=1))
-        else:
-            if not k.get():
-                root.create(ttk.Label, relx=0.69, rely=0.15, relwidth=0.10, relheight=0.04,
-                            text=LABELS[LANG]["other"]).bind("<Button-1>", lambda event: [[((flag.set(0) if k.get() else flag.set(1)) if flag["text"] not in ab_list + sim_list else 0) for flag in sheet_flags], k.set(not k.get())])
-            k.set(k.get() + 1)
-            sheet_flags.append(root.create(Flag, relx=0.69, rely=0.15 + 0.05 * k.get(), text=sheet_name, default=1))
+    # Create radiobuttons choosing the sight written to global.blk - every sight is created no matter what
+    default_sight_var = tk.StringVar(value=SIM_SIGHT_MODE)
+    root.create(ttk.Label, relx=0.52, rely=0.20, relwidth=0.25, relheight=0.04, text=LABELS[LANG]["defaultSight"])
+    for i, mode_name in enumerate(DEFAULT_SIGHT_MODES):
+        root.create(ttk.Radiobutton, relx=0.52, rely=0.25 + 0.05 * i, variable=default_sight_var, value=mode_name,
+                    text=mode_name)
 
     # Create action buttons
     root.bind("<Return>", lambda event: run())
@@ -298,7 +270,7 @@ def main_menu():
     root.create(ttk.Button, relx=0.21, rely=0.41, relwidth=0.22, relheight=0.08, command=clear, text=LABELS[LANG]["clear"])
     root.create(ttk.Button, relx=0.75, rely=0.37, relwidth=0.22, relheight=0.08, command=change_language, text=LABELS[LANG]["changeLanguage"])
     root.create(ttk.Label, relx=0.02, rely=0.02, relwidth=0.16, relheight=0.08, text=LABELS[LANG]["id"])
-    id_input = root.create(Input, relx=0.20, rely=0.02, relwidth=0.10, relheight=0.08, text=generator.Settings("settings.json").get_setting("id"))
+    id_input = root.create(Input, relx=0.20, rely=0.02, relwidth=0.20, relheight=0.08, text=generator.Settings("settings.json").get_setting("id"))
 
 curPreset = ""
 
@@ -336,7 +308,7 @@ def settings_menu():
         Function that creates tkinter window for preview for certain sight type and draws whole sight model.
         """
         color = "black"
-        canvas_tk = Root(theme="breeze", title=LABELS[LANG]["canvas"] + ' ' + settings["sightTypes"][cur_type_index]["names"][0],
+        canvas_tk = Root(theme="breeze", title=LABELS[LANG]["canvas"] + ' ' + cur_type_name,
                          geometry="300x300")
         canvas_tk.resizable(False, False)
         canvas = canvas_tk.create(tk.Canvas, x=0, y=0, width=300, height=300, background="lightgrey")
@@ -367,7 +339,7 @@ def settings_menu():
             canvas.create_line(0, 100, 300, 100, fill=color, width=float(lineSizeMult.get()))
         if settings["drawCentralLineVert"] == "yes":
             canvas.create_line(150, 0, 150, 300, fill=color, width=float(lineSizeMult.get()))
-        if settings["sightTypes"][cur_type_index]["centralLines"] == "brackets":
+        if settings["sightTypes"][cur_type_name]["centralLines"] == "brackets":
             canvas.create_line(153, 106, 156, 106, fill=color, width=float(lineSizeMult.get()))
             canvas.create_line(144, 106, 147, 106, fill=color, width=float(lineSizeMult.get()))
             canvas.create_line(153, 94, 156, 94, fill=color, width=float(lineSizeMult.get()))
@@ -376,20 +348,23 @@ def settings_menu():
             canvas.create_line(144, 94, 144, 106, fill=color, width=float(lineSizeMult.get()))
             canvas.create_line(156, 100, 166, 100, fill=color, width=float(lineSizeMult.get()))
             canvas.create_line(134, 100, 144, 100, fill=color, width=float(lineSizeMult.get()))
-        elif settings["sightTypes"][cur_type_index]["centralLines"] == "standard":
+        elif settings["sightTypes"][cur_type_name]["centralLines"] == "standard":
             canvas.create_line(157, 100, 170, 100, fill=color, width=float(lineSizeMult.get()))
             canvas.create_line(130, 100, 143, 100, fill=color, width=float(lineSizeMult.get()))
-        if settings["sightTypes"][cur_type_index]["names"][0] in ["sim_APDS", "AB_f", "RB_f"]:
+        type_name = cur_type_name
+        # Gamemode sights have no parallax, so their markers lie on the central vertical line
+        no_parallax = type_name.count("arcade") or type_name.count("realistic")
+        if type_name in ["simulator_f", "arcade_f", "realistic_f"]:
             speed = 1500
-        elif settings["sightTypes"][cur_type_index]["names"][0] in ["sim_AP", "AB", "RB"]:
+        elif type_name in ["simulator", "arcade", "realistic"]:
             speed = 800
-        elif settings["sightTypes"][cur_type_index]["names"][0] in ["sim_AP_s", "AB_s", "RB_s"]:
+        elif type_name in ["simulator_s", "arcade_s", "realistic_s"]:
             speed = 500
         else:
             speed = 1000
         dist_list = list(map(int, items["line_dist_list"].get().split()))
         for i in range(1, len(dist_list)):
-            if settings["sightTypes"][cur_type_index]["names"][0].count("AB") or settings["sightTypes"][cur_type_index]["names"][0].count("RB"):
+            if no_parallax:
                 canvas.create_line(150, 50000 * dist_list[i] / speed ** 2 + 100, 150,
                                    50000 * dist_list[i - 1] / speed ** 2 + 100, fill=color,
                                    width=float(lineSizeMult.get()))
@@ -400,8 +375,8 @@ def settings_menu():
                 y2 = 5000 / dist_list[i - 1] + 50000 * dist_list[i - 1] / speed ** 2 + 93.75 if dist_list[
                     i - 1] else 100
                 canvas.create_line(x1, y1, x2, y2, fill=color, width=float(lineSizeMult.get()))
-        for dist, circle_dict in settings["sightTypes"][cur_type_index]["circles"].items():
-            if settings["sightTypes"][cur_type_index]["names"][0].count("AB") or settings["sightTypes"][cur_type_index]["names"][0].count("RB"):
+        for dist, circle_dict in settings["sightTypes"][cur_type_name]["circles"].items():
+            if no_parallax:
                 x, y = 150, 50000 * int(dist) / speed ** 2 + 100
             else:
                 x, y = 156.25 - 5000 / int(dist), 5000 / int(dist) + 50000 * int(dist) / speed ** 2 + 93.75
@@ -412,21 +387,21 @@ def settings_menu():
                                font=("TkDefaultFont", int(circle_dict["textSize"] * float(fontSizeMult.get()) * 15)),
                                fill=color)
         for dist in list(map(int, items["small_dist_list"].get().split())):
-            if settings["sightTypes"][cur_type_index]["names"][0].count("AB") or settings["sightTypes"][cur_type_index]["names"][0].count("RB"):
+            if no_parallax:
                 x, y = 150, 50000 * int(dist) / speed ** 2 + 100
             else:
                 x, y = 156.25 - 5000 / int(DIST_POINT), 50000 * int(dist) / speed ** 2 + 100
             canvas.create_line(x, y, x + float(1000 * DIST_MULT * float(distLength.get())), y, fill=color,
                                width=float(lineSizeMult.get()))
         for dist in list(map(int, items["right_dist_list"].get().split())):
-            if settings["sightTypes"][cur_type_index]["names"][0].count("AB") or settings["sightTypes"][cur_type_index]["names"][0].count("RB"):
+            if no_parallax:
                 x, y = 150, 50000 * int(dist) / speed ** 2 + 100
             else:
                 x, y = 156.25 - 5000 / int(DIST_POINT), 50000 * int(dist) / speed ** 2 + 100
             canvas.create_line(x, y, x + 1000 * float(distLength.get()), y, fill=color, width=float(lineSizeMult.get()))
             canvas.create_text(x + 1000 * (float(distLength.get()) + DIST_INDENT), y, text=dist if int(dist) < 100 else str(int(dist) // 100), font=("TkDefaultFont", int(float(fontSizeMult.get()) * 10)), fill=color)
         for dist in list(map(int, items["left_dist_list"].get().split())):
-            if settings["sightTypes"][cur_type_index]["names"][0].count("AB") or settings["sightTypes"][cur_type_index]["names"][0].count("RB"):
+            if no_parallax:
                 x, y = 150, 50000 * int(dist) / speed ** 2 + 100
             else:
                 x, y = 156.25 - 5000 / int(DIST_POINT), 50000 * int(dist) / speed ** 2 + 100
@@ -449,14 +424,14 @@ def settings_menu():
                 """
                 Function that saves circles settings to program memory (not json file) after closing tkinter window.
                 """
-                settings["sightTypes"][cur_type_index]["circles"] = dict()
+                settings["sightTypes"][cur_type_name]["circles"] = dict()
                 for d in list(circles.values()):
                     try:
                         cur_dist = d["dist"].get()
-                        settings["sightTypes"][cur_type_index]["circles"][cur_dist] = dict()
-                        settings["sightTypes"][cur_type_index]["circles"][cur_dist]["size"] = float(d["size"].get())
-                        settings["sightTypes"][cur_type_index]["circles"][cur_dist]["textPos"] = list(map(float, d["textPos"].get().split(',')))
-                        settings["sightTypes"][cur_type_index]["circles"][cur_dist]["textSize"] = float(d["textSize"].get())
+                        settings["sightTypes"][cur_type_name]["circles"][cur_dist] = dict()
+                        settings["sightTypes"][cur_type_name]["circles"][cur_dist]["size"] = float(d["size"].get())
+                        settings["sightTypes"][cur_type_name]["circles"][cur_dist]["textPos"] = list(map(float, d["textPos"].get().split(',')))
+                        settings["sightTypes"][cur_type_name]["circles"][cur_dist]["textSize"] = float(d["textSize"].get())
                     except:
                         if crosshair_var.get() and central_lines_var:
                             pass  # without this python garbage collector will kill this variable
@@ -474,9 +449,9 @@ def settings_menu():
                 d["dist"] = edit_tk.create(Input, x=36, y=45 + 33 * i, width=60, height=30,
                                            text=dist if dist else str(i))
                 d["size"] = edit_tk.create(Input, x=99, y=45 + 33 * i, width=60, height=30, text=str(
-                    settings["sightTypes"][cur_type_index]["circles"][dist]["size"]) if dist else "1.0")
-                d["textPos"] = edit_tk.create(Input, x=162, y=45 + 33 * i, width=72, height=30, text=", ".join(map(str, settings["sightTypes"][cur_type_index]["circles"][dist]["textPos"] if dist else [0.0, 0.0])))
-                d["textSize"] = edit_tk.create(Input, x=237, y=45 + 33 * i, width=60, height=30, text=str(settings["sightTypes"][cur_type_index]["circles"][dist]["textSize"]) if dist else "1.0")
+                    settings["sightTypes"][cur_type_name]["circles"][dist]["size"]) if dist else "1.0")
+                d["textPos"] = edit_tk.create(Input, x=162, y=45 + 33 * i, width=72, height=30, text=", ".join(map(str, settings["sightTypes"][cur_type_name]["circles"][dist]["textPos"] if dist else [0.0, 0.0])))
+                d["textSize"] = edit_tk.create(Input, x=237, y=45 + 33 * i, width=60, height=30, text=str(settings["sightTypes"][cur_type_name]["circles"][dist]["textSize"]) if dist else "1.0")
                 return d
 
             edit_tk = Root(theme="breeze", title=LABELS[LANG]["editCircles"], on_destroy=save_circles)
@@ -492,57 +467,53 @@ def settings_menu():
             circles = dict()
             i = tk.IntVar()
             i.set(0)
-            for dist in settings["sightTypes"][cur_type_index]["circles"].keys():
+            for dist in settings["sightTypes"][cur_type_name]["circles"].keys():
                 circles[i.get()] = create_row(i.get(), dist)
                 i.set(i.get() + 1)
             edit_tk.geometry("300x" + str(45 + 33 * i.get()))
             edit_tk.mainloop()
 
-        global cur_type_index
+        global cur_type_name
         if event:
-            settings["sightTypes"][cur_type_index]["rangefinder"] = items["rangefinder"].get()
-            settings["sightTypes"][cur_type_index]["centralCircleSize"] = float(items["centralCircleSize"].get())
-            settings["sightTypes"][cur_type_index]["right_dist_list"] = list(
+            settings["sightTypes"][cur_type_name]["rangefinder"] = items["rangefinder"].get()
+            settings["sightTypes"][cur_type_name]["centralCircleSize"] = float(items["centralCircleSize"].get())
+            settings["sightTypes"][cur_type_name]["right_dist_list"] = list(
                 map(int, items["right_dist_list"].get().split()))
-            settings["sightTypes"][cur_type_index]["left_dist_list"] = list(
+            settings["sightTypes"][cur_type_name]["left_dist_list"] = list(
                 map(int, items["left_dist_list"].get().split()))
-            settings["sightTypes"][cur_type_index]["small_dist_list"] = list(
+            settings["sightTypes"][cur_type_name]["small_dist_list"] = list(
                 map(int, items["small_dist_list"].get().split()))
-            settings["sightTypes"][cur_type_index]["line_dist_list"] = list(
+            settings["sightTypes"][cur_type_name]["line_dist_list"] = list(
                 map(int, items["line_dist_list"].get().split()))
         for obj in items.values():
             obj.destroy()
-        for s_type in settings["sightTypes"]:
-            if types_box.get() in s_type["names"]:
-                cur_type_index = settings["sightTypes"].index(s_type)
-                break
-        items["aliases_label"] = root.create(ttk.Label, relx=0.73, rely=0.02, relwidth=0.28, relheight=0.23, text=LABELS[LANG]["aliases"] + ", ".join(settings["sightTypes"][cur_type_index]["names"]), justify=tk.LEFT, anchor="nw", wraplength=170)
-        items["edit_button"] = root.create(ttk.Button, relx=0.52, rely=0.11, relwidth=0.20, relheight=0.11, text=LABELS[LANG]["editSimCircles"], command=edit_circles)
-        items["rangefinder"] = root.create(Flag, relx=0.52, rely=0.25, text=LABELS[LANG]["stadiametricRangefinder"], default=1 if settings["sightTypes"][cur_type_index]["rangefinder"] else 0)
+        cur_type_name = types_box.get()
+        items["edit_button"] = root.create(ttk.Button, relx=0.52, rely=0.11, relwidth=0.30, relheight=0.11, text=LABELS[LANG]["editSimCircles"], command=edit_circles)
+        items["rangefinder"] = root.create(Flag, relx=0.52, rely=0.25, text=LABELS[LANG]["stadiametricRangefinder"], default=1 if settings["sightTypes"][cur_type_name]["rangefinder"] else 0)
 
         items["right_dist_list_label"] = root.create(ttk.Label, relx=0.52, rely=0.32, text=LABELS[LANG]["rightDistList"])
-        items["right_dist_list"] = root.create(Input, relx=0.52, rely=0.35, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["right_dist_list"])))
+        items["right_dist_list"] = root.create(Input, relx=0.52, rely=0.35, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_name]["right_dist_list"])))
         items["left_dist_list_label"] = root.create(ttk.Label, relx=0.52, rely=0.42, text=LABELS[LANG]["leftDistList"])
-        items["left_dist_list"] = root.create(Input, relx=0.52, rely=0.46, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["left_dist_list"])))
+        items["left_dist_list"] = root.create(Input, relx=0.52, rely=0.46, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_name]["left_dist_list"])))
         items["small_dist_list_label"] = root.create(ttk.Label, relx=0.52, rely=0.52, text=LABELS[LANG]["smallDistList"])
-        items["small_dist_list"] = root.create(Input, relx=0.52, rely=0.56, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["small_dist_list"])))
+        items["small_dist_list"] = root.create(Input, relx=0.52, rely=0.56, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_name]["small_dist_list"])))
         items["line_dist_list_label"] = root.create(ttk.Label, relx=0.52, rely=0.62, text=LABELS[LANG]["lineDistList"])
-        items["line_dist_list"] = root.create(Input, relx=0.52, rely=0.66, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_index]["line_dist_list"])))
+        items["line_dist_list"] = root.create(Input, relx=0.52, rely=0.66, relwidth=0.45, relheight=0.06, text=' '.join(map(str, settings["sightTypes"][cur_type_name]["line_dist_list"])))
 
         items["centralCircle_label"] = root.create(ttk.Label, relx=0.52, rely=0.75, text=LABELS[LANG]["centralCircleSize"])
-        items["centralCircleSize"] = root.create(Input, relx=0.85, rely=0.74, relwidth=0.07, relheight=0.06, text=settings["sightTypes"][cur_type_index]["centralCircleSize"])
+        items["centralCircleSize"] = root.create(Input, relx=0.85, rely=0.74, relwidth=0.07, relheight=0.06, text=settings["sightTypes"][cur_type_name]["centralCircleSize"])
         central_lines_var = tk.IntVar()
-        if settings["sightTypes"][cur_type_index]["centralLines"] == "brackets":
+        if settings["sightTypes"][cur_type_name]["centralLines"] == "brackets":
             central_lines_var.set(2)
-        elif settings["sightTypes"][cur_type_index]["centralLines"] == "standard":
+        elif settings["sightTypes"][cur_type_name]["centralLines"] == "standard":
             central_lines_var.set(1)
-        elif settings["sightTypes"][cur_type_index]["centralLines"] == "no":
+        elif settings["sightTypes"][cur_type_name]["centralLines"] == "no":
             central_lines_var.set(0)
         else:
             central_lines_var.set(-1)
-        root.create(ttk.Radiobutton, relx=0.52, rely=0.82, variable=central_lines_var, value=0, command=lambda: settings["sightTypes"][cur_type_index].__setitem__("centralLines", "no"), text=LABELS[LANG]["noLines"])
-        root.create(ttk.Radiobutton, relx=0.52, rely=0.87, variable=central_lines_var, value=1, command=lambda: settings["sightTypes"][cur_type_index].__setitem__("centralLines", "standard"), text=LABELS[LANG]["standardLines"])
-        root.create(ttk.Radiobutton, relx=0.52, rely=0.92, variable=central_lines_var, value=2, command=lambda: settings["sightTypes"][cur_type_index].__setitem__("centralLines", "brackets"), text=LABELS[LANG]["bracketsLines"])
+        root.create(ttk.Radiobutton, relx=0.52, rely=0.82, variable=central_lines_var, value=0, command=lambda: settings["sightTypes"][cur_type_name].__setitem__("centralLines", "no"), text=LABELS[LANG]["noLines"])
+        root.create(ttk.Radiobutton, relx=0.52, rely=0.87, variable=central_lines_var, value=1, command=lambda: settings["sightTypes"][cur_type_name].__setitem__("centralLines", "standard"), text=LABELS[LANG]["standardLines"])
+        root.create(ttk.Radiobutton, relx=0.52, rely=0.92, variable=central_lines_var, value=2, command=lambda: settings["sightTypes"][cur_type_name].__setitem__("centralLines", "brackets"), text=LABELS[LANG]["bracketsLines"])
 
     def no_crosshair():
         """
@@ -608,9 +579,9 @@ def settings_menu():
                 text=LABELS[LANG]["partialCrosshair"])
     root.create(ttk.Radiobutton, relx=0.02, rely=0.43, variable=crosshair_var, value=2, command=full_crosshair,
                 text=LABELS[LANG]["fullCrosshair"])
-    sight_types = [s_type["names"][0] for s_type in settings["sightTypes"]]
+    sight_types = list(settings["sightTypes"])
     items = {}
-    types_box = root.create(ttk.Combobox, relx=0.52, rely=0.03, relwidth=0.20, relheight=0.06, values=sight_types,
+    types_box = root.create(ttk.Combobox, relx=0.52, rely=0.03, relwidth=0.30, relheight=0.06, values=sight_types,
                             state="readonly")
     types_box.set(sight_types[0])
     types_box.bind("<<ComboboxSelected>>", load_sight_type)

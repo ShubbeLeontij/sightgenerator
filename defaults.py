@@ -7,6 +7,11 @@ RANGEFINDER_GOOD = 0.45
 DIST_INDENT = 0.01
 DIST_MULT = 0.66
 DIST_POINT = 2000
+SLOW_SPEED_THRESHOLD = 600
+FAST_SPEED_THRESHOLD = 1100
+GAMEMODE_SIGHT_TYPES = ("arcade", "realistic")
+SIM_SIGHT_MODE = "simulator"
+DEFAULT_SIGHT_MODES = GAMEMODE_SIGHT_TYPES + (SIM_SIGHT_MODE,)
 ALL_TANKS_TOP = "matchExpClass {\nexp_tank:b = yes\nexp_heavy_tank:b = yes\nexp_tank_destroyer:b = yes\nexp_SPAA:b = yes\n}\n\n"
 PARTIAL_CROSSHAIR = "line{\nline:p4= 0, -2.5, 0, -400\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 2.5, 0, 400, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -2.5, 0, -400, 0\nmove:b=no\nthousandth:b=yes\n}\n"
 BRACKETS_CENTRAL_LINES = "line{\nline:p4= 0.6, 0, 1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0, -1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, 0.6, 0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0.6, -0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\n"
@@ -42,7 +47,6 @@ RANGEFINDERS_BLK = {
 LABELS = {
     "EN": {
         "title": "Sightgenerator by Leontij",
-        "aliases": "Aliases: ",
         "editSimCircles": ["EDIT SIM\nCIRCLES", "Circles helpful mostly for simulator gamemode. There is parallax mechanic in tank sim and to counter it, this program creates flight path of shell, so basically circles are distance markers."],
         "saveSettings": "SAVE SETTINGS AND\nEXIT TO MAIN MENU",
         "stadiametricRangefinder": ["Stadiametric rangefinder", "Should program draw stadiametric rangefinder. This rangefinder helps find distance, by measuring enemy tank height."],
@@ -73,9 +77,7 @@ LABELS = {
         "id": ["User ID", "You can get your ID at https://store.gaijin.net/user.php.\nYou can leave this field empty if you have only one account."],
         "devMode": "Dev mode",
         "clear": ["Clear Folder*", "WARNING!!! This action will completely remove all contents of Sights Folder."],
-        "abrb": ["AB/RB", "Click here to check/uncheck all."],
-        "sim": ["Sim", "Click here to check/uncheck all."],
-        "other": ["Other", "Click here to check/uncheck all."],
+        "defaultSight": ["Default sight", "Every sight is always created. This only chooses which one is written to global.blk as the default one for every tank."],
         "deleting": "Deleting...",
         "areYouSure": "Are you sure you want to remove all sigths?",
         "preview": ["SIGHT PREVIEW", "If you have any questions, just test how it looks by this feature. Exact repetition not guaranteed, approximate result shown."],
@@ -84,7 +86,6 @@ LABELS = {
     },
     "RU": {
         "title": "Sightgenerator by Leontij",
-        "aliases": "Псевдонимы: ",
         "editSimCircles": ["РЕДАКТИРОВАТЬ\nКРУГИ", "Круги полезны в основном для симуляторного режима, в нем есть механика параллакса, и чтобы компенсировать его, эта программа создает траекторию полета снаряда относительно прицела и пушки, так что в основном круги являются метками дистанции."],
         "saveSettings": "СОХРАНИТЬ НАСТРОЙКИ\nИ ВЫЙТИ В ГЛАВНОЕ МЕНЮ",
         "stadiametricRangefinder": ["Стадиометрический дальномер", "Будет ли программа рисовать стад. дальномер. Этот дальномер помогает замерить дистанцию по высоте вражеского танка."],
@@ -115,9 +116,7 @@ LABELS = {
         "id": ["ID пользователя", "Вы можете узнать свой ID на https://store.gaijin.net/user.php. Можете оставить поле пустым если у вас только один аккаунт."],
         "devMode": "Dev mode",
         "clear": ["Очистить Папку*", "ОСТОРОЖНО!!! Полностью удалит всё содержимое папки с прицелами."],
-        "abrb": ["AB/RB", "Нажми здесь чтобы отметить/убрать везде."],
-        "sim": ["Sim", "Нажми здесь чтобы отметить/убрать везде."],
-        "other": ["Другое", "Нажми здесь чтобы отметить/убрать везде."],
+        "defaultSight": ["Прицел по умолчанию", "Создаются всегда все прицелы. Здесь выбирается только тот, который записывается в global.blk как прицел по умолчанию для каждого танка."],
         "deleting": "Удаление...",
         "areYouSure": "Вы уверены, что хотите удалить все прицелы?",
         "preview": ["ПРЕДПРОСМОТР", "Если у вас есть вопросы к работе какого-то из пунктов, просто нажмите эту кнопку и проверьте как оно будет выглядеть. Точное повторение не гарантировано, показан приблизительный результат."],

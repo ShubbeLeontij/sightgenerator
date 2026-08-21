@@ -8,11 +8,8 @@
     "lineSizeMult": 0.7,
     "fontSizeMult": 0.7,
     "preset": "crosshairColor:c=220, 255, 0, 255\ncrosshairLightColor:c=0, 0, 0, 255\nshotDistScaleOffset:i=0\n\nrangefinder{\n  visible:b=yes\n  textColor:c=220, 255, 0, 255\n  bgColor:c=0, 0, 0, 0\n  lightTextColor:c=0, 0, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  position:p2=1000, 500\n  textSize:i=30\n  font:t=\"hud\"\n  progressColor:c=0, 255, 0, 64\n  progressBackgroundColor:c=255, 255, 255, 64\n}\n\ngunReady{\n  visible:b=yes\n  color:c=220, 255, 0, 255\n  lightColor:c=0, 0, 0, 255\n  textSize:i=30\n  font:t=\"hud\"\n  position:p2=1070, 500\n  gunReadyMarkVisible:b=no\n}\n\nbulletType{\n  visible:b=no\n  isShortName:b=no\n  textColor:c=0, 0, 0, 255\n  bgColor:c=0, 0, 0, 0\n  lightTextColor:c=0, 0, 0, 255\n  lightBgColor:c=0, 0, 0, 0\n  position:p2=700, 202\n  textSize:i=30\n  font:t=\"hud\"\n}\n",
-    "sightTypes": [
-        {
-            "names": [
-                "sim_LASER"
-            ],
+    "sightTypes": {
+        "simulator_laser": {
             "rangefinder": 0,
             "left_dist_list": [],
             "right_dist_list": [],
@@ -88,13 +85,7 @@
             "centralLines": "brackets",
             "centralCircleSize": 2.0
         },
-        {
-            "names": [
-                "sim_APDS",
-                "sim_AP_f",
-                "sim_HEAT_f",
-                "sim_HE_f"
-            ],
+        "simulator_f": {
             "rangefinder": 1,
             "left_dist_list": [],
             "right_dist_list": [
@@ -189,12 +180,7 @@
             "centralLines": "brackets",
             "centralCircleSize": 2.5
         },
-        {
-            "names": [
-                "sim_AP",
-                "sim_HEAT",
-                "sim_HE"
-            ],
+        "simulator": {
             "rangefinder": 1,
             "left_dist_list": [],
             "right_dist_list": [
@@ -296,12 +282,7 @@
             "centralLines": "brackets",
             "centralCircleSize": 2.5
         },
-        {
-            "names": [
-                "sim_AP_s",
-                "sim_HEAT_s",
-                "sim_HE_s"
-            ],
+        "simulator_s": {
             "rangefinder": 1,
             "left_dist_list": [],
             "right_dist_list": [
@@ -414,23 +395,7 @@
             "centralLines": "brackets",
             "centralCircleSize": 3.0
         },
-        {
-            "names": [
-                "CLEAN"
-            ],
-            "rangefinder": 0,
-            "left_dist_list": [],
-            "right_dist_list": [],
-            "small_dist_list": [],
-            "circles": {},
-            "line_dist_list": [],
-            "centralLines": "line{\nline:p4= 0, 400, 0, 2.5\nmove:b=no\nthousandth:b=yes\n}\n",
-            "centralCircleSize": 3.0
-        },
-        {
-            "names": [
-                "AB_f"
-            ],
+        "arcade_f": {
             "rangefinder": 0,
             "right_dist_list": [
                 400,
@@ -453,10 +418,7 @@
             "centralLines": "standard",
             "centralCircleSize": 3.0
         },
-        {
-            "names": [
-                "AB"
-            ],
+        "arcade": {
             "rangefinder": 0,
             "right_dist_list": [
                 200,
@@ -485,10 +447,7 @@
             "centralLines": "standard",
             "centralCircleSize": 3.0
         },
-        {
-            "names": [
-                "AB_s"
-            ],
+        "arcade_s": {
             "rangefinder": 0,
             "right_dist_list": [
                 100,
@@ -533,10 +492,7 @@
             "centralLines": "standard",
             "centralCircleSize": 3.0
         },
-        {
-            "names": [
-                "RB_f"
-            ],
+        "realistic_f": {
             "rangefinder": 1,
             "right_dist_list": [
                 400,
@@ -559,10 +515,7 @@
             "centralLines": "standard",
             "centralCircleSize": 3.0
         },
-        {
-            "names": [
-                "RB"
-            ],
+        "realistic": {
             "rangefinder": 1,
             "right_dist_list": [
                 200,
@@ -591,10 +544,7 @@
             "centralLines": "standard",
             "centralCircleSize": 3.0
         },
-        {
-            "names": [
-                "RB_s"
-            ],
+        "realistic_s": {
             "rangefinder": 1,
             "right_dist_list": [
                 100,
@@ -639,6 +589,6 @@
             "centralLines": "standard",
             "centralCircleSize": 3.0
         }
-    ],
+    },
     "path": ""
 }
