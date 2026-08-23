@@ -254,9 +254,9 @@ def main_menu():
     mode_flag.set(0)
 
     # Create radiobuttons choosing the sight written to global.blk - every sight is created no matter what
-    default_sight_var = tk.StringVar(value=SIM_SIGHT_MODE)
+    default_sight_var = tk.StringVar(value="simulator")
     root.create(ttk.Label, relx=0.52, rely=0.20, relwidth=0.25, relheight=0.04, text=LABELS[LANG]["defaultSight"])
-    for i, mode_name in enumerate(DEFAULT_SIGHT_MODES):
+    for i, mode_name in enumerate(("arcade", "realistic", "simulator")):
         root.create(ttk.Radiobutton, relx=0.52, rely=0.25 + 0.05 * i, variable=default_sight_var, value=mode_name,
                     text=mode_name)
 

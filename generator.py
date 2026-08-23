@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 from defaults import *
+from bisect import bisect_left
+from functools import lru_cache
+import math
 import os
 import re
 import json
@@ -39,7 +42,81 @@ def speed_category(speed) -> str:
     return ""
 
 
-def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
+def drag_factor(shell) -> float:
+    """
+    Function that finds how strongly the air slows a shell down.
+    :param shell: dict with "mass" (kg), "caliber" (m, the diameter of the body that actually flies - for a
+    discarding-sabot shell that of its penetrator), "cx" (drag coefficient) and "type" of the shell, as they
+    are stored in data.json. A missing cx is taken from DEFAULT_CX by the shell type, while a missing mass
+    or caliber means "no data" i.e. no air resistance at all
+    :return: float k in 1/m, the shell losing speed as a = -k * v^2
+    """
+    if not shell:
+        return 0.0
+    mass, caliber = shell.get("mass"), shell.get("caliber")
+    # A shell whose game files state no cx still flies through the same air, so its type answers for it
+    cx = shell.get("cx") or DEFAULT_CX.get(shell.get("type") or "", DEFAULT_CX_FALLBACK)
+    if not mass or not caliber:
+        return 0.0
+    area = math.pi * caliber ** 2 / 4
+    return AIR_DENSITY * cx * area * DRAG_MULT / (2 * mass)
+
+
+@lru_cache(maxsize=64)
+def trajectory(speed, k, max_range):
+    """
+    Function that integrates the flight path of a shell fired horizontally, with gravity and air drag.
+    :param speed: shell's muzzle velocity in m/s
+    :param k: drag factor in 1/m from drag_factor()
+    :param max_range: distance in meters up to which the path is needed
+    :return: tuple of two lists - distances flown in meters and how far the shell fell by then in meters
+    """
+    distances, drops = [0.0], [0.0]
+    x, y, vx, vy, t = 0.0, 0.0, float(speed), 0.0, 0.0
+    while x < max_range and t < BALLISTIC_MAX_TIME:
+        v = math.hypot(vx, vy)
+        if v <= 0:
+            break
+        dt = BALLISTIC_STEP / v
+        # Midpoint method - one half step to find the accelerations in the middle of the step
+        ax, ay = -k * v * vx, -k * v * vy - GRAVITY
+        mvx, mvy = vx + ax * dt / 2, vy + ay * dt / 2
+        mv = math.hypot(mvx, mvy)
+        m_ax, m_ay = -k * mv * mvx, -k * mv * mvy - GRAVITY
+        x, y = x + mvx * dt, y + mvy * dt
+        vx, vy = vx + m_ax * dt, vy + m_ay * dt
+        t += dt
+        distances.append(x)
+        drops.append(-y)
+    return distances, drops
+
+
+def drop_angle(distance, speed, shell=None, max_range=0):
+    """
+    Function that finds how much the sight mark of a distance has to sit above the gun axis.
+    :param distance: int distance in meters
+    :param speed: shell's muzzle velocity in m/s
+    :param shell: dict with the shell's ballistic data (see drag_factor), None meaning no air resistance
+    :param max_range: the farthest distance the sight needs, so that one trajectory serves all its marks
+    :return: float angle in radians
+    """
+    k = drag_factor(shell)
+    if not k:  # No ballistic data - fall back to the vacuum trajectory
+        return GRAVITY * distance / (2 * speed ** 2)
+    distances, drops = trajectory(speed, k, max(max_range, distance) + BALLISTIC_RANGE_RESERVE)
+    if distances[-1] < distance:  # Shell never gets that far, no sensible mark to draw
+        return GRAVITY * distance / (2 * speed ** 2)
+    i = bisect_left(distances, distance)
+    if distances[i] == distance:
+        drop = drops[i]
+    else:  # Interpolating between the two steps around the distance
+        part = (distance - distances[i - 1]) / (distances[i] - distances[i - 1])
+        drop = drops[i - 1] + part * (drops[i] - drops[i - 1])
+    # Flat fire approximation - firing at this angle raises the whole path by drop at the target
+    return drop / distance
+
+
+def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True, shell=None):
     """
     Function that creates sight layout.
     :param speed: shell's speed in m/s (int type)
@@ -48,6 +125,8 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     :param coord: list with two floats inside - height and width location of sight relatively to the gun in meters
     :param convergence: convergence in meters i.e. distance with zero parallax (int type)
     :param isMain: boolean showing whether is this sight main or additional
+    :param shell: dict with the shell's "mass", "caliber", "cx" and "type" from data.json, used to account
+    for air resistance. Without it the shell is dropped through vacuum
     :return: list containing: start, distances_blk, lines_blk, circles_blk, text_blk. All in blk format
     """
     def point(distance):
@@ -59,7 +138,7 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
         if distance == 0:
             return "0, 0"
         parallax_x, parallax_y = - coord[1] * (1 / distance - 1 / convergence), coord[0] * (1 / distance - 1 / convergence)
-        gravity = 5.0 * distance / speed ** 2  # 5.0 is g/2
+        gravity = drop_angle(distance, speed, shell, max_range)
         return str(round(parallax_x * 1000, 2)) + ", " + str(round((parallax_y + gravity) * 1000, 2))
 
     def crosshair_distance(distance, size, side):
@@ -103,6 +182,10 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True):
     circles_list = s_type["circles"]
     centralLines = s_type["centralLines"]
     centralCircleSize = s_type["centralCircleSize"]
+    # The farthest mark of the sight, rounded up so that sights of one shell share one cached trajectory
+    max_range = max([DIST_POINT] + line_dist_list + right_dist_list + left_dist_list + small_dist_list +
+                    [int(d) for d in circles_list])
+    max_range = math.ceil(max_range / BALLISTIC_RANGE_RESERVE) * BALLISTIC_RANGE_RESERVE
 
     # Replace other direct dictionary accesses with calls to settings.get_setting
     distLength = settings.get_setting("distLength")
@@ -267,7 +350,7 @@ def bind_preset(name, filename):
     insert_str[name] = ("        " + name + "{\n          crosshair:t=\"" + filename + "\"\n" + settings.get_setting("preset") + "\n        }\n")
 
 
-def generator(name, speed, zoom, sight_type, coord, convergence, filename=None, bind=True):
+def generator(name, speed, zoom, sight_type, coord, convergence, filename=None, bind=True, shells=None):
     """
     Function that creates sight .blk file.
     :param name: tank name
@@ -278,10 +361,13 @@ def generator(name, speed, zoom, sight_type, coord, convergence, filename=None, 
     :param convergence: list of convergences in meters i.e. distance with zero parallax (int type)
     :param filename: name of the .blk file to create. By default it is built from the sight types and tank name
     :param bind: boolean showing whether this sight should be bound to the tank in global.blk
+    :param shells: list of dicts with the shells' ballistic data from data.json (see create_sight), one per
+    mount. Without it the sights are built without air resistance
     """
-    sight_list = create_sight(speed[0], zoom, sight_type[0], coord[0], convergence[0], True)
+    shells = shells if shells else [None] * len(coord)
+    sight_list = create_sight(speed[0], zoom, sight_type[0], coord[0], convergence[0], True, shells[0])
     for i in range(1, len(coord)):
-        cur_sight_list = create_sight(speed[i], zoom, sight_type[i], coord[i], convergence[i], False)
+        cur_sight_list = create_sight(speed[i], zoom, sight_type[i], coord[i], convergence[i], False, shells[i])
         sight_list[2] += cur_sight_list[2]
         sight_list[3] += cur_sight_list[3]
         sight_list[4] += cur_sight_list[4]
@@ -310,11 +396,17 @@ if __name__ == "__main__":
         sight_type = speed_category(speed)
         filename = input("Sight name: ")
         coord = list(map(float, input("Sight coordinates: ").split(',')))
+        shell_data = input("Shell mass in kg, caliber in m, cx and type (leave empty for no air drag): ")
+        shell = None
+        if shell_data.strip():
+            mass, caliber, cx, shell_type = (shell_data.split(',') + [""])[:4]
+            shell = {"mass": float(mass), "caliber": float(caliber), "cx": float(cx), "type": shell_type.strip()}
         try:
             os.mkdir(get_path() + "/UserSights/")
         except:
             pass
-        print(generator(name, [speed], zoom, [sight_type], [coord], [convergence], filename=filename))
+        print(generator(name, [speed], zoom, [sight_type], [coord], [convergence], filename=filename,
+                        shells=[shell]))
         print(save_presets())
     except ValueError:
         print("Wrong format string")

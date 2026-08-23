@@ -1,5 +1,4 @@
 # Some setting that I don't want to include in .json. Normally you don't want to change this.
-SIGHT_BLOCK_IDENTIFIER = "tankSightSettings{"
 MIN_FONT_SIZE = 0.35
 BAD_ZOOM_THRESHOLD = 4.99
 RANGEFINDER_BAD = 0.66
@@ -9,9 +8,64 @@ DIST_MULT = 0.66
 DIST_POINT = 2000
 SLOW_SPEED_THRESHOLD = 600
 FAST_SPEED_THRESHOLD = 1100
-GAMEMODE_SIGHT_TYPES = ("arcade", "realistic")
-SIM_SIGHT_MODE = "simulator"
-DEFAULT_SIGHT_MODES = GAMEMODE_SIGHT_TYPES + (SIM_SIGHT_MODE,)
+GRAVITY = 9.81
+AIR_DENSITY = 1.225
+BALLISTIC_STEP = 4.0
+BALLISTIC_MAX_TIME = 60.0
+BALLISTIC_RANGE_RESERVE = 500
+DRAG_MULT = 1.0
+DEFAULT_CX_FALLBACK = 0.43
+DEFAULT_CX = {
+    "ap_ball_M2": 0.335,
+    "ap_i": 0.458,
+    "ap_i_ball": 0.341,
+    "ap_i_t": 0.36,
+    "ap_i_t_ball": 0.339,
+    "ap_i_t_ball_M20": 0.335,
+    "ap_t": 0.31,
+    "ap_tank": 0.5,
+    "apbc_tank": 0.444,
+    "apbc_usa_tank": 0.398,
+    "apc_solid_medium_caliber_tank": 0.4,
+    "apc_tank": 0.6,
+    "apcbc_solid_medium_caliber_tank": 0.389,
+    "apcbc_tank": 0.378,
+    "apcr_t": 0.322,
+    "apcr_tank": 0.28,
+    "apds_autocannon": 0.13,
+    "apds_early_tank": 0.258,
+    "apds_fs_full_body_steel_tank": 0.31,
+    "apds_fs_long_l30_tank": 0.71,
+    "apds_fs_long_tank": 0.4,
+    "apds_fs_tungsten_caliber_fins_tank": 0.507,
+    "apds_fs_tungsten_l10_l15_tank": 0.268,
+    "apds_fs_tungsten_small_core_tank": 0.357,
+    "apds_l15_tank": 0.176,
+    "apds_tank": 0.228,
+    "aphe": 0.6,
+    "aphe_tank": 0.6,
+    "aphebc_tank": 0.36,
+    "frag_i_t": 0.311,
+    "he_frag_dist_fuse": 0.466,
+    "he_frag_fs_tank": 0.431,
+    "he_frag_i": 0.298,
+    "he_frag_i_t": 0.5,
+    "he_frag_radio_fuse": 0.377,
+    "he_frag_tank": 0.377,
+    "he_i_t": 0.375,
+    "he_or_tank": 0.634,
+    "he_tf": 0.375,
+    "heat_fs_tank": 0.553,
+    "heat_grenade_tank": 0.45,
+    "heat_mp_vt_tank": 0.634,
+    "heat_tank": 0.36,
+    "hesh_tank": 0.692,
+    "sap_hei_tank": 0.6,
+    "sapi": 0.263,
+    "shrapnel_tank": 0.518,
+    "smoke_tank": 0.684,
+}
+SIGHT_BLOCK_IDENTIFIER = "tankSightSettings{"
 ALL_TANKS_TOP = "matchExpClass {\nexp_tank:b = yes\nexp_heavy_tank:b = yes\nexp_tank_destroyer:b = yes\nexp_SPAA:b = yes\n}\n\n"
 PARTIAL_CROSSHAIR = "line{\nline:p4= 0, -2.5, 0, -400\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 2.5, 0, 400, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -2.5, 0, -400, 0\nmove:b=no\nthousandth:b=yes\n}\n"
 BRACKETS_CENTRAL_LINES = "line{\nline:p4= 0.6, 0, 1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0, -1.6, 0\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.6, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, 0.6, 0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, 0.6, -0.3, 0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= 0.6, -0.6, 0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\nline{\nline:p4= -0.6, -0.6, -0.3, -0.6\nmove:b=no\nthousandth:b=yes\n}\n"

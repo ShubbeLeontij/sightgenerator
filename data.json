@@ -26,14 +26,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1770.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -109,7 +109,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -123,21 +123,21 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     },
     "105mm_m774": {
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m833": {
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -154,14 +154,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -244,7 +244,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -296,7 +296,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -348,7 +348,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -576,21 +576,21 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1585.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.68
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_ke_w_a2": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.68
     }
   },
@@ -780,7 +780,7 @@
       "type": "apds_early_tank",
       "speed": 1257.0,
       "mass": 2.81,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_m496": {
@@ -1070,7 +1070,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -1098,14 +1098,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -1205,7 +1205,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1433.0,
       "mass": 1.63,
-      "caliber": 0.076,
+      "caliber": 0.021,
       "cx": 0.607
     }
   },
@@ -1236,14 +1236,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1770.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -1281,14 +1281,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1770.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -1312,7 +1312,7 @@
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1580.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "120mm_122tm_he": {
@@ -1326,7 +1326,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1580.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "120mm_122tm_heat": {
@@ -1364,7 +1364,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "type_56_apcr": {
@@ -1416,14 +1416,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1740.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -1478,7 +1478,7 @@
       "type": "apds_autocannon",
       "speed": 1400.0,
       "mass": 0.38,
-      "caliber": 0.035,
+      "caliber": 0.018,
       "cx": 0.25
     }
   },
@@ -1688,7 +1688,7 @@
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1505.0,
       "mass": 3.44,
-      "caliber": 0.1,
+      "caliber": 0.04,
       "cx": 0.452
     },
     "100mm_1_71_74": {
@@ -1709,7 +1709,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1610.0,
       "mass": 3.3,
-      "caliber": 0.1,
+      "caliber": 0.027,
       "cx": 0.36
     }
   },
@@ -1726,7 +1726,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1740.0,
       "mass": 4.45,
-      "caliber": 0.12,
+      "caliber": 0.034,
       "cx": 0.24097
     },
     "120mm_dys_120": {
@@ -1764,14 +1764,14 @@
       "type": "apds_autocannon",
       "speed": 1180.0,
       "mass": 0.286,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_dtc10_30": {
       "type": "apds_fs_long_tank",
       "speed": 1310.0,
       "mass": 0.13,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -1854,7 +1854,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -2114,7 +2114,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -2173,7 +2173,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -2211,7 +2211,7 @@
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1615.0,
       "mass": 4.0,
-      "caliber": 0.115,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "115mm_3of_11": {
@@ -2225,7 +2225,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1615.0,
       "mass": 4.0,
-      "caliber": 0.115,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "115mm_3bk_4": {
@@ -2263,7 +2263,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bk_12m": {
@@ -2308,7 +2308,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "type_56_apcr": {
@@ -2381,7 +2381,7 @@
       "type": "apds_early_tank",
       "speed": 1432.0,
       "mass": 3.18,
-      "caliber": 0.1,
+      "caliber": 0.056,
       "cx": 0.22297
     },
     "100mm_type1973": {
@@ -2433,7 +2433,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -2464,7 +2464,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "type_56_apcr": {
@@ -2516,7 +2516,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "type_56_apcr": {
@@ -2630,7 +2630,7 @@
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1505.0,
       "mass": 3.44,
-      "caliber": 0.1,
+      "caliber": 0.04,
       "cx": 0.452
     },
     "100mm_1_71_74": {
@@ -2661,7 +2661,7 @@
       "type": "apds_early_tank",
       "speed": 1432.0,
       "mass": 3.18,
-      "caliber": 0.1,
+      "caliber": 0.056,
       "cx": 0.22297
     },
     "type_44_he": {
@@ -2682,7 +2682,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1430.0,
       "mass": 3.4,
-      "caliber": 0.1,
+      "caliber": 0.038,
       "cx": 0.31
     },
     "100mm_type1973": {
@@ -2727,7 +2727,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1500.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dtb_1_he": {
@@ -2861,14 +2861,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1770.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -2906,14 +2906,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1740.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1770.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -2944,14 +2944,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dtw2_105": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1530.0,
       "mass": 3.775,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_dtb_1_he": {
@@ -2996,7 +2996,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dtb_1_he": {
@@ -3041,14 +3041,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1770.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1810.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -3148,14 +3148,14 @@
       "type": "apds_autocannon",
       "speed": 1180.0,
       "mass": 0.286,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_dtc10_30": {
       "type": "apds_fs_long_tank",
       "speed": 1310.0,
       "mass": 0.13,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -3227,14 +3227,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dtw2_105": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1530.0,
       "mass": 3.775,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_dtb_1_he": {
@@ -3279,14 +3279,14 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_djw_85": {
       "type": "apds_fs_long_tank",
       "speed": 1290.0,
       "mass": 2.1,
-      "caliber": 0.085,
+      "caliber": 0.025,
       "cx": 0.32638
     }
   },
@@ -3338,7 +3338,7 @@
       "type": "apds_early_tank",
       "speed": 1432.0,
       "mass": 3.18,
-      "caliber": 0.1,
+      "caliber": 0.056,
       "cx": 0.22297
     },
     "100mm_type1973": {
@@ -3390,7 +3390,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1500.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dtb_1_he": {
@@ -3428,7 +3428,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -3459,7 +3459,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     }
   },
@@ -3490,7 +3490,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     }
   },
@@ -3521,7 +3521,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     }
   },
@@ -3552,7 +3552,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     }
   },
@@ -3583,14 +3583,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1770.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -3628,14 +3628,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1770.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -3673,14 +3673,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1770.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -3718,14 +3718,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1730.0,
       "mass": 4.02,
-      "caliber": 0.125,
+      "caliber": 0.028,
       "cx": 0.36933
     },
     "125mm_dtc10_125": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1770.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_dtb_12_he": {
@@ -3931,7 +3931,7 @@
       "type": "apds_autocannon",
       "speed": 1150.0,
       "mass": 0.126,
-      "caliber": 0.02,
+      "caliber": 0.012,
       "cx": null
     }
   },
@@ -3962,7 +3962,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1400.0,
       "mass": 3.8,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_o_fum_ph_f3": {
@@ -4231,7 +4231,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1525.0,
       "mass": 3.8,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_ofph_f1": {
@@ -4269,7 +4269,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1525.0,
       "mass": 3.8,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_ofph_f1": {
@@ -4338,7 +4338,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1525.0,
       "mass": 3.8,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_ofph_f1": {
@@ -4376,7 +4376,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1525.0,
       "mass": 3.8,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_ofph_f1": {
@@ -4438,7 +4438,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1525.0,
       "mass": 3.8,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_ofph_f1": {
@@ -4469,7 +4469,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 3.8,
-      "caliber": 0.12,
+      "caliber": 0.026,
       "cx": 0.49
     }
   },
@@ -4500,7 +4500,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1525.0,
       "mass": 3.8,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_ofph_f1": {
@@ -4531,7 +4531,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 3.8,
-      "caliber": 0.12,
+      "caliber": 0.026,
       "cx": 0.49
     }
   },
@@ -5039,7 +5039,7 @@
       "type": "apds_autocannon",
       "speed": 1400.0,
       "mass": 0.38,
-      "caliber": 0.035,
+      "caliber": 0.018,
       "cx": 0.25
     },
     "35_228mm_aphe_i": {
@@ -5060,7 +5060,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1400.0,
       "mass": 0.25,
-      "caliber": 0.035,
+      "caliber": 0.012,
       "cx": 0.25221
     }
   },
@@ -5159,7 +5159,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1510.0,
       "mass": 0.34,
-      "caliber": 0.04,
+      "caliber": 0.012,
       "cx": 0.37154
     },
     "40mm_gpr_pd_t_he": {
@@ -5197,14 +5197,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1740.0,
       "mass": 4.4,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_ofl_120_f1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1790.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_f1_he": {
@@ -5235,14 +5235,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1740.0,
       "mass": 4.4,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_ofl_120_f1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1790.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_f1_he": {
@@ -5273,14 +5273,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1740.0,
       "mass": 4.4,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_ofl_120_f1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1790.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_f1_he": {
@@ -5311,14 +5311,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1740.0,
       "mass": 4.4,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_ofl_120_f1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1790.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_f1_he": {
@@ -5356,14 +5356,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -5387,14 +5387,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -5418,14 +5418,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -5449,7 +5449,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -5463,7 +5463,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -5487,7 +5487,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_dm_11": {
@@ -5501,7 +5501,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -6208,7 +6208,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1275.0,
       "mass": 3.8,
-      "caliber": 0.09,
+      "caliber": 0.026,
       "cx": 0.49
     }
   },
@@ -6232,7 +6232,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1780.0,
       "mass": 3.8,
-      "caliber": 0.12,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "120mm_f1_he": {
@@ -6466,7 +6466,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1475.0,
       "mass": 3.41,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_ofph_f1": {
@@ -6593,14 +6593,14 @@
       "type": "apds_autocannon",
       "speed": 1335.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     },
     "25mm_pmb_09": {
       "type": "apds_fs_long_tank",
       "speed": 1385.0,
       "mass": 0.098,
-      "caliber": 0.025,
+      "caliber": 0.009,
       "cx": 0.3
     }
   },
@@ -6617,14 +6617,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -6662,14 +6662,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1500.0,
       "mass": 3.8,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_ofl_g2": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1500.0,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.021,
       "cx": 0.89334
     },
     "105mm_o_fum_ph_f3": {
@@ -6941,14 +6941,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_dm63": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -6965,14 +6965,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_pmc287": {
       "type": "apds_fs_long_tank",
       "speed": 1405.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     },
     "30mm_mk_266": {
@@ -6996,7 +6996,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_dm502": {
@@ -7017,7 +7017,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -7327,7 +7327,7 @@
       "type": "apds_autocannon",
       "speed": 1400.0,
       "mass": 0.38,
-      "caliber": 0.035,
+      "caliber": 0.018,
       "cx": 0.25
     }
   },
@@ -7358,7 +7358,7 @@
       "type": "apds_autocannon",
       "speed": 1400.0,
       "mass": 0.38,
-      "caliber": 0.035,
+      "caliber": 0.018,
       "cx": 0.25
     }
   },
@@ -7503,7 +7503,7 @@
       "type": "apds_early_tank",
       "speed": 1158.24,
       "mass": 1.025,
-      "caliber": 0.057,
+      "caliber": 0.037,
       "cx": 0.27283
     }
   },
@@ -7676,7 +7676,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1508.76,
       "mass": 3.787,
-      "caliber": 0.152,
+      "caliber": 0.036,
       "cx": 0.50421
     }
   },
@@ -7707,28 +7707,28 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1780.0,
       "mass": 3.88,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.322
     },
     "125mm_3bm22": {
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     },
     "125mm_3bm9": {
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1800.0,
       "mass": 3.6,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.3105
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -7901,7 +7901,7 @@
       "type": "apds_early_tank",
       "speed": 1257.0,
       "mass": 2.81,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_m496": {
@@ -7939,14 +7939,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -7970,14 +7970,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -8001,14 +8001,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -8032,14 +8032,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -8063,14 +8063,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_ke_w": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1585.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.68
     },
     "120mm_im_he": {
@@ -8101,14 +8101,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_ke_w": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1585.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.68
     },
     "120mm_im_he": {
@@ -8139,7 +8139,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -8153,7 +8153,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -8177,7 +8177,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_dm_11": {
@@ -8191,7 +8191,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -8215,7 +8215,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -8229,7 +8229,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -8253,7 +8253,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_dm_11": {
@@ -8267,7 +8267,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -8291,7 +8291,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_dm_11": {
@@ -8305,7 +8305,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -8336,14 +8336,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -8367,14 +8367,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -8398,7 +8398,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -8412,7 +8412,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -8429,7 +8429,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_dm502": {
@@ -8450,7 +8450,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -8474,7 +8474,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_dm502": {
@@ -8495,7 +8495,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -8526,14 +8526,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -8564,14 +8564,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -8674,7 +8674,7 @@
       "type": "apds_autocannon",
       "speed": 1150.0,
       "mass": 0.126,
-      "caliber": 0.02,
+      "caliber": 0.012,
       "cx": null
     }
   },
@@ -8705,7 +8705,7 @@
       "type": "apds_autocannon",
       "speed": 1150.0,
       "mass": 0.126,
-      "caliber": 0.02,
+      "caliber": 0.012,
       "cx": null
     }
   },
@@ -8895,7 +8895,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_dm502": {
@@ -8916,7 +8916,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -8954,14 +8954,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -11414,14 +11414,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -11476,14 +11476,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_pmc287": {
       "type": "apds_fs_long_tank",
       "speed": 1405.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     },
     "30mm_mk_266": {
@@ -11507,14 +11507,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_pmc287": {
       "type": "apds_fs_long_tank",
       "speed": 1405.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     },
     "30mm_mk_266": {
@@ -11538,14 +11538,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_pmc287": {
       "type": "apds_fs_long_tank",
       "speed": 1405.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     },
     "30mm_mk_266": {
@@ -12094,7 +12094,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1475.0,
       "mass": 3.41,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.49
     },
     "105mm_ofph_f1": {
@@ -12132,7 +12132,7 @@
       "type": "apds_autocannon",
       "speed": 1150.0,
       "mass": 0.126,
-      "caliber": 0.02,
+      "caliber": 0.012,
       "cx": null
     }
   },
@@ -12495,14 +12495,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -12533,14 +12533,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -12557,7 +12557,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_dm502": {
@@ -12578,7 +12578,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -12616,14 +12616,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_dm63": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -12654,14 +12654,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -12678,14 +12678,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -12778,14 +12778,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -12854,7 +12854,7 @@
       "type": "apds_autocannon",
       "speed": 1150.0,
       "mass": 0.126,
-      "caliber": 0.02,
+      "caliber": 0.012,
       "cx": null
     }
   },
@@ -12947,7 +12947,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_shell_ss_mk1": {
@@ -12971,7 +12971,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -12999,7 +12999,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     }
   },
@@ -13030,7 +13030,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -13044,14 +13044,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -13082,7 +13082,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -13096,14 +13096,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -13120,14 +13120,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -13151,14 +13151,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -13244,7 +13244,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1620.0,
       "mass": 0.87,
-      "caliber": 0.06,
+      "caliber": 0.017,
       "cx": 0.365
     },
     "60mm_oto_he": {
@@ -13482,7 +13482,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_imi_m156": {
@@ -13510,7 +13510,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -13527,7 +13527,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_imi_m156": {
@@ -13555,7 +13555,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -13586,7 +13586,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -13600,14 +13600,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -13624,7 +13624,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_imi_m156": {
@@ -13652,7 +13652,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -13683,7 +13683,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -13697,14 +13697,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -13721,7 +13721,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -13749,7 +13749,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     }
   },
@@ -13780,7 +13780,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -13794,14 +13794,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -13832,7 +13832,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -13846,14 +13846,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -13884,7 +13884,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -13898,14 +13898,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -13936,7 +13936,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -13950,14 +13950,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -13988,7 +13988,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -14002,14 +14002,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -14040,7 +14040,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -14054,14 +14054,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -14092,7 +14092,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -14106,14 +14106,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -14144,7 +14144,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -14158,14 +14158,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -14196,7 +14196,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -14210,14 +14210,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -14248,7 +14248,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -14262,14 +14262,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -14300,7 +14300,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -14314,14 +14314,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -14352,14 +14352,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_m338": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 5.058,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.779
     }
   },
@@ -14390,14 +14390,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_m338": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 5.058,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.779
     }
   },
@@ -14428,14 +14428,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_m338": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 5.058,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.779
     }
   },
@@ -14466,14 +14466,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_m338": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 5.058,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.779
     }
   },
@@ -14504,14 +14504,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_m338": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 5.058,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.779
     }
   },
@@ -14542,14 +14542,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_m338": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 5.058,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.779
     }
   },
@@ -14566,14 +14566,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -14597,14 +14597,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -14642,14 +14642,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_m338": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 5.058,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.779
     }
   },
@@ -14756,7 +14756,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -14787,7 +14787,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_imi_m156": {
@@ -14815,7 +14815,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -14832,7 +14832,7 @@
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1615.0,
       "mass": 4.0,
-      "caliber": 0.115,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "115mm_3of_11": {
@@ -14846,7 +14846,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1615.0,
       "mass": 4.0,
-      "caliber": 0.115,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "115mm_3bk_4": {
@@ -15197,7 +15197,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_dm_11": {
@@ -15218,7 +15218,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -15297,7 +15297,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1620.0,
       "mass": 0.87,
-      "caliber": 0.06,
+      "caliber": 0.017,
       "cx": 0.365
     },
     "60mm_oto_he": {
@@ -15335,7 +15335,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -15349,14 +15349,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -15387,7 +15387,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -15401,14 +15401,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -15477,14 +15477,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -15508,7 +15508,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1200.0,
       "mass": 3.7,
-      "caliber": 0.09,
+      "caliber": 0.026,
       "cx": 0.52
     },
     "90mm_m618a1": {
@@ -15546,7 +15546,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -15567,7 +15567,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -15591,7 +15591,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -15612,7 +15612,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -15636,7 +15636,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     },
     "120mm_dm_11": {
@@ -15657,7 +15657,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     }
   },
@@ -15681,7 +15681,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -15702,7 +15702,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -15726,7 +15726,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_m339": {
@@ -15747,7 +15747,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -15771,7 +15771,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -15785,7 +15785,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_f1_he": {
@@ -15799,7 +15799,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -15823,7 +15823,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -15837,7 +15837,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_f1_he": {
@@ -15851,7 +15851,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -15875,14 +15875,14 @@
       "type": "apds_autocannon",
       "speed": 1335.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     },
     "25mm_pmb_09": {
       "type": "apds_fs_long_tank",
       "speed": 1385.0,
       "mass": 0.098,
-      "caliber": 0.025,
+      "caliber": 0.009,
       "cx": 0.3
     }
   },
@@ -15930,7 +15930,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1200.0,
       "mass": 3.7,
-      "caliber": 0.09,
+      "caliber": 0.026,
       "cx": 0.52
     },
     "90mm_m618a1": {
@@ -15975,7 +15975,7 @@
       "type": "apds_autocannon",
       "speed": 1150.0,
       "mass": 0.126,
-      "caliber": 0.02,
+      "caliber": 0.012,
       "cx": null
     }
   },
@@ -16023,14 +16023,14 @@
       "type": "apds_autocannon",
       "speed": 1335.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     },
     "25mm_pmb_09": {
       "type": "apds_fs_long_tank",
       "speed": 1385.0,
       "mass": 0.098,
-      "caliber": 0.025,
+      "caliber": 0.009,
       "cx": 0.3
     }
   },
@@ -16047,14 +16047,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -16078,14 +16078,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_pmc287": {
       "type": "apds_fs_long_tank",
       "speed": 1405.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     },
     "30mm_mk_266": {
@@ -16226,7 +16226,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_dm502": {
@@ -16247,7 +16247,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -16285,14 +16285,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -16316,14 +16316,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -16347,7 +16347,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_dm_11": {
@@ -16361,7 +16361,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -16961,7 +16961,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_m393a2": {
@@ -16989,7 +16989,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -17068,7 +17068,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -17096,7 +17096,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     }
   },
@@ -17113,7 +17113,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_m393a2": {
@@ -17141,14 +17141,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -17165,7 +17165,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_m393a2": {
@@ -17193,14 +17193,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -17217,7 +17217,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_m393a2": {
@@ -17245,14 +17245,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -17324,7 +17324,7 @@
       "type": "apds_autocannon",
       "speed": 1330.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     }
   },
@@ -17348,7 +17348,7 @@
       "type": "apds_autocannon",
       "speed": 1330.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     }
   },
@@ -17379,7 +17379,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1580.0,
       "mass": 2.175,
-      "caliber": 0.076,
+      "caliber": 0.026,
       "cx": 0.33
     }
   },
@@ -18097,7 +18097,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -18149,7 +18149,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -18239,28 +18239,28 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1780.0,
       "mass": 3.88,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.322
     },
     "125mm_3bm22": {
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     },
     "125mm_3bm9": {
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1800.0,
       "mass": 3.6,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.3105
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -18315,14 +18315,14 @@
       "type": "apds_autocannon",
       "speed": 1335.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     },
     "25mm_pmb_09": {
       "type": "apds_fs_long_tank",
       "speed": 1385.0,
       "mass": 0.098,
-      "caliber": 0.025,
+      "caliber": 0.009,
       "cx": 0.3
     }
   },
@@ -18339,14 +18339,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -18377,7 +18377,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1620.0,
       "mass": 0.87,
-      "caliber": 0.06,
+      "caliber": 0.017,
       "cx": 0.365
     },
     "60mm_oto_he": {
@@ -18422,7 +18422,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -18436,14 +18436,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -18536,14 +18536,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -18608,14 +18608,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -18646,14 +18646,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -18691,7 +18691,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_dm_11": {
@@ -18705,7 +18705,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -18895,7 +18895,7 @@
       "type": "apds_early_tank",
       "speed": 1257.0,
       "mass": 2.81,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_m496": {
@@ -19078,7 +19078,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -19106,14 +19106,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -19168,14 +19168,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1740.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.023,
       "cx": 0.71
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -19400,7 +19400,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_type75": {
@@ -19428,7 +19428,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     }
   },
@@ -19459,14 +19459,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.6,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -19497,7 +19497,7 @@
       "type": "apds_autocannon",
       "speed": 1150.0,
       "mass": 0.126,
-      "caliber": 0.02,
+      "caliber": 0.012,
       "cx": null
     }
   },
@@ -19521,14 +19521,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_type_10": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1780.0,
       "mass": 4.2,
-      "caliber": 0.12,
+      "caliber": 0.024,
       "cx": 0.58
     }
   },
@@ -19552,14 +19552,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_type_10": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1780.0,
       "mass": 4.2,
-      "caliber": 0.12,
+      "caliber": 0.024,
       "cx": 0.58
     }
   },
@@ -19583,14 +19583,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_type_10": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1780.0,
       "mass": 4.2,
-      "caliber": 0.12,
+      "caliber": 0.024,
       "cx": 0.58
     }
   },
@@ -19621,7 +19621,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -19635,14 +19635,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1501.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.022,
       "cx": 0.53
     },
     "105mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -19673,7 +19673,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -19687,14 +19687,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1501.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.022,
       "cx": 0.53
     },
     "105mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -19725,7 +19725,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -19739,14 +19739,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1501.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.022,
       "cx": 0.53
     },
     "105mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -20369,7 +20369,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -20383,14 +20383,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1501.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.022,
       "cx": 0.53
     },
     "105mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -20407,7 +20407,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_type75": {
@@ -20435,7 +20435,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     }
   },
@@ -20466,7 +20466,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -20480,14 +20480,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1501.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.022,
       "cx": 0.53
     },
     "105mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -20518,7 +20518,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -20532,14 +20532,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1501.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.022,
       "cx": 0.53
     },
     "105mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -20556,7 +20556,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_type75": {
@@ -20584,7 +20584,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     }
   },
@@ -20653,7 +20653,7 @@
       "type": "apds_autocannon",
       "speed": 1400.0,
       "mass": 0.38,
-      "caliber": 0.035,
+      "caliber": 0.018,
       "cx": 0.25
     }
   },
@@ -20677,14 +20677,14 @@
       "type": "apds_autocannon",
       "speed": 1335.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     },
     "25mm_pmb_09": {
       "type": "apds_fs_long_tank",
       "speed": 1385.0,
       "mass": 0.098,
-      "caliber": 0.025,
+      "caliber": 0.009,
       "cx": 0.3
     }
   },
@@ -20715,7 +20715,7 @@
       "type": "apds_autocannon",
       "speed": 1150.0,
       "mass": 0.126,
-      "caliber": 0.02,
+      "caliber": 0.012,
       "cx": null
     }
   },
@@ -20732,7 +20732,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 0.38,
-      "caliber": 0.035,
+      "caliber": 0.018,
       "cx": 0.25
     },
     "35_228mm_he_i_t_belt": {
@@ -20794,7 +20794,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     }
   },
@@ -20818,7 +20818,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     }
   },
@@ -20842,7 +20842,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     }
   },
@@ -20866,7 +20866,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     }
   },
@@ -21199,7 +21199,7 @@
       "type": "apds_early_tank",
       "speed": 1036.32,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     }
   },
@@ -21254,14 +21254,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -21316,7 +21316,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_shell_ss_mk1": {
@@ -21361,7 +21361,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -21399,14 +21399,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -21430,7 +21430,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1680.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     },
     "120mm_slsgr_m95": {
@@ -21444,7 +21444,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1740.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     }
   },
@@ -21461,14 +21461,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -21492,7 +21492,7 @@
       "type": "apds_autocannon",
       "speed": 1400.0,
       "mass": 0.38,
-      "caliber": 0.035,
+      "caliber": 0.018,
       "cx": 0.25
     },
     "35_228mm_aphe_i": {
@@ -21513,7 +21513,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1400.0,
       "mass": 0.25,
-      "caliber": 0.035,
+      "caliber": 0.012,
       "cx": 0.25221
     }
   },
@@ -21530,14 +21530,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -21713,7 +21713,7 @@
       "type": "apds_l15_tank",
       "speed": 1400.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_slspgr_m61": {
@@ -21727,7 +21727,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_slsgr_m61": {
@@ -21772,7 +21772,7 @@
       "type": "apds_autocannon",
       "speed": 1400.0,
       "mass": 0.38,
-      "caliber": 0.035,
+      "caliber": 0.018,
       "cx": 0.25
     }
   },
@@ -21976,7 +21976,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 0.3,
-      "caliber": 0.037,
+      "caliber": 0.024,
       "cx": 0.3
     }
   },
@@ -22031,14 +22031,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -22062,14 +22062,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_dm23": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -22093,7 +22093,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.611
     },
     "120mm_dm_11": {
@@ -22107,7 +22107,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -22155,7 +22155,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1465.0,
       "mass": 0.5,
-      "caliber": 0.04,
+      "caliber": 0.01,
       "cx": 0.75
     },
     "40mm_slsgr_m90": {
@@ -22176,7 +22176,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1495.0,
       "mass": 0.53,
-      "caliber": 0.04,
+      "caliber": 0.01,
       "cx": 0.75
     }
   },
@@ -22259,14 +22259,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -22490,7 +22490,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 1.025,
-      "caliber": 0.057,
+      "caliber": 0.037,
       "cx": 0.27283
     }
   },
@@ -22528,7 +22528,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 1.025,
-      "caliber": 0.057,
+      "caliber": 0.037,
       "cx": 0.27283
     }
   },
@@ -22590,7 +22590,7 @@
       "type": "apds_early_tank",
       "speed": 1110.0,
       "mass": 2.6,
-      "caliber": 0.075,
+      "caliber": 0.05,
       "cx": 0.25759
     }
   },
@@ -22852,7 +22852,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1465.0,
       "mass": 0.5,
-      "caliber": 0.04,
+      "caliber": 0.01,
       "cx": 0.75
     },
     "40mm_slsgr_m90": {
@@ -22873,7 +22873,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1495.0,
       "mass": 0.53,
-      "caliber": 0.04,
+      "caliber": 0.01,
       "cx": 0.75
     }
   },
@@ -22890,7 +22890,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1465.0,
       "mass": 0.5,
-      "caliber": 0.04,
+      "caliber": 0.01,
       "cx": 0.75
     },
     "40mm_slsgr_m90": {
@@ -22911,7 +22911,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1495.0,
       "mass": 0.53,
-      "caliber": 0.04,
+      "caliber": 0.01,
       "cx": 0.75
     }
   },
@@ -22928,7 +22928,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1465.0,
       "mass": 0.5,
-      "caliber": 0.04,
+      "caliber": 0.01,
       "cx": 0.75
     },
     "40mm_slsgr_m90": {
@@ -22949,7 +22949,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1495.0,
       "mass": 0.53,
-      "caliber": 0.04,
+      "caliber": 0.01,
       "cx": 0.75
     }
   },
@@ -22966,7 +22966,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_slsgr_m95": {
@@ -22980,7 +22980,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -22997,14 +22997,14 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_slpprj_m66": {
       "type": "apds_l15_tank",
       "speed": 1400.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_slspgr_m61": {
@@ -23042,7 +23042,7 @@
       "type": "apds_tank",
       "speed": 1500.0,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_slspgr_m61": {
@@ -23056,7 +23056,7 @@
       "type": "apds_l15_tank",
       "speed": 1450.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_slsgr_m61": {
@@ -23087,7 +23087,7 @@
       "type": "apds_tank",
       "speed": 1500.0,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_slspgr_m61": {
@@ -23101,7 +23101,7 @@
       "type": "apds_l15_tank",
       "speed": 1450.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_slsgr_m61": {
@@ -23132,7 +23132,7 @@
       "type": "apds_l15_tank",
       "speed": 1450.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_slspgr_m61": {
@@ -23146,7 +23146,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_slsgr_m61": {
@@ -23177,7 +23177,7 @@
       "type": "apds_l15_tank",
       "speed": 1400.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_slspgr_m61": {
@@ -23191,7 +23191,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_slsgr_m61": {
@@ -23222,7 +23222,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_slspgr_m61": {
@@ -23236,7 +23236,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     },
     "105mm_slsgr_m61": {
@@ -23267,7 +23267,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1650.0,
       "mass": 4.436,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.41106
     },
     "120mm_slsgr_m95": {
@@ -23281,7 +23281,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.032,
       "cx": 0.30562
     }
   },
@@ -23298,7 +23298,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_dm12a1": {
@@ -23319,14 +23319,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm53": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -23343,7 +23343,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_dm12a1": {
@@ -23364,14 +23364,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm53": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -23388,7 +23388,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_dm12a1": {
@@ -23409,14 +23409,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1640.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm53": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1670.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -23447,7 +23447,7 @@
       "type": "apds_early_tank",
       "speed": 1160.0,
       "mass": 2.6,
-      "caliber": 0.075,
+      "caliber": 0.05,
       "cx": 0.25759
     }
   },
@@ -23478,7 +23478,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_rokgr_m53": {
@@ -23516,7 +23516,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_rokgr_m53": {
@@ -23554,7 +23554,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 0.3,
-      "caliber": 0.037,
+      "caliber": 0.024,
       "cx": 0.3
     }
   },
@@ -23585,7 +23585,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 0.3,
-      "caliber": 0.037,
+      "caliber": 0.024,
       "cx": 0.3
     }
   },
@@ -23616,7 +23616,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 0.3,
-      "caliber": 0.037,
+      "caliber": 0.024,
       "cx": 0.3
     }
   },
@@ -23647,7 +23647,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 0.3,
-      "caliber": 0.037,
+      "caliber": 0.024,
       "cx": 0.3
     }
   },
@@ -23678,7 +23678,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 0.3,
-      "caliber": 0.037,
+      "caliber": 0.024,
       "cx": 0.3
     }
   },
@@ -23709,7 +23709,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 0.3,
-      "caliber": 0.037,
+      "caliber": 0.024,
       "cx": 0.3
     }
   },
@@ -23740,7 +23740,7 @@
       "type": "apds_early_tank",
       "speed": 1150.0,
       "mass": 0.3,
-      "caliber": 0.037,
+      "caliber": 0.024,
       "cx": 0.3
     }
   },
@@ -23951,7 +23951,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -24062,7 +24062,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -24093,7 +24093,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_of_412": {
@@ -24128,7 +24128,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1475.0,
       "mass": 3.75,
-      "caliber": 0.1,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -24159,28 +24159,28 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1780.0,
       "mass": 3.88,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.322
     },
     "125mm_3bm22": {
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     },
     "125mm_3bm9": {
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1800.0,
       "mass": 3.6,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.3105
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -24211,14 +24211,14 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bm46": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.025,
       "cx": 0.53816
     },
     "125mm_3bk_12m": {
@@ -24432,7 +24432,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -24484,7 +24484,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -24788,7 +24788,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -24840,7 +24840,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -24892,7 +24892,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -25238,7 +25238,7 @@
       "type": "apds_early_tank",
       "speed": 1158.24,
       "mass": 1.025,
-      "caliber": 0.057,
+      "caliber": 0.037,
       "cx": 0.27283
     }
   },
@@ -25397,7 +25397,7 @@
       "type": "apds_early_tank",
       "speed": 1036.32,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     }
   },
@@ -25442,7 +25442,7 @@
       "type": "apds_early_tank",
       "speed": 1036.32,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     }
   },
@@ -25487,7 +25487,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -25584,7 +25584,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -25608,7 +25608,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1510.0,
       "mass": 0.34,
-      "caliber": 0.04,
+      "caliber": 0.012,
       "cx": 0.37154
     },
     "40mm_gpr_pd_t_he": {
@@ -25698,7 +25698,7 @@
       "type": "apds_early_tank",
       "speed": 1158.24,
       "mass": 1.025,
-      "caliber": 0.057,
+      "caliber": 0.037,
       "cx": 0.27283
     }
   },
@@ -25777,14 +25777,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -25832,14 +25832,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_pmc287": {
       "type": "apds_fs_long_tank",
       "speed": 1405.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     },
     "30mm_mk_266": {
@@ -25877,7 +25877,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_shell_ss_mk1": {
@@ -25929,7 +25929,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -25953,7 +25953,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_l35": {
@@ -26005,7 +26005,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -26043,7 +26043,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_shell_ss_mk1": {
@@ -26081,7 +26081,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_rokgr_m53": {
@@ -26136,7 +26136,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_shell_ss_mk1": {
@@ -26174,7 +26174,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -26188,14 +26188,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -26212,7 +26212,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -26233,7 +26233,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     }
   },
@@ -26250,7 +26250,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -26271,7 +26271,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1550.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     }
   },
@@ -26302,14 +26302,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     },
     "120mm_l27a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.44426
     }
   },
@@ -26326,7 +26326,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -26347,14 +26347,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     },
     "120mm_l27a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.44426
     }
   },
@@ -26378,7 +26378,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1690.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.55
     },
     "120mm_dm_11": {
@@ -26392,7 +26392,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 5.0,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.74
     }
   },
@@ -26409,7 +26409,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -26430,14 +26430,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     },
     "120mm_l27a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.44426
     }
   },
@@ -26454,7 +26454,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -26475,14 +26475,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     },
     "120mm_l27a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.44426
     }
   },
@@ -26499,7 +26499,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -26520,14 +26520,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     },
     "120mm_l27a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.44426
     }
   },
@@ -26558,14 +26558,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     },
     "120mm_l27a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.44426
     }
   },
@@ -26582,7 +26582,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -26603,14 +26603,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     },
     "120mm_l27a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.44426
     }
   },
@@ -26627,7 +26627,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -26648,14 +26648,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     },
     "120mm_l27a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1650.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.44426
     }
   },
@@ -26672,7 +26672,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -26693,7 +26693,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1550.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     }
   },
@@ -26724,7 +26724,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_shell_ss_mk1": {
@@ -26748,7 +26748,7 @@
       "type": "apds_l15_tank",
       "speed": 1371.6,
       "mass": 7.484,
-      "caliber": 0.12,
+      "caliber": 0.068,
       "cx": 0.16549
     },
     "120mm_l37a7": {
@@ -26762,7 +26762,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_smoke_l34": {
@@ -26800,7 +26800,7 @@
       "type": "apds_autocannon",
       "speed": 1400.0,
       "mass": 0.38,
-      "caliber": 0.035,
+      "caliber": 0.018,
       "cx": 0.25
     }
   },
@@ -26817,7 +26817,7 @@
       "type": "apds_l15_tank",
       "speed": 1371.6,
       "mass": 7.484,
-      "caliber": 0.12,
+      "caliber": 0.068,
       "cx": 0.16549
     },
     "120mm_l37a7": {
@@ -26831,7 +26831,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_smoke_l34": {
@@ -26855,7 +26855,7 @@
       "type": "apds_l15_tank",
       "speed": 1371.6,
       "mass": 7.484,
-      "caliber": 0.12,
+      "caliber": 0.068,
       "cx": 0.16549
     },
     "120mm_l37a7": {
@@ -26869,7 +26869,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_smoke_l34": {
@@ -26893,7 +26893,7 @@
       "type": "apds_l15_tank",
       "speed": 1371.6,
       "mass": 7.484,
-      "caliber": 0.12,
+      "caliber": 0.068,
       "cx": 0.16549
     },
     "120mm_l37a7": {
@@ -26907,7 +26907,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_smoke_l34": {
@@ -26997,7 +26997,7 @@
       "type": "apds_early_tank",
       "speed": 1036.32,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     }
   },
@@ -27014,7 +27014,7 @@
       "type": "apds_early_tank",
       "speed": 1493.0,
       "mass": 6.37,
-      "caliber": 0.12,
+      "caliber": 0.07,
       "cx": 0.22
     },
     "120mm_l1tk": {
@@ -27366,14 +27366,14 @@
       "type": "apds_autocannon",
       "speed": 1345.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     },
     "25mm_pmb_09": {
       "type": "apds_fs_long_tank",
       "speed": 1385.0,
       "mass": 0.098,
-      "caliber": 0.025,
+      "caliber": 0.009,
       "cx": 0.3
     }
   },
@@ -27459,14 +27459,14 @@
       "type": "apds_autocannon",
       "speed": 1175.0,
       "mass": 0.3,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_l21a1": {
       "type": "apds_fs_long_tank",
       "speed": 1325.0,
       "mass": 0.16,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     }
   },
@@ -27497,14 +27497,14 @@
       "type": "apds_autocannon",
       "speed": 1175.0,
       "mass": 0.3,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_l21a1": {
       "type": "apds_fs_long_tank",
       "speed": 1325.0,
       "mass": 0.16,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     }
   },
@@ -27535,7 +27535,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_shell_ss_mk1": {
@@ -27559,7 +27559,7 @@
       "type": "apds_early_tank",
       "speed": 1493.0,
       "mass": 6.37,
-      "caliber": 0.12,
+      "caliber": 0.07,
       "cx": 0.22
     },
     "120mm_l1tk": {
@@ -27614,7 +27614,7 @@
       "type": "apds_early_tank",
       "speed": 1432.56,
       "mass": 3.22,
-      "caliber": 0.083,
+      "caliber": 0.053,
       "cx": 0.19137
     },
     "83mm_shell_ss_mk1": {
@@ -27652,14 +27652,14 @@
       "type": "apds_autocannon",
       "speed": 1175.0,
       "mass": 0.3,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_l21a1": {
       "type": "apds_fs_long_tank",
       "speed": 1325.0,
       "mass": 0.16,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     }
   },
@@ -27690,14 +27690,14 @@
       "type": "apds_autocannon",
       "speed": 1175.0,
       "mass": 0.3,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_l21a1": {
       "type": "apds_fs_long_tank",
       "speed": 1325.0,
       "mass": 0.16,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.37442
     }
   },
@@ -27769,7 +27769,7 @@
       "type": "apds_l15_tank",
       "speed": 1371.6,
       "mass": 7.484,
-      "caliber": 0.12,
+      "caliber": 0.068,
       "cx": 0.16549
     },
     "120mm_l37a7": {
@@ -27783,7 +27783,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_smoke_l34": {
@@ -27845,14 +27845,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1585.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.68
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -27876,21 +27876,21 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1585.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.68
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_ke_w_a2": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.68
     }
   },
@@ -28273,7 +28273,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -28311,14 +28311,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm63": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -28445,14 +28445,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -28469,7 +28469,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1615.0,
       "mass": 2.175,
-      "caliber": 0.076,
+      "caliber": 0.026,
       "cx": 0.33
     },
     "76mm_gt4_he": {
@@ -28507,14 +28507,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -28697,7 +28697,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -28749,7 +28749,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -28801,7 +28801,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -28825,7 +28825,7 @@
       "type": "apds_l15_tank",
       "speed": 1371.6,
       "mass": 7.484,
-      "caliber": 0.12,
+      "caliber": 0.068,
       "cx": 0.16549
     },
     "120mm_l37a7": {
@@ -28846,14 +28846,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l23a1": {
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     }
   },
@@ -28922,7 +28922,7 @@
       "type": "apds_early_tank",
       "speed": 1203.96,
       "mass": 2.477,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_shell_ss_mk1": {
@@ -29008,14 +29008,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -29070,14 +29070,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_dm63": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -29236,14 +29236,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.6,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -29298,7 +29298,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_l35": {
@@ -29322,7 +29322,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_l35": {
@@ -29353,7 +29353,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
-      "caliber": 0.12,
+      "caliber": 0.029,
       "cx": 0.34982
     },
     "120mm_l37a7": {
@@ -29374,7 +29374,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1550.0,
       "mass": 4.3,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.45126
     }
   },
@@ -29405,14 +29405,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.6,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -29460,7 +29460,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_l35": {
@@ -29522,14 +29522,14 @@
       "type": "apds_autocannon",
       "speed": 1345.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     },
     "25mm_m919": {
       "type": "apds_fs_long_tank",
       "speed": 1385.0,
       "mass": 0.098,
-      "caliber": 0.025,
+      "caliber": 0.009,
       "cx": 0.3
     }
   },
@@ -29567,28 +29567,28 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_c76a1": {
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.6,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m774": {
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m833": {
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -29688,28 +29688,28 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_c76a1": {
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.6,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m774": {
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m833": {
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -29726,14 +29726,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -29867,7 +29867,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1463.0,
       "mass": 2.27,
-      "caliber": 0.075,
+      "caliber": 0.026,
       "cx": 0.5
     },
     "75mm_xm884": {
@@ -30219,14 +30219,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     },
     "105mm_m900": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1505.0,
       "mass": 3.85,
-      "caliber": 0.105,
+      "caliber": 0.023,
       "cx": 0.55254
     }
   },
@@ -30250,21 +30250,21 @@
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m900": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1505.0,
       "mass": 3.85,
-      "caliber": 0.105,
+      "caliber": 0.023,
       "cx": 0.55254
     },
     "105mm_m833": {
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -30288,21 +30288,21 @@
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m900": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1505.0,
       "mass": 3.85,
-      "caliber": 0.105,
+      "caliber": 0.023,
       "cx": 0.55254
     },
     "105mm_m833": {
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -30319,14 +30319,14 @@
       "type": "apds_autocannon",
       "speed": 1480.0,
       "mass": 0.19,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.13
     },
     "30mm_mk258": {
       "type": "apds_fs_long_tank",
       "speed": 1430.0,
       "mass": 0.17,
-      "caliber": 0.03,
+      "caliber": 0.009,
       "cx": 0.3
     },
     "30mm_mk_266": {
@@ -30599,7 +30599,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -30613,21 +30613,21 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     },
     "105mm_m774": {
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m833": {
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -30658,7 +30658,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -30672,21 +30672,21 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     },
     "105mm_m774": {
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m833": {
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -30724,14 +30724,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1505.0,
       "mass": 3.85,
-      "caliber": 0.105,
+      "caliber": 0.023,
       "cx": 0.55254
     },
     "105mm_m833": {
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -30755,28 +30755,28 @@
       "type": "apds_fs_long_tank",
       "speed": 1670.0,
       "mass": 4.268,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.46031
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1575.0,
       "mass": 4.887,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.92643
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -30800,28 +30800,28 @@
       "type": "apds_fs_long_tank",
       "speed": 1670.0,
       "mass": 4.268,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.46031
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1575.0,
       "mass": 4.887,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.92643
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -30845,14 +30845,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1585.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.68
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -30876,28 +30876,28 @@
       "type": "apds_fs_long_tank",
       "speed": 1670.0,
       "mass": 4.268,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.46031
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a2": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 4.921,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.76874
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -30921,28 +30921,28 @@
       "type": "apds_fs_long_tank",
       "speed": 1670.0,
       "mass": 4.268,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.46031
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a2": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 4.921,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.76874
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -30966,28 +30966,28 @@
       "type": "apds_fs_long_tank",
       "speed": 1670.0,
       "mass": 4.268,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.46031
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a2": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 4.921,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.76874
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -31011,28 +31011,28 @@
       "type": "apds_fs_long_tank",
       "speed": 1670.0,
       "mass": 4.268,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.46031
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a2": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 4.921,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.76874
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -31056,28 +31056,28 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 4.921,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.76874
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a3": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1555.0,
       "mass": 6.5,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.75
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_xm1147": {
@@ -31108,28 +31108,28 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 4.921,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.76874
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a3": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1555.0,
       "mass": 6.5,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.75
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_xm1147": {
@@ -31160,28 +31160,28 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 4.921,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.76874
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a3": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1555.0,
       "mass": 6.5,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.75
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_xm1147": {
@@ -31212,28 +31212,28 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 4.921,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.76874
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a3": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1555.0,
       "mass": 6.5,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.75
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_xm1147": {
@@ -31803,14 +31803,14 @@
       "type": "apds_autocannon",
       "speed": 1345.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     },
     "25mm_m919": {
       "type": "apds_fs_long_tank",
       "speed": 1385.0,
       "mass": 0.098,
-      "caliber": 0.025,
+      "caliber": 0.009,
       "cx": 0.3
     }
   },
@@ -31965,14 +31965,14 @@
       "type": "apds_autocannon",
       "speed": 1345.0,
       "mass": 0.134,
-      "caliber": 0.025,
+      "caliber": 0.014,
       "cx": 0.2
     },
     "25mm_m919": {
       "type": "apds_fs_long_tank",
       "speed": 1385.0,
       "mass": 0.098,
-      "caliber": 0.025,
+      "caliber": 0.009,
       "cx": 0.3
     }
   },
@@ -32010,7 +32010,7 @@
       "type": "apds_early_tank",
       "speed": 1257.0,
       "mass": 2.81,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_m496": {
@@ -33155,7 +33155,7 @@
       "type": "apds_early_tank",
       "speed": 1257.0,
       "mass": 2.81,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_m496": {
@@ -33331,7 +33331,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_m393a2": {
@@ -33376,28 +33376,28 @@
       "type": "apds_fs_long_tank",
       "speed": 1670.0,
       "mass": 4.268,
-      "caliber": 0.12,
+      "caliber": 0.027,
       "cx": 0.46031
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     },
     "120mm_m829a1": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1575.0,
       "mass": 4.887,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.92643
     },
     "120mm_m908": {
       "type": "he_or_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -33414,7 +33414,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -33442,7 +33442,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     }
   },
@@ -33459,7 +33459,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -33487,14 +33487,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -33511,7 +33511,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -33539,14 +33539,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -33594,14 +33594,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1585.0,
       "mass": 4.0,
-      "caliber": 0.12,
+      "caliber": 0.022,
       "cx": 0.68
     },
     "120mm_m830a1": {
       "type": "heat_mp_vt_tank",
       "speed": 1410.0,
       "mass": 11.4,
-      "caliber": 0.12,
+      "caliber": 0.08,
       "cx": 0.63402
     }
   },
@@ -33618,7 +33618,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m456": {
@@ -33639,7 +33639,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m416": {
@@ -33653,21 +33653,21 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     },
     "105mm_m774": {
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_m833": {
       "type": "apds_fs_long_tank",
       "speed": 1485.0,
       "mass": 3.7,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.45
     }
   },
@@ -33901,7 +33901,7 @@
       "type": "apds_tank",
       "speed": 1478.3,
       "mass": 4.0,
-      "caliber": 0.105,
+      "caliber": 0.06,
       "cx": 0.15718
     },
     "105mm_imi_m156": {
@@ -33929,7 +33929,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     }
   },
@@ -33960,7 +33960,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1508.76,
       "mass": 3.787,
-      "caliber": 0.152,
+      "caliber": 0.036,
       "cx": 0.50421
     }
   },
@@ -33991,7 +33991,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -34005,14 +34005,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -34043,7 +34043,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
-      "caliber": 0.105,
+      "caliber": 0.033,
       "cx": 0.26763
     },
     "105mm_m416": {
@@ -34057,14 +34057,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     },
     "105mm_imi_m426": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
-      "caliber": 0.105,
+      "caliber": 0.024,
       "cx": 0.53008
     }
   },
@@ -34095,14 +34095,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1705.0,
       "mass": 5.6,
-      "caliber": 0.12,
+      "caliber": 0.025,
       "cx": 0.73
     },
     "120mm_m338": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1680.0,
       "mass": 5.058,
-      "caliber": 0.12,
+      "caliber": 0.023,
       "cx": 0.779
     }
   },
@@ -34157,7 +34157,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1463.0,
       "mass": 2.27,
-      "caliber": 0.075,
+      "caliber": 0.026,
       "cx": 0.5
     },
     "75mm_xm884": {
@@ -34243,14 +34243,14 @@
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.6,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -34851,7 +34851,7 @@
       "type": "apds_early_tank",
       "speed": 1554.0,
       "mass": 4.5,
-      "caliber": 0.105,
+      "caliber": 0.066,
       "cx": 0.19137
     }
   },
@@ -34882,7 +34882,7 @@
       "type": "apds_early_tank",
       "speed": 1554.0,
       "mass": 4.5,
-      "caliber": 0.105,
+      "caliber": 0.066,
       "cx": 0.19137
     }
   },
@@ -35051,7 +35051,7 @@
       "type": "apds_early_tank",
       "speed": 1257.0,
       "mass": 2.81,
-      "caliber": 0.076,
+      "caliber": 0.05,
       "cx": 0.25759
     },
     "76mm_m496": {
@@ -35113,7 +35113,7 @@
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1570.0,
       "mass": 3.6,
-      "caliber": 0.09,
+      "caliber": 0.04,
       "cx": 0.305
     },
     "90mm_t340e14h": {
@@ -35144,7 +35144,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -35172,14 +35172,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -35196,7 +35196,7 @@
       "type": "apds_l15_tank",
       "speed": 1426.0,
       "mass": 4.53,
-      "caliber": 0.105,
+      "caliber": 0.061,
       "cx": 0.17605
     },
     "105mm_m393a2": {
@@ -35224,14 +35224,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_dm33": {
       "type": "apds_fs_long_tank",
       "speed": 1455.0,
       "mass": 3.79,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.4
     }
   },
@@ -35293,14 +35293,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1501.14,
       "mass": 3.719,
-      "caliber": 0.105,
+      "caliber": 0.035,
       "cx": 0.2925
     },
     "105mm_m774": {
       "type": "apds_fs_long_tank",
       "speed": 1509.0,
       "mass": 3.4,
-      "caliber": 0.105,
+      "caliber": 0.026,
       "cx": 0.45
     }
   },
@@ -35331,7 +35331,7 @@
       "type": "apds_autocannon",
       "speed": 1150.0,
       "mass": 0.126,
-      "caliber": 0.02,
+      "caliber": 0.012,
       "cx": null
     }
   },
@@ -35362,7 +35362,7 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1508.76,
       "mass": 3.787,
-      "caliber": 0.152,
+      "caliber": 0.036,
       "cx": 0.50421
     }
   },
@@ -35521,7 +35521,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bk_12m": {
@@ -35535,7 +35535,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     }
   },
@@ -35566,7 +35566,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bk_12m": {
@@ -35580,7 +35580,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -35611,7 +35611,7 @@
       "type": "apds_fs_long_tank",
       "speed": 1500.0,
       "mass": 0.95,
-      "caliber": 0.057,
+      "caliber": 0.016,
       "cx": 0.8
     },
     "57mm_3uo8": {
@@ -35867,14 +35867,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -35905,14 +35905,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -35943,14 +35943,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -36005,14 +36005,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -36043,14 +36043,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -36081,14 +36081,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -36119,14 +36119,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     },
     "30mm_UOF23": {
@@ -36164,14 +36164,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     },
     "30mm_UOF23": {
@@ -36482,14 +36482,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -36520,14 +36520,14 @@
       "type": "apds_autocannon",
       "speed": 1120.0,
       "mass": 0.304,
-      "caliber": 0.03,
+      "caliber": 0.018,
       "cx": 0.12
     },
     "30mm_3ubr_11": {
       "type": "apds_fs_long_tank",
       "speed": 1260.0,
       "mass": 0.165,
-      "caliber": 0.03,
+      "caliber": 0.01,
       "cx": 0.25
     }
   },
@@ -36699,7 +36699,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -36758,7 +36758,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -36824,7 +36824,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -36876,7 +36876,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -36928,7 +36928,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -36980,7 +36980,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -37032,7 +37032,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -37084,7 +37084,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -37136,7 +37136,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -37319,7 +37319,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -37607,7 +37607,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -37856,7 +37856,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -38008,7 +38008,7 @@
       "type": "apds_fs_tank",
       "speed": 1750.0,
       "mass": 8.0,
-      "caliber": 0.152,
+      "caliber": 0.052,
       "cx": 0.395
     },
     "152mm_m69_he_fs": {
@@ -38032,7 +38032,7 @@
       "type": "apds_tank",
       "speed": 1535.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_d54ts_he": {
@@ -38156,7 +38156,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1980.0,
       "mass": 7.0,
-      "caliber": 0.152,
+      "caliber": 0.028,
       "cx": 0.5
     },
     "152mm_lp_83_he_fs": {
@@ -38180,7 +38180,7 @@
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1615.0,
       "mass": 4.0,
-      "caliber": 0.115,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "115mm_3of_11": {
@@ -38194,7 +38194,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1615.0,
       "mass": 4.0,
-      "caliber": 0.115,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "115mm_3bk_4": {
@@ -38239,7 +38239,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1430.0,
       "mass": 3.4,
-      "caliber": 0.1,
+      "caliber": 0.038,
       "cx": 0.31
     },
     "100mm_3d3": {
@@ -38646,7 +38646,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -38712,7 +38712,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -38840,7 +38840,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -39228,7 +39228,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -39287,7 +39287,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -39346,7 +39346,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -39412,7 +39412,7 @@
       "type": "apds_tank",
       "speed": 1400.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_10": {
@@ -39450,7 +39450,7 @@
       "type": "apds_tank",
       "speed": 1620.0,
       "mass": 4.5,
-      "caliber": 0.122,
+      "caliber": 0.058,
       "cx": 0.22805
     },
     "122mm_zbk_9": {
@@ -39917,7 +39917,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -40361,7 +40361,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -40420,7 +40420,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -40479,7 +40479,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -40538,7 +40538,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -40597,7 +40597,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -40656,7 +40656,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -40746,7 +40746,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -40819,7 +40819,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -40909,7 +40909,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "85mm_br_365p": {
@@ -41058,7 +41058,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -41124,7 +41124,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -41190,7 +41190,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -41221,7 +41221,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_of_412": {
@@ -41242,7 +41242,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1430.0,
       "mass": 3.4,
-      "caliber": 0.1,
+      "caliber": 0.038,
       "cx": 0.31
     },
     "100mm_3bk_17m": {
@@ -41273,7 +41273,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_of_412": {
@@ -41294,7 +41294,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1430.0,
       "mass": 3.4,
-      "caliber": 0.1,
+      "caliber": 0.038,
       "cx": 0.31
     },
     "100mm_3bk_17m": {
@@ -41325,7 +41325,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_of_412": {
@@ -41346,7 +41346,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1430.0,
       "mass": 3.4,
-      "caliber": 0.1,
+      "caliber": 0.038,
       "cx": 0.31
     },
     "100mm_3bk_17m": {
@@ -41408,7 +41408,7 @@
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1615.0,
       "mass": 4.0,
-      "caliber": 0.115,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "115mm_3of_11": {
@@ -41422,7 +41422,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1615.0,
       "mass": 4.0,
-      "caliber": 0.115,
+      "caliber": 0.042,
       "cx": 0.395
     },
     "115mm_3bk_4": {
@@ -41460,14 +41460,14 @@
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1600.0,
       "mass": 4.88,
-      "caliber": 0.115,
+      "caliber": 0.035,
       "cx": 0.55
     },
     "115mm_3bm21": {
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1600.0,
       "mass": 4.55,
-      "caliber": 0.115,
+      "caliber": 0.038,
       "cx": 0.395
     }
   },
@@ -41498,7 +41498,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bk_12m": {
@@ -41512,7 +41512,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     }
   },
@@ -41543,7 +41543,7 @@
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1800.0,
       "mass": 3.6,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.3105
     },
     "125mm_3of_26": {
@@ -41557,14 +41557,14 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1780.0,
       "mass": 3.88,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.322
     },
     "125mm_3bm22": {
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     }
   },
@@ -41633,28 +41633,28 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1780.0,
       "mass": 3.88,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.322
     },
     "125mm_3bm22": {
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     },
     "125mm_3bm9": {
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1800.0,
       "mass": 3.6,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.3105
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -41685,28 +41685,28 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1780.0,
       "mass": 3.88,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.322
     },
     "125mm_3bm22": {
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     },
     "125mm_3bm9": {
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1800.0,
       "mass": 3.6,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.3105
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -41737,7 +41737,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bk_12m": {
@@ -41751,7 +41751,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     }
   },
@@ -41782,14 +41782,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -41820,14 +41820,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -41858,14 +41858,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -41896,14 +41896,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -41934,7 +41934,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bk_12m": {
@@ -41948,7 +41948,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     }
   },
@@ -41979,28 +41979,28 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1780.0,
       "mass": 3.88,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.322
     },
     "125mm_3bm22": {
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     },
     "125mm_3bm9": {
       "type": "apds_fs_full_body_steel_tank",
       "speed": 1800.0,
       "mass": 3.6,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.3105
     },
     "125mm_tapna": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1690.0,
       "mass": 3.7,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.55
     }
   },
@@ -42069,7 +42069,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bk_12m": {
@@ -42083,7 +42083,7 @@
       "type": "apds_fs_tungsten_small_core_tank",
       "speed": 1760.0,
       "mass": 4.83,
-      "caliber": 0.125,
+      "caliber": 0.044,
       "cx": 0.357
     }
   },
@@ -42114,7 +42114,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bk_12m": {
@@ -42128,7 +42128,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 3.9,
-      "caliber": 0.125,
+      "caliber": 0.021,
       "cx": 0.85
     }
   },
@@ -42159,14 +42159,14 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bm46": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.025,
       "cx": 0.53816
     },
     "125mm_3bk_12m": {
@@ -42204,14 +42204,14 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bm46": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.025,
       "cx": 0.53816
     },
     "125mm_3bk_12m": {
@@ -42249,14 +42249,14 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bm46": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.025,
       "cx": 0.53816
     },
     "125mm_3bk_12m": {
@@ -42294,7 +42294,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bk_12m": {
@@ -42332,14 +42332,14 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bm46": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.025,
       "cx": 0.53816
     },
     "125mm_3bk_12m": {
@@ -42377,14 +42377,14 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bm46": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.025,
       "cx": 0.53816
     },
     "125mm_3bk_12m": {
@@ -42422,7 +42422,7 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.025,
       "cx": 0.53816
     },
     "125mm_3bk_12m": {
@@ -42436,7 +42436,7 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -42467,14 +42467,14 @@
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     },
     "125mm_3bm46": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.025,
       "cx": 0.53816
     },
     "125mm_3bk_12m": {
@@ -42512,14 +42512,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bm42": {
       "type": "apds_fs_tungsten_caliber_fins_tank",
       "speed": 1700.0,
       "mass": 4.85,
-      "caliber": 0.125,
+      "caliber": 0.032,
       "cx": 0.5068
     }
   },
@@ -42550,14 +42550,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bm42_2": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 3.9,
-      "caliber": 0.125,
+      "caliber": 0.021,
       "cx": 0.85
     },
     "125mm_3of_82": {
@@ -42595,14 +42595,14 @@
       "type": "apds_fs_long_l30_tank",
       "speed": 1660.0,
       "mass": 5.12,
-      "caliber": 0.125,
+      "caliber": 0.022,
       "cx": 0.843
     },
     "125mm_3bm42_2": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1750.0,
       "mass": 3.9,
-      "caliber": 0.125,
+      "caliber": 0.021,
       "cx": 0.85
     },
     "125mm_3of_82": {
@@ -42640,7 +42640,7 @@
       "type": "apds_tank",
       "speed": 1415.0,
       "mass": 4.13,
-      "caliber": 0.1,
+      "caliber": 0.055,
       "cx": 0.22805
     },
     "100mm_zbk_5": {
@@ -42685,7 +42685,7 @@
       "type": "apcbc_tank",
       "speed": 792.0,
       "mass": 9.2,
-      "caliber": 0.085,
+      "caliber": 0.07,
       "cx": 0.37803
     },
     "type_56_apcr": {

@@ -9,7 +9,7 @@ import os
 import argparse
 
 
-def reader(MODE, default_mode=SIM_SIGHT_MODE, _print=print, _input=input):
+def reader(MODE, default_mode="simulator", _print=print, _input=input):
     """
     Function that reads data.json and creates every sight of every tank. This is the core of whole program.
     :param MODE: output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3
@@ -55,12 +55,13 @@ def reader(MODE, default_mode=SIM_SIGHT_MODE, _print=print, _input=input):
         # in those gamemodes, so the sight sits on the gun (no coords) and convergence never matters
         # Standard shell without speed is reported by the shell loop below, so here it is simply skipped
         standard_speed = entry.get(standard, {}).get("speed") if standard else None
-        for gamemode in GAMEMODE_SIGHT_TYPES if standard_speed else ():
+        for gamemode in ("arcade", "realistic") if standard_speed else ():
             sight_type = gamemode + generator.speed_category(standard_speed)
             _output(str((unit_id, gamemode, sight_type, standard, standard_speed)), 0)
             try:
                 _output(generator.generator(unit_id, [standard_speed], zoom, [sight_type], [[0.0, 0.0]],
-                                            [math.inf], filename=gamemode, bind=gamemode == default_mode), 0)
+                                            [math.inf], filename=gamemode, bind=gamemode == default_mode,
+                                            shells=[entry.get(standard)]), 0)
             except:  # If something went wrong
                 wrong_entries += 1
                 _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + gamemode, 1)
@@ -69,7 +70,8 @@ def reader(MODE, default_mode=SIM_SIGHT_MODE, _print=print, _input=input):
             sight_type = "simulator_laser"
             try:
                 _output(generator.generator(unit_id, [standard_speed], zoom, [sight_type], [coord],
-                                            [convergence], filename=sight_type, bind=True), 0)
+                                            [convergence], filename=sight_type, bind=True,
+                                            shells=[entry.get(standard)]), 0)
             except:  # If something went wrong
                 wrong_entries += 1
                 _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + sight_type, 1)
@@ -82,13 +84,13 @@ def reader(MODE, default_mode=SIM_SIGHT_MODE, _print=print, _input=input):
                 # wrong_entries += 1
                 _output("No shell speed. Unit: " + unit_id + " Shell: " + shell_name, 0)
                 continue
-            sight_type = SIM_SIGHT_MODE + generator.speed_category(speed)
+            sight_type = "simulator" + generator.speed_category(speed)
             _output(str((unit_id, shell_name, sight_type, shell)), 0)
             try:
                 # Create sight using generator, the standard shell being the default sight in simulator mode
                 _output(generator.generator(unit_id, [speed], zoom, [sight_type], [coord], [convergence],
-                                            filename=shell_name,
-                                            bind=default_mode == SIM_SIGHT_MODE and shell_name == standard), 0)
+                                            filename=shell_name, shells=[shell],
+                                            bind=default_mode == "simulator" and shell_name == standard), 0)
             except:  # If something went wrong
                 wrong_entries += 1
                 _output("Wrong entry format. Unit: " + unit_id + " Shell: " + shell_name, 1)
@@ -130,7 +132,7 @@ if __name__ == "__main__":
     # Read all arguments from terminal and run main function
     parser = argparse.ArgumentParser(description="Creates UserSights folder with WarThunder sights.")
     parser.add_argument("-m", "--mode", help="Output mode. Development - 0 ; Normal - 1 (default) ; Silent - 2 ; Full silent - 3", default=1)
-    parser.add_argument("-d", "--default", help="Sight written to global.blk as the default one", choices=DEFAULT_SIGHT_MODES, default=SIM_SIGHT_MODE)
+    parser.add_argument("-d", "--default", help="Sight written to global.blk as the default one", choices=("arcade", "realistic", "simulator"), default="simulator")
     args = vars(parser.parse_args())
 
     reader(int(args["mode"]), args["default"], _print=print, _input=input)
