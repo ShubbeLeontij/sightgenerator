@@ -62,9 +62,9 @@ def reader(MODE, default_mode="simulator", _print=print, _input=input):
                 _output(generator.generator(unit_id, [standard_speed], zoom, [sight_type], [[0.0, 0.0]],
                                             [math.inf], filename=gamemode, bind=gamemode == default_mode,
                                             shells=[entry.get(standard)]), 0)
-            except:  # If something went wrong
+            except Exception as e:  # If something went wrong
                 wrong_entries += 1
-                _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + gamemode, 1)
+                _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + gamemode + ". Error: " + str(e), 1)
 
         if entry.get("laser"):
             sight_type = "simulator_laser"
@@ -72,9 +72,9 @@ def reader(MODE, default_mode="simulator", _print=print, _input=input):
                 _output(generator.generator(unit_id, [standard_speed], zoom, [sight_type], [coord],
                                             [convergence], filename=sight_type, bind=True,
                                             shells=[entry.get(standard)]), 0)
-            except:  # If something went wrong
+            except Exception as e:  # If something went wrong
                 wrong_entries += 1
-                _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + sight_type, 1)
+                _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + sight_type + ". Error: " + str(e), 1)
 
         for shell_name, shell in entry.items():  # Iterating shells of the tank
             if shell_name in ("zoom", "convergence", "coords", "standard", "laser"):
@@ -91,9 +91,9 @@ def reader(MODE, default_mode="simulator", _print=print, _input=input):
                 _output(generator.generator(unit_id, [speed], zoom, [sight_type], [coord], [convergence],
                                             filename=shell_name, shells=[shell],
                                             bind=default_mode == "simulator" and shell_name == standard), 0)
-            except:  # If something went wrong
+            except Exception as e:  # If something went wrong
                 wrong_entries += 1
-                _output("Wrong entry format. Unit: " + unit_id + " Shell: " + shell_name, 1)
+                _output("Wrong entry format. Unit: " + unit_id + " Shell: " + shell_name + ". Error: " + str(e), 1)
 
     try:
         res = generator.save_presets()
