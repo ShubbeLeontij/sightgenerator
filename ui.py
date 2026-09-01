@@ -118,27 +118,33 @@ class Output(tk.Text):
         :param sep: separator between two texts
         :param end: ending after printing
         """
-        output_string = ""
-        for i in args:
-            if isinstance(i, int):
-                i = str(i)
-            elif not isinstance(i, str):
-                i = json.dumps(i)
-            output_string += sep + i
+        try:
+            output_string = ""
+            for i in args:
+                if isinstance(i, int):
+                    i = str(i)
+                elif not isinstance(i, str):
+                    i = json.dumps(i)
+                output_string += sep + i
 
-        self.config(state=tk.NORMAL)
-        self.insert(tk.END, output_string + end)
-        self.config(state=tk.DISABLED)
-        self.see(tk.END)
-        self.master.update()
+            self.config(state=tk.NORMAL)
+            self.insert(tk.END, output_string + end)
+            self.config(state=tk.DISABLED)
+            self.see(tk.END)
+            self.master.update()
+        except tk.TclError:  # Widget has already been destroyed
+            pass
 
     def clear(self):
         """
         Function that clears whole output field.
         """
-        self.config(state=tk.NORMAL)
-        self.delete(1.0, tk.END)
-        self.config(state=tk.DISABLED)
+        try:
+            self.config(state=tk.NORMAL)
+            self.delete(1.0, tk.END)
+            self.config(state=tk.DISABLED)
+        except tk.TclError:  # Widget has already been destroyed
+            pass
 
 
 class Input(ttk.Entry):

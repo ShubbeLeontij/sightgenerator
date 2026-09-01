@@ -244,7 +244,7 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True, shell
             elif centralLines == "standard":
                 lines_blk += STANDARD_CENTRAL_LINES
             else:
-                centralLines += centralLines
+                lines_blk += centralLines
         lines_blk += rangefinder_lines
 
     # Circles
