@@ -2,11 +2,11 @@
 
 There are two installation methods, the first is simpler, and the second gives more freedom of customization (if ui offers not enough, you can try editing the defaults.py file or other program files), but requires the user to have basic terminal skills for installation.
 1) Folder with exe file\
-Download zip: https://github.com/ShubbeLeontij/sightgenerator/releases/download/6.0/sightgenerator.zip \
+Download zip: https://github.com/ShubbeLeontij/sightgenerator/releases/download/6.1/sightgenerator.zip \
 You do not need to download anything additionally, however, at the first start, the antivirus may react - allow it to run the file.
 
 2) Python project\
-Clone the project: https://github.com/ShubbeLeontij/sightgenerator, download and install python3: https://www.python.org/downloads/ (if not already installed), make sure `ADD Python to PATH` and `td/tk and IDLE` are checked.
+Clone the project: https://github.com/ShubbeLeontij/sightgenerator , download and install python3: https://www.python.org/downloads/ (if not already installed), make sure `ADD Python to PATH` and `td/tk and IDLE` are checked.
 Install the required libraries `python -m pip install -r requirements.txt`.
 In the project folder, you need to run `ui.py`.
 
@@ -29,7 +29,7 @@ After changing the settings, remember to press SAVE SETTINGS AND EXIT TO MAIN ME
 
 If you want to know what sights the tank gets, you can open data.json - the file sights are built from. Each top-level key is a tank's unit id.
 Inside it, "zoom" is the gunner's sight zoom (minimum), "convergence" is the convergence distance in meters (zero-parallax distance, null means no convergence), "coords" is the sight's height/side offset from the gun in meters, "standard" is the shell whose sight is bound to the tank in global.blk and "laser" tells whether the tank has a laser rangefinder.
-Every other key is a shell of that tank - one sight is created for each of them, named after the shell, plus arcade.blk and realistic.blk for the standard one and simulator_laser.blk when "laser" is true. A shell holds its "speed" in m/s (the sight type is chosen by it), the game's shell "type", and its "mass" in kg, "caliber" in meters and "cx" (drag coefficient), from which the air resistance is calculated. The caliber is the diameter of the body that actually flies, so for a discarding-sabot shell it is the penetrator, not the barrel.
+Every other key is a shell of that tank - one sight is created for each of them, named after the shell, plus arcade.blk and realistic.blk for the standard one and simulator_laser.blk when "laser" is true. A shell holds its "speed" in m/s (the sight type is chosen by it), the game's shell "type", and its "mass" in kg, "caliber" in meters and "cx" (drag coefficient), from which the air resistance is calculated. A "cx" of null means the game files state none, and 0.35 is used instead. The caliber is the diameter of the body that actually flies, so for a discarding-sabot shell it is the penetrator, not the barrel.
 An empty `{}` entry means no sight is generated for that tank, and shells without "speed" (missiles and rockets) are skipped.
 
 # Presets

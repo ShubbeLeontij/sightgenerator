@@ -46,16 +46,16 @@ def drag_factor(shell) -> float:
     """
     Function that finds how strongly the air slows a shell down.
     :param shell: dict with "mass" (kg), "caliber" (m, the diameter of the body that actually flies - for a
-    discarding-sabot shell that of its penetrator), "cx" (drag coefficient) and "type" of the shell, as they
-    are stored in data.json. A missing cx is taken from DEFAULT_CX by the shell type, while a missing mass
-    or caliber means "no data" i.e. no air resistance at all
+    discarding-sabot shell that of its penetrator) and "cx" (drag coefficient) of the shell, as they are
+    stored in data.json. A missing cx is DEFAULT_CX, while a missing mass or caliber means "no data" i.e.
+    no air resistance at all
     :return: float k in 1/m, the shell losing speed as a = -k * v^2
     """
     if not shell:
         return 0.0
     mass, caliber = shell.get("mass"), shell.get("caliber")
-    # A shell whose game files state no cx still flies through the same air, so its type answers for it
-    cx = shell.get("cx") or DEFAULT_CX.get(shell.get("type") or "", DEFAULT_CX_FALLBACK)
+    # A shell whose game files state no cx has been measured in game to fly as if its cx were DEFAULT_CX
+    cx = shell.get("cx") or DEFAULT_CX
     if not mass or not caliber:
         return 0.0
     area = math.pi * caliber ** 2 / 4
@@ -125,7 +125,7 @@ def create_sight(speed, zoom, sight_type, coord, convergence, isMain=True, shell
     :param coord: list with two floats inside - height and width location of sight relatively to the gun in meters
     :param convergence: convergence in meters i.e. distance with zero parallax (int type)
     :param isMain: boolean showing whether is this sight main or additional
-    :param shell: dict with the shell's "mass", "caliber", "cx" and "type" from data.json, used to account
+    :param shell: dict with the shell's "mass", "caliber" and "cx" from data.json, used to account
     for air resistance. Without it the shell is dropped through vacuum
     :return: list containing: start, distances_blk, lines_blk, circles_blk, text_blk. All in blk format
     """
@@ -396,11 +396,11 @@ if __name__ == "__main__":
         sight_type = speed_category(speed)
         filename = input("Sight name: ")
         coord = list(map(float, input("Sight coordinates: ").split(',')))
-        shell_data = input("Shell mass in kg, caliber in m, cx and type (leave empty for no air drag): ")
+        shell_data = input("Shell mass in kg, caliber in m and cx (leave empty for no air drag): ")
         shell = None
         if shell_data.strip():
-            mass, caliber, cx, shell_type = (shell_data.split(',') + [""])[:4]
-            shell = {"mass": float(mass), "caliber": float(caliber), "cx": float(cx), "type": shell_type.strip()}
+            mass, caliber, cx = (shell_data.split(',') + [""])[:3]
+            shell = {"mass": float(mass), "caliber": float(caliber), "cx": float(cx) if cx.strip() else None}
         try:
             os.mkdir(get_path() + "/UserSights/")
         except:
