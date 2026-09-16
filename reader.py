@@ -60,9 +60,9 @@ def reader(MODE, default_mode="simulator", _print=print, _input=input):
             _output(str((unit_id, gamemode, sight_type, standard, standard_speed)), 0)
             try:
                 _output(generator.generator(unit_id, [standard_speed], zoom, [sight_type], [[0.0, 0.0]],
-                                            [math.inf], filename=gamemode, bind=gamemode == default_mode,
-                                            shells=[entry.get(standard)]), 0)
-            except Exception as e:  # If something went wrong
+                                            [math.inf], filename=gamemode + generator.speed_category(standard_speed),
+                                            bind=gamemode == default_mode, shells=[entry.get(standard)]), 0)
+            except Exception as e:
                 wrong_entries += 1
                 _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + gamemode + ". Error: " + str(e), 1)
 
@@ -72,7 +72,7 @@ def reader(MODE, default_mode="simulator", _print=print, _input=input):
                 _output(generator.generator(unit_id, [standard_speed], zoom, [sight_type], [coord],
                                             [convergence], filename=sight_type, bind=True,
                                             shells=[entry.get(standard)]), 0)
-            except Exception as e:  # If something went wrong
+            except Exception as e:
                 wrong_entries += 1
                 _output("Wrong entry format. Unit: " + unit_id + " Gamemode: " + sight_type + ". Error: " + str(e), 1)
 
@@ -91,7 +91,7 @@ def reader(MODE, default_mode="simulator", _print=print, _input=input):
                 _output(generator.generator(unit_id, [speed], zoom, [sight_type], [coord], [convergence],
                                             filename=shell_name, shells=[shell],
                                             bind=default_mode == "simulator" and shell_name == standard), 0)
-            except Exception as e:  # If something went wrong
+            except Exception as e:
                 wrong_entries += 1
                 _output("Wrong entry format. Unit: " + unit_id + " Shell: " + shell_name + ". Error: " + str(e), 1)
 
