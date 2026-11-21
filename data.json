@@ -2784,6 +2784,30 @@
       "cx": 0.377
     }
   },
+  "cn_zbd_04": {
+    "zoom": 7.2,
+    "convergence": null,
+    "laser": true,
+    "coords": [
+      0.308,
+      -0.4757
+    ],
+    "standard": "30mm_zpz02_apds",
+    "30mm_zpz02_apds": {
+      "type": "apds_autocannon",
+      "speed": 1180.0,
+      "mass": 0.286,
+      "caliber": 0.018,
+      "cx": 0.12
+    },
+    "30mm_zpz02_hei": {
+      "type": "he_frag_i",
+      "speed": 960.0,
+      "mass": 0.389,
+      "caliber": 0.03,
+      "cx": 0.29841
+    }
+  },
   "cn_zbd_04a": {
     "zoom": 6.0,
     "convergence": null,
@@ -3850,7 +3874,7 @@
     },
     "105mm_ofph_f1": {
       "type": "smoke_tank",
-      "speed": 700.0,
+      "speed": 695.0,
       "mass": 11.4,
       "caliber": 0.105,
       "cx": null
@@ -3881,7 +3905,7 @@
     },
     "105mm_ofph_f1": {
       "type": "smoke_tank",
-      "speed": 700.0,
+      "speed": 695.0,
       "mass": 11.4,
       "caliber": 0.105,
       "cx": null
@@ -3950,7 +3974,7 @@
     },
     "105mm_ofph_f1": {
       "type": "smoke_tank",
-      "speed": 700.0,
+      "speed": 695.0,
       "mass": 11.4,
       "caliber": 0.105,
       "cx": null
@@ -3988,7 +4012,7 @@
     },
     "105mm_ofph_f1": {
       "type": "smoke_tank",
-      "speed": 700.0,
+      "speed": 695.0,
       "mass": 11.4,
       "caliber": 0.105,
       "cx": null
@@ -4050,7 +4074,7 @@
     },
     "105mm_ofph_f1": {
       "type": "smoke_tank",
-      "speed": 700.0,
+      "speed": 695.0,
       "mass": 11.4,
       "caliber": 0.105,
       "cx": null
@@ -4112,7 +4136,7 @@
     },
     "105mm_ofph_f1": {
       "type": "smoke_tank",
-      "speed": 700.0,
+      "speed": 695.0,
       "mass": 11.4,
       "caliber": 0.105,
       "cx": null
@@ -4536,7 +4560,7 @@
     "laser": false,
     "coords": [
       0.2622,
-      -0.6221
+      0.6184
     ],
     "standard": "40mm_MkII",
     "40mm_M81A1": {
@@ -5942,6 +5966,37 @@
       "cx": null
     }
   },
+  "fr_prtl": {
+    "zoom": 1.5,
+    "convergence": null,
+    "laser": false,
+    "coords": [
+      0.5933,
+      0.331
+    ],
+    "standard": "35_228mm_apds_t",
+    "35_228mm_apds_t": {
+      "type": "apds_autocannon",
+      "speed": 1400.0,
+      "mass": 0.38,
+      "caliber": 0.018,
+      "cx": 0.25
+    },
+    "35_228mm_aphe_i": {
+      "type": "ap_i_t",
+      "speed": 1175.0,
+      "mass": 0.55,
+      "caliber": 0.035,
+      "cx": 0.246
+    },
+    "35_228mm_he_i_t": {
+      "type": "he_i_t",
+      "speed": 1175.0,
+      "mass": 0.55,
+      "caliber": 0.035,
+      "cx": 0.246
+    }
+  },
   "fr_pzkpfw_V_panther_dauphine": {
     "zoom": 2.5,
     "convergence": 800,
@@ -6063,7 +6118,7 @@
     },
     "105mm_ofph_f1": {
       "type": "smoke_tank",
-      "speed": 700.0,
+      "speed": 695.0,
       "mass": 11.4,
       "caliber": 0.105,
       "cx": null
@@ -6666,8 +6721,8 @@
     "convergence": 800,
     "laser": false,
     "coords": [
-      0.6836,
-      0.4847
+      0.6535,
+      0.4784
     ],
     "standard": "30mm_PzGr_H",
     "30mm_MGr": {
@@ -7827,6 +7882,44 @@
       "cx": 0.66
     }
   },
+  "germ_leopard_2a8": {
+    "zoom": 3.0,
+    "convergence": 1000,
+    "laser": true,
+    "coords": [
+      0.4084,
+      0.7673
+    ],
+    "standard": "120mm_dm53",
+    "120mm_dm12a1": {
+      "type": "heat_fs_tank",
+      "speed": 1190.0,
+      "mass": 13.5,
+      "caliber": 0.12,
+      "cx": 0.55327
+    },
+    "120mm_dm43": {
+      "type": "apds_fs_long_l30_tank",
+      "speed": 1750.0,
+      "mass": 4.0,
+      "caliber": 0.022,
+      "cx": 0.611
+    },
+    "120mm_dm53": {
+      "type": "apds_fs_long_l30_tank",
+      "speed": 1750.0,
+      "mass": 5.0,
+      "caliber": 0.023,
+      "cx": 0.74
+    },
+    "120mm_dm_11": {
+      "type": "he_frag_dist_fuse",
+      "speed": 1015.0,
+      "mass": 19.0,
+      "caliber": 0.12,
+      "cx": 0.66
+    }
+  },
   "germ_leopard_2av": {
     "zoom": 4.0,
     "convergence": 1000,
@@ -8752,6 +8845,44 @@
     "coords": [
       0.5899,
       -0.5325
+    ],
+    "standard": "88mm_pzrg_39_43",
+    "88mm_grhl39": {
+      "type": "heat_tank",
+      "speed": 600.0,
+      "mass": 7.64,
+      "caliber": 0.088,
+      "cx": null
+    },
+    "88mm_pzrg_39_43": {
+      "type": "apcbc_tank",
+      "speed": 1000.0,
+      "mass": 10.16,
+      "caliber": 0.088,
+      "cx": 0.26231
+    },
+    "88mm_pzrg_40_43": {
+      "type": "apcr_tank",
+      "speed": 1130.0,
+      "mass": 7.3,
+      "caliber": 0.088,
+      "cx": 0.28
+    },
+    "88mm_sprgr_43": {
+      "type": "he_frag_tank",
+      "speed": 820.0,
+      "mass": 9.4,
+      "caliber": 0.088,
+      "cx": null
+    }
+  },
+  "germ_panzerjager_panther_g2": {
+    "zoom": 4.7,
+    "convergence": 800,
+    "laser": false,
+    "coords": [
+      0.517,
+      -0.5417
     ],
     "standard": "88mm_pzrg_39_43",
     "88mm_grhl39": {
@@ -11344,7 +11475,7 @@
     },
     "105mm_ofph_f1": {
       "type": "smoke_tank",
-      "speed": 700.0,
+      "speed": 695.0,
       "mass": 11.4,
       "caliber": 0.105,
       "cx": null
@@ -14240,8 +14371,8 @@
     "convergence": 400,
     "laser": false,
     "coords": [
-      0.1158,
-      -0.0506
+      0.3834,
+      0.0552
     ],
     "standard": "20mm_perforante_m35_belt",
     "20mm_granata_m35": {
@@ -14790,14 +14921,14 @@
       "type": "heat_grenade_tank",
       "speed": 502.92,
       "mass": 7.96,
-      "caliber": 0.106,
+      "caliber": 0.105,
       "cx": 0.45
     },
     "106mm_m361a1": {
       "type": "hesh_tank",
       "speed": 498.348,
       "mass": 7.95,
-      "caliber": 0.106,
+      "caliber": 0.105,
       "cx": 0.45
     }
   },
@@ -15081,6 +15212,30 @@
       "mass": 12.5,
       "caliber": 0.1,
       "cx": null
+    }
+  },
+  "it_lancia_flak38": {
+    "zoom": 1.9,
+    "convergence": 800,
+    "laser": false,
+    "coords": [
+      0.5534,
+      0.2999
+    ],
+    "standard": "20mm_pzgr",
+    "20mm_pzgr": {
+      "type": "ap_i_t",
+      "speed": 800.0,
+      "mass": 0.148,
+      "caliber": 0.02,
+      "cx": 0.51976
+    },
+    "20mm_sprgr": {
+      "type": "he_frag_i_t",
+      "speed": 900.0,
+      "mass": 0.115,
+      "caliber": 0.02,
+      "cx": 0.5
     }
   },
   "it_leopard_1a2": {
@@ -16020,14 +16175,14 @@
       "type": "heat_grenade_tank",
       "speed": 502.92,
       "mass": 7.96,
-      "caliber": 0.106,
+      "caliber": 0.105,
       "cx": 0.45
     },
     "106mm_m361a1": {
       "type": "hesh_tank",
       "speed": 498.348,
       "mass": 7.95,
-      "caliber": 0.106,
+      "caliber": 0.105,
       "cx": 0.45
     }
   },
@@ -17021,6 +17176,37 @@
       "cx": null
     }
   },
+  "it_v_4_straussler": {
+    "zoom": 1.9,
+    "convergence": 400,
+    "laser": false,
+    "coords": [
+      0.0371,
+      -0.2135
+    ],
+    "standard": "40mm_36m",
+    "40mm_36m": {
+      "type": "aphebc_tank",
+      "speed": 800.0,
+      "mass": 0.965,
+      "caliber": 0.04,
+      "cx": null
+    },
+    "40mm_39m": {
+      "type": "he_frag_tank",
+      "speed": 800.0,
+      "mass": 0.965,
+      "caliber": 0.04,
+      "cx": null
+    },
+    "40mm_43m": {
+      "type": "apbc_usa_tank",
+      "speed": 800.0,
+      "mass": 1.05,
+      "caliber": 0.04,
+      "cx": null
+    }
+  },
   "it_vbc_pt2": {
     "zoom": 2.0,
     "convergence": 1000,
@@ -17212,6 +17398,37 @@
       "mass": 2.8,
       "caliber": 0.057,
       "cx": 0.377
+    }
+  },
+  "jp_bmp_3f": {
+    "zoom": 5.0,
+    "convergence": null,
+    "laser": true,
+    "coords": [
+      0.3225,
+      -0.4706
+    ],
+    "standard": "30mm_3UBR8",
+    "30mm_3UBR8": {
+      "type": "apds_autocannon",
+      "speed": 1120.0,
+      "mass": 0.304,
+      "caliber": 0.018,
+      "cx": 0.12
+    },
+    "30mm_UBR6": {
+      "type": "ap_t",
+      "speed": 970.0,
+      "mass": 0.4,
+      "caliber": 0.03,
+      "cx": 0.25687
+    },
+    "30mm_UOF8": {
+      "type": "he_frag_i",
+      "speed": 960.0,
+      "mass": 0.389,
+      "caliber": 0.03,
+      "cx": 0.29841
     }
   },
   "jp_btr_3e1": {
@@ -18914,14 +19131,14 @@
       "type": "heat_grenade_tank",
       "speed": 502.92,
       "mass": 7.96,
-      "caliber": 0.106,
+      "caliber": 0.105,
       "cx": 0.45
     },
     "106mm_type_68_hesh": {
       "type": "hesh_tank",
       "speed": 498.348,
       "mass": 7.95,
-      "caliber": 0.106,
+      "caliber": 0.105,
       "cx": 0.45
     }
   },
@@ -20672,6 +20889,44 @@
       "cx": 0.74
     }
   },
+  "sw_leopard_2a8no": {
+    "zoom": 3.0,
+    "convergence": 1000,
+    "laser": true,
+    "coords": [
+      0.4084,
+      0.7673
+    ],
+    "standard": "120mm_dm53",
+    "120mm_dm12a1": {
+      "type": "heat_fs_tank",
+      "speed": 1190.0,
+      "mass": 13.5,
+      "caliber": 0.12,
+      "cx": 0.55327
+    },
+    "120mm_dm43": {
+      "type": "apds_fs_long_l30_tank",
+      "speed": 1750.0,
+      "mass": 4.0,
+      "caliber": 0.022,
+      "cx": 0.611
+    },
+    "120mm_dm53": {
+      "type": "apds_fs_long_l30_tank",
+      "speed": 1750.0,
+      "mass": 5.0,
+      "caliber": 0.023,
+      "cx": 0.74
+    },
+    "120mm_dm_11": {
+      "type": "he_frag_dist_fuse",
+      "speed": 1015.0,
+      "mass": 19.0,
+      "caliber": 0.12,
+      "cx": 0.66
+    }
+  },
   "sw_lvkv_42": {
     "zoom": 4.7,
     "convergence": null,
@@ -20815,6 +21070,37 @@
       "mass": 11.6,
       "caliber": 0.105,
       "cx": 0.68423
+    }
+  },
+  "sw_patria_bmp_3": {
+    "zoom": 5.0,
+    "convergence": 1000,
+    "laser": true,
+    "coords": [
+      0.3299,
+      -0.4588
+    ],
+    "standard": "30mm_3UBR8",
+    "30mm_3UBR8": {
+      "type": "apds_autocannon",
+      "speed": 1120.0,
+      "mass": 0.304,
+      "caliber": 0.018,
+      "cx": 0.12
+    },
+    "30mm_UBR6": {
+      "type": "ap_t",
+      "speed": 970.0,
+      "mass": 0.4,
+      "caliber": 0.03,
+      "cx": 0.25687
+    },
+    "30mm_UOF8": {
+      "type": "he_frag_i",
+      "speed": 960.0,
+      "mass": 0.389,
+      "caliber": 0.03,
+      "cx": 0.29841
     }
   },
   "sw_pbil_m40": {
@@ -20963,6 +21249,37 @@
       "mass": 6.2,
       "caliber": 0.076,
       "cx": 0.43355
+    }
+  },
+  "sw_pv_m39": {
+    "zoom": 1.9,
+    "convergence": 400,
+    "laser": false,
+    "coords": [
+      0.3868,
+      -0.5121
+    ],
+    "standard": "20mm_slpgr_m42",
+    "20mm_slpgr_m42": {
+      "type": "ap_t",
+      "speed": 845.0,
+      "mass": 0.136,
+      "caliber": 0.02,
+      "cx": null
+    },
+    "20mm_slpprj_m40": {
+      "type": "ap_t",
+      "speed": 815.0,
+      "mass": 0.145,
+      "caliber": 0.02,
+      "cx": null
+    },
+    "20mm_slsgr_m42": {
+      "type": "he_frag_i_t",
+      "speed": 845.0,
+      "mass": 0.136,
+      "caliber": 0.02,
+      "cx": null
     }
   },
   "sw_pvkv_II": {
@@ -24492,13 +24809,6 @@
       0.6548
     ],
     "standard": "120mm_l23a1",
-    "120mm_l23": {
-      "type": "apds_fs_long_tank",
-      "speed": 1535.0,
-      "mass": 3.89,
-      "caliber": 0.029,
-      "cx": 0.34982
-    },
     "120mm_l23a1": {
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
@@ -25027,7 +25337,7 @@
       0.4256,
       0.6299
     ],
-    "standard": "120mm_l23",
+    "standard": "120mm_l23a1",
     "120mm_l15a3": {
       "type": "apds_l15_tank",
       "speed": 1371.6,
@@ -25035,7 +25345,7 @@
       "caliber": 0.068,
       "cx": 0.16549
     },
-    "120mm_l23": {
+    "120mm_l23a1": {
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
@@ -25096,7 +25406,7 @@
       0.4623,
       0.5726
     ],
-    "standard": "120mm_l23",
+    "standard": "120mm_l23a1",
     "120mm_l15a3": {
       "type": "apds_l15_tank",
       "speed": 1371.6,
@@ -25104,7 +25414,7 @@
       "caliber": 0.068,
       "cx": 0.16549
     },
-    "120mm_l23": {
+    "120mm_l23a1": {
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
@@ -25971,7 +26281,7 @@
       0.457,
       0.6341
     ],
-    "standard": "120mm_l23",
+    "standard": "120mm_l23a1",
     "120mm_l15a3": {
       "type": "apds_l15_tank",
       "speed": 1371.6,
@@ -25979,7 +26289,7 @@
       "caliber": 0.068,
       "cx": 0.16549
     },
-    "120mm_l23": {
+    "120mm_l23a1": {
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
@@ -26471,20 +26781,51 @@
       0.6337,
       0.6137
     ],
-    "standard": "105mm_dm63",
-    "105mm_dm63": {
+    "standard": "105mm_fs_mk3",
+    "105mm_fs_mk1": {
+      "type": "apds_fs_tungsten_l10_l15_tank",
+      "speed": 1455.0,
+      "mass": 4.2,
+      "caliber": 0.033,
+      "cx": 0.26763
+    },
+    "105mm_fs_mk3": {
       "type": "apds_fs_long_l30_tank",
       "speed": 1455.0,
       "mass": 4.4,
       "caliber": 0.024,
       "cx": 0.53008
     },
-    "105mm_m111": {
+    "105mm_m456": {
+      "type": "heat_fs_tank",
+      "speed": 1173.5,
+      "mass": 10.5,
+      "caliber": 0.105,
+      "cx": 0.52416
+    }
+  },
+  "uk_olifant_optimering": {
+    "zoom": 3.0,
+    "convergence": 1000,
+    "laser": true,
+    "coords": [
+      0.3777,
+      0.6764
+    ],
+    "standard": "105mm_fs_mk3",
+    "105mm_fs_mk1": {
       "type": "apds_fs_tungsten_l10_l15_tank",
       "speed": 1455.0,
       "mass": 4.2,
       "caliber": 0.033,
       "cx": 0.26763
+    },
+    "105mm_fs_mk3": {
+      "type": "apds_fs_long_l30_tank",
+      "speed": 1455.0,
+      "mass": 4.4,
+      "caliber": 0.024,
+      "cx": 0.53008
     },
     "105mm_m456": {
       "type": "heat_fs_tank",
@@ -26964,7 +27305,7 @@
       0.4686,
       0.6548
     ],
-    "standard": "120mm_l23",
+    "standard": "120mm_l23a1",
     "120mm_l15a5": {
       "type": "apds_l15_tank",
       "speed": 1371.6,
@@ -26972,7 +27313,7 @@
       "caliber": 0.068,
       "cx": 0.16549
     },
-    "120mm_l23": {
+    "120mm_l23a1": {
       "type": "apds_fs_long_tank",
       "speed": 1535.0,
       "mass": 3.89,
@@ -27853,10 +28194,10 @@
     },
     "37mm_m59a1": {
       "type": "apc_t",
-      "speed": 625.0,
-      "mass": 0.87,
+      "speed": 624.84,
+      "mass": 0.866,
       "caliber": 0.037,
-      "cx": null
+      "cx": 0.62665
     }
   },
   "us_halftrack_m16": {
@@ -29799,6 +30140,30 @@
       "cx": null
     }
   },
+  "us_m3a1_stuart_nvidia": {
+    "zoom": 1.9,
+    "convergence": 400,
+    "laser": false,
+    "coords": [
+      -0.0025,
+      -0.1448
+    ],
+    "standard": "37mm_m51b1",
+    "37mm_m51b1": {
+      "type": "apcbc_solid_medium_caliber_tank",
+      "speed": 883.0,
+      "mass": 0.87,
+      "caliber": 0.037,
+      "cx": null
+    },
+    "37mm_m74b1": {
+      "type": "ap_tank",
+      "speed": 883.0,
+      "mass": 0.87,
+      "caliber": 0.037,
+      "cx": null
+    }
+  },
   "us_m3a1_stuart_usmc": {
     "zoom": 1.9,
     "convergence": 400,
@@ -30877,14 +31242,14 @@
       "type": "heat_grenade_tank",
       "speed": 502.92,
       "mass": 7.96,
-      "caliber": 0.106,
+      "caliber": 0.105,
       "cx": 0.45
     },
     "106mm_m361a1": {
       "type": "hesh_tank",
       "speed": 498.348,
       "mass": 7.95,
-      "caliber": 0.106,
+      "caliber": 0.105,
       "cx": 0.45
     }
   },
@@ -31974,6 +32339,44 @@
       "cx": 0.52416
     }
   },
+  "us_stingray_2": {
+    "zoom": 7.0,
+    "convergence": null,
+    "laser": true,
+    "coords": [
+      0.4032,
+      0.7059
+    ],
+    "standard": "105mm_dm33",
+    "105mm_c76a1": {
+      "type": "apds_fs_long_tank",
+      "speed": 1509.0,
+      "mass": 3.6,
+      "caliber": 0.026,
+      "cx": 0.45
+    },
+    "105mm_dm33": {
+      "type": "apds_fs_long_tank",
+      "speed": 1455.0,
+      "mass": 3.79,
+      "caliber": 0.026,
+      "cx": 0.4
+    },
+    "105mm_m393a2": {
+      "type": "hesh_tank",
+      "speed": 731.5,
+      "mass": 11.2,
+      "caliber": 0.105,
+      "cx": 0.69212
+    },
+    "105mm_m456a2": {
+      "type": "heat_fs_tank",
+      "speed": 1173.5,
+      "mass": 10.5,
+      "caliber": 0.105,
+      "cx": 0.52416
+    }
+  },
   "us_t114": {
     "zoom": 4.4,
     "convergence": 800,
@@ -31985,10 +32388,10 @@
     "standard": "106mm_m344a1",
     "106mm_m344a1": {
       "type": "heat_grenade_tank",
-      "speed": 502.0,
-      "mass": 10.0,
-      "caliber": 0.106,
-      "cx": null
+      "speed": 502.92,
+      "mass": 7.96,
+      "caliber": 0.105,
+      "cx": 0.45
     }
   },
   "us_t14": {
@@ -33653,8 +34056,8 @@
     "convergence": null,
     "laser": true,
     "coords": [
-      0.287,
-      -0.4823
+      0.2842,
+      -0.4588
     ],
     "standard": "30mm_3UBR8",
     "30mm_3UBR8": {
@@ -33844,6 +34247,30 @@
       "cx": 0.39837
     }
   },
+  "ussr_bt_7_m_816": {
+    "zoom": 1.9,
+    "convergence": 400,
+    "laser": false,
+    "coords": [
+      0.1154,
+      -0.1077
+    ],
+    "standard": "45mm_br_243",
+    "45mm_br_243": {
+      "type": "aphebc_tank",
+      "speed": 760.0,
+      "mass": 1.43,
+      "caliber": 0.045,
+      "cx": 0.39837
+    },
+    "45mm_br_243sp": {
+      "type": "apbc_usa_tank",
+      "speed": 757.0,
+      "mass": 1.43,
+      "caliber": 0.045,
+      "cx": 0.39837
+    }
+  },
   "ussr_bt_7a_f32": {
     "zoom": 1.9,
     "convergence": 800,
@@ -33997,6 +34424,44 @@
       "mass": 0.304,
       "caliber": 0.018,
       "cx": 0.12
+    },
+    "30mm_UBR6": {
+      "type": "ap_t",
+      "speed": 970.0,
+      "mass": 0.4,
+      "caliber": 0.03,
+      "cx": 0.25687
+    },
+    "30mm_UOF8": {
+      "type": "he_frag_i",
+      "speed": 960.0,
+      "mass": 0.389,
+      "caliber": 0.03,
+      "cx": 0.29841
+    }
+  },
+  "ussr_btr_90_2004": {
+    "zoom": 2.5,
+    "convergence": null,
+    "laser": true,
+    "coords": [
+      0.3171,
+      -0.5638
+    ],
+    "standard": "30mm_3UBR8",
+    "30mm_3UBR8": {
+      "type": "apds_autocannon",
+      "speed": 1120.0,
+      "mass": 0.304,
+      "caliber": 0.018,
+      "cx": 0.12
+    },
+    "30mm_3ubr_11": {
+      "type": "apds_fs_long_tank",
+      "speed": 1260.0,
+      "mass": 0.165,
+      "caliber": 0.01,
+      "cx": 0.25
     },
     "30mm_UBR6": {
       "type": "ap_t",
@@ -35453,8 +35918,8 @@
     "convergence": 800,
     "laser": false,
     "coords": [
-      0.2457,
-      -0.4791
+      0.2162,
+      -0.4794
     ],
     "standard": "115mm_3bm3",
     "115mm_3bk_4": {
@@ -37508,8 +37973,8 @@
     "convergence": 800,
     "laser": false,
     "coords": [
-      -0.0144,
-      -0.3033
+      0.0036,
+      -0.3448
     ],
     "standard": "85mm_br_365a",
     "85mm_br_365a": {
@@ -37643,8 +38108,8 @@
     "convergence": 800,
     "laser": false,
     "coords": [
-      -0.0144,
-      -0.3033
+      0.0036,
+      -0.3448
     ],
     "standard": "85mm_br_365a",
     "85mm_br_365a": {
